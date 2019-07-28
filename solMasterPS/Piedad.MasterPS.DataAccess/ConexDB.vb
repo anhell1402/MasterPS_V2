@@ -2,6 +2,8 @@
 Imports System.Data
 Imports System.Reflection
 Public Class ConexDB
+    Implements IDisposable
+
     Private oCon As SqlConnection
     Private oCmd As SqlCommand
     Private dr As SqlDataReader
@@ -43,10 +45,11 @@ Public Class ConexDB
         AbreConexion()
     End Sub
     Public Sub CerrarConexion()
-        If (oCon.State = ConnectionState.Open) Then
-            oCon.Close()
-        End If
-        oCon.Dispose()
+        'If (oCon.State = ConnectionState.Open) Then
+        '    oCon.Close()
+        'End If
+        'oCon.Dispose()
+        Me.Dispose()
     End Sub
 
     Public WriteOnly Property EstablecerTipoComando As TipoComando
@@ -193,4 +196,42 @@ Public Class ConexDB
             Return Nothing
         End If
     End Function
+
+#Region "IDisposable Support"
+    Private disposedValue As Boolean ' Para detectar llamadas redundantes
+
+    ' IDisposable
+    Protected Overridable Sub Dispose(disposing As Boolean)
+        If Not disposedValue Then
+            If disposing Then
+                ' TODO: elimine el estado administrado (objetos administrados).
+            End If
+
+            ' TODO: libere los recursos no administrados (objetos no administrados) y reemplace Finalize() a continuación.
+            ' TODO: configure los campos grandes en nulos.
+            If (Not oCon Is Nothing) Then
+                If oCon.State = ConnectionState.Open Then
+                    oCon.Close()
+                End If
+                oCon.Dispose()
+            End If
+        End If
+            disposedValue = True
+    End Sub
+
+    ' TODO: reemplace Finalize() solo si el anterior Dispose(disposing As Boolean) tiene código para liberar recursos no administrados.
+    Protected Overrides Sub Finalize()
+        ' No cambie este código. Coloque el código de limpieza en el anterior Dispose(disposing As Boolean).
+        Dispose(False)
+        MyBase.Finalize()
+    End Sub
+
+    ' Visual Basic agrega este código para implementar correctamente el patrón descartable.
+    Public Sub Dispose() Implements IDisposable.Dispose
+        ' No cambie este código. Coloque el código de limpieza en el anterior Dispose(disposing As Boolean).
+        Dispose(True)
+        ' TODO: quite la marca de comentario de la siguiente línea si Finalize() se ha reemplazado antes.
+        ' GC.SuppressFinalize(Me)
+    End Sub
+#End Region
 End Class

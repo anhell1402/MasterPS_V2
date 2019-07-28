@@ -22,6 +22,11 @@
             idUsuario_ = value
         End Set
     End Property
+    Public WriteOnly Property SetIdUsuario As Integer
+        Set(value As Integer)
+            idUsuario_.IdUsuario = value
+        End Set
+    End Property
     Private idMotivo_ As Generico
     Public Property IdMotivo As Generico
         Get
