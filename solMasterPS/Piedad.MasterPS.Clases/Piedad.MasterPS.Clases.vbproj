@@ -76,6 +76,14 @@
     <Compile Include="Catalogo\Mercancias.vb" />
     <Compile Include="Catalogo\Sucursal.vb" />
     <Compile Include="Catalogo\Sucursales.vb" />
+    <Compile Include="CA\CAC.vb" />
+    <Compile Include="Configuracion\ConfigApartado.vb" />
+    <Compile Include="Configuracion\ConfigAseguradora.vb" />
+    <Compile Include="Configuracion\ConfigDatosProfeco.vb" />
+    <Compile Include="Configuracion\ConfigFacturacion.vb" />
+    <Compile Include="Configuracion\ConfigOtrasVariables.vb" />
+    <Compile Include="Configuracion\ConfigTasa.vb" />
+    <Compile Include="Configuracion\ConfigTasasAplicadas.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -91,6 +99,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Pawn\DetalleEmpenio.vb" />
+    <Compile Include="Pawn\Empenio.vb" />
+    <Compile Include="Pawn\Movimiento.vb" />
+    <Compile Include="Sale\Venta.vb" />
     <Compile Include="Seguridad\Estatus.vb" />
     <Compile Include="Seguridad\Usuario.vb" />
     <Compile Include="Seguridad\Usuarios.vb" />
@@ -114,5 +126,6 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
