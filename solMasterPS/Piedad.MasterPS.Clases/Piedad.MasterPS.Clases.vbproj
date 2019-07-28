@@ -64,10 +64,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Catalogo\Checador.vb" />
+    <Compile Include="Catalogo\Checadores.vb" />
     <Compile Include="Catalogo\Cliente.vb" />
+    <Compile Include="Catalogo\Clientes.vb" />
     <Compile Include="Catalogo\Direccion.vb" />
+    <Compile Include="Catalogo\Direcciones.vb" />
     <Compile Include="Catalogo\Generico.vb" />
     <Compile Include="Catalogo\Genericos.vb" />
+    <Compile Include="Catalogo\Mercancia.vb" />
+    <Compile Include="Catalogo\Mercancias.vb" />
+    <Compile Include="Catalogo\Sucursal.vb" />
+    <Compile Include="Catalogo\Sucursales.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
