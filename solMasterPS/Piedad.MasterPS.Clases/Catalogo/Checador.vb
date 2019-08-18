@@ -1,5 +1,6 @@
 ﻿Public Class Checador
     Public Sub New()
+        idSucursal_ = New Sucursal
         idUsuario_ = New Usuario
         idMotivo_ = New Generico
         idCaja_ = New Generico
@@ -11,6 +12,15 @@
         End Get
         Set(ByVal value As Integer)
             idChecador_ = value
+        End Set
+    End Property
+    Private idSucursal_ As Sucursal
+    Public Property IdSucursal As Sucursal
+        Get
+            Return idSucursal_
+        End Get
+        Set(ByVal value As Sucursal)
+            idSucursal_ = value
         End Set
     End Property
     Private idUsuario_ As Usuario

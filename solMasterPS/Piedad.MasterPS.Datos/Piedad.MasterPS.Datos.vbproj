@@ -65,8 +65,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Catalogo\ChecadorDA.vb" />
+    <Compile Include="Catalogo\ClienteDA.vb" />
+    <Compile Include="Catalogo\CotitularDA.vb" />
+    <Compile Include="Catalogo\DireccionDA.vb" />
     <Compile Include="Catalogo\GenericoDA.vb" />
+    <Compile Include="Catalogo\InventarioDA.vb" />
+    <Compile Include="Catalogo\MercanciaDA.vb" />
+    <Compile Include="Catalogo\SucursalDA.vb" />
     <Compile Include="Catalogo\TipoGenerico.vb" />
+    <Compile Include="CA\CACDA.vb" />
+    <Compile Include="CA\MensajeDA.vb" />
+    <Compile Include="Configuracion\ConfigApartadoDA.vb" />
+    <Compile Include="Configuracion\ConfigAseguradoraDA.vb" />
+    <Compile Include="Configuracion\ConfigDatosProfecoDA.vb" />
+    <Compile Include="Configuracion\ConfigFacturacionDA.vb" />
+    <Compile Include="Configuracion\ConfigOtrasVariableDA.vb" />
+    <Compile Include="Configuracion\ConfigTasaAplicadaDA.vb" />
+    <Compile Include="Configuracion\ConfigTasaDA.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -82,6 +97,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Pawn\CancelacionDA.vb" />
+    <Compile Include="Pawn\DetalleEmpenioDA.vb" />
+    <Compile Include="Pawn\DocumentoDA.vb" />
+    <Compile Include="Pawn\EmpenioDA.vb" />
+    <Compile Include="Pawn\MovimientoDA.vb" />
+    <Compile Include="Sale\AbonosApartadoDA.vb" />
+    <Compile Include="Sale\AdicionCompraDA.vb" />
+    <Compile Include="Sale\AlmonedaDA.vb" />
+    <Compile Include="Sale\ApartadoDA.vb" />
+    <Compile Include="Sale\CancelacionApartadoDA.vb" />
+    <Compile Include="Sale\DetalleAlmonedaDA.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -112,5 +138,6 @@
       <Name>Piedad.MasterPS.DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

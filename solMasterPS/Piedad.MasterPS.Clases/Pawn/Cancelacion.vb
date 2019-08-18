@@ -1,15 +1,25 @@
-﻿Public Class CAC
+﻿Public Class Cancelacion
     Public Sub New()
+        idVenta_ = New Venta
         idUsuario_ = New Usuario
         idEmpenio_ = New Empenio
     End Sub
-    Private idCAC_ As Integer
-    Public Property IdCAC As Integer
+    Private idCancelacion_ As Integer
+    Public Property IdCancelacion As Integer
         Get
-            Return idCAC_
+            Return idCancelacion_
         End Get
         Set(ByVal value As Integer)
-            idCAC_ = value
+            idCancelacion_ = value
+        End Set
+    End Property
+    Private idVenta_ As Venta
+    Public Property IdVenta As Venta
+        Get
+            Return idVenta_
+        End Get
+        Set(ByVal value As Venta)
+            idVenta_ = value
         End Set
     End Property
     Private idUsuario_ As Usuario
@@ -21,15 +31,6 @@
             idUsuario_ = value
         End Set
     End Property
-    Private fechaRegistro_ As DateTime
-    Public Property FechaRegistro As DateTime
-        Get
-            Return fechaRegistro_
-        End Get
-        Set(ByVal value As DateTime)
-            fechaRegistro_ = value
-        End Set
-    End Property
     Private descripcion_ As String
     Public Property Descripcion As String
         Get
@@ -37,6 +38,15 @@
         End Get
         Set(ByVal value As String)
             descripcion_ = value
+        End Set
+    End Property
+    Private fecha_ As DateTime
+    Public Property Fecha As DateTime
+        Get
+            Return fecha_
+        End Get
+        Set(ByVal value As DateTime)
+            fecha_ = value
         End Set
     End Property
     Private idEmpenio_ As Empenio

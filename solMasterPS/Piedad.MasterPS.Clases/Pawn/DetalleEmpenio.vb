@@ -1,4 +1,13 @@
 ﻿Public Class DetalleEmpenio
+    Public Sub New()
+        idEmpenio_ = New Empenio
+        idMercancia_ = New Mercancia
+        idTipoMotor_ = New Generico
+        idNivelCombustible_ = New Generico
+        idTipoFormaDiamante_ = New Generico
+        idTipoArte_ = New Generico
+        idTipoAntiguedades_ = New Generico
+    End Sub
     Private idDetalleEmpenio_ As Integer
     Public Property IdDetalleEmpenio As Integer
         Get
@@ -161,13 +170,122 @@
             numeroTarjetaCirculacion_ = value
         End Set
     End Property
-    Private newPropertyValue As String
-    Public Property NewProperty() As String
+    Private aseguradora_Artista_TipoDisenio_ As String
+    Public Property Aseguradora_Artista_TipoDisenio As String
         Get
-            Return newPropertyValue
+            Return aseguradora_Artista_TipoDisenio_
         End Get
         Set(ByVal value As String)
-            newPropertyValue = value
+            aseguradora_Artista_TipoDisenio_ = value
         End Set
     End Property
+    Private numeroPoliza_ As Decimal
+    Public Property NumeroPoliza As Decimal
+        Get
+            Return numeroPoliza_
+        End Get
+        Set(ByVal value As Decimal)
+            numeroPoliza_ = value
+        End Set
+    End Property
+    Private fechaVencimiento_ As DateTime
+    Public Property FechaVencimiento As DateTime
+        Get
+            Return fechaVencimiento_
+        End Get
+        Set(ByVal value As DateTime)
+            fechaVencimiento_ = value
+        End Set
+    End Property
+    Private cantidadPrendas_ As Integer
+    Public Property CantidadPrendas As Integer
+        Get
+            Return cantidadPrendas_
+        End Get
+        Set(ByVal value As Integer)
+            cantidadPrendas_ = value
+        End Set
+    End Property
+    Private peso_ As Decimal
+    Public Property Peso As Decimal
+        Get
+            Return peso_
+        End Get
+        Set(ByVal value As Decimal)
+            peso_ = value
+        End Set
+    End Property
+    Private pesoPiedra_ As Decimal
+    Public Property PesoPiedra As Decimal
+        Get
+            Return pesoPiedra_
+        End Get
+        Set(ByVal value As Decimal)
+            pesoPiedra_ = value
+        End Set
+    End Property
+    Private numeroPiedras_ As Integer
+    Public Property NumeroPiedras As Integer
+        Get
+            Return numeroPiedras_
+        End Get
+        Set(ByVal value As Integer)
+            numeroPiedras_ = value
+        End Set
+    End Property
+    Private tamanio_ As String
+    Public Property Tamanio As String
+        Get
+            Return tamanio_
+        End Get
+        Set(ByVal value As String)
+            tamanio_ = value
+        End Set
+    End Property
+    Private numeroSerie_ As String
+    Public Property NumeroSerie As String
+        Get
+            Return numeroSerie_
+        End Get
+        Set(ByVal value As String)
+            numeroSerie_ = value
+        End Set
+    End Property
+    Private idTipoFormaDiamante_ As Generico
+    Public Property IdTipoFormaDiamante As Generico
+        Get
+            Return idTipoFormaDiamante_
+        End Get
+        Set(ByVal value As Generico)
+            idTipoFormaDiamante_ = value
+        End Set
+    End Property
+    Private pureza_ As String
+    Public Property Pureza As String
+        Get
+            Return pureza_
+        End Get
+        Set(ByVal value As String)
+            pureza_ = value
+        End Set
+    End Property
+    Private idTipoArte_ As Generico
+    Public Property IdTipoArte As Generico
+        Get
+            Return idTipoArte_
+        End Get
+        Set(ByVal value As Generico)
+            idTipoArte_ = value
+        End Set
+    End Property
+    Private idTipoAntiguedades_ As Generico
+    Public Property IdTipoAntiguedades As Generico
+        Get
+            Return idTipoAntiguedades_
+        End Get
+        Set(ByVal value As Generico)
+            idTipoAntiguedades_ = value
+        End Set
+    End Property
+
 End Class

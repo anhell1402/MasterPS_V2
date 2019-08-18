@@ -1,15 +1,14 @@
-﻿Public Class CAC
+﻿Public Class Almoneda
     Public Sub New()
         idUsuario_ = New Usuario
-        idEmpenio_ = New Empenio
     End Sub
-    Private idCAC_ As Integer
-    Public Property IdCAC As Integer
+    Private idAlmoneda_ As Integer
+    Public Property IdAlmoneda As Integer
         Get
-            Return idCAC_
+            Return idAlmoneda_
         End Get
         Set(ByVal value As Integer)
-            idCAC_ = value
+            idAlmoneda_ = value
         End Set
     End Property
     Private idUsuario_ As Usuario
@@ -28,24 +27,6 @@
         End Get
         Set(ByVal value As DateTime)
             fechaRegistro_ = value
-        End Set
-    End Property
-    Private descripcion_ As String
-    Public Property Descripcion As String
-        Get
-            Return descripcion_
-        End Get
-        Set(ByVal value As String)
-            descripcion_ = value
-        End Set
-    End Property
-    Private idEmpenio_ As Empenio
-    Public Property IdEmpenio As Empenio
-        Get
-            Return idEmpenio_
-        End Get
-        Set(ByVal value As Empenio)
-            idEmpenio_ = value
         End Set
     End Property
 
