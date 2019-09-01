@@ -21,7 +21,7 @@ Public Class GenericoBL
     End Sub
     Public Sub Almacenar(ByVal generic As Generico)
         Try
-            Dim obj As New GenericoBL(cadenaConex, tipoGen)
+            Dim obj As New GenericoDA(cadenaConex, tipoGen)
             obj.Almacenar(generic)
             _hayError = False
         Catch ex As Exception
@@ -31,7 +31,7 @@ Public Class GenericoBL
     End Sub
     Public Sub Actualizar(ByVal generic As Generico)
         Try
-            Dim obj As New GenericoBL(cadenaConex, tipoGen)
+            Dim obj As New GenericoDA(cadenaConex, tipoGen)
             obj.Actualizar(generic)
             _hayError = False
         Catch ex As Exception
@@ -41,7 +41,7 @@ Public Class GenericoBL
     End Sub
     Public Sub Eliminar(ByVal generic As Generico)
         Try
-            Dim obj As New GenericoBL(cadenaConex, tipoGen)
+            Dim obj As New GenericoDA(cadenaConex, tipoGen)
             obj.Eliminar(generic)
             _hayError = False
         Catch ex As Exception
@@ -51,7 +51,7 @@ Public Class GenericoBL
     End Sub
     Public Function Obtener(ByVal generic As Generico) As Generico
         Try
-            Dim obj As New GenericoBL(cadenaConex, tipoGen)
+            Dim obj As New GenericoDA(cadenaConex, tipoGen)
             Return obj.Obtener(generic)
             _hayError = False
         Catch ex As Exception
@@ -62,7 +62,7 @@ Public Class GenericoBL
     End Function
     Public Function Obtener() As Genericos
         Try
-            Dim obj As New GenericoBL(cadenaConex, tipoGen)
+            Dim obj As New GenericoDA(cadenaConex, tipoGen)
             Return obj.ObtenerTodos()
             _hayError = False
         Catch ex As Exception
