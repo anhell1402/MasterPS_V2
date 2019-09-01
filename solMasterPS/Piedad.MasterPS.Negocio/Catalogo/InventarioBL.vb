@@ -20,7 +20,7 @@ Public Class InventarioBL
     Public Sub Almacenar(ByVal inventario_ As Inventario)
         Try
             Dim obj As New InventarioDA(cadenaConex)
-            obj.Almacenar(inventario_|)
+            obj.Almacenar(inventario_)
             _hayError = False
         Catch ex As Exception
             _hayError = True

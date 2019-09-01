@@ -17,7 +17,6 @@ Public Class CACBL
     Private cadenaConex As String
     Public Sub New(ByVal cadenaConexion As String)
         cadenaConex = cadenaConexion
-        _hayError = False
     End Sub
     Public Sub Almacenar(ByVal cac_ As CAC)
         Try

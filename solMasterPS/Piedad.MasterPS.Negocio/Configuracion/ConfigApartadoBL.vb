@@ -27,7 +27,7 @@ Public Class ConfigApartadoBL
             _error = ex.Message
         End Try
     End Sub
-    Public Sub Actualizar(ByVal configApartado_ As ConfigApartado)}
+    Public Sub Actualizar(ByVal configApartado_ As ConfigApartado)
         Try
             Dim obj As New ConfigApartadoDA(cadenaConex)
             obj.Actualizar(configApartado_)
