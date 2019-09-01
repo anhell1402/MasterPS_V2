@@ -76,6 +76,11 @@
     <Compile Include="CA\MensajeBL.vb" />
     <Compile Include="Configuracion\ConfigApartadoBL.vb" />
     <Compile Include="Configuracion\ConfigAseguradoraBL.vb" />
+    <Compile Include="Configuracion\ConfigDatosProfecoBL.vb" />
+    <Compile Include="Configuracion\ConfigFacturacionBL.vb" />
+    <Compile Include="Configuracion\ConfigOtrasVariableBL.vb" />
+    <Compile Include="Configuracion\ConfigTasaAplicadaBL.vb" />
+    <Compile Include="Configuracion\ConfigTasaBL.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -91,6 +96,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Pawn\CancelacionBL.vb" />
+    <Compile Include="Pawn\DetalleEmpenioBL.vb" />
+    <Compile Include="Pawn\DocumentoBL.vb" />
+    <Compile Include="Pawn\EmpenioBL.vb" />
+    <Compile Include="Pawn\MovimientoBL.vb" />
+    <Compile Include="Sale\AbonosApartadoBL.vb" />
+    <Compile Include="Sale\AdicionCompraBL.vb" />
+    <Compile Include="Sale\AlmonedaBL.vb" />
+    <Compile Include="Sale\ApartadoBL.vb" />
+    <Compile Include="Sale\CancelacionApartadoBL.vb" />
+    <Compile Include="Sale\DetalleAlmonedaBL.vb" />
     <Compile Include="Seguridad\MenuBL.vb" />
     <Compile Include="Seguridad\PermisoBL.vb" />
     <Compile Include="Seguridad\UsuarioBL.vb" />
@@ -124,8 +140,6 @@
       <Name>Piedad.MasterPS.Datos</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Pawn\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
