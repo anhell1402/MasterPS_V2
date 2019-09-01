@@ -1,4 +1,8 @@
 ﻿Public Class Documento
+    Public Sub New()
+        idTipoDocumento_ = New Generico
+        idDetalleEmpenio_ = New DetalleEmpenio
+    End Sub
     Private idDocumento_ As Integer
     Public Property IdDocumento As Integer
         Get
@@ -17,6 +21,11 @@
             idTipoDocumento_ = value
         End Set
     End Property
+    Public WriteOnly Property SetIdTipoDocumento As Integer
+        Set(value As Integer)
+            idTipoDocumento_.IdGenerico = value
+        End Set
+    End Property
     Private idDetalleEmpenio_ As DetalleEmpenio
     Public Property IdDetalleEmpenio As DetalleEmpenio
         Get
@@ -24,6 +33,11 @@
         End Get
         Set(ByVal value As DetalleEmpenio)
             idDetalleEmpenio_ = value
+        End Set
+    End Property
+    Public WriteOnly Property SetIdDetalleEmpenio As Integer
+        Set(value As Integer)
+            idDetalleEmpenio_.IdDetalleEmpenio = value
         End Set
     End Property
     Private mimeType_ As String

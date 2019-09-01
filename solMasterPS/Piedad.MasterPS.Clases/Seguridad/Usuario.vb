@@ -1,8 +1,8 @@
 ﻿Public Class Usuario
 
     Public Sub New()
-        rol_ = New Generico()
-        telefono_ = New Generico()
+        idRol_ = New Generico()
+        idTelefono_ = New Generico()
         idDireccion_ = New Direccion()
     End Sub
     Private idUsuario_ As Integer
@@ -41,6 +41,20 @@
             amaterno_ = value
         End Set
     End Property
+    Private idRol_ As Generico
+    Public Property IdRol As Generico
+        Get
+            Return idRol_
+        End Get
+        Set(ByVal value As Generico)
+            idRol_ = value
+        End Set
+    End Property
+    Public WriteOnly Property SetIdRol As Integer
+        Set(value As Integer)
+            idRol_.IdGenerico = value
+        End Set
+    End Property
     Private mail_ As String
     Public Property Mail As String
         Get
@@ -77,24 +91,6 @@
             status_ = value
         End Set
     End Property
-    Private rol_ As Generico
-    Public Property Rol As Generico
-        Get
-            Return rol_
-        End Get
-        Set(ByVal value As Generico)
-            rol_ = value
-        End Set
-    End Property
-    Private telefono_ As Generico
-    Public Property Telefono As Generico
-        Get
-            Return telefono_
-        End Get
-        Set(ByVal value As Generico)
-            telefono_ = value
-        End Set
-    End Property
     Private idDireccion_ As Direccion
     Public Property IdDireccion As Direccion
         Get
@@ -102,6 +98,25 @@
         End Get
         Set(ByVal value As Direccion)
             idDireccion_ = value
+        End Set
+    End Property
+    Public WriteOnly Property SetIdDireccion As Integer
+        Set(value As Integer)
+            idDireccion_.IdDireccion = value
+        End Set
+    End Property
+    Private idTelefono_ As Generico
+    Public Property IdTelefono As Generico
+        Get
+            Return idTelefono_
+        End Get
+        Set(ByVal value As Generico)
+            idTelefono_ = value
+        End Set
+    End Property
+    Public WriteOnly Property SetIdTelefono As Integer
+        Set(value As Integer)
+            idTelefono_.IdGenerico = value
         End Set
     End Property
 End Class

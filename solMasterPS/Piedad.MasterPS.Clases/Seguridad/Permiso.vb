@@ -21,6 +21,11 @@
             idMenu_ = value
         End Set
     End Property
+    Public WriteOnly Property SetIdMenu As Integer
+        Set(value As Integer)
+            idMenu_.IdMenu = value
+        End Set
+    End Property
     Private idRol_ As Generico
     Public Property IdRol As Generico
         Get
@@ -28,6 +33,11 @@
         End Get
         Set(ByVal value As Generico)
             idRol_ = value
+        End Set
+    End Property
+    Public WriteOnly Property SetIdRol As Integer
+        Set(value As Integer)
+            idRol_.IdGenerico = value
         End Set
     End Property
 End Class

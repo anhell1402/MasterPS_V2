@@ -24,6 +24,11 @@
             idCliente_ = value
         End Set
     End Property
+    Public WriteOnly Property SetIdCliente As Integer
+        Set(value As Integer)
+            idCliente_.IdCliente = value
+        End Set
+    End Property
     Private idTipoIngreso_ As Generico
     Public Property IdTipoIngreso As Generico
         Get
@@ -31,6 +36,11 @@
         End Get
         Set(ByVal value As Generico)
             idTipoIngreso_ = value
+        End Set
+    End Property
+    Public WriteOnly Property SetIdTipoIngreso As Integer
+        Set(value As Integer)
+            idTipoIngreso_.IdGenerico = value
         End Set
     End Property
     Private idMercancia_ As Mercancia
@@ -42,6 +52,11 @@
             idMercancia_ = value
         End Set
     End Property
+    Public WriteOnly Property SetIdMercancia As Integer
+        Set(value As Integer)
+            idMercancia_.IdMercancia = value
+        End Set
+    End Property
     Private idTipoEmpenio_ As Generico
     Public Property IdTipoEmpenio As Generico
         Get
@@ -49,6 +64,11 @@
         End Get
         Set(ByVal value As Generico)
             idTipoEmpenio_ = value
+        End Set
+    End Property
+    Public WriteOnly Property SetIdTipoEmpenio As Integer
+        Set(value As Integer)
+            idTipoEmpenio_.IdGenerico = value
         End Set
     End Property
     Private idDetalleMercanciaVenta_ As DetalleMercanciaVenta
@@ -60,5 +80,9 @@
             idDetalleMercanciaVenta_ = value
         End Set
     End Property
-
+    Public WriteOnly Property SetIdDetalleMercanciaVenta As Integer
+        Set(value As Integer)
+            idDetalleMercanciaVenta_.IdDetalleMercanciaVenta = value
+        End Set
+    End Property
 End Class

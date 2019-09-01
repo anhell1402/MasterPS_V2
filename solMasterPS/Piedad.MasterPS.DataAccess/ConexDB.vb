@@ -124,7 +124,7 @@ Public Class ConexDB
     ''' </summary>
     ''' <param name="nombreParametro">Nombre del parámetro</param>
     ''' <returns>El valor del parámetro</returns>
-    Public Function EjecutaComando(ByVal nombreParametro As String) As String
+    Public Function EjectutaComando(ByVal nombreParametro As String) As String
         Dim valor As String = String.Empty
         Try
             EjecutaComando()
