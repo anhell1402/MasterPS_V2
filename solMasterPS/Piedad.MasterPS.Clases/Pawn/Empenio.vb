@@ -25,11 +25,6 @@
             idCliente_ = value
         End Set
     End Property
-    Public WriteOnly Property SetIdCliente As Integer
-        Set(value As Integer)
-            idCliente_.IdCliente = value
-        End Set
-    End Property
     Private prestamo_ As Decimal
     Public Property Prestamo As Decimal
         Get
@@ -48,11 +43,6 @@
             idTasa_ = value
         End Set
     End Property
-    Public WriteOnly Property SetIdTasa As Integer
-        Set(value As Integer)
-            idTasa_.IdTasa = value
-        End Set
-    End Property
     Private idUsuario_ As Usuario
     Public Property IdUsuario As Usuario
         Get
@@ -60,11 +50,6 @@
         End Get
         Set(ByVal value As Usuario)
             idUsuario_ = value
-        End Set
-    End Property
-    Public WriteOnly Property SetIdUsuario As Integer
-        Set(value As Integer)
-            idUsuario_.IdUsuario = value
         End Set
     End Property
     Private fechaHora_ As DateTime
@@ -112,11 +97,6 @@
             idTipoEmpenio_ = value
         End Set
     End Property
-    Public WriteOnly Property SetIdTipoEmpenio As Integer
-        Set(value As Integer)
-            idTipoEmpenio_.IdGenerico = value
-        End Set
-    End Property
     Private idEstatusEmpenio_ As Generico
     Public Property IdEstatusEmpenio As Generico
         Get
@@ -124,11 +104,6 @@
         End Get
         Set(ByVal value As Generico)
             idEstatusEmpenio_ = value
-        End Set
-    End Property
-    Public WriteOnly Property SetIdEstatusEmpenio As Integer
-        Set(value As Integer)
-            idEstatusEmpenio_.IdGenerico = value
         End Set
     End Property
 End Class

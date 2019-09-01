@@ -39,11 +39,6 @@
             idEstatusMensaje_ = value
         End Set
     End Property
-    Public WriteOnly Property SetIdEstatusMensaje As Integer
-        Set(value As Integer)
-            idEstatusMensaje_.IdGenerico = value
-        End Set
-    End Property
     Private fechaFinal_ As DateTime
     Public Property FechaFinal As DateTime
         Get
@@ -62,9 +57,5 @@
             idCliente_ = value
         End Set
     End Property
-    Public WriteOnly Property SetIdCliente As Integer
-        Set(value As Integer)
-            idCliente_.IdCliente = value
-        End Set
-    End Property
+
 End Class

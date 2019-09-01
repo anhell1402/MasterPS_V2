@@ -22,11 +22,6 @@
             idCliente_ = value
         End Set
     End Property
-    Public WriteOnly Property SetIdCliente As Integer
-        Set(value As Integer)
-            idCliente_.IdCliente = value
-        End Set
-    End Property
     Private idUsuario_ As Usuario
     Public Property IdUsuario As Usuario
         Get
@@ -34,11 +29,6 @@
         End Get
         Set(ByVal value As Usuario)
             idUsuario_ = value
-        End Set
-    End Property
-    Public WriteOnly Property SetIdUsuario As Integer
-        Set(value As Integer)
-            idUsuario_.IdUsuario = value
         End Set
     End Property
     Private fechaRegistro_ As DateTime
@@ -68,9 +58,5 @@
             idEstatusVenta_ = value
         End Set
     End Property
-    Public WriteOnly Property SetIdEstatusVenta As Integer
-        Set(value As Integer)
-            idEstatusVenta_.IdGenerico = value
-        End Set
-    End Property
+
 End Class

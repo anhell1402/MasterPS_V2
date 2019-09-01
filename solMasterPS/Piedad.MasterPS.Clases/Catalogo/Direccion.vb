@@ -47,11 +47,6 @@
             idMunicipio_ = value
         End Set
     End Property
-    Public WriteOnly Property SetIdMunicipio As Integer
-        Set(value As Integer)
-            idMunicipio_.IdGenerico = value
-        End Set
-    End Property
     Private numExt_ As String
     Public Property NumExt As String
         Get

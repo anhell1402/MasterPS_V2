@@ -23,11 +23,6 @@
             idApartado_ = value
         End Set
     End Property
-    Public WriteOnly Property SetIdApartado As Integer
-        Set(value As Integer)
-            idApartado_.IdApartado = value
-        End Set
-    End Property
     Private idTipoCancelacionApartado_ As Generico
     Public Property IdTipoCancelacionApartado As Generico
         Get
@@ -35,11 +30,6 @@
         End Get
         Set(ByVal value As Generico)
             idTipoCancelacionApartado_ = value
-        End Set
-    End Property
-    Public WriteOnly Property SetIdTipoCancelacionApartado As Integer
-        Set(value As Integer)
-            idTipoCancelacionApartado_.IdGenerico = value
         End Set
     End Property
     Private montoActualAbonado_ As Decimal
@@ -60,11 +50,6 @@
             idConfigApartado_ = value
         End Set
     End Property
-    Public WriteOnly Property SetIdConfigApartado As Integer
-        Set(value As Integer)
-            idConfigApartado_.IdConfigApartado = value
-        End Set
-    End Property
     Private montoACuenta_ As Decimal
     Public Property MontoACuenta As Decimal
         Get
@@ -83,9 +68,5 @@
             idVenta_ = value
         End Set
     End Property
-    Public WriteOnly Property SetIdVenta As Integer
-        Set(value As Integer)
-            idVenta_.IdVenta = value
-        End Set
-    End Property
+
 End Class

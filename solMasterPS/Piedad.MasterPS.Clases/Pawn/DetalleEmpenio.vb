@@ -26,11 +26,6 @@
             idEmpenio_ = value
         End Set
     End Property
-    Public WriteOnly Property SetIdEmpenio As Integer
-        Set(value As Integer)
-            idEmpenio_.IdEmpenio = value
-        End Set
-    End Property
     Private descripcionMercancia_ As String
     Public Property DescripcionMercancia As String
         Get
@@ -47,11 +42,6 @@
         End Get
         Set(ByVal value As Mercancia)
             idMercancia_ = value
-        End Set
-    End Property
-    Public WriteOnly Property SetIdMercancia As Integer
-        Set(value As Integer)
-            idMercancia_.IdMercancia = value
         End Set
     End Property
     Private prestamoUnitario_ As Decimal
@@ -162,11 +152,6 @@
             idTipoMotor_ = value
         End Set
     End Property
-    Public WriteOnly Property SetIdTipoMotor As Integer
-        Set(value As Integer)
-            idTipoMotor_.IdGenerico = value
-        End Set
-    End Property
     Private idNivelCombustible_ As Generico
     Public Property IdNivelCombustible As Generico
         Get
@@ -174,11 +159,6 @@
         End Get
         Set(ByVal value As Generico)
             idNivelCombustible_ = value
-        End Set
-    End Property
-    Public WriteOnly Property SetIdNivelCombustible As Integer
-        Set(value As Integer)
-            idNivelCombustible_.IdGenerico = value
         End Set
     End Property
     Private numeroTarjetaCirculacion_ As Decimal
@@ -280,11 +260,6 @@
             idTipoFormaDiamante_ = value
         End Set
     End Property
-    Public WriteOnly Property SetIdTipoFormaDiamante As Integer
-        Set(value As Integer)
-            idTipoFormaDiamante_.IdGenerico = value
-        End Set
-    End Property
     Private pureza_ As String
     Public Property Pureza As String
         Get
@@ -303,11 +278,6 @@
             idTipoArte_ = value
         End Set
     End Property
-    Public WriteOnly Property SetIdTipoArte As Integer
-        Set(value As Integer)
-            idTipoArte_.IdGenerico = value
-        End Set
-    End Property
     Private idTipoAntiguedades_ As Generico
     Public Property IdTipoAntiguedades As Generico
         Get
@@ -317,9 +287,5 @@
             idTipoAntiguedades_ = value
         End Set
     End Property
-    Public WriteOnly Property SetIdTipoAntiguedades As Integer
-        Set(value As Integer)
-            idTipoAntiguedades_.IdGenerico = value
-        End Set
-    End Property
+
 End Class

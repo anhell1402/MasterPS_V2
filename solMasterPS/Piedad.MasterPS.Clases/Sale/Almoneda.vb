@@ -20,11 +20,6 @@
             idUsuario_ = value
         End Set
     End Property
-    Public WriteOnly Property SetIdUsuario As Integer
-        Set(value As Integer)
-            idUsuario_.IdUsuario = value
-        End Set
-    End Property
     Private fechaRegistro_ As DateTime
     Public Property FechaRegistro As DateTime
         Get

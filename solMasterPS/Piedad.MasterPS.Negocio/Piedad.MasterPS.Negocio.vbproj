@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{93B57437-047D-44BE-A628-C8BC203881E7}</ProjectGuid>
+    <ProjectGuid>{2553E7F2-85A2-469F-AE0D-30D41AFED23E}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Piedad.MasterPS.Datos</RootNamespace>
-    <AssemblyName>Piedad.MasterPS.Datos</AssemblyName>
+    <RootNamespace>Piedad.MasterPS.Negocio</RootNamespace>
+    <AssemblyName>Piedad.MasterPS.Negocio</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -19,7 +19,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>Piedad.MasterPS.Datos.xml</DocumentationFile>
+    <DocumentationFile>Piedad.MasterPS.Negocio.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -28,7 +28,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>Piedad.MasterPS.Datos.xml</DocumentationFile>
+    <DocumentationFile>Piedad.MasterPS.Negocio.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -64,24 +64,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Catalogo\ChecadorDA.vb" />
-    <Compile Include="Catalogo\ClienteDA.vb" />
-    <Compile Include="Catalogo\CotitularDA.vb" />
-    <Compile Include="Catalogo\DireccionDA.vb" />
-    <Compile Include="Catalogo\GenericoDA.vb" />
-    <Compile Include="Catalogo\InventarioDA.vb" />
-    <Compile Include="Catalogo\MercanciaDA.vb" />
-    <Compile Include="Catalogo\SucursalDA.vb" />
-    <Compile Include="Catalogo\TipoGenerico.vb" />
-    <Compile Include="CA\CACDA.vb" />
-    <Compile Include="CA\MensajeDA.vb" />
-    <Compile Include="Configuracion\ConfigApartadoDA.vb" />
-    <Compile Include="Configuracion\ConfigAseguradoraDA.vb" />
-    <Compile Include="Configuracion\ConfigDatosProfecoDA.vb" />
-    <Compile Include="Configuracion\ConfigFacturacionDA.vb" />
-    <Compile Include="Configuracion\ConfigOtrasVariableDA.vb" />
-    <Compile Include="Configuracion\ConfigTasaAplicadaDA.vb" />
-    <Compile Include="Configuracion\ConfigTasaDA.vb" />
+    <Compile Include="Catalogo\ChecadorBL.vb" />
+    <Compile Include="Catalogo\ClienteBL.vb" />
+    <Compile Include="Catalogo\CotitularBL.vb" />
+    <Compile Include="Catalogo\DireccionBL.vb" />
+    <Compile Include="Catalogo\GenericoBL.vb" />
+    <Compile Include="Catalogo\InventarioBL.vb" />
+    <Compile Include="Catalogo\MercanciaBL.vb" />
+    <Compile Include="Catalogo\SucursalBL.vb" />
+    <Compile Include="CA\CACBL.vb" />
+    <Compile Include="CA\MensajeBL.vb" />
+    <Compile Include="Configuracion\ConfigApartadoBL.vb" />
+    <Compile Include="Configuracion\ConfigAseguradoraBL.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -97,17 +91,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Pawn\CancelacionDA.vb" />
-    <Compile Include="Pawn\DetalleEmpenioDA.vb" />
-    <Compile Include="Pawn\DocumentoDA.vb" />
-    <Compile Include="Pawn\EmpenioDA.vb" />
-    <Compile Include="Pawn\MovimientoDA.vb" />
-    <Compile Include="Sale\AbonosApartadoDA.vb" />
-    <Compile Include="Sale\AdicionCompraDA.vb" />
-    <Compile Include="Sale\AlmonedaDA.vb" />
-    <Compile Include="Sale\ApartadoDA.vb" />
-    <Compile Include="Sale\CancelacionApartadoDA.vb" />
-    <Compile Include="Sale\DetalleAlmonedaDA.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -133,11 +116,10 @@
       <Project>{7c757211-290e-4090-b56e-1ccd98fb6a44}</Project>
       <Name>Piedad.MasterPS.Clases</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Piedad.MasterPS.DataAccess\Piedad.MasterPS.DataAccess.vbproj">
-      <Project>{76d18e9e-8117-4125-9319-ef9c6a5d5024}</Project>
-      <Name>Piedad.MasterPS.DataAccess</Name>
+    <ProjectReference Include="..\Piedad.MasterPS.Datos\Piedad.MasterPS.Datos.vbproj">
+      <Project>{93b57437-047d-44be-a628-c8bc203881e7}</Project>
+      <Name>Piedad.MasterPS.Datos</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
