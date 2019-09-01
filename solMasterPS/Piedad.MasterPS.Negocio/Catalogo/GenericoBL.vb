@@ -18,6 +18,7 @@ Public Class GenericoBL
     Public Sub New(ByVal cadenaConex As String, ByVal tipo As TipoGenerico)
         Me.cadenaConex = cadenaConex
         Me.tipoGen = tipo
+        _hayError = False
     End Sub
     Public Sub Almacenar(ByVal generic As Generico)
         Try

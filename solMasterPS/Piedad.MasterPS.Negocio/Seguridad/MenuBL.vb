@@ -1,7 +1,7 @@
 ﻿Imports Piedad.MasterPS.Clases
 Imports Piedad.MasterPS.Datos
 
-Public Class CACBL
+Public Class MenuBL
     Private _error As String
     Public ReadOnly Property MensajeError As String
         Get
@@ -19,41 +19,40 @@ Public Class CACBL
         cadenaConex = cadenaConexion
         _hayError = False
     End Sub
-    Public Sub Almacenar(ByVal cac_ As CAC)
+    Public Sub Almacenar(ByVal menu_ As Menu)
         Try
-            Dim obj As New CACDA(cadenaConex)
-            obj.Almacenar(cac_)
-            _hayError = False
-        Catch ex As Exception
-            _hayError = True
-            _error = ex.Message
-        End Try
-
-    End Sub
-    Public Sub Actualizar(ByVal cac_ As CAC)
-        Try
-            Dim obj As New CACDA(cadenaConex)
-            obj.Actualizar(cac_)
+            Dim obj As New MenuDA(cadenaConex)
+            obj.Almacenar(menu_)
             _hayError = False
         Catch ex As Exception
             _hayError = True
             _error = ex.Message
         End Try
     End Sub
-    Public Sub Eliminar(ByVal cac_ As CAC)
+    Public Sub Actualizar(ByVal menu_ As Menu)
         Try
-            Dim obj As New CACDA(cadenaConex)
-            obj.Eliminar(cac_)
+            Dim obj As New MenuDA(cadenaConex)
+            obj.Actualizar(menu_)
             _hayError = False
         Catch ex As Exception
             _hayError = True
             _error = ex.Message
         End Try
     End Sub
-    Public Function Obtener(ByVal cac_ As CAC) As CAC
+    Public Sub Eliminar(ByVal menu_ As Menu)
         Try
-            Dim obj As New CACDA(cadenaConex)
-            Return obj.Obtener(cac_)
+            Dim obj As New MenuDA(cadenaConex)
+            obj.Eliminar(menu_)
+            _hayError = False
+        Catch ex As Exception
+            _hayError = True
+            _error = ex.Message
+        End Try
+    End Sub
+    Public Function Obtener(ByVal menu_ As Menu) As Menu
+        Try
+            Dim obj As New MenuDA(cadenaConex)
+            Return obj.Obtener(menu_)
             _hayError = False
         Catch ex As Exception
             _hayError = True
@@ -61,9 +60,9 @@ Public Class CACBL
             Return Nothing
         End Try
     End Function
-    Public Function Obtener() As CACS
+    Public Function Obtener() As Menus
         Try
-            Dim obj As New CACDA(cadenaConex)
+            Dim obj As New MenuDA(cadenaConex)
             Return obj.ObtenerTodos()
             _hayError = False
         Catch ex As Exception

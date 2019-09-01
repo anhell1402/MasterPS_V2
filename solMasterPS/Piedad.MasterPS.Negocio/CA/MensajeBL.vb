@@ -17,6 +17,7 @@ Public Class MensajeBL
     Private cadenaConex As String
     Public Sub New(ByVal cadenaConexion As String)
         cadenaConex = cadenaConexion
+        _hayError = False
     End Sub
     Public Sub Almacenar(ByVal mensaje_ As Mensaje)
         Try

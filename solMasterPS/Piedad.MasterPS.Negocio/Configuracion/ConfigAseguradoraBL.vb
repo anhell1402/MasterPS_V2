@@ -16,6 +16,7 @@ Public Class ConfigAseguradoraBL
     Private cadenaConex As String
     Public Sub New(ByVal cadenaConexion As String)
         cadenaConex = cadenaConexion
+        _hayError = False
     End Sub
     Public Sub Almacenar(ByVal configAseguradora_ As ConfigAseguradora)
         Try
