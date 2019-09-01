@@ -92,6 +92,8 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Seguridad\MenuBL.vb" />
+    <Compile Include="Seguridad\PermisoBL.vb" />
+    <Compile Include="Seguridad\UsuarioBL.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
