@@ -23,6 +23,11 @@
             idTipoEmpenio_ = value
         End Set
     End Property
+    Public WriteOnly Property SetIdTipoEmpenio As Integer
+        Set(value As Integer)
+            idTipoEmpenio_.IdGenerico = value
+        End Set
+    End Property
     Private idTipoMercancia_Metal_ As Generico
     Public Property IdTipoMercancia_Metal As Generico
         Get
@@ -30,6 +35,11 @@
         End Get
         Set(ByVal value As Generico)
             idTipoMercancia_Metal_ = value
+        End Set
+    End Property
+    Public WriteOnly Property SetIdTipoMercancia_Metal As Integer
+        Set(value As Integer)
+            idTipoMercancia_Metal_.IdGenerico = value
         End Set
     End Property
     Private idFamilia_TipoKilataje_ As Generico
@@ -41,6 +51,11 @@
             idFamilia_TipoKilataje_ = value
         End Set
     End Property
+    Public WriteOnly Property SetIdFamilia_TipoKilataje As Integer
+        Set(value As Integer)
+            idFamilia_TipoKilataje_.IdGenerico = value
+        End Set
+    End Property
     Private idMarca_EstadoMetal_ As Generico
     Public Property IdMarca_EstadoMetal As Generico
         Get
@@ -48,6 +63,11 @@
         End Get
         Set(ByVal value As Generico)
             idMarca_EstadoMetal_ = value
+        End Set
+    End Property
+    Public WriteOnly Property SetIdMarca_EstadoMetal As Integer
+        Set(value As Integer)
+            idMarca_EstadoMetal_.IdGenerico = value
         End Set
     End Property
     Private precioMaximo_ As Decimal

@@ -21,6 +21,11 @@
             idVenta_ = value
         End Set
     End Property
+    Public WriteOnly Property SetIdVenta As Integer
+        Set(value As Integer)
+            idVenta_.IdVenta = value
+        End Set
+    End Property
     Private idInventario_ As Inventario
     Public Property IdInventario As Inventario
         Get
@@ -28,6 +33,11 @@
         End Get
         Set(ByVal value As Inventario)
             idInventario_ = value
+        End Set
+    End Property
+    Public WriteOnly Property SetIdInventario As Integer
+        Set(value As Integer)
+            idInventario_.IdInventario = value
         End Set
     End Property
     Private precioOficial_ As Decimal

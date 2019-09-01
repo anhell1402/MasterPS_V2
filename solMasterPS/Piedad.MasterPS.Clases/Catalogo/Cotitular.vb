@@ -49,6 +49,11 @@
             idCliente_ = value
         End Set
     End Property
+    Public WriteOnly Property SetIdCliente As Integer
+        Set(value As Integer)
+            idCliente_.IdCliente = value
+        End Set
+    End Property
     Private idTipoIdentificacion_ As Generico
     Public Property IdTipoIdentificacion As Generico
         Get
@@ -56,6 +61,11 @@
         End Get
         Set(ByVal value As Generico)
             idTipoIdentificacion_ = value
+        End Set
+    End Property
+    Public WriteOnly Property SetIdTipoIdentificacion As Integer
+        Set(value As Integer)
+            idTipoIdentificacion_.IdGenerico = value
         End Set
     End Property
     Private numeroIdentificacion_ As String

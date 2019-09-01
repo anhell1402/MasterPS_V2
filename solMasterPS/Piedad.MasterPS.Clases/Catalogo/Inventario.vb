@@ -25,6 +25,11 @@
             idMercancia_ = value
         End Set
     End Property
+    Public WriteOnly Property SetIdMercancia As Integer
+        Set(value As Integer)
+            idMercancia_.IdMercancia = value
+        End Set
+    End Property
     Private idAdicionCompra_ As AdicionCompra
     Public Property IdAdicionCompra As AdicionCompra
         Get
@@ -32,6 +37,11 @@
         End Get
         Set(ByVal value As AdicionCompra)
             idAdicionCompra_ = value
+        End Set
+    End Property
+    Public WriteOnly Property SetIdAdicionCompra As Integer
+        Set(value As Integer)
+            idAdicionCompra_.IdAdicionCompra = value
         End Set
     End Property
     Private cantidad_ As Integer
@@ -52,6 +62,11 @@
             idEmpenio_ = value
         End Set
     End Property
+    Public WriteOnly Property SetIdEmpenio As Integer
+        Set(value As Integer)
+            idEmpenio_.IdEmpenio = value
+        End Set
+    End Property
     Private idDetalleMercanciaVenta_ As DetalleMercanciaVenta
     Public Property IdDetalleMercanciaVenta As DetalleMercanciaVenta
         Get
@@ -59,6 +74,11 @@
         End Get
         Set(ByVal value As DetalleMercanciaVenta)
             idDetalleMercanciaVenta_ = value
+        End Set
+    End Property
+    Public WriteOnly Property SetIdDetalleMercanciaVenta As Integer
+        Set(value As Integer)
+            idDetalleMercanciaVenta_.IdDetalleMercanciaVenta = value
         End Set
     End Property
     Private diasVencidos_ As Integer
@@ -79,6 +99,11 @@
             idTipoIngreso_ = value
         End Set
     End Property
+    Public WriteOnly Property SetIdTipoIngreso As Integer
+        Set(value As Integer)
+            idTipoIngreso_.IdGenerico = value
+        End Set
+    End Property
     Private idEstatusInventario_ As Generico
     Public Property IdEstatusInventario As Generico
         Get
@@ -88,5 +113,9 @@
             idEstatusInventario_ = value
         End Set
     End Property
-
+    Public WriteOnly Property SetIdEstatusInventario As Integer
+        Set(value As Integer)
+            idEstatusInventario_.IdGenerico = value
+        End Set
+    End Property
 End Class

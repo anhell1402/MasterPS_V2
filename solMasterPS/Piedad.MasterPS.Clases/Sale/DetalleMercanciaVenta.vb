@@ -29,6 +29,11 @@
             idMercancia_ = value
         End Set
     End Property
+    Public WriteOnly Property SetIdMercancia As Integer
+        Set(value As Integer)
+            idMercancia_.IdMercancia = value
+        End Set
+    End Property
     Private precioUnitario_ As Decimal
     Public Property PrecioUnitario As Decimal
         Get

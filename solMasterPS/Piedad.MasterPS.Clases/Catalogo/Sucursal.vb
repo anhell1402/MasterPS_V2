@@ -57,6 +57,11 @@
             idDireccion_ = value
         End Set
     End Property
+    Public WriteOnly Property SetIdDireccion As Integer
+        Set(value As Integer)
+            idDireccion_.IdDireccion = value
+        End Set
+    End Property
     Private idTelefono_ As Generico
     Public Property IdTelefono As Generico
         Get
@@ -64,6 +69,11 @@
         End Get
         Set(ByVal value As Generico)
             idTelefono_ = value
+        End Set
+    End Property
+    Public WriteOnly Property SetIdTelefono As Integer
+        Set(value As Integer)
+            idTelefono_.IdGenerico = value
         End Set
     End Property
 End Class

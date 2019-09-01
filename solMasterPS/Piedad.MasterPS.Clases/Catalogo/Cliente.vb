@@ -52,6 +52,11 @@
             idDireccion_ = value
         End Set
     End Property
+    Public WriteOnly Property SetIdDireccion As Integer
+        Set(value As Integer)
+            idDireccion_.IdDireccion = value
+        End Set
+    End Property
     Private idTipoIdentificacion_ As Generico
     Public Property IdTipoIdentificacion As Generico
         Get
@@ -59,6 +64,11 @@
         End Get
         Set(ByVal value As Generico)
             idTipoIdentificacion_ = value
+        End Set
+    End Property
+    Public WriteOnly Property SetIdTipoIdentificacion As Integer
+        Set(value As Integer)
+            idTipoIdentificacion_.IdGenerico = value
         End Set
     End Property
     Private numeroIdentificacion_ As String
@@ -79,6 +89,11 @@
             idTelefono_ = value
         End Set
     End Property
+    Public WriteOnly Property SetIdTelefono As Integer
+        Set(value As Integer)
+            idTelefono_.IdGenerico = value
+        End Set
+    End Property
     Private fechaNacimiento_ As DateTime
     Public Property FechaNacimiento As DateTime
         Get
@@ -97,6 +112,11 @@
             idSexo_ = value
         End Set
     End Property
+    Public WriteOnly Property SetIdSexo As Integer
+        Set(value As Integer)
+            idSexo_.IdGenerico = value
+        End Set
+    End Property
     Private email_ As String
     Public Property Email As String
         Get
@@ -113,6 +133,11 @@
         End Get
         Set(ByVal value As Generico)
             idOcupacion_ = value
+        End Set
+    End Property
+    Public WriteOnly Property SetIdOcupacion As Integer
+        Set(value As Integer)
+            idOcupacion_.IdGenerico = value
         End Set
     End Property
     Private alerta_ As String
@@ -140,6 +165,11 @@
         End Get
         Set(ByVal value As Generico)
             idMedioEnterado_ = value
+        End Set
+    End Property
+    Public WriteOnly Property SetIdMedioEnterado As Integer
+        Set(value As Integer)
+            idMedioEnterado_.IdGenerico = value
         End Set
     End Property
 End Class

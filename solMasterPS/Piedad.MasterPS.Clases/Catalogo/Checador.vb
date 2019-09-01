@@ -23,6 +23,11 @@
             idSucursal_ = value
         End Set
     End Property
+    Public WriteOnly Property SetIdSucursal As Integer
+        Set(value As Integer)
+            idSucursal_.IdSucursal = value
+        End Set
+    End Property
     Private idUsuario_ As Usuario
     Public Property IdUsuario As Usuario
         Get
@@ -46,6 +51,12 @@
             idMotivo_ = value
         End Set
     End Property
+    Public WriteOnly Property SetIdMotivo As Integer
+        Set(value As Integer)
+            idMotivo_.IdGenerico = value
+        End Set
+    End Property
+
     Private idCaja_ As Generico
     Public Property IdCaja As Generico
         Get
@@ -53,6 +64,11 @@
         End Get
         Set(ByVal value As Generico)
             idCaja_ = value
+        End Set
+    End Property
+    Public WriteOnly Property SetIdCaja As Integer
+        Set(value As Integer)
+            idCaja_.IdGenerico = value
         End Set
     End Property
     Private fechaHora_ As DateTime

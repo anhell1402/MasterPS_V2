@@ -22,6 +22,11 @@
             idVenta_ = value
         End Set
     End Property
+    Public WriteOnly Property SetIdVenta As Integer
+        Set(value As Integer)
+            idVenta_.IdVenta = value
+        End Set
+    End Property
     Private idUsuario_ As Usuario
     Public Property IdUsuario As Usuario
         Get
@@ -29,6 +34,11 @@
         End Get
         Set(ByVal value As Usuario)
             idUsuario_ = value
+        End Set
+    End Property
+    Public WriteOnly Property SetIdUsuario As Integer
+        Set(value As Integer)
+            idUsuario_.IdUsuario = value
         End Set
     End Property
     Private descripcion_ As String
@@ -58,5 +68,9 @@
             idEmpenio_ = value
         End Set
     End Property
-
+    Public WriteOnly Property SetIdEmpenio As Integer
+        Set(value As Integer)
+            idEmpenio_.IdEmpenio = value
+        End Set
+    End Property
 End Class
