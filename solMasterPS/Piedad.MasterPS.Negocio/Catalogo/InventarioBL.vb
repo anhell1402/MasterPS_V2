@@ -58,7 +58,7 @@ Public Class InventarioBL
             Return Nothing
         End Try
     End Function
-    Public Function ObtenerTodos() As Inventarios
+    Public Function Obtener() As Inventarios
         Try
             Dim obj As New InventarioDA(cadenaConex)
             Return obj.ObtenerTodos()

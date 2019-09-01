@@ -61,7 +61,7 @@ Public Class CACBL
             Return Nothing
         End Try
     End Function
-    Public Function ObtenerTodos() As CACS
+    Public Function Obtener() As CACS
         Try
             Dim obj As New CACDA(cadenaConex)
             Return obj.ObtenerTodos()

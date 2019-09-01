@@ -58,7 +58,7 @@ Public Class DireccionBL
             Return Nothing
         End Try
     End Function
-    Public Function ObtenerTodos() As Direcciones
+    Public Function Obtener() As Direcciones
         Try
             Dim obj As New DireccionDA(cadenaConex)
             Return obj.ObtenerTodos()

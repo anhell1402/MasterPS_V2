@@ -58,7 +58,7 @@ Public Class ConfigApartadoBL
             Return Nothing
         End Try
     End Function
-    Public Function ObtenerTodos() As ConfigApartados
+    Public Function Obtener() As ConfigApartados
         Try
             Dim obj As New ConfigApartadoDA(cadenaConex)
             Return obj.ObtenerTodos()

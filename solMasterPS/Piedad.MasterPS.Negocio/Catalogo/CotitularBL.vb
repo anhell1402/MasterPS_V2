@@ -58,7 +58,7 @@ Public Class CotitularBL
             Return Nothing
         End Try
     End Function
-    Public Function ObtenerTodos() As Cotitulares
+    Public Function Obtener() As Cotitulares
         Try
             Dim obj As New CotitularDA(cadenaConex)
             Return obj.ObtenerTodos()

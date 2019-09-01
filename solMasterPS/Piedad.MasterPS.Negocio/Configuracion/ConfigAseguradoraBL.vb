@@ -58,7 +58,7 @@ Public Class ConfigAseguradoraBL
             Return Nothing
         End Try
     End Function
-    Public Function ObtenerTodos() As ConfigAseguradoras
+    Public Function Obtener() As ConfigAseguradoras
         Try
             Dim obj As New ConfigAseguradoraDA(cadenaConex)
             Return obj.ObtenerTodos()

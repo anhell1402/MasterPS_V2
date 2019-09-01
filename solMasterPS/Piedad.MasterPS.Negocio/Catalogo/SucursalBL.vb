@@ -58,7 +58,7 @@ Public Class SucursalBL
             Return Nothing
         End Try
     End Function
-    Public Function ObtenerTodos() As Sucursales
+    Public Function Obtener() As Sucursales
         Try
             Dim obj As New SucursalDA(cadenaConex)
             Return obj.ObtenerTodos()

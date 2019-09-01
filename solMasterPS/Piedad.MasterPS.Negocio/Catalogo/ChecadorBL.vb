@@ -59,7 +59,7 @@ Public Class ChecadorBL
             Return Nothing
         End Try
     End Function
-    Public Function ObtenerTodos() As Checadores
+    Public Function Obtener() As Checadores
         Try
             Dim obj As New ChecadorDA(cadenaConex)
             Return obj.ObtenerTodos()

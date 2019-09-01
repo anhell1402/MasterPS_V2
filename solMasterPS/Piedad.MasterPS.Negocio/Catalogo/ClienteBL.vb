@@ -58,7 +58,7 @@ Public Class ClienteBL
             Return Nothing
         End Try
     End Function
-    Public Function ObtenerTodos() As Clientes
+    Public Function Obtener() As Clientes
         Try
             Dim obj As New ClienteDA(cadenaConex)
             Return obj.ObtenerTodos()

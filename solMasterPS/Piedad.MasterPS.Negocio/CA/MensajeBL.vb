@@ -59,7 +59,7 @@ Public Class MensajeBL
             Return Nothing
         End Try
     End Function
-    Public Function ObtenerTodos() As Mensajes
+    Public Function Obtener() As Mensajes
         Try
             Dim obj As New MensajeDA(cadenaConex)
             Return obj.ObtenerTodos()

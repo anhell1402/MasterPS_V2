@@ -60,7 +60,7 @@ Public Class GenericoBL
             Return Nothing
         End Try
     End Function
-    Public Function ObtenerTodos() As Genericos
+    Public Function Obtener() As Genericos
         Try
             Dim obj As New GenericoBL(cadenaConex, tipoGen)
             Return obj.ObtenerTodos()

@@ -58,7 +58,7 @@ Public Class MercanciaBL
             Return Nothing
         End Try
     End Function
-    Public Function ObtenerTodos() As Mercancias
+    Public Function Obtener() As Mercancias
         Try
             Dim obj As New MercanciaDA(cadenaConex)
             Return obj.ObtenerTodos()
