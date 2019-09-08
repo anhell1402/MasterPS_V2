@@ -2,7 +2,7 @@
 Imports System.Text
 Imports System.Security.Cryptography
 
-Public Module Protection
+Module Protection
     Dim EncryptionKey As String = "MAKV2SPBNI99212"
     ''' <summary>
     ''' Función que encripta una cadena de texto plano

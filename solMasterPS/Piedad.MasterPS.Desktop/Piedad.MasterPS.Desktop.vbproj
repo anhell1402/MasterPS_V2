@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CF45BA3D-104A-4D81-8C62-E26834FABF5F}</ProjectGuid>
+    <ProjectGuid>{611E1BAA-FF38-45D8-98F3-559E167ED21E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <StartupObject>Piedad.MasterPS.Desktop.My.MyApplication</StartupObject>
     <RootNamespace>Piedad.MasterPS.Desktop</RootNamespace>
@@ -110,9 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -126,15 +126,6 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="img\cerrar.png" />
-    <Content Include="img\favicon.ico" />
-    <Content Include="img\logo.png" />
-    <Content Include="img\logosolo.png" />
-    <Content Include="img\maxi.png" />
-    <Content Include="img\mini.png" />
-    <Content Include="img\res.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

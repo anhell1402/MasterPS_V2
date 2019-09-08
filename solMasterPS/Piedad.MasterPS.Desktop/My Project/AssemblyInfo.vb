@@ -10,15 +10,15 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyTitle("Piedad.MasterPS.Desktop")>
 <Assembly: AssemblyDescription("")>
-<Assembly: AssemblyCompany("")>
+<Assembly: AssemblyCompany("HP Inc.")>
 <Assembly: AssemblyProduct("Piedad.MasterPS.Desktop")>
-<Assembly: AssemblyCopyright("Copyright ©  2019")>
+<Assembly: AssemblyCopyright("Copyright © HP Inc. 2019")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
 
 'El siguiente GUID sirve como id. de typelib si este proyecto se expone a COM.
-<Assembly: Guid("d4426311-e0c2-4837-8081-742fed2ccbd4")>
+<Assembly: Guid("994714e5-157a-4d14-add2-973688566df5")>
 
 ' La información de versión de un ensamblado consta de los cuatro valores siguientes:
 '
