@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmPrincipal
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,34 +20,55 @@ Partial Class frmPrincipal
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPrincipal))
         Me.PanelContenedor = New System.Windows.Forms.Panel()
         Me.PanelFormularios = New System.Windows.Forms.Panel()
+        Me.PanelSubMenuCaja = New System.Windows.Forms.Panel()
+        Me.btnCajaCorte = New System.Windows.Forms.Button()
+        Me.btnCajaGastos = New System.Windows.Forms.Button()
+        Me.btnAportacionRetiro = New System.Windows.Forms.Button()
+        Me.btnCajaArqueo = New System.Windows.Forms.Button()
+        Me.PanelSubMenuHistorial = New System.Windows.Forms.Panel()
+        Me.btnHistorialApartados = New System.Windows.Forms.Button()
+        Me.btnHistorialVentas = New System.Windows.Forms.Button()
+        Me.btnHistorialEmpenios = New System.Windows.Forms.Button()
+        Me.btnHistorialCliente = New System.Windows.Forms.Button()
+        Me.PanelSubMenuInventario = New System.Windows.Forms.Panel()
+        Me.btnSalidaInventario = New System.Windows.Forms.Button()
+        Me.btnVisas = New System.Windows.Forms.Button()
+        Me.btnAdisionCompra = New System.Windows.Forms.Button()
+        Me.btnImpresionEtiqueta = New System.Windows.Forms.Button()
+        Me.btnLoadBalance = New System.Windows.Forms.Button()
+        Me.btnInventarioFundicion = New System.Windows.Forms.Button()
+        Me.btnInventarioVenta = New System.Windows.Forms.Button()
+        Me.PanelSubMenuCallCenter = New System.Windows.Forms.Panel()
+        Me.btnBuscarRegistroCall = New System.Windows.Forms.Button()
+        Me.btnRegistroCall = New System.Windows.Forms.Button()
         Me.PanelSubMenuVenta = New System.Windows.Forms.Panel()
-        Me.btnReportesVentas = New System.Windows.Forms.Button()
         Me.btnDemasias = New System.Windows.Forms.Button()
         Me.btnAbonos = New System.Windows.Forms.Button()
         Me.btnApartado = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.btnSlide = New System.Windows.Forms.PictureBox()
         Me.PanelSubMenuEmpenio = New System.Windows.Forms.Panel()
-        Me.btnReportesEmpenios = New System.Windows.Forms.Button()
         Me.btnCotizar = New System.Windows.Forms.Button()
         Me.btnLiqEmp = New System.Windows.Forms.Button()
         Me.btnRefrendo = New System.Windows.Forms.Button()
         Me.btnNuevoEmpeño = New System.Windows.Forms.Button()
-        Me.FondoLogo = New System.Windows.Forms.PictureBox()
         Me.PanelMensajes = New System.Windows.Forms.Panel()
+        Me.lblFecha = New System.Windows.Forms.Label()
+        Me.lblHora = New System.Windows.Forms.Label()
         Me.PanelMenu = New System.Windows.Forms.Panel()
+        Me.btnReportes = New System.Windows.Forms.Button()
+        Me.btnCaja = New System.Windows.Forms.Button()
+        Me.btnHistorial = New System.Windows.Forms.Button()
         Me.btnInventario = New System.Windows.Forms.Button()
-        Me.btnCheckInOut = New System.Windows.Forms.Button()
-        Me.btnUsuario = New System.Windows.Forms.Button()
         Me.btnSummary = New System.Windows.Forms.Button()
         Me.btnConfiguracion = New System.Windows.Forms.Button()
         Me.btnCallCenter = New System.Windows.Forms.Button()
-        Me.btnCatalogo = New System.Windows.Forms.Button()
         Me.btnVenta = New System.Windows.Forms.Button()
         Me.btnEmpenio = New System.Windows.Forms.Button()
         Me.PanelBarraTitulo = New System.Windows.Forms.Panel()
@@ -56,20 +77,18 @@ Partial Class frmPrincipal
         Me.btnMinimizar = New System.Windows.Forms.PictureBox()
         Me.btnMaximizar = New System.Windows.Forms.PictureBox()
         Me.btnCerrar = New System.Windows.Forms.PictureBox()
-        Me.PanelSubMenuCatalogo = New System.Windows.Forms.Panel()
-        Me.btnAltaCotitular = New System.Windows.Forms.Button()
-        Me.btnAltaUsuario = New System.Windows.Forms.Button()
-        Me.btnAltaMercancia = New System.Windows.Forms.Button()
-        Me.btnAltaCliente = New System.Windows.Forms.Button()
-        Me.PanelSubMenuCallCenter = New System.Windows.Forms.Panel()
-        Me.btnBuscarRegistroCall = New System.Windows.Forms.Button()
-        Me.btnRegistroCall = New System.Windows.Forms.Button()
+        Me.horaFecha = New System.Windows.Forms.Timer(Me.components)
+        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.PanelContenedor.SuspendLayout()
         Me.PanelFormularios.SuspendLayout()
+        Me.PanelSubMenuCaja.SuspendLayout()
+        Me.PanelSubMenuHistorial.SuspendLayout()
+        Me.PanelSubMenuInventario.SuspendLayout()
+        Me.PanelSubMenuCallCenter.SuspendLayout()
         Me.PanelSubMenuVenta.SuspendLayout()
         CType(Me.btnSlide, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSubMenuEmpenio.SuspendLayout()
-        CType(Me.FondoLogo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelMensajes.SuspendLayout()
         Me.PanelMenu.SuspendLayout()
         Me.PanelBarraTitulo.SuspendLayout()
         CType(Me.logoSistema, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -77,8 +96,6 @@ Partial Class frmPrincipal
         CType(Me.btnMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnMaximizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PanelSubMenuCatalogo.SuspendLayout()
-        Me.PanelSubMenuCallCenter.SuspendLayout()
         Me.SuspendLayout()
         '
         'PanelContenedor
@@ -97,50 +114,421 @@ Partial Class frmPrincipal
         'PanelFormularios
         '
         Me.PanelFormularios.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.PanelFormularios.BackgroundImage = CType(resources.GetObject("PanelFormularios.BackgroundImage"), System.Drawing.Image)
+        Me.PanelFormularios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PanelFormularios.Controls.Add(Me.PanelSubMenuCaja)
+        Me.PanelFormularios.Controls.Add(Me.PanelSubMenuHistorial)
+        Me.PanelFormularios.Controls.Add(Me.PanelSubMenuInventario)
         Me.PanelFormularios.Controls.Add(Me.PanelSubMenuCallCenter)
-        Me.PanelFormularios.Controls.Add(Me.PanelSubMenuCatalogo)
         Me.PanelFormularios.Controls.Add(Me.PanelSubMenuVenta)
         Me.PanelFormularios.Controls.Add(Me.btnSlide)
         Me.PanelFormularios.Controls.Add(Me.PanelSubMenuEmpenio)
-        Me.PanelFormularios.Controls.Add(Me.FondoLogo)
         Me.PanelFormularios.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelFormularios.Location = New System.Drawing.Point(250, 35)
         Me.PanelFormularios.Name = "PanelFormularios"
         Me.PanelFormularios.Size = New System.Drawing.Size(1050, 545)
-        Me.PanelFormularios.TabIndex = 3
+        Me.PanelFormularios.TabIndex = 0
+        '
+        'PanelSubMenuCaja
+        '
+        Me.PanelSubMenuCaja.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.PanelSubMenuCaja.Controls.Add(Me.btnCajaCorte)
+        Me.PanelSubMenuCaja.Controls.Add(Me.btnCajaGastos)
+        Me.PanelSubMenuCaja.Controls.Add(Me.btnAportacionRetiro)
+        Me.PanelSubMenuCaja.Controls.Add(Me.btnCajaArqueo)
+        Me.PanelSubMenuCaja.Location = New System.Drawing.Point(0, 231)
+        Me.PanelSubMenuCaja.Name = "PanelSubMenuCaja"
+        Me.PanelSubMenuCaja.Size = New System.Drawing.Size(0, 97)
+        Me.PanelSubMenuCaja.TabIndex = 15
+        '
+        'btnCajaCorte
+        '
+        Me.btnCajaCorte.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnCajaCorte.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnCajaCorte.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
+        Me.btnCajaCorte.FlatAppearance.BorderSize = 0
+        Me.btnCajaCorte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
+        Me.btnCajaCorte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
+        Me.btnCajaCorte.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCajaCorte.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCajaCorte.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnCajaCorte.Image = CType(resources.GetObject("btnCajaCorte.Image"), System.Drawing.Image)
+        Me.btnCajaCorte.Location = New System.Drawing.Point(405, 0)
+        Me.btnCajaCorte.Name = "btnCajaCorte"
+        Me.btnCajaCorte.Size = New System.Drawing.Size(135, 97)
+        Me.btnCajaCorte.TabIndex = 3
+        Me.btnCajaCorte.Text = "CORTE DE CAJA"
+        Me.btnCajaCorte.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.btnCajaCorte.UseVisualStyleBackColor = False
+        '
+        'btnCajaGastos
+        '
+        Me.btnCajaGastos.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnCajaGastos.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnCajaGastos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
+        Me.btnCajaGastos.FlatAppearance.BorderSize = 0
+        Me.btnCajaGastos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
+        Me.btnCajaGastos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
+        Me.btnCajaGastos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCajaGastos.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCajaGastos.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnCajaGastos.Image = CType(resources.GetObject("btnCajaGastos.Image"), System.Drawing.Image)
+        Me.btnCajaGastos.Location = New System.Drawing.Point(270, 0)
+        Me.btnCajaGastos.Name = "btnCajaGastos"
+        Me.btnCajaGastos.Size = New System.Drawing.Size(135, 97)
+        Me.btnCajaGastos.TabIndex = 2
+        Me.btnCajaGastos.Text = "GASTOS"
+        Me.btnCajaGastos.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.btnCajaGastos.UseVisualStyleBackColor = False
+        '
+        'btnAportacionRetiro
+        '
+        Me.btnAportacionRetiro.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnAportacionRetiro.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnAportacionRetiro.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
+        Me.btnAportacionRetiro.FlatAppearance.BorderSize = 0
+        Me.btnAportacionRetiro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
+        Me.btnAportacionRetiro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
+        Me.btnAportacionRetiro.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAportacionRetiro.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAportacionRetiro.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnAportacionRetiro.Image = CType(resources.GetObject("btnAportacionRetiro.Image"), System.Drawing.Image)
+        Me.btnAportacionRetiro.Location = New System.Drawing.Point(135, 0)
+        Me.btnAportacionRetiro.Name = "btnAportacionRetiro"
+        Me.btnAportacionRetiro.Size = New System.Drawing.Size(135, 97)
+        Me.btnAportacionRetiro.TabIndex = 1
+        Me.btnAportacionRetiro.Text = "APORTAR/RETIRAR"
+        Me.btnAportacionRetiro.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.btnAportacionRetiro.UseVisualStyleBackColor = False
+        '
+        'btnCajaArqueo
+        '
+        Me.btnCajaArqueo.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnCajaArqueo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnCajaArqueo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
+        Me.btnCajaArqueo.FlatAppearance.BorderSize = 0
+        Me.btnCajaArqueo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
+        Me.btnCajaArqueo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
+        Me.btnCajaArqueo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCajaArqueo.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCajaArqueo.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnCajaArqueo.Image = CType(resources.GetObject("btnCajaArqueo.Image"), System.Drawing.Image)
+        Me.btnCajaArqueo.Location = New System.Drawing.Point(0, 0)
+        Me.btnCajaArqueo.Name = "btnCajaArqueo"
+        Me.btnCajaArqueo.Size = New System.Drawing.Size(135, 97)
+        Me.btnCajaArqueo.TabIndex = 0
+        Me.btnCajaArqueo.Text = "ARQUEO"
+        Me.btnCajaArqueo.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.btnCajaArqueo.UseVisualStyleBackColor = False
+        '
+        'PanelSubMenuHistorial
+        '
+        Me.PanelSubMenuHistorial.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.PanelSubMenuHistorial.Controls.Add(Me.btnHistorialApartados)
+        Me.PanelSubMenuHistorial.Controls.Add(Me.btnHistorialVentas)
+        Me.PanelSubMenuHistorial.Controls.Add(Me.btnHistorialEmpenios)
+        Me.PanelSubMenuHistorial.Controls.Add(Me.btnHistorialCliente)
+        Me.PanelSubMenuHistorial.Location = New System.Drawing.Point(0, 193)
+        Me.PanelSubMenuHistorial.Name = "PanelSubMenuHistorial"
+        Me.PanelSubMenuHistorial.Size = New System.Drawing.Size(0, 97)
+        Me.PanelSubMenuHistorial.TabIndex = 14
+        '
+        'btnHistorialApartados
+        '
+        Me.btnHistorialApartados.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnHistorialApartados.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnHistorialApartados.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
+        Me.btnHistorialApartados.FlatAppearance.BorderSize = 0
+        Me.btnHistorialApartados.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
+        Me.btnHistorialApartados.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
+        Me.btnHistorialApartados.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnHistorialApartados.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnHistorialApartados.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnHistorialApartados.Image = CType(resources.GetObject("btnHistorialApartados.Image"), System.Drawing.Image)
+        Me.btnHistorialApartados.Location = New System.Drawing.Point(405, 0)
+        Me.btnHistorialApartados.Name = "btnHistorialApartados"
+        Me.btnHistorialApartados.Size = New System.Drawing.Size(135, 97)
+        Me.btnHistorialApartados.TabIndex = 3
+        Me.btnHistorialApartados.Text = "APARTADOS"
+        Me.btnHistorialApartados.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.btnHistorialApartados.UseVisualStyleBackColor = False
+        '
+        'btnHistorialVentas
+        '
+        Me.btnHistorialVentas.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnHistorialVentas.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnHistorialVentas.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
+        Me.btnHistorialVentas.FlatAppearance.BorderSize = 0
+        Me.btnHistorialVentas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
+        Me.btnHistorialVentas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
+        Me.btnHistorialVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnHistorialVentas.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnHistorialVentas.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnHistorialVentas.Image = CType(resources.GetObject("btnHistorialVentas.Image"), System.Drawing.Image)
+        Me.btnHistorialVentas.Location = New System.Drawing.Point(270, 0)
+        Me.btnHistorialVentas.Name = "btnHistorialVentas"
+        Me.btnHistorialVentas.Size = New System.Drawing.Size(135, 97)
+        Me.btnHistorialVentas.TabIndex = 2
+        Me.btnHistorialVentas.Text = "VENTAS"
+        Me.btnHistorialVentas.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.btnHistorialVentas.UseVisualStyleBackColor = False
+        '
+        'btnHistorialEmpenios
+        '
+        Me.btnHistorialEmpenios.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnHistorialEmpenios.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnHistorialEmpenios.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
+        Me.btnHistorialEmpenios.FlatAppearance.BorderSize = 0
+        Me.btnHistorialEmpenios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
+        Me.btnHistorialEmpenios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
+        Me.btnHistorialEmpenios.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnHistorialEmpenios.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnHistorialEmpenios.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnHistorialEmpenios.Image = CType(resources.GetObject("btnHistorialEmpenios.Image"), System.Drawing.Image)
+        Me.btnHistorialEmpenios.Location = New System.Drawing.Point(135, 0)
+        Me.btnHistorialEmpenios.Name = "btnHistorialEmpenios"
+        Me.btnHistorialEmpenios.Size = New System.Drawing.Size(135, 97)
+        Me.btnHistorialEmpenios.TabIndex = 1
+        Me.btnHistorialEmpenios.Text = "EMPEÑOS"
+        Me.btnHistorialEmpenios.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.btnHistorialEmpenios.UseVisualStyleBackColor = False
+        '
+        'btnHistorialCliente
+        '
+        Me.btnHistorialCliente.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnHistorialCliente.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnHistorialCliente.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
+        Me.btnHistorialCliente.FlatAppearance.BorderSize = 0
+        Me.btnHistorialCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
+        Me.btnHistorialCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
+        Me.btnHistorialCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnHistorialCliente.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnHistorialCliente.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnHistorialCliente.Image = CType(resources.GetObject("btnHistorialCliente.Image"), System.Drawing.Image)
+        Me.btnHistorialCliente.Location = New System.Drawing.Point(0, 0)
+        Me.btnHistorialCliente.Name = "btnHistorialCliente"
+        Me.btnHistorialCliente.Size = New System.Drawing.Size(135, 97)
+        Me.btnHistorialCliente.TabIndex = 0
+        Me.btnHistorialCliente.Text = "CLIENTES"
+        Me.btnHistorialCliente.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.btnHistorialCliente.UseVisualStyleBackColor = False
+        '
+        'PanelSubMenuInventario
+        '
+        Me.PanelSubMenuInventario.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.PanelSubMenuInventario.Controls.Add(Me.btnSalidaInventario)
+        Me.PanelSubMenuInventario.Controls.Add(Me.btnVisas)
+        Me.PanelSubMenuInventario.Controls.Add(Me.btnAdisionCompra)
+        Me.PanelSubMenuInventario.Controls.Add(Me.btnImpresionEtiqueta)
+        Me.PanelSubMenuInventario.Controls.Add(Me.btnLoadBalance)
+        Me.PanelSubMenuInventario.Controls.Add(Me.btnInventarioFundicion)
+        Me.PanelSubMenuInventario.Controls.Add(Me.btnInventarioVenta)
+        Me.PanelSubMenuInventario.Location = New System.Drawing.Point(0, 113)
+        Me.PanelSubMenuInventario.Name = "PanelSubMenuInventario"
+        Me.PanelSubMenuInventario.Size = New System.Drawing.Size(0, 194)
+        Me.PanelSubMenuInventario.TabIndex = 13
+        '
+        'btnSalidaInventario
+        '
+        Me.btnSalidaInventario.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnSalidaInventario.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSalidaInventario.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
+        Me.btnSalidaInventario.FlatAppearance.BorderSize = 0
+        Me.btnSalidaInventario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
+        Me.btnSalidaInventario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
+        Me.btnSalidaInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSalidaInventario.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSalidaInventario.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnSalidaInventario.Image = CType(resources.GetObject("btnSalidaInventario.Image"), System.Drawing.Image)
+        Me.btnSalidaInventario.Location = New System.Drawing.Point(286, 97)
+        Me.btnSalidaInventario.Name = "btnSalidaInventario"
+        Me.btnSalidaInventario.Size = New System.Drawing.Size(150, 97)
+        Me.btnSalidaInventario.TabIndex = 6
+        Me.btnSalidaInventario.Text = "SALIDA DE INVENTARIO"
+        Me.btnSalidaInventario.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.btnSalidaInventario.UseVisualStyleBackColor = False
+        '
+        'btnVisas
+        '
+        Me.btnVisas.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnVisas.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnVisas.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
+        Me.btnVisas.FlatAppearance.BorderSize = 0
+        Me.btnVisas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
+        Me.btnVisas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
+        Me.btnVisas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnVisas.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnVisas.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnVisas.Image = CType(resources.GetObject("btnVisas.Image"), System.Drawing.Image)
+        Me.btnVisas.Location = New System.Drawing.Point(143, 97)
+        Me.btnVisas.Name = "btnVisas"
+        Me.btnVisas.Size = New System.Drawing.Size(143, 97)
+        Me.btnVisas.TabIndex = 5
+        Me.btnVisas.Text = "VISAS"
+        Me.btnVisas.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.btnVisas.UseVisualStyleBackColor = False
+        '
+        'btnAdisionCompra
+        '
+        Me.btnAdisionCompra.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnAdisionCompra.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnAdisionCompra.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
+        Me.btnAdisionCompra.FlatAppearance.BorderSize = 0
+        Me.btnAdisionCompra.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
+        Me.btnAdisionCompra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
+        Me.btnAdisionCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAdisionCompra.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdisionCompra.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnAdisionCompra.Image = CType(resources.GetObject("btnAdisionCompra.Image"), System.Drawing.Image)
+        Me.btnAdisionCompra.Location = New System.Drawing.Point(0, 97)
+        Me.btnAdisionCompra.Name = "btnAdisionCompra"
+        Me.btnAdisionCompra.Size = New System.Drawing.Size(143, 97)
+        Me.btnAdisionCompra.TabIndex = 4
+        Me.btnAdisionCompra.Text = "ADISION/COMPRA"
+        Me.btnAdisionCompra.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.btnAdisionCompra.UseVisualStyleBackColor = False
+        '
+        'btnImpresionEtiqueta
+        '
+        Me.btnImpresionEtiqueta.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnImpresionEtiqueta.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnImpresionEtiqueta.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
+        Me.btnImpresionEtiqueta.FlatAppearance.BorderSize = 0
+        Me.btnImpresionEtiqueta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
+        Me.btnImpresionEtiqueta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
+        Me.btnImpresionEtiqueta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnImpresionEtiqueta.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnImpresionEtiqueta.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnImpresionEtiqueta.Image = CType(resources.GetObject("btnImpresionEtiqueta.Image"), System.Drawing.Image)
+        Me.btnImpresionEtiqueta.Location = New System.Drawing.Point(436, 0)
+        Me.btnImpresionEtiqueta.Name = "btnImpresionEtiqueta"
+        Me.btnImpresionEtiqueta.Size = New System.Drawing.Size(150, 97)
+        Me.btnImpresionEtiqueta.TabIndex = 3
+        Me.btnImpresionEtiqueta.Text = "IMPRESION ETIQUETAS"
+        Me.btnImpresionEtiqueta.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.btnImpresionEtiqueta.UseVisualStyleBackColor = False
+        '
+        'btnLoadBalance
+        '
+        Me.btnLoadBalance.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnLoadBalance.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnLoadBalance.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
+        Me.btnLoadBalance.FlatAppearance.BorderSize = 0
+        Me.btnLoadBalance.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
+        Me.btnLoadBalance.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
+        Me.btnLoadBalance.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLoadBalance.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLoadBalance.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnLoadBalance.Image = CType(resources.GetObject("btnLoadBalance.Image"), System.Drawing.Image)
+        Me.btnLoadBalance.Location = New System.Drawing.Point(286, 0)
+        Me.btnLoadBalance.Name = "btnLoadBalance"
+        Me.btnLoadBalance.Size = New System.Drawing.Size(150, 97)
+        Me.btnLoadBalance.TabIndex = 2
+        Me.btnLoadBalance.Text = "LOAD BALANCE"
+        Me.btnLoadBalance.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.btnLoadBalance.UseVisualStyleBackColor = False
+        '
+        'btnInventarioFundicion
+        '
+        Me.btnInventarioFundicion.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnInventarioFundicion.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnInventarioFundicion.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
+        Me.btnInventarioFundicion.FlatAppearance.BorderSize = 0
+        Me.btnInventarioFundicion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
+        Me.btnInventarioFundicion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
+        Me.btnInventarioFundicion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnInventarioFundicion.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnInventarioFundicion.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnInventarioFundicion.Image = CType(resources.GetObject("btnInventarioFundicion.Image"), System.Drawing.Image)
+        Me.btnInventarioFundicion.Location = New System.Drawing.Point(143, 0)
+        Me.btnInventarioFundicion.Name = "btnInventarioFundicion"
+        Me.btnInventarioFundicion.Size = New System.Drawing.Size(143, 97)
+        Me.btnInventarioFundicion.TabIndex = 1
+        Me.btnInventarioFundicion.Text = "EN FUNDICION"
+        Me.btnInventarioFundicion.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.btnInventarioFundicion.UseVisualStyleBackColor = False
+        '
+        'btnInventarioVenta
+        '
+        Me.btnInventarioVenta.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnInventarioVenta.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnInventarioVenta.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
+        Me.btnInventarioVenta.FlatAppearance.BorderSize = 0
+        Me.btnInventarioVenta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
+        Me.btnInventarioVenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
+        Me.btnInventarioVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnInventarioVenta.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnInventarioVenta.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnInventarioVenta.Image = CType(resources.GetObject("btnInventarioVenta.Image"), System.Drawing.Image)
+        Me.btnInventarioVenta.Location = New System.Drawing.Point(0, 0)
+        Me.btnInventarioVenta.Name = "btnInventarioVenta"
+        Me.btnInventarioVenta.Size = New System.Drawing.Size(143, 97)
+        Me.btnInventarioVenta.TabIndex = 0
+        Me.btnInventarioVenta.Text = "EN VENTA"
+        Me.btnInventarioVenta.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.btnInventarioVenta.UseVisualStyleBackColor = False
+        '
+        'PanelSubMenuCallCenter
+        '
+        Me.PanelSubMenuCallCenter.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.PanelSubMenuCallCenter.Controls.Add(Me.btnBuscarRegistroCall)
+        Me.PanelSubMenuCallCenter.Controls.Add(Me.btnRegistroCall)
+        Me.PanelSubMenuCallCenter.Location = New System.Drawing.Point(0, 154)
+        Me.PanelSubMenuCallCenter.Name = "PanelSubMenuCallCenter"
+        Me.PanelSubMenuCallCenter.Size = New System.Drawing.Size(0, 97)
+        Me.PanelSubMenuCallCenter.TabIndex = 12
+        '
+        'btnBuscarRegistroCall
+        '
+        Me.btnBuscarRegistroCall.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnBuscarRegistroCall.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnBuscarRegistroCall.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
+        Me.btnBuscarRegistroCall.FlatAppearance.BorderSize = 0
+        Me.btnBuscarRegistroCall.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
+        Me.btnBuscarRegistroCall.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
+        Me.btnBuscarRegistroCall.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscarRegistroCall.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscarRegistroCall.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnBuscarRegistroCall.Image = CType(resources.GetObject("btnBuscarRegistroCall.Image"), System.Drawing.Image)
+        Me.btnBuscarRegistroCall.Location = New System.Drawing.Point(135, 0)
+        Me.btnBuscarRegistroCall.Name = "btnBuscarRegistroCall"
+        Me.btnBuscarRegistroCall.Size = New System.Drawing.Size(135, 97)
+        Me.btnBuscarRegistroCall.TabIndex = 1
+        Me.btnBuscarRegistroCall.Text = "BUSCAR REGISTROS"
+        Me.btnBuscarRegistroCall.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.btnBuscarRegistroCall.UseVisualStyleBackColor = False
+        '
+        'btnRegistroCall
+        '
+        Me.btnRegistroCall.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnRegistroCall.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnRegistroCall.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
+        Me.btnRegistroCall.FlatAppearance.BorderSize = 0
+        Me.btnRegistroCall.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
+        Me.btnRegistroCall.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
+        Me.btnRegistroCall.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRegistroCall.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRegistroCall.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnRegistroCall.Image = CType(resources.GetObject("btnRegistroCall.Image"), System.Drawing.Image)
+        Me.btnRegistroCall.Location = New System.Drawing.Point(0, 0)
+        Me.btnRegistroCall.Name = "btnRegistroCall"
+        Me.btnRegistroCall.Size = New System.Drawing.Size(135, 97)
+        Me.btnRegistroCall.TabIndex = 0
+        Me.btnRegistroCall.Text = "REGISTRO"
+        Me.btnRegistroCall.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.btnRegistroCall.UseVisualStyleBackColor = False
         '
         'PanelSubMenuVenta
         '
         Me.PanelSubMenuVenta.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.PanelSubMenuVenta.Controls.Add(Me.btnReportesVentas)
         Me.PanelSubMenuVenta.Controls.Add(Me.btnDemasias)
         Me.PanelSubMenuVenta.Controls.Add(Me.btnAbonos)
         Me.PanelSubMenuVenta.Controls.Add(Me.btnApartado)
         Me.PanelSubMenuVenta.Controls.Add(Me.btnNuevo)
         Me.PanelSubMenuVenta.Location = New System.Drawing.Point(0, 74)
         Me.PanelSubMenuVenta.Name = "PanelSubMenuVenta"
-        Me.PanelSubMenuVenta.Size = New System.Drawing.Size(0, 195)
+        Me.PanelSubMenuVenta.Size = New System.Drawing.Size(0, 97)
         Me.PanelSubMenuVenta.TabIndex = 10
-        '
-        'btnReportesVentas
-        '
-        Me.btnReportesVentas.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnReportesVentas.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnReportesVentas.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
-        Me.btnReportesVentas.FlatAppearance.BorderSize = 0
-        Me.btnReportesVentas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
-        Me.btnReportesVentas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
-        Me.btnReportesVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnReportesVentas.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnReportesVentas.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnReportesVentas.Image = CType(resources.GetObject("btnReportesVentas.Image"), System.Drawing.Image)
-        Me.btnReportesVentas.Location = New System.Drawing.Point(135, 97)
-        Me.btnReportesVentas.Name = "btnReportesVentas"
-        Me.btnReportesVentas.Size = New System.Drawing.Size(135, 97)
-        Me.btnReportesVentas.TabIndex = 6
-        Me.btnReportesVentas.Text = "REPORTES"
-        Me.btnReportesVentas.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.btnReportesVentas.UseVisualStyleBackColor = False
         '
         'btnDemasias
         '
@@ -154,7 +542,7 @@ Partial Class frmPrincipal
         Me.btnDemasias.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDemasias.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.btnDemasias.Image = CType(resources.GetObject("btnDemasias.Image"), System.Drawing.Image)
-        Me.btnDemasias.Location = New System.Drawing.Point(0, 97)
+        Me.btnDemasias.Location = New System.Drawing.Point(405, 0)
         Me.btnDemasias.Name = "btnDemasias"
         Me.btnDemasias.Size = New System.Drawing.Size(135, 97)
         Me.btnDemasias.TabIndex = 3
@@ -236,35 +624,14 @@ Partial Class frmPrincipal
         'PanelSubMenuEmpenio
         '
         Me.PanelSubMenuEmpenio.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.PanelSubMenuEmpenio.Controls.Add(Me.btnReportesEmpenios)
         Me.PanelSubMenuEmpenio.Controls.Add(Me.btnCotizar)
         Me.PanelSubMenuEmpenio.Controls.Add(Me.btnLiqEmp)
         Me.PanelSubMenuEmpenio.Controls.Add(Me.btnRefrendo)
         Me.PanelSubMenuEmpenio.Controls.Add(Me.btnNuevoEmpeño)
         Me.PanelSubMenuEmpenio.Location = New System.Drawing.Point(0, 34)
         Me.PanelSubMenuEmpenio.Name = "PanelSubMenuEmpenio"
-        Me.PanelSubMenuEmpenio.Size = New System.Drawing.Size(0, 195)
+        Me.PanelSubMenuEmpenio.Size = New System.Drawing.Size(0, 97)
         Me.PanelSubMenuEmpenio.TabIndex = 9
-        '
-        'btnReportesEmpenios
-        '
-        Me.btnReportesEmpenios.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnReportesEmpenios.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnReportesEmpenios.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
-        Me.btnReportesEmpenios.FlatAppearance.BorderSize = 0
-        Me.btnReportesEmpenios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
-        Me.btnReportesEmpenios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
-        Me.btnReportesEmpenios.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnReportesEmpenios.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnReportesEmpenios.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnReportesEmpenios.Image = CType(resources.GetObject("btnReportesEmpenios.Image"), System.Drawing.Image)
-        Me.btnReportesEmpenios.Location = New System.Drawing.Point(136, 97)
-        Me.btnReportesEmpenios.Name = "btnReportesEmpenios"
-        Me.btnReportesEmpenios.Size = New System.Drawing.Size(135, 97)
-        Me.btnReportesEmpenios.TabIndex = 6
-        Me.btnReportesEmpenios.Text = "REPORTES"
-        Me.btnReportesEmpenios.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.btnReportesEmpenios.UseVisualStyleBackColor = False
         '
         'btnCotizar
         '
@@ -278,7 +645,7 @@ Partial Class frmPrincipal
         Me.btnCotizar.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCotizar.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.btnCotizar.Image = CType(resources.GetObject("btnCotizar.Image"), System.Drawing.Image)
-        Me.btnCotizar.Location = New System.Drawing.Point(0, 97)
+        Me.btnCotizar.Location = New System.Drawing.Point(405, 0)
         Me.btnCotizar.Name = "btnCotizar"
         Me.btnCotizar.Size = New System.Drawing.Size(135, 97)
         Me.btnCotizar.TabIndex = 3
@@ -298,7 +665,7 @@ Partial Class frmPrincipal
         Me.btnLiqEmp.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLiqEmp.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.btnLiqEmp.Image = CType(resources.GetObject("btnLiqEmp.Image"), System.Drawing.Image)
-        Me.btnLiqEmp.Location = New System.Drawing.Point(269, 0)
+        Me.btnLiqEmp.Location = New System.Drawing.Point(270, 0)
         Me.btnLiqEmp.Name = "btnLiqEmp"
         Me.btnLiqEmp.Size = New System.Drawing.Size(135, 97)
         Me.btnLiqEmp.TabIndex = 2
@@ -318,7 +685,7 @@ Partial Class frmPrincipal
         Me.btnRefrendo.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRefrendo.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.btnRefrendo.Image = CType(resources.GetObject("btnRefrendo.Image"), System.Drawing.Image)
-        Me.btnRefrendo.Location = New System.Drawing.Point(137, 0)
+        Me.btnRefrendo.Location = New System.Drawing.Point(135, 0)
         Me.btnRefrendo.Name = "btnRefrendo"
         Me.btnRefrendo.Size = New System.Drawing.Size(135, 97)
         Me.btnRefrendo.TabIndex = 1
@@ -346,22 +713,11 @@ Partial Class frmPrincipal
         Me.btnNuevoEmpeño.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.btnNuevoEmpeño.UseVisualStyleBackColor = False
         '
-        'FondoLogo
-        '
-        Me.FondoLogo.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.FondoLogo.Image = CType(resources.GetObject("FondoLogo.Image"), System.Drawing.Image)
-        Me.FondoLogo.Location = New System.Drawing.Point(202, 126)
-        Me.FondoLogo.Name = "FondoLogo"
-        Me.FondoLogo.Size = New System.Drawing.Size(721, 306)
-        Me.FondoLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.FondoLogo.TabIndex = 0
-        Me.FondoLogo.TabStop = False
-        '
         'PanelMensajes
         '
-        Me.PanelMensajes.BackColor = System.Drawing.Color.Transparent
+        Me.PanelMensajes.BackColor = System.Drawing.Color.Gainsboro
+        Me.PanelMensajes.Controls.Add(Me.lblFecha)
+        Me.PanelMensajes.Controls.Add(Me.lblHora)
         Me.PanelMensajes.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.PanelMensajes.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PanelMensajes.Location = New System.Drawing.Point(250, 580)
@@ -369,16 +725,40 @@ Partial Class frmPrincipal
         Me.PanelMensajes.Size = New System.Drawing.Size(1050, 70)
         Me.PanelMensajes.TabIndex = 2
         '
+        'lblFecha
+        '
+        Me.lblFecha.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblFecha.AutoSize = True
+        Me.lblFecha.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFecha.ForeColor = System.Drawing.SystemColors.MenuText
+        Me.lblFecha.Location = New System.Drawing.Point(786, 47)
+        Me.lblFecha.Name = "lblFecha"
+        Me.lblFecha.Size = New System.Drawing.Size(57, 20)
+        Me.lblFecha.TabIndex = 13
+        Me.lblFecha.Text = "Label1"
+        '
+        'lblHora
+        '
+        Me.lblHora.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblHora.AutoSize = True
+        Me.lblHora.Font = New System.Drawing.Font("Century Gothic", 30.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHora.ForeColor = System.Drawing.Color.DarkOliveGreen
+        Me.lblHora.Location = New System.Drawing.Point(772, -2)
+        Me.lblHora.Name = "lblHora"
+        Me.lblHora.Size = New System.Drawing.Size(151, 49)
+        Me.lblHora.TabIndex = 0
+        Me.lblHora.Text = "Label1"
+        '
         'PanelMenu
         '
         Me.PanelMenu.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.PanelMenu.Controls.Add(Me.btnReportes)
+        Me.PanelMenu.Controls.Add(Me.btnCaja)
+        Me.PanelMenu.Controls.Add(Me.btnHistorial)
         Me.PanelMenu.Controls.Add(Me.btnInventario)
-        Me.PanelMenu.Controls.Add(Me.btnCheckInOut)
-        Me.PanelMenu.Controls.Add(Me.btnUsuario)
         Me.PanelMenu.Controls.Add(Me.btnSummary)
         Me.PanelMenu.Controls.Add(Me.btnConfiguracion)
         Me.PanelMenu.Controls.Add(Me.btnCallCenter)
-        Me.PanelMenu.Controls.Add(Me.btnCatalogo)
         Me.PanelMenu.Controls.Add(Me.btnVenta)
         Me.PanelMenu.Controls.Add(Me.btnEmpenio)
         Me.PanelMenu.Dock = System.Windows.Forms.DockStyle.Left
@@ -386,6 +766,60 @@ Partial Class frmPrincipal
         Me.PanelMenu.Name = "PanelMenu"
         Me.PanelMenu.Size = New System.Drawing.Size(250, 615)
         Me.PanelMenu.TabIndex = 1
+        '
+        'btnReportes
+        '
+        Me.btnReportes.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnReportes.FlatAppearance.BorderSize = 0
+        Me.btnReportes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
+        Me.btnReportes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
+        Me.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnReportes.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnReportes.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnReportes.Image = CType(resources.GetObject("btnReportes.Image"), System.Drawing.Image)
+        Me.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnReportes.Location = New System.Drawing.Point(0, 272)
+        Me.btnReportes.Name = "btnReportes"
+        Me.btnReportes.Size = New System.Drawing.Size(250, 35)
+        Me.btnReportes.TabIndex = 7
+        Me.btnReportes.Text = "REPORTES"
+        Me.btnReportes.UseVisualStyleBackColor = True
+        '
+        'btnCaja
+        '
+        Me.btnCaja.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnCaja.FlatAppearance.BorderSize = 0
+        Me.btnCaja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
+        Me.btnCaja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
+        Me.btnCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCaja.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCaja.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnCaja.Image = CType(resources.GetObject("btnCaja.Image"), System.Drawing.Image)
+        Me.btnCaja.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnCaja.Location = New System.Drawing.Point(0, 231)
+        Me.btnCaja.Name = "btnCaja"
+        Me.btnCaja.Size = New System.Drawing.Size(250, 35)
+        Me.btnCaja.TabIndex = 5
+        Me.btnCaja.Text = "CAJA"
+        Me.btnCaja.UseVisualStyleBackColor = True
+        '
+        'btnHistorial
+        '
+        Me.btnHistorial.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnHistorial.FlatAppearance.BorderSize = 0
+        Me.btnHistorial.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
+        Me.btnHistorial.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
+        Me.btnHistorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnHistorial.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnHistorial.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnHistorial.Image = CType(resources.GetObject("btnHistorial.Image"), System.Drawing.Image)
+        Me.btnHistorial.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnHistorial.Location = New System.Drawing.Point(0, 193)
+        Me.btnHistorial.Name = "btnHistorial"
+        Me.btnHistorial.Size = New System.Drawing.Size(250, 35)
+        Me.btnHistorial.TabIndex = 4
+        Me.btnHistorial.Text = "HISTORIAL"
+        Me.btnHistorial.UseVisualStyleBackColor = True
         '
         'btnInventario
         '
@@ -398,48 +832,12 @@ Partial Class frmPrincipal
         Me.btnInventario.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.btnInventario.Image = CType(resources.GetObject("btnInventario.Image"), System.Drawing.Image)
         Me.btnInventario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnInventario.Location = New System.Drawing.Point(0, 234)
+        Me.btnInventario.Location = New System.Drawing.Point(0, 113)
         Me.btnInventario.Name = "btnInventario"
         Me.btnInventario.Size = New System.Drawing.Size(250, 35)
-        Me.btnInventario.TabIndex = 10
+        Me.btnInventario.TabIndex = 2
         Me.btnInventario.Text = "INVENTARIO"
         Me.btnInventario.UseVisualStyleBackColor = True
-        '
-        'btnCheckInOut
-        '
-        Me.btnCheckInOut.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnCheckInOut.FlatAppearance.BorderSize = 0
-        Me.btnCheckInOut.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
-        Me.btnCheckInOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
-        Me.btnCheckInOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCheckInOut.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCheckInOut.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnCheckInOut.Image = CType(resources.GetObject("btnCheckInOut.Image"), System.Drawing.Image)
-        Me.btnCheckInOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCheckInOut.Location = New System.Drawing.Point(0, 194)
-        Me.btnCheckInOut.Name = "btnCheckInOut"
-        Me.btnCheckInOut.Size = New System.Drawing.Size(250, 35)
-        Me.btnCheckInOut.TabIndex = 9
-        Me.btnCheckInOut.Text = "CHECK IN/OUT"
-        Me.btnCheckInOut.UseVisualStyleBackColor = True
-        '
-        'btnUsuario
-        '
-        Me.btnUsuario.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnUsuario.FlatAppearance.BorderSize = 0
-        Me.btnUsuario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
-        Me.btnUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
-        Me.btnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnUsuario.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUsuario.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnUsuario.Image = CType(resources.GetObject("btnUsuario.Image"), System.Drawing.Image)
-        Me.btnUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnUsuario.Location = New System.Drawing.Point(0, 314)
-        Me.btnUsuario.Name = "btnUsuario"
-        Me.btnUsuario.Size = New System.Drawing.Size(250, 35)
-        Me.btnUsuario.TabIndex = 7
-        Me.btnUsuario.Text = "USUARIOS"
-        Me.btnUsuario.UseVisualStyleBackColor = True
         '
         'btnSummary
         '
@@ -452,7 +850,7 @@ Partial Class frmPrincipal
         Me.btnSummary.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.btnSummary.Image = CType(resources.GetObject("btnSummary.Image"), System.Drawing.Image)
         Me.btnSummary.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSummary.Location = New System.Drawing.Point(0, 274)
+        Me.btnSummary.Location = New System.Drawing.Point(-3, 356)
         Me.btnSummary.Name = "btnSummary"
         Me.btnSummary.Size = New System.Drawing.Size(250, 35)
         Me.btnSummary.TabIndex = 6
@@ -470,7 +868,7 @@ Partial Class frmPrincipal
         Me.btnConfiguracion.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.btnConfiguracion.Image = CType(resources.GetObject("btnConfiguracion.Image"), System.Drawing.Image)
         Me.btnConfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnConfiguracion.Location = New System.Drawing.Point(0, 354)
+        Me.btnConfiguracion.Location = New System.Drawing.Point(0, 313)
         Me.btnConfiguracion.Name = "btnConfiguracion"
         Me.btnConfiguracion.Size = New System.Drawing.Size(250, 35)
         Me.btnConfiguracion.TabIndex = 5
@@ -491,27 +889,9 @@ Partial Class frmPrincipal
         Me.btnCallCenter.Location = New System.Drawing.Point(0, 154)
         Me.btnCallCenter.Name = "btnCallCenter"
         Me.btnCallCenter.Size = New System.Drawing.Size(250, 35)
-        Me.btnCallCenter.TabIndex = 4
+        Me.btnCallCenter.TabIndex = 3
         Me.btnCallCenter.Text = "CALL CENTER"
         Me.btnCallCenter.UseVisualStyleBackColor = True
-        '
-        'btnCatalogo
-        '
-        Me.btnCatalogo.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnCatalogo.FlatAppearance.BorderSize = 0
-        Me.btnCatalogo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
-        Me.btnCatalogo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
-        Me.btnCatalogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCatalogo.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCatalogo.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnCatalogo.Image = CType(resources.GetObject("btnCatalogo.Image"), System.Drawing.Image)
-        Me.btnCatalogo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCatalogo.Location = New System.Drawing.Point(0, 114)
-        Me.btnCatalogo.Name = "btnCatalogo"
-        Me.btnCatalogo.Size = New System.Drawing.Size(250, 35)
-        Me.btnCatalogo.TabIndex = 3
-        Me.btnCatalogo.Text = "CATALOGO"
-        Me.btnCatalogo.UseVisualStyleBackColor = True
         '
         'btnVenta
         '
@@ -622,164 +1002,31 @@ Partial Class frmPrincipal
         Me.btnCerrar.TabIndex = 0
         Me.btnCerrar.TabStop = False
         '
-        'PanelSubMenuCatalogo
+        'horaFecha
         '
-        Me.PanelSubMenuCatalogo.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.PanelSubMenuCatalogo.Controls.Add(Me.btnAltaCotitular)
-        Me.PanelSubMenuCatalogo.Controls.Add(Me.btnAltaUsuario)
-        Me.PanelSubMenuCatalogo.Controls.Add(Me.btnAltaMercancia)
-        Me.PanelSubMenuCatalogo.Controls.Add(Me.btnAltaCliente)
-        Me.PanelSubMenuCatalogo.Location = New System.Drawing.Point(0, 114)
-        Me.PanelSubMenuCatalogo.Name = "PanelSubMenuCatalogo"
-        Me.PanelSubMenuCatalogo.Size = New System.Drawing.Size(0, 195)
-        Me.PanelSubMenuCatalogo.TabIndex = 11
+        Me.horaFecha.Enabled = True
         '
-        'btnAltaCotitular
-        '
-        Me.btnAltaCotitular.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnAltaCotitular.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnAltaCotitular.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
-        Me.btnAltaCotitular.FlatAppearance.BorderSize = 0
-        Me.btnAltaCotitular.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
-        Me.btnAltaCotitular.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
-        Me.btnAltaCotitular.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAltaCotitular.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAltaCotitular.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnAltaCotitular.Image = CType(resources.GetObject("btnAltaCotitular.Image"), System.Drawing.Image)
-        Me.btnAltaCotitular.Location = New System.Drawing.Point(0, 99)
-        Me.btnAltaCotitular.Name = "btnAltaCotitular"
-        Me.btnAltaCotitular.Size = New System.Drawing.Size(135, 97)
-        Me.btnAltaCotitular.TabIndex = 6
-        Me.btnAltaCotitular.Text = "COTITULAR"
-        Me.btnAltaCotitular.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.btnAltaCotitular.UseVisualStyleBackColor = False
-        '
-        'btnAltaUsuario
-        '
-        Me.btnAltaUsuario.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnAltaUsuario.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnAltaUsuario.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
-        Me.btnAltaUsuario.FlatAppearance.BorderSize = 0
-        Me.btnAltaUsuario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
-        Me.btnAltaUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
-        Me.btnAltaUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAltaUsuario.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAltaUsuario.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnAltaUsuario.Image = CType(resources.GetObject("btnAltaUsuario.Image"), System.Drawing.Image)
-        Me.btnAltaUsuario.Location = New System.Drawing.Point(136, 99)
-        Me.btnAltaUsuario.Name = "btnAltaUsuario"
-        Me.btnAltaUsuario.Size = New System.Drawing.Size(135, 97)
-        Me.btnAltaUsuario.TabIndex = 3
-        Me.btnAltaUsuario.Text = "USUARIOS"
-        Me.btnAltaUsuario.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.btnAltaUsuario.UseVisualStyleBackColor = False
-        '
-        'btnAltaMercancia
-        '
-        Me.btnAltaMercancia.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnAltaMercancia.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnAltaMercancia.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
-        Me.btnAltaMercancia.FlatAppearance.BorderSize = 0
-        Me.btnAltaMercancia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
-        Me.btnAltaMercancia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
-        Me.btnAltaMercancia.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAltaMercancia.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAltaMercancia.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnAltaMercancia.Image = CType(resources.GetObject("btnAltaMercancia.Image"), System.Drawing.Image)
-        Me.btnAltaMercancia.Location = New System.Drawing.Point(136, 0)
-        Me.btnAltaMercancia.Name = "btnAltaMercancia"
-        Me.btnAltaMercancia.Size = New System.Drawing.Size(135, 97)
-        Me.btnAltaMercancia.TabIndex = 1
-        Me.btnAltaMercancia.Text = "MERCANCIAS"
-        Me.btnAltaMercancia.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.btnAltaMercancia.UseVisualStyleBackColor = False
-        '
-        'btnAltaCliente
-        '
-        Me.btnAltaCliente.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnAltaCliente.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnAltaCliente.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
-        Me.btnAltaCliente.FlatAppearance.BorderSize = 0
-        Me.btnAltaCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
-        Me.btnAltaCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
-        Me.btnAltaCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAltaCliente.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAltaCliente.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnAltaCliente.Image = CType(resources.GetObject("btnAltaCliente.Image"), System.Drawing.Image)
-        Me.btnAltaCliente.Location = New System.Drawing.Point(0, 0)
-        Me.btnAltaCliente.Name = "btnAltaCliente"
-        Me.btnAltaCliente.Size = New System.Drawing.Size(135, 97)
-        Me.btnAltaCliente.TabIndex = 0
-        Me.btnAltaCliente.Text = "CLIENTES"
-        Me.btnAltaCliente.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.btnAltaCliente.UseVisualStyleBackColor = False
-        '
-        'PanelSubMenuCallCenter
-        '
-        Me.PanelSubMenuCallCenter.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.PanelSubMenuCallCenter.Controls.Add(Me.btnBuscarRegistroCall)
-        Me.PanelSubMenuCallCenter.Controls.Add(Me.btnRegistroCall)
-        Me.PanelSubMenuCallCenter.Location = New System.Drawing.Point(0, 155)
-        Me.PanelSubMenuCallCenter.Name = "PanelSubMenuCallCenter"
-        Me.PanelSubMenuCallCenter.Size = New System.Drawing.Size(0, 97)
-        Me.PanelSubMenuCallCenter.TabIndex = 12
-        '
-        'btnBuscarRegistroCall
-        '
-        Me.btnBuscarRegistroCall.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnBuscarRegistroCall.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnBuscarRegistroCall.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
-        Me.btnBuscarRegistroCall.FlatAppearance.BorderSize = 0
-        Me.btnBuscarRegistroCall.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
-        Me.btnBuscarRegistroCall.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
-        Me.btnBuscarRegistroCall.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBuscarRegistroCall.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBuscarRegistroCall.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnBuscarRegistroCall.Image = CType(resources.GetObject("btnBuscarRegistroCall.Image"), System.Drawing.Image)
-        Me.btnBuscarRegistroCall.Location = New System.Drawing.Point(136, 0)
-        Me.btnBuscarRegistroCall.Name = "btnBuscarRegistroCall"
-        Me.btnBuscarRegistroCall.Size = New System.Drawing.Size(135, 97)
-        Me.btnBuscarRegistroCall.TabIndex = 1
-        Me.btnBuscarRegistroCall.Text = "BUSCAR REGISTROS"
-        Me.btnBuscarRegistroCall.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.btnBuscarRegistroCall.UseVisualStyleBackColor = False
-        '
-        'btnRegistroCall
-        '
-        Me.btnRegistroCall.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnRegistroCall.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnRegistroCall.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
-        Me.btnRegistroCall.FlatAppearance.BorderSize = 0
-        Me.btnRegistroCall.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
-        Me.btnRegistroCall.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
-        Me.btnRegistroCall.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRegistroCall.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRegistroCall.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnRegistroCall.Image = CType(resources.GetObject("btnRegistroCall.Image"), System.Drawing.Image)
-        Me.btnRegistroCall.Location = New System.Drawing.Point(0, 0)
-        Me.btnRegistroCall.Name = "btnRegistroCall"
-        Me.btnRegistroCall.Size = New System.Drawing.Size(135, 97)
-        Me.btnRegistroCall.TabIndex = 0
-        Me.btnRegistroCall.Text = "REGISTRO"
-        Me.btnRegistroCall.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.btnRegistroCall.UseVisualStyleBackColor = False
-        '
-        'frmPrincipal
+        'frmMenuPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1300, 650)
         Me.Controls.Add(Me.PanelContenedor)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "frmPrincipal"
+        Me.Name = "frmMenuPrincipal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frmPrincipal"
+        Me.Text = "Menu Principal"
         Me.PanelContenedor.ResumeLayout(False)
         Me.PanelFormularios.ResumeLayout(False)
+        Me.PanelSubMenuCaja.ResumeLayout(False)
+        Me.PanelSubMenuHistorial.ResumeLayout(False)
+        Me.PanelSubMenuInventario.ResumeLayout(False)
+        Me.PanelSubMenuCallCenter.ResumeLayout(False)
         Me.PanelSubMenuVenta.ResumeLayout(False)
         CType(Me.btnSlide, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelSubMenuEmpenio.ResumeLayout(False)
-        CType(Me.FondoLogo, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelMensajes.ResumeLayout(False)
+        Me.PanelMensajes.PerformLayout()
         Me.PanelMenu.ResumeLayout(False)
         Me.PanelBarraTitulo.ResumeLayout(False)
         CType(Me.logoSistema, System.ComponentModel.ISupportInitialize).EndInit()
@@ -787,8 +1034,6 @@ Partial Class frmPrincipal
         CType(Me.btnMinimizar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnMaximizar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnCerrar, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PanelSubMenuCatalogo.ResumeLayout(False)
-        Me.PanelSubMenuCallCenter.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -802,36 +1047,50 @@ Partial Class frmPrincipal
     Friend WithEvents btnMinimizar As PictureBox
     Friend WithEvents btnMaximizar As PictureBox
     Friend WithEvents btnCerrar As PictureBox
-    Friend WithEvents btnUsuario As Button
     Friend WithEvents btnSummary As Button
     Friend WithEvents btnConfiguracion As Button
     Friend WithEvents btnCallCenter As Button
-    Friend WithEvents btnCatalogo As Button
     Friend WithEvents btnVenta As Button
     Friend WithEvents btnEmpenio As Button
-    Friend WithEvents FondoLogo As PictureBox
     Friend WithEvents logoSistema As PictureBox
     Friend WithEvents btnSlide As PictureBox
     Friend WithEvents PanelSubMenuEmpenio As Panel
-    Friend WithEvents btnCheckInOut As Button
-    Friend WithEvents btnReportesEmpenios As Button
     Friend WithEvents btnCotizar As Button
     Friend WithEvents btnLiqEmp As Button
     Friend WithEvents btnRefrendo As Button
     Friend WithEvents btnNuevoEmpeño As Button
     Friend WithEvents PanelSubMenuVenta As Panel
-    Friend WithEvents btnReportesVentas As Button
     Friend WithEvents btnDemasias As Button
     Friend WithEvents btnAbonos As Button
     Friend WithEvents btnApartado As Button
     Friend WithEvents btnNuevo As Button
-    Friend WithEvents btnInventario As Button
-    Friend WithEvents PanelSubMenuCatalogo As Panel
-    Friend WithEvents btnAltaCotitular As Button
-    Friend WithEvents btnAltaUsuario As Button
-    Friend WithEvents btnAltaMercancia As Button
-    Friend WithEvents btnAltaCliente As Button
     Friend WithEvents PanelSubMenuCallCenter As Panel
     Friend WithEvents btnBuscarRegistroCall As Button
     Friend WithEvents btnRegistroCall As Button
+    Friend WithEvents lblFecha As Label
+    Friend WithEvents lblHora As Label
+    Friend WithEvents horaFecha As Timer
+    Friend WithEvents btnInventario As Button
+    Friend WithEvents PanelSubMenuInventario As Panel
+    Friend WithEvents btnImpresionEtiqueta As Button
+    Friend WithEvents btnLoadBalance As Button
+    Friend WithEvents btnInventarioFundicion As Button
+    Friend WithEvents btnInventarioVenta As Button
+    Friend WithEvents btnSalidaInventario As Button
+    Friend WithEvents btnVisas As Button
+    Friend WithEvents btnAdisionCompra As Button
+    Friend WithEvents PanelSubMenuHistorial As Panel
+    Friend WithEvents btnHistorialApartados As Button
+    Friend WithEvents btnHistorialVentas As Button
+    Friend WithEvents btnHistorialEmpenios As Button
+    Friend WithEvents btnHistorialCliente As Button
+    Friend WithEvents btnHistorial As Button
+    Friend WithEvents PanelSubMenuCaja As Panel
+    Friend WithEvents btnCajaCorte As Button
+    Friend WithEvents btnCajaGastos As Button
+    Friend WithEvents btnAportacionRetiro As Button
+    Friend WithEvents btnCajaArqueo As Button
+    Friend WithEvents btnCaja As Button
+    Friend WithEvents btnReportes As Button
+    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
 End Class
