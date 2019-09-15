@@ -160,7 +160,7 @@ Partial Class FrmLogin
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label3.Location = New System.Drawing.Point(318, 145)
+        Me.Label3.Location = New System.Drawing.Point(318, 144)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(88, 17)
         Me.Label3.TabIndex = 9
