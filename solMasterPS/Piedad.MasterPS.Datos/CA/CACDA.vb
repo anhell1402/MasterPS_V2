@@ -12,6 +12,7 @@ Public Class CACDA
             objDA.AgregarParametro("@fechaRegistro", cac_.FechaRegistro)
             objDA.AgregarParametro("@descripcion", cac_.Descripcion)
             objDA.AgregarParametro("@idEmpenio", cac_.IdEmpenio)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -23,6 +24,7 @@ Public Class CACDA
             objDA.AgregarParametro("fechaRegistro", cac_.FechaRegistro)
             objDA.AgregarParametro("@descripcion", cac_.Descripcion)
             objDA.AgregarParametro("@idEmpenio", cac_.IdEmpenio)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -30,6 +32,7 @@ Public Class CACDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarCAC")
             objDA.AgregarParametro("@idCAC", cac_.IdCAC)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -39,6 +42,7 @@ Public Class CACDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerCAC")
             objDA.AgregarParametro("@idCAC", cac_.IdCAC)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of CAC)()
             cc = New CAC()
             cc = lst(0)
@@ -49,6 +53,7 @@ Public Class CACDA
         Dim lst As CACS = Nothing
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerCACs")
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             Dim lista As New List(Of CAC)
             lista = objDA.ObtenerResultados(Of CAC)()
             For Each cc As CAC In lista

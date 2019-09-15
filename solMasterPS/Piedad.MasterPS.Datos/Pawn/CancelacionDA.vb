@@ -13,6 +13,7 @@ Public Class CancelacionDA
             objDA.AgregarParametro("@descripcion", cancelacion_.Descripcion)
             objDA.AgregarParametro("@fecha", cancelacion_.Fecha)
             objDA.AgregarParametro("@idEmpenio", cancelacion_.IdEmpenio)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -25,6 +26,7 @@ Public Class CancelacionDA
             objDA.AgregarParametro("@descripcion", cancelacion_.Descripcion)
             objDA.AgregarParametro("@fecha", cancelacion_.Fecha)
             objDA.AgregarParametro("@idEmpenio", cancelacion_.IdEmpenio)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -32,6 +34,7 @@ Public Class CancelacionDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarCancelacion")
             objDA.AgregarParametro("@idCancelacion", cancelacion_.IdCancelacion)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -41,6 +44,7 @@ Public Class CancelacionDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerCancelacion")
             objDA.AgregarParametro("@idCancelacion", cancelacion_.IdCancelacion)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of Cancelacion)()
             cancel = New Cancelacion()
             cancel = lst(0)
@@ -51,6 +55,7 @@ Public Class CancelacionDA
         Dim lst As Cancelaciones = Nothing
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerCancelaciones")
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             Dim lista As New List(Of Cancelacion)
             lista = objDA.ObtenerResultados(Of Cancelacion)()
             For Each cancel As Cancelacion In lista

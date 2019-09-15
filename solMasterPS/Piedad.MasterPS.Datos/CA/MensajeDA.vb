@@ -13,6 +13,7 @@ Public Class MensajeDA
             objDA.AgregarParametro("@idEstatusMensaje", mensaje_.IdEstatusMensaje)
             objDA.AgregarParametro("@fechaFinal", mensaje_.FechaFinal)
             objDA.AgregarParametro("idCliente", mensaje_.IdCliente)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -25,6 +26,7 @@ Public Class MensajeDA
             objDA.AgregarParametro("@idEstatusMensaje", mensaje_.IdEstatusMensaje)
             objDA.AgregarParametro("@fechaFinal", mensaje_.FechaFinal)
             objDA.AgregarParametro("@idCliente", mensaje_.IdCliente)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -32,6 +34,7 @@ Public Class MensajeDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarMensaje")
             objDA.AgregarParametro("@idMensaje", mensaje_.IdMensaje)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -41,6 +44,7 @@ Public Class MensajeDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerMensaje")
             objDA.AgregarParametro("@idMensaje", mensaje_.IdMensaje)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of Mensaje)()
             msj = New Mensaje()
             msj = lst(0)
@@ -51,6 +55,7 @@ Public Class MensajeDA
         Dim lst As Mensajes = Nothing
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerMensajes")
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             Dim lista As New List(Of Mensaje)
             lista = objDA.ObtenerResultados(Of Mensaje)()
             For Each msj As Mensaje In lista

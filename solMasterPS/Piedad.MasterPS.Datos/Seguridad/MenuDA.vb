@@ -11,6 +11,7 @@ Public Class MenuDA
             objDA.AgregarParametro("@descripcion", menu_.Descripcion)
             objDA.AgregarParametro("@idPadre", menu_.IdPadre)
             objDA.AgregarParametro("@formulario", menu_.Formulario)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -21,6 +22,7 @@ Public Class MenuDA
             objDA.AgregarParametro("@descripcion", menu_.Descripcion)
             objDA.AgregarParametro("@idPadre", menu_.IdPadre)
             objDA.AgregarParametro("@formulario", menu_.Formulario)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -28,6 +30,7 @@ Public Class MenuDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarMenu")
             objDA.AgregarParametro("@idMenu", menu_.IdMenu)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -37,6 +40,7 @@ Public Class MenuDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerMenu")
             objDA.AgregarParametro("@idMenu", menu_.IdMenu)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of Menu)()
             main = New Menu()
             main = lst(0)
@@ -47,6 +51,7 @@ Public Class MenuDA
         Dim lst As Menus = Nothing
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerMenus")
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             Dim lista As New List(Of Menu)
             lista = objDA.ObtenerResultados(Of Menu)()
             For Each main As Menu In lista

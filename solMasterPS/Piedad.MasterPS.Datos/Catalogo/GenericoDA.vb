@@ -274,6 +274,7 @@ Public Class GenericoDA
             ElseIf tipoGen = TipoGenerico.TipoFormaDiamante Then
                 objDA.AgregarParametro("@auxiliarUno", generic.AuxiliarUno)
             End If
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -281,6 +282,7 @@ Public Class GenericoDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando(elimina)
             objDA.AgregarParametro("@id", generic.IdGenerico)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -290,6 +292,7 @@ Public Class GenericoDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando(obtener_)
             objDA.AgregarParametro("@id", generic.IdGenerico)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of Generico)()
             gen = New Generico()
             gen = lst(0)
@@ -301,6 +304,7 @@ Public Class GenericoDA
         Dim lst As Genericos = Nothing
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando(obtenerTodos_)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             Dim lista As New List(Of Generico)
             lista = objDA.ObtenerResultados(Of Generico)()
             For Each gen As Generico In lista

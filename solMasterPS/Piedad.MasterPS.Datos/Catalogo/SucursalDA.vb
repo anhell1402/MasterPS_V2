@@ -14,6 +14,7 @@ Public Class SucursalDA
             objDA.AgregarParametro("@rfc", sucursal_.Rfc)
             objDA.AgregarParametro("@idDireccion", sucursal_.IdDireccion)
             objDA.AgregarParametro("idTelefono", sucursal_.IdTelefono)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -27,6 +28,7 @@ Public Class SucursalDA
             objDA.AgregarParametro("@rfc", sucursal_.Rfc)
             objDA.AgregarParametro("@idDireccion", sucursal_.IdDireccion)
             objDA.AgregarParametro("idTelefono", sucursal_.IdTelefono)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -34,6 +36,7 @@ Public Class SucursalDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarSucursal")
             objDA.AgregarParametro("@idSucursal", sucursal_.IdSucursal)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -43,6 +46,7 @@ Public Class SucursalDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerSucursal")
             objDA.AgregarParametro("@idSucursal", sucursal_.IdSucursal)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of Sucursal)()
             suc = New Sucursal()
             suc = lst(0)
@@ -53,6 +57,7 @@ Public Class SucursalDA
         Dim lst As Sucursales = Nothing
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerSucursales")
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             Dim lista As New List(Of Sucursal)
             lista = objDA.ObtenerResultados(Of Sucursal)()
             For Each suc As Sucursal In lista

@@ -73,6 +73,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmEmpenio.Designer.vb">
+      <DependentUpon>frmEmpenio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmpenio.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmLogin.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,18 @@
     <Compile Include="frmPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmRefrendo.Designer.vb">
+      <DependentUpon>frmRefrendo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRefrendo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVentanaAviso.Designer.vb">
+      <DependentUpon>frmVentanaAviso.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmVentanaAviso.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -107,8 +125,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="RespuestaVentana.vb" />
+    <Compile Include="TipoVentana.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmEmpenio.resx">
+      <DependentUpon>frmEmpenio.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </EmbeddedResource>
@@ -118,8 +141,14 @@
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmRefrendo.resx">
+      <DependentUpon>frmRefrendo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVentanaAviso.resx">
+      <DependentUpon>frmVentanaAviso.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
-      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <Generator>PublicVbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
@@ -150,6 +179,15 @@
       <Project>{a2926c08-6d04-4580-b9dd-8fce389ab5a6}</Project>
       <Name>Piedad.MasterPS.Utilerias</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Aviso.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Pregunta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\warningRed.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

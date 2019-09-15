@@ -16,6 +16,7 @@ Public Class ApartadoDA
             objDA.AgregarParametro("@vencimientoApartado", apartado_.VencimientoApartado)
             objDA.AgregarParametro("@idEstatusApartado", apartado_.IdEstatusApartado)
             objDA.AgregarParametro("@idApartadoRelacionado", apartado_.IdApartadoRelacionado)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -31,6 +32,7 @@ Public Class ApartadoDA
             objDA.AgregarParametro("@vencimientoApartado", apartado_.VencimientoApartado)
             objDA.AgregarParametro("@idEstatusApartado", apartado_.IdEstatusApartado)
             objDA.AgregarParametro("@idApartadoRelacionado", apartado_.IdApartadoRelacionado)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -38,6 +40,7 @@ Public Class ApartadoDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarApartado")
             objDA.AgregarParametro("@idApartado", apartado_.IdApartado)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -47,6 +50,7 @@ Public Class ApartadoDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerApartado")
             objDA.AgregarParametro("@idApartado", apartado_.IdApartado)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of Apartado)()
             ap = New Apartado
             ap = lst(0)
@@ -57,6 +61,7 @@ Public Class ApartadoDA
         Dim lst As Apartados = Nothing
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerApartados")
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             Dim lista As New List(Of Apartado)
             lista = objDA.ObtenerResultados(Of Apartado)()
             For Each ap As Apartado In lista

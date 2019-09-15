@@ -38,6 +38,7 @@ Public Class DetalleEmpenioDA
             objDA.AgregarParametro("@pureza", detalleEmpenio_.Pureza)
             objDA.AgregarParametro("@idTipoArte", detalleEmpenio_.IdTipoArte)
             objDA.AgregarParametro("@idTipoAntiguedades", detalleEmpenio_.IdTipoAntiguedades)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -75,6 +76,7 @@ Public Class DetalleEmpenioDA
             objDA.AgregarParametro("@pureza", detalleEmpenio_.Pureza)
             objDA.AgregarParametro("@idTipoArte", detalleEmpenio_.IdTipoArte)
             objDA.AgregarParametro("@idTipoAntiguedades", detalleEmpenio_.IdTipoAntiguedades)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -82,6 +84,7 @@ Public Class DetalleEmpenioDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarDetalleEmpenio")
             objDA.AgregarParametro("@idDetalleEmpenio", detalleEmpenio_.IdDetalleEmpenio)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -91,6 +94,7 @@ Public Class DetalleEmpenioDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerDetalleEmpenio")
             objDA.AgregarParametro("@idDetalleEmpenio", detalleEmpenio_.IdDetalleEmpenio)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of DetalleEmpenio)()
             detalleEmp = New DetalleEmpenio()
             detalleEmp = lst(0)
@@ -101,6 +105,7 @@ Public Class DetalleEmpenioDA
         Dim lst As DetalleEmpenios = Nothing
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerDetalleEmpenios")
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             Dim lista As New List(Of DetalleEmpenio)
             lista = objDA.ObtenerResultados(Of DetalleEmpenio)()
             For Each detalleEmp As DetalleEmpenio In lista

@@ -12,6 +12,7 @@ Public Class DocumentoDA
             objDA.AgregarParametro("@idDetalleEmpenio", documento_.IdDetalleEmpenio)
             objDA.AgregarParametro("@mimeType", documento_.MimeType)
             objDA.AgregarParametro("@documento", documento_.Documento)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -23,6 +24,7 @@ Public Class DocumentoDA
             objDA.AgregarParametro("@idDetalleEmpenio", documento_.IdDetalleEmpenio)
             objDA.AgregarParametro("@mimeType", documento_.MimeType)
             objDA.AgregarParametro("@documento", documento_.Documento)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -30,6 +32,7 @@ Public Class DocumentoDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarDocumento")
             objDA.AgregarParametro("@idDocumento", documento_.IdDocumento)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -39,6 +42,7 @@ Public Class DocumentoDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerDocumento")
             objDA.AgregarParametro("@idDocumento", documento_.IdDocumento)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of Documento)()
             doc = New Documento()
             doc = lst(0)
@@ -49,6 +53,7 @@ Public Class DocumentoDA
         Dim lst As Documentos = Nothing
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerDocumentos")
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             Dim lista As New List(Of Documento)
             lista = objDA.ObtenerResultados(Of Documento)()
             For Each doc As Documento In lista

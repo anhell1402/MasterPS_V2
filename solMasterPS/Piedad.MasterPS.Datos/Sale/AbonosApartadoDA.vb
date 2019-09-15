@@ -13,6 +13,7 @@ Public Class AbonosApartadoDA
             objDA.AgregarParametro("@fechaRegistro", abonosApartado_.FechaRegistro)
             objDA.AgregarParametro("@montoAbonado", abonosApartado_.MontoAbonado)
             objDA.AgregarParametro("@montoRestante", abonosApartado_.MontoRestante)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -25,6 +26,7 @@ Public Class AbonosApartadoDA
             objDA.AgregarParametro("@fechaRegistro", abonosApartado_.FechaRegistro)
             objDA.AgregarParametro("@montoAbonado", abonosApartado_.MontoAbonado)
             objDA.AgregarParametro("@montoRestante", abonosApartado_.MontoRestante)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -32,6 +34,7 @@ Public Class AbonosApartadoDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarAbonosApartado")
             objDA.AgregarParametro("@idAbonosApartado", abonosApartado_.IdAbonosApartados)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -41,6 +44,7 @@ Public Class AbonosApartadoDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerAbonosApartado")
             objDA.AgregarParametro("@idAbonosApartado", abonosApartado_.IdAbonosApartados)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of AbonosApartado)()
             abonosAp = New AbonosApartado()
             abonosAp = lst(0)
@@ -51,6 +55,7 @@ Public Class AbonosApartadoDA
         Dim lst As AbonosApartados = Nothing
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerAbonosApartados")
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             Dim lista As New List(Of AbonosApartado)
             lista = objDA.ObtenerResultados(Of AbonosApartado)()
             For Each abonosAp As AbonosApartado In lista

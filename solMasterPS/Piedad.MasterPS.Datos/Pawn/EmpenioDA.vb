@@ -18,6 +18,7 @@ Public Class EmpenioDA
             objDA.AgregarParametro("@folio", empenio_.Folio)
             objDA.AgregarParametro("@idTipoEmpenio", empenio_.IdTipoEmpenio)
             objDA.AgregarParametro("@idEstatusEmpenio", empenio_.IdEstatusEmpenio)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -35,6 +36,7 @@ Public Class EmpenioDA
             objDA.AgregarParametro("@folio", empenio_.Folio)
             objDA.AgregarParametro("@idTipoEmpenio", empenio_.IdTipoEmpenio)
             objDA.AgregarParametro("@idEstatusEmpenio", empenio_.IdEstatusEmpenio)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -42,6 +44,7 @@ Public Class EmpenioDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarEmpenio")
             objDA.AgregarParametro("@idEmpenio", empenio_.IdEmpenio)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -51,6 +54,7 @@ Public Class EmpenioDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerEmpenio")
             objDA.AgregarParametro("@idEmpenio", empenio_.IdEmpenio)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of Empenio)()
             emp = New Empenio()
             emp = lst(0)
@@ -61,6 +65,7 @@ Public Class EmpenioDA
         Dim lst As Empenios = Nothing
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerEmpenios")
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             Dim lista As New List(Of Empenio)
             lista = objDA.ObtenerResultados(Of Empenio)()
             For Each emp As Empenio In lista

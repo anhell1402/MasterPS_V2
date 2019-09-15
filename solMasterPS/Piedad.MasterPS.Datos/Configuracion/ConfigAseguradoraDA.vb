@@ -11,6 +11,7 @@ Public Class ConfigAseguradoraDA
             objDA.AgregarParametro("@numeroPoliza", configAseguradora_.NumeroPoliza)
             objDA.AgregarParametro("@fechaExpedicion", configAseguradora_.FechaExpedicion)
             objDA.AgregarParametro("@aseguradora", configAseguradora_.Aseguradora)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -21,6 +22,7 @@ Public Class ConfigAseguradoraDA
             objDA.AgregarParametro("@numeroPoliza", configAseguradora_.NumeroPoliza)
             objDA.AgregarParametro("@fechaExpedicion", configAseguradora_.FechaExpedicion)
             objDA.AgregarParametro("@aseguradora", configAseguradora_.Aseguradora)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -28,6 +30,7 @@ Public Class ConfigAseguradoraDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarConfigAseguradora")
             objDA.AgregarParametro("@idAseguradora", configAseguradora_.IdAseguradora)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -37,6 +40,7 @@ Public Class ConfigAseguradoraDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerConfigAseguradora")
             objDA.AgregarParametro("@idAseguradora", configAseguradora_.IdAseguradora)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of ConfigAseguradora)()
             confAseg = New ConfigAseguradora()
             confAseg = lst(0)
@@ -47,6 +51,7 @@ Public Class ConfigAseguradoraDA
         Dim lst As ConfigAseguradoras = Nothing
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerConfigAseguradoras")
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             Dim lista As New List(Of ConfigAseguradora)
             lista = objDA.ObtenerResultados(Of ConfigAseguradora)()
             For Each confAseg As ConfigAseguradora In lista

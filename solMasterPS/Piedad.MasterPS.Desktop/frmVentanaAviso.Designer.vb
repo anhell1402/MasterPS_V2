@@ -23,11 +23,12 @@ Partial Class frmVentanaAviso
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.PanelSuperiorAviso = New System.Windows.Forms.Panel()
-        Me.btnEmpenio = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.lblEncabezadoAviso = New System.Windows.Forms.Label()
+        Me.btnSi = New System.Windows.Forms.Button()
+        Me.btnNo = New System.Windows.Forms.Button()
         Me.lblMensajeAviso = New System.Windows.Forms.Label()
         Me.ImagenAviso = New System.Windows.Forms.PictureBox()
+        Me.btnOK = New System.Windows.Forms.Button()
         Me.PanelSuperiorAviso.SuspendLayout()
         CType(Me.ImagenAviso, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -42,42 +43,6 @@ Partial Class frmVentanaAviso
         Me.PanelSuperiorAviso.Size = New System.Drawing.Size(388, 30)
         Me.PanelSuperiorAviso.TabIndex = 0
         '
-        'btnEmpenio
-        '
-        Me.btnEmpenio.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnEmpenio.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnEmpenio.FlatAppearance.BorderSize = 0
-        Me.btnEmpenio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
-        Me.btnEmpenio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
-        Me.btnEmpenio.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEmpenio.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEmpenio.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnEmpenio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnEmpenio.Location = New System.Drawing.Point(173, 114)
-        Me.btnEmpenio.Name = "btnEmpenio"
-        Me.btnEmpenio.Size = New System.Drawing.Size(87, 30)
-        Me.btnEmpenio.TabIndex = 1
-        Me.btnEmpenio.Text = "SI"
-        Me.btnEmpenio.UseVisualStyleBackColor = False
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
-        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(276, 114)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(87, 30)
-        Me.Button1.TabIndex = 2
-        Me.Button1.Text = "NO"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
         'lblEncabezadoAviso
         '
         Me.lblEncabezadoAviso.AutoSize = True
@@ -88,6 +53,42 @@ Partial Class frmVentanaAviso
         Me.lblEncabezadoAviso.Size = New System.Drawing.Size(50, 17)
         Me.lblEncabezadoAviso.TabIndex = 0
         Me.lblEncabezadoAviso.Text = "Label1"
+        '
+        'btnSi
+        '
+        Me.btnSi.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnSi.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSi.FlatAppearance.BorderSize = 0
+        Me.btnSi.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
+        Me.btnSi.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
+        Me.btnSi.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSi.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSi.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnSi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSi.Location = New System.Drawing.Point(173, 114)
+        Me.btnSi.Name = "btnSi"
+        Me.btnSi.Size = New System.Drawing.Size(87, 30)
+        Me.btnSi.TabIndex = 1
+        Me.btnSi.Text = "SI"
+        Me.btnSi.UseVisualStyleBackColor = False
+        '
+        'btnNo
+        '
+        Me.btnNo.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnNo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnNo.FlatAppearance.BorderSize = 0
+        Me.btnNo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
+        Me.btnNo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
+        Me.btnNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnNo.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNo.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnNo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnNo.Location = New System.Drawing.Point(276, 114)
+        Me.btnNo.Name = "btnNo"
+        Me.btnNo.Size = New System.Drawing.Size(87, 30)
+        Me.btnNo.TabIndex = 2
+        Me.btnNo.Text = "NO"
+        Me.btnNo.UseVisualStyleBackColor = False
         '
         'lblMensajeAviso
         '
@@ -108,18 +109,38 @@ Partial Class frmVentanaAviso
         Me.ImagenAviso.TabIndex = 4
         Me.ImagenAviso.TabStop = False
         '
+        'btnOK
+        '
+        Me.btnOK.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnOK.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnOK.FlatAppearance.BorderSize = 0
+        Me.btnOK.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
+        Me.btnOK.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
+        Me.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnOK.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnOK.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnOK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnOK.Location = New System.Drawing.Point(276, 114)
+        Me.btnOK.Name = "btnOK"
+        Me.btnOK.Size = New System.Drawing.Size(87, 30)
+        Me.btnOK.TabIndex = 5
+        Me.btnOK.Text = "OK"
+        Me.btnOK.UseVisualStyleBackColor = False
+        '
         'frmVentanaAviso
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(388, 159)
+        Me.Controls.Add(Me.btnOK)
         Me.Controls.Add(Me.ImagenAviso)
         Me.Controls.Add(Me.lblMensajeAviso)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.btnEmpenio)
+        Me.Controls.Add(Me.btnNo)
+        Me.Controls.Add(Me.btnSi)
         Me.Controls.Add(Me.PanelSuperiorAviso)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmVentanaAviso"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "frmVentanaAviso"
         Me.PanelSuperiorAviso.ResumeLayout(False)
         Me.PanelSuperiorAviso.PerformLayout()
@@ -130,9 +151,10 @@ Partial Class frmVentanaAviso
     End Sub
 
     Friend WithEvents PanelSuperiorAviso As Panel
-    Friend WithEvents btnEmpenio As Button
+    Friend WithEvents btnSi As Button
     Friend WithEvents lblEncabezadoAviso As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnNo As Button
     Friend WithEvents lblMensajeAviso As Label
     Friend WithEvents ImagenAviso As PictureBox
+    Friend WithEvents btnOK As Button
 End Class

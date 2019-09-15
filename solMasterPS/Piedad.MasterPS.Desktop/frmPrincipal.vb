@@ -17,10 +17,16 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub BtnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
-        If (MessageBox.Show("¿Está seguro que desea salir?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
+        Dim frm As New frmVentanaAviso(TipoVentana.Pregunta, "¿Está seguro que desea salir?", "Aviso")
+        frm.ShowDialog()
+        If (frm.Respuesta = RespuestaVentana.Si) Then
             Me.DialogResult = DialogResult.Cancel
             Me.Close()
         End If
+        'If (MessageBox.Show("¿Está seguro que desea salir?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
+        '    Me.DialogResult = DialogResult.Cancel
+        '    Me.Close()
+        'End If
         'Application.Exit()
     End Sub
 

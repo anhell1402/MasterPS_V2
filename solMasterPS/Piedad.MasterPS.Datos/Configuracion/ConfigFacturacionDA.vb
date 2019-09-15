@@ -10,6 +10,7 @@ Public Class ConfigFacturacionDA
             objDA.CrearComando("dbo.sp_AltaConfigFacturacion")
             objDA.AgregarParametro("@serie", configFacturacion_.Serie)
             objDA.AgregarParametro("@folio", configFacturacion_.Folio)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -19,6 +20,7 @@ Public Class ConfigFacturacionDA
             objDA.AgregarParametro("@idFacturacion", configFacturacion_.IdFacturacion)
             objDA.AgregarParametro("@serie", configFacturacion_.Serie)
             objDA.AgregarParametro("@folio", configFacturacion_.Folio)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -26,6 +28,7 @@ Public Class ConfigFacturacionDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarConfigFacturacion")
             objDA.AgregarParametro("@idFacturacion", configFacturacion_.IdFacturacion)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -35,6 +38,7 @@ Public Class ConfigFacturacionDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerConfigFacturacion")
             objDA.AgregarParametro("@idFacturacion", configFacturacion_.IdFacturacion)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of ConfigFacturacion)()
             conFac = New ConfigFacturacion()
             conFac = lst(0)
@@ -46,6 +50,7 @@ Public Class ConfigFacturacionDA
         Using objDA As New ConexDB(cadenaConex)
             Dim lista As New List(Of ConfigFacturacion)
             lista = objDA.ObtenerResultados(Of ConfigFacturacion)()
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             For Each conFac As ConfigFacturacion In lista
                 lst.Add(conFac)
             Next

@@ -21,6 +21,7 @@ Public Class ConfigTasaDA
             objDA.AgregarParametro("@seguro", configTasa_.Seguro)
             objDA.AgregarParametro("@diasMinimos", configTasa_.DiasMinimos)
             objDA.AgregarParametro("@diasGracia", configTasa_.DiasGracia)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -41,6 +42,7 @@ Public Class ConfigTasaDA
             objDA.AgregarParametro("@seguro", configTasa_.Seguro)
             objDA.AgregarParametro("@diasMinimos", configTasa_.DiasMinimos)
             objDA.AgregarParametro("@diasGracia", configTasa_.DiasGracia)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -48,6 +50,7 @@ Public Class ConfigTasaDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarTasa")
             objDA.AgregarParametro("@idTasa", configTasa_.IdTasa)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -57,6 +60,7 @@ Public Class ConfigTasaDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerTasa")
             objDA.AgregarParametro("@idTasa", configTasa_.IdTasa)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of ConfigTasa)()
             confTasa = New ConfigTasa()
             confTasa = lst(0)
@@ -67,6 +71,7 @@ Public Class ConfigTasaDA
         Dim lst As ConfigTasas = Nothing
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerTasas")
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             Dim lista As New List(Of ConfigTasa)
             lista = objDA.ObtenerResultados(Of ConfigTasa)()
             For Each confTasa As ConfigTasa In lista

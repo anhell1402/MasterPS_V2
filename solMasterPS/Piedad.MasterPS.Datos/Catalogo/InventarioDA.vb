@@ -16,6 +16,7 @@ Public Class InventarioDA
             objDA.AgregarParametro("@diasVencidos", inventario_.DiasVencidos)
             objDA.AgregarParametro("@idTipoIngreso", inventario_.IdTipoIngreso)
             objDA.AgregarParametro("@idEstatusInventario", inventario_.IdEstatusInventario)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -31,6 +32,7 @@ Public Class InventarioDA
             objDA.AgregarParametro("@diasVencidos", inventario_.DiasVencidos)
             objDA.AgregarParametro("@idTipoIngreso", inventario_.IdTipoIngreso)
             objDA.AgregarParametro("@idEstatusInventario", inventario_.IdEstatusInventario)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -38,6 +40,7 @@ Public Class InventarioDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarInventario")
             objDA.AgregarParametro("@idInventario", inventario_.IdInventario)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -47,6 +50,7 @@ Public Class InventarioDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerInventario")
             objDA.AgregarParametro("@idInventario", inventario_.IdInventario)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of Inventario)()
             inv = New Inventario()
             inv = lst(0)
@@ -57,6 +61,7 @@ Public Class InventarioDA
         Dim lst As Inventarios = Nothing
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerInventarios")
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             Dim lista As New List(Of Inventario)
             lista = objDA.ObtenerResultados(Of Inventario)()
             For Each inv As Inventario In lista

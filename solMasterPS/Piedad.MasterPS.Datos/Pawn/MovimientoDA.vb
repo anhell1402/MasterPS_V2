@@ -29,6 +29,7 @@ Public Class MovimientoDA
             objDA.AgregarParametro("@idTipoOperacionEmpenio", movimiento_.IdTipoOperacionEmpenio)
             objDA.AgregarParametro("@idEstatusEmpenio", movimiento_.IdEstatusEmpenio)
             objDA.AgregarParametro("@idUsuario", movimiento_.IdUsuario)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -57,6 +58,7 @@ Public Class MovimientoDA
             objDA.AgregarParametro("@idTipoOperacionEmpenio", movimiento_.IdTipoOperacionEmpenio)
             objDA.AgregarParametro("@idEstatusEmpenio", movimiento_.IdEstatusEmpenio)
             objDA.AgregarParametro("@idUsuario", movimiento_.IdUsuario)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -64,6 +66,7 @@ Public Class MovimientoDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarRegistroMovimientoEmpenio")
             objDA.AgregarParametro("@idFolio", movimiento_.IdFolio)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -73,6 +76,7 @@ Public Class MovimientoDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerRegistroMovimientoEmpenio")
             objDA.AgregarParametro("@idFolio", movimiento_.IdFolio)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of Movimiento)()
             regEmp = New Movimiento()
             regEmp = lst(0)
@@ -83,6 +87,7 @@ Public Class MovimientoDA
         Dim lst As Movimientos = Nothing
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerRegistroMovimientoEmpenios")
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             Dim lista As New List(Of Movimiento)
             lista = objDA.ObtenerResultados(Of Movimiento)()
             For Each regEmp As Movimiento In lista

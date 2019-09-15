@@ -12,6 +12,7 @@ Public Class DireccionDA
             objDA.AgregarParametro("@colonia", direccion_.Colonia)
             objDA.AgregarParametro("@cp", direccion_.CP)
             objDA.AgregarParametro("@idMunicipio", direccion_.IdMunicipio)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -23,6 +24,7 @@ Public Class DireccionDA
             objDA.AgregarParametro("@colonia", direccion_.Colonia)
             objDA.AgregarParametro("@cp", direccion_.CP)
             objDA.AgregarParametro("@idMunicipio", direccion_.IdMunicipio)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -30,6 +32,7 @@ Public Class DireccionDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarDireccion")
             objDA.AgregarParametro("@idDireccion", direccion_.IdDireccion)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -39,6 +42,7 @@ Public Class DireccionDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerDireccion")
             objDA.AgregarParametro("@idDireccion", direccion_.IdDireccion)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of Direccion)()
             dire = New Direccion()
             dire = lst(0)
@@ -49,6 +53,7 @@ Public Class DireccionDA
         Dim lst As Direcciones = Nothing
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerDirecciones")
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             Dim lista As New List(Of Direccion)
             lista = objDA.ObtenerResultados(Of Direccion)()
             For Each dire As Direccion In lista

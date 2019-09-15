@@ -44,6 +44,7 @@ Public Class AutenticacionDA
             Using objDA As New ConexDB(cadenaConex)
                 objDA.CrearComando("dbo.Autentica_sp_RestablecerPass")
                 objDA.AgregarParametro("@username", user.Username)
+                objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
                 objDA.EjecutaComando()
             End Using
             _error = String.Empty
@@ -61,6 +62,7 @@ Public Class AutenticacionDA
                 objDA.CrearComando("dbo.Autentica_sp_OlvidaPasswd")
                 objDA.AgregarParametro("@username", user.Username)
                 objDA.AgregarParametro("@mail", user.Mail)
+                objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
                 lista = objDA.ObtenerResultados(Of Usuario)()
                 user = lista(0)
             End Using

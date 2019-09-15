@@ -13,6 +13,7 @@ Public Class AdicionCompraDA
             objDA.AgregarParametro("@idMercancia", adicionCompra_.IdMercancia)
             objDA.AgregarParametro("@idTipoEmpenio", adicionCompra_.IdTipoEmpenio)
             objDA.AgregarParametro("@idDetalleMercanciaVenta", adicionCompra_.IdDetalleMercanciaVenta)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -25,6 +26,7 @@ Public Class AdicionCompraDA
             objDA.AgregarParametro("@idMercancia", adicionCompra_.IdMercancia)
             objDA.AgregarParametro("@idTipoEmpenio", adicionCompra_.IdTipoEmpenio)
             objDA.AgregarParametro("@idDetalleMercanciaVenta", adicionCompra_.IdDetalleMercanciaVenta)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -32,6 +34,7 @@ Public Class AdicionCompraDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarAdicionCompra")
             objDA.AgregarParametro("@idAdicionCompra", adicionCompra_.IdAdicionCompra)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -41,6 +44,7 @@ Public Class AdicionCompraDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerAdicionCompra")
             objDA.AgregarParametro("@idAdicionCompra", adicionCompra_.IdAdicionCompra)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of AdicionCompra)()
             adiCom = New AdicionCompra()
             adiCom = lst(0)
@@ -51,6 +55,7 @@ Public Class AdicionCompraDA
         Dim lst As AdicionesCompras = Nothing
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerAdicionesCompras")
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             Dim lista As New List(Of AdicionCompra)
             lista = objDA.ObtenerResultados(Of AdicionCompra)()
             For Each adiCom As AdicionCompra In lista

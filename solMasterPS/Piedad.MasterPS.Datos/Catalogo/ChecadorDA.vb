@@ -15,6 +15,7 @@ Public Class ChecadorDA
             objDA.AgregarParametro("@idCaja", checador_.IdCaja)
             objDA.AgregarParametro("@fechaHora", checador_.FechaHora)
             objDA.AgregarParametro("@entrada", checador_.Entrada)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -28,6 +29,7 @@ Public Class ChecadorDA
             objDA.AgregarParametro("@idCaja", checador_.IdCaja)
             objDA.AgregarParametro("@fechaHora", checador_.FechaHora)
             objDA.AgregarParametro("@entrada", checador_.Entrada)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -35,6 +37,7 @@ Public Class ChecadorDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarChecador")
             objDA.AgregarParametro("@idChecador", checador_.IdChecador)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -44,6 +47,7 @@ Public Class ChecadorDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerChecador")
             objDA.AgregarParametro("@idChecador", checador_.IdChecador)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of Checador)()
             chk = New Checador()
             chk = lst(0)
@@ -54,6 +58,7 @@ Public Class ChecadorDA
         Dim lst As Checadores = Nothing
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerChecadores")
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             Dim lista As New List(Of Checador)
             lista = objDA.ObtenerResultados(Of Checador)()
             For Each chk As Checador In lista

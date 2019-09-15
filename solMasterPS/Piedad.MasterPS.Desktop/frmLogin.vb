@@ -23,12 +23,14 @@ Public Class FrmLogin
             Dim user As New Usuario()
             user.Username = txtUser.Text.Trim()
             user.Password = Protection.Encrypt(txtPass.Text.Trim())
+            txtPass.Text = String.Empty
             Dim objDa As New AutenticacionBL(cadena)
             user = objDa.AutenciaUsuario(user)
             If (Not objDa.HayError) Then
                 If user IsNot Nothing Then
                     If (user.IdUsuario <> -1) Then
-                        'Usuario autenticado
+                        'Usuario autenticado                        
+                        txtUser.Text = String.Empty
                         Me.Hide()
                         Dim frm As New frmPrincipal()
                         Dim result As DialogResult = frm.ShowDialog()
@@ -36,10 +38,23 @@ Public Class FrmLogin
                             Me.Show()
                         End If
                         frm = Nothing
+                    Else
+                        Dim frmAviso As New frmVentanaAviso(TipoVentana.AdvertenciaError, "Usuario y/o contraseña incorrectos", "Error")
+                        frmAviso.ShowDialog()
+
                     End If
+                Else
+                    Dim frmAviso As New frmVentanaAviso(TipoVentana.AdvertenciaError, "Usuario y/o contraseña incorrectos", "Error")
+                    frmAviso.ShowDialog()
                 End If
+            Else
+                Dim frmAviso As New frmVentanaAviso(TipoVentana.AdvertenciaError, "Usuario y/o contraseña incorrectos", "Error")
+                frmAviso.ShowDialog()
             End If
         Else
+            Dim frmAviso As New frmVentanaAviso(TipoVentana.AdvertenciaError, "Usuario y/o contraseña incorrectos", "Error")
+            frmAviso.ShowDialog()
+            Dim resp As RespuestaVentana = frmAviso.Respuesta
         End If
 
         'frmPrincipal.Show()

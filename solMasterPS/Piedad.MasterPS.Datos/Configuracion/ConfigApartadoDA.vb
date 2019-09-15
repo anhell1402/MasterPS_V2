@@ -14,6 +14,7 @@ Public Class ConfigApartadoDA
             objDA.AgregarParametro("@descuentoAutorizado", configApartado_.DescuentoAutorizado)
             objDA.AgregarParametro("@diasGracia", configApartado_.DiasGracia)
             objDA.AgregarParametro("@penalizacionCancelacion", configApartado_.PenalizacionCancelacion)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -27,6 +28,7 @@ Public Class ConfigApartadoDA
             objDA.AgregarParametro("@descuentoAutorizado", configApartado_.DescuentoAutorizado)
             objDA.AgregarParametro("@diasGracia", configApartado_.DiasGracia)
             objDA.AgregarParametro("@penalizacionCancelacion", configApartado_.PenalizacionCancelacion)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -34,6 +36,7 @@ Public Class ConfigApartadoDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarConfiguracionApartado")
             objDA.AgregarParametro("@idConfigApartado", configApartado_.IdConfigApartado)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -43,6 +46,7 @@ Public Class ConfigApartadoDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerConfiguracionApartado")
             objDA.AgregarParametro("@idConfigApartado", configApartado_.IdConfigApartado)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of ConfigApartado)()
             confAp = New ConfigApartado()
             confAp = lst(0)
@@ -53,6 +57,7 @@ Public Class ConfigApartadoDA
         Dim lst As ConfigApartados = Nothing
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerConfiguracionApartados")
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             Dim lista As New List(Of ConfigApartado)
             lista = objDA.ObtenerResultados(Of ConfigApartado)()
             For Each confAp As ConfigApartado In lista

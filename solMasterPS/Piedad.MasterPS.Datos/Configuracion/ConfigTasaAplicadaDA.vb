@@ -12,6 +12,7 @@ Public Class ConfigTasaAplicadaDA
             objDA.AgregarParametro("@gastosOperacion", configTasaAplicada_.GastosOperacion)
             objDA.AgregarParametro("@iva", configTasaAplicada_.IVA)
             objDA.AgregarParametro("@porcentajeUtilidad", configTasaAplicada_.PorcentajeUtilidad)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -23,6 +24,7 @@ Public Class ConfigTasaAplicadaDA
             objDA.AgregarParametro("@gastosOperacion", configTasaAplicada_.GastosOperacion)
             objDA.AgregarParametro("@iva", configTasaAplicada_.IVA)
             objDA.AgregarParametro("@porcentajeUtilidad", configTasaAplicada_.PorcentajeUtilidad)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -30,6 +32,7 @@ Public Class ConfigTasaAplicadaDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarConfiguracionTasasAplicadas")
             objDA.AgregarParametro("@idTasaAplicada", configTasaAplicada_.IdTasaAplicada)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -39,6 +42,7 @@ Public Class ConfigTasaAplicadaDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerConfiguracionTasaAplicada")
             objDA.AgregarParametro("@idTasaAplicada", configTasaAplicada_.IdTasaAplicada)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of ConfigTasaAplicada)()
             confTA = New ConfigTasaAplicada()
             confTA = lst(0)
@@ -49,6 +53,7 @@ Public Class ConfigTasaAplicadaDA
         Dim lst As ConfigTasasAplicadas = Nothing
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerConfiguracionTasasAplicadas")
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             Dim lista As New List(Of ConfigTasaAplicada)
             lista = objDA.ObtenerResultados(Of ConfigTasaAplicada)
             For Each confTA As ConfigTasaAplicada In lista

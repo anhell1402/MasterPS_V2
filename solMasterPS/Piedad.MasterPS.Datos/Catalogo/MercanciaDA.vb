@@ -14,6 +14,7 @@ Public Class MercanciaDA
             objDA.AgregarParametro("@idMarca_EstadoMetal", mercancia_.IdMarca_EstadoMetal)
             objDA.AgregarParametro("@precioMaximo", mercancia_.PrecioMaximo)
             objDA.AgregarParametro("@modelo", mercancia_.Modelo)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -27,6 +28,7 @@ Public Class MercanciaDA
             objDA.AgregarParametro("@idMarca_EstadoMetal", mercancia_.IdMarca_EstadoMetal)
             objDA.AgregarParametro("@precioMaximo", mercancia_.PrecioMaximo)
             objDA.AgregarParametro("@modelo", mercancia_.Modelo)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -34,6 +36,7 @@ Public Class MercanciaDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarMercancia")
             objDA.AgregarParametro("@idMercancia", mercancia_.IdMercancia)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -43,6 +46,7 @@ Public Class MercanciaDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerMercancia")
             objDA.AgregarParametro("@idMercancia", mercancia_.IdMercancia)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of Mercancia)()
             merc = New Mercancia()
             merc = lst(0)
@@ -53,6 +57,7 @@ Public Class MercanciaDA
         Dim lst As Mercancias = Nothing
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerMercancias")
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             Dim lista As New List(Of Mercancia)
             lista = objDA.ObtenerResultados(Of Mercancia)()
             For Each merc As Mercancia In lista

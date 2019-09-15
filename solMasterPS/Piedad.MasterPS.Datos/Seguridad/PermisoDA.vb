@@ -10,6 +10,7 @@ Public Class PermisoDA
             objDA.CrearComando("dbo.sp_AltaPermisos")
             objDA.AgregarParametro("@idMenu", permiso_.IdMenu)
             objDA.AgregarParametro("@idRol", permiso_.IdRol)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -19,6 +20,7 @@ Public Class PermisoDA
             objDA.AgregarParametro("@idPermiso", permiso_.IdPermiso)
             objDA.AgregarParametro("@idMenu", permiso_.IdMenu)
             objDA.AgregarParametro("@idRol", permiso_.IdRol)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -26,6 +28,7 @@ Public Class PermisoDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarPermisos")
             objDA.AgregarParametro("@idPermiso", permiso_.IdPermiso)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -35,6 +38,7 @@ Public Class PermisoDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerPermiso")
             objDA.AgregarParametro("@idPermiso", permiso_.IdPermiso)
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of Permiso)()
             per = New Permiso()
             per = lst(0)
@@ -45,6 +49,7 @@ Public Class PermisoDA
         Dim lst As Permisos = Nothing
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerPermisos")
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             Dim lista As New List(Of Permiso)
             lista = objDA.ObtenerResultados(Of Permiso)()
             For Each per As Permiso In lista
