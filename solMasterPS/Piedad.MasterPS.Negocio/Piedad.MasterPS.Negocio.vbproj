@@ -107,6 +107,7 @@
     <Compile Include="Sale\ApartadoBL.vb" />
     <Compile Include="Sale\CancelacionApartadoBL.vb" />
     <Compile Include="Sale\DetalleAlmonedaBL.vb" />
+    <Compile Include="Seguridad\AutenticacionBL.vb" />
     <Compile Include="Seguridad\MenuBL.vb" />
     <Compile Include="Seguridad\PermisoBL.vb" />
     <Compile Include="Seguridad\UsuarioBL.vb" />

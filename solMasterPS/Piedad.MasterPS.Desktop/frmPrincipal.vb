@@ -17,7 +17,11 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub BtnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
-        Application.Exit()
+        If (MessageBox.Show("¿Está seguro que desea salir?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
+            Me.DialogResult = DialogResult.Cancel
+            Me.Close()
+        End If
+        'Application.Exit()
     End Sub
     Dim lx, ly As Integer
     Dim sw, sh As Integer

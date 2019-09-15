@@ -70,4 +70,6 @@ Public Class UsuarioBL
             Return Nothing
         End Try
     End Function
+
+
 End Class

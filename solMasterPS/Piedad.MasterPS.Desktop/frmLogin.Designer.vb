@@ -26,7 +26,7 @@ Partial Class FrmLogin
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.txtUser = New System.Windows.Forms.TextBox()
-        Me.txtpass = New System.Windows.Forms.TextBox()
+        Me.txtPass = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnLogin = New System.Windows.Forms.Button()
         Me.lkOlvidaste = New System.Windows.Forms.LinkLabel()
@@ -71,16 +71,16 @@ Partial Class FrmLogin
         Me.txtUser.Size = New System.Drawing.Size(395, 20)
         Me.txtUser.TabIndex = 1
         '
-        'txtpass
+        'txtPass
         '
-        Me.txtpass.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.txtpass.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtpass.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtpass.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.txtpass.Location = New System.Drawing.Point(316, 161)
-        Me.txtpass.Name = "txtpass"
-        Me.txtpass.Size = New System.Drawing.Size(395, 20)
-        Me.txtpass.TabIndex = 2
+        Me.txtPass.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtPass.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPass.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.txtPass.Location = New System.Drawing.Point(316, 161)
+        Me.txtPass.Name = "txtPass"
+        Me.txtPass.Size = New System.Drawing.Size(395, 20)
+        Me.txtPass.TabIndex = 2
         '
         'Label1
         '
@@ -179,7 +179,7 @@ Partial Class FrmLogin
         Me.Controls.Add(Me.lkOlvidaste)
         Me.Controls.Add(Me.btnLogin)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.txtpass)
+        Me.Controls.Add(Me.txtPass)
         Me.Controls.Add(Me.txtUser)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -198,7 +198,7 @@ Partial Class FrmLogin
 
     Friend WithEvents Panel1 As Panel
     Friend WithEvents txtUser As TextBox
-    Friend WithEvents txtpass As TextBox
+    Friend WithEvents txtPass As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents btnLogin As Button
     Friend WithEvents lkOlvidaste As LinkLabel

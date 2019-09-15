@@ -48,6 +48,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
@@ -79,6 +80,12 @@
       <DependentUpon>frmLogin.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmOlvidaPasswd.Designer.vb">
+      <DependentUpon>frmOlvidaPasswd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmOlvidaPasswd.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmPrincipal.Designer.vb">
       <DependentUpon>frmPrincipal.vb</DependentUpon>
     </Compile>
@@ -105,6 +112,9 @@
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmOlvidaPasswd.resx">
+      <DependentUpon>frmOlvidaPasswd.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.vb</DependentUpon>
     </EmbeddedResource>
@@ -126,6 +136,20 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Piedad.MasterPS.Clases\Piedad.MasterPS.Clases.vbproj">
+      <Project>{7c757211-290e-4090-b56e-1ccd98fb6a44}</Project>
+      <Name>Piedad.MasterPS.Clases</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Piedad.MasterPS.Negocio\Piedad.MasterPS.Negocio.vbproj">
+      <Project>{2553e7f2-85a2-469f-ae0d-30d41afed23e}</Project>
+      <Name>Piedad.MasterPS.Negocio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Piedad.MasterPS.Utilerias\Piedad.MasterPS.Utilerias.vbproj">
+      <Project>{a2926c08-6d04-4580-b9dd-8fce389ab5a6}</Project>
+      <Name>Piedad.MasterPS.Utilerias</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
