@@ -90,6 +90,7 @@ Public Class frmPrincipal
             formulario.TopLevel = False
             PanelFormularios.Controls.Add(formulario)
             PanelFormularios.Tag = formulario
+            formulario.Anchor = Anchor.Right Or Anchor.Left Or Anchor.Top Or Anchor.Bottom
             formulario.Show()
             formulario.BringToFront()
         Else
