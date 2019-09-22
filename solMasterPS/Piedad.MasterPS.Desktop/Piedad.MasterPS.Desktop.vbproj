@@ -73,6 +73,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmCatGenerico.Designer.vb">
+      <DependentUpon>frmCatGenerico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCatGenerico.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmEmpenio.Designer.vb">
       <DependentUpon>frmEmpenio.vb</DependentUpon>
     </Compile>
@@ -129,6 +135,9 @@
     <Compile Include="TipoVentana.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmCatGenerico.resx">
+      <DependentUpon>frmCatGenerico.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEmpenio.resx">
       <DependentUpon>frmEmpenio.vb</DependentUpon>
     </EmbeddedResource>

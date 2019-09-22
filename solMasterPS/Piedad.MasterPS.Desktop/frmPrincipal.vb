@@ -90,7 +90,6 @@ Public Class frmPrincipal
             formulario.TopLevel = False
             PanelFormularios.Controls.Add(formulario)
             PanelFormularios.Tag = formulario
-            formulario.Anchor = Anchor.Right Or Anchor.Left Or Anchor.Top Or Anchor.Bottom
             formulario.Show()
             formulario.BringToFront()
         Else
@@ -105,6 +104,7 @@ Public Class frmPrincipal
         PanelSubMenuCallCenter.Width = 0
         PanelSubMenuHistorial.Width = 0
         PanelSubMenuCaja.Width = 0
+        PanelSubMenuReportes.Width = 0
         If PanelSubMenuEmpenio.Width = 0 Then
             PanelSubMenuEmpenio.Width = 540
         Else
@@ -119,23 +119,11 @@ Public Class frmPrincipal
         PanelSubMenuCallCenter.Width = 0
         PanelSubMenuHistorial.Width = 0
         PanelSubMenuCaja.Width = 0
+        PanelSubMenuReportes.Width = 0
         If PanelSubMenuVenta.Width = 0 Then
             PanelSubMenuVenta.Width = 540
         Else
             PanelSubMenuVenta.Width = 0
-        End If
-    End Sub
-    Private Sub BtnCallCenter_Click(sender As Object, e As EventArgs) Handles btnCallCenter.Click
-        PanelSubMenuCallCenter.BringToFront()
-        PanelSubMenuEmpenio.Width = 0
-        PanelSubMenuVenta.Width = 0
-        PanelSubMenuInventario.Width = 0
-        PanelSubMenuHistorial.Width = 0
-        PanelSubMenuCaja.Width = 0
-        If PanelSubMenuCallCenter.Width = 0 Then
-            PanelSubMenuCallCenter.Width = 270
-        Else
-            PanelSubMenuCallCenter.Width = 0
         End If
     End Sub
     Private Sub BtnInventario_Click(sender As Object, e As EventArgs) Handles btnInventario.Click
@@ -145,10 +133,25 @@ Public Class frmPrincipal
         PanelSubMenuCallCenter.Width = 0
         PanelSubMenuHistorial.Width = 0
         PanelSubMenuCaja.Width = 0
+        PanelSubMenuReportes.Width = 0
         If PanelSubMenuInventario.Width = 0 Then
             PanelSubMenuInventario.Width = 586
         Else
             PanelSubMenuInventario.Width = 0
+        End If
+    End Sub
+    Private Sub BtnCallCenter_Click(sender As Object, e As EventArgs) Handles btnCallCenter.Click
+        PanelSubMenuCallCenter.BringToFront()
+        PanelSubMenuEmpenio.Width = 0
+        PanelSubMenuVenta.Width = 0
+        PanelSubMenuInventario.Width = 0
+        PanelSubMenuHistorial.Width = 0
+        PanelSubMenuCaja.Width = 0
+        PanelSubMenuReportes.Width = 0
+        If PanelSubMenuCallCenter.Width = 0 Then
+            PanelSubMenuCallCenter.Width = 270
+        Else
+            PanelSubMenuCallCenter.Width = 0
         End If
     End Sub
     Private Sub BtnHistorial_Click(sender As Object, e As EventArgs) Handles btnHistorial.Click
@@ -158,6 +161,7 @@ Public Class frmPrincipal
         PanelSubMenuInventario.Width = 0
         PanelSubMenuCallCenter.Width = 0
         PanelSubMenuCaja.Width = 0
+        PanelSubMenuReportes.Width = 0
         If PanelSubMenuHistorial.Width = 0 Then
             PanelSubMenuHistorial.Width = 540
         Else
@@ -171,19 +175,31 @@ Public Class frmPrincipal
         PanelSubMenuInventario.Width = 0
         PanelSubMenuCallCenter.Width = 0
         PanelSubMenuHistorial.Width = 0
+        PanelSubMenuReportes.Width = 0
         If PanelSubMenuCaja.Width = 0 Then
             PanelSubMenuCaja.Width = 540
         Else
             PanelSubMenuCaja.Width = 0
         End If
     End Sub
+    Private Sub BtnReportes_Click(sender As Object, e As EventArgs) Handles btnReportes.Click
+        PanelSubMenuReportes.BringToFront()
+        PanelSubMenuEmpenio.Width = 0
+        PanelSubMenuVenta.Width = 0
+        PanelSubMenuInventario.Width = 0
+        PanelSubMenuCallCenter.Width = 0
+        PanelSubMenuHistorial.Width = 0
+        PanelSubMenuCaja.Width = 0
+        If PanelSubMenuReportes.Width = 0 Then
+            PanelSubMenuReportes.Width = 135
+        Else
+            PanelSubMenuReportes.Width = 0
+        End If
+    End Sub
     Private Sub HoraFecha_Tick(sender As Object, e As EventArgs) Handles horaFecha.Tick
         lblHora.Text = DateTime.Now.ToLongTimeString()
         lblFecha.Text = DateTime.Now.ToLongDateString()
     End Sub
-
-
-
     Private Sub BtnNuevoEmpeño_Click(sender As Object, e As EventArgs) Handles btnNuevoEmpeño.Click
         PanelSubMenuEmpenio.Width = 0
         AbrirFormularioEnPanel(Of frmEmpenio)()

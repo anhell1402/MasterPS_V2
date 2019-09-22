@@ -79,6 +79,8 @@ Partial Class frmPrincipal
         Me.btnCerrar = New System.Windows.Forms.PictureBox()
         Me.horaFecha = New System.Windows.Forms.Timer(Me.components)
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.PanelSubMenuReportes = New System.Windows.Forms.Panel()
+        Me.btnAbrirReportes = New System.Windows.Forms.Button()
         Me.PanelContenedor.SuspendLayout()
         Me.PanelFormularios.SuspendLayout()
         Me.PanelSubMenuCaja.SuspendLayout()
@@ -96,6 +98,7 @@ Partial Class frmPrincipal
         CType(Me.btnMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnMaximizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelSubMenuReportes.SuspendLayout()
         Me.SuspendLayout()
         '
         'PanelContenedor
@@ -116,6 +119,7 @@ Partial Class frmPrincipal
         Me.PanelFormularios.BackColor = System.Drawing.Color.WhiteSmoke
         Me.PanelFormularios.BackgroundImage = CType(resources.GetObject("PanelFormularios.BackgroundImage"), System.Drawing.Image)
         Me.PanelFormularios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PanelFormularios.Controls.Add(Me.PanelSubMenuReportes)
         Me.PanelFormularios.Controls.Add(Me.PanelSubMenuCaja)
         Me.PanelFormularios.Controls.Add(Me.PanelSubMenuHistorial)
         Me.PanelFormularios.Controls.Add(Me.PanelSubMenuInventario)
@@ -1006,6 +1010,35 @@ Partial Class frmPrincipal
         '
         Me.horaFecha.Enabled = True
         '
+        'PanelSubMenuReportes
+        '
+        Me.PanelSubMenuReportes.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.PanelSubMenuReportes.Controls.Add(Me.btnAbrirReportes)
+        Me.PanelSubMenuReportes.Location = New System.Drawing.Point(0, 272)
+        Me.PanelSubMenuReportes.Name = "PanelSubMenuReportes"
+        Me.PanelSubMenuReportes.Size = New System.Drawing.Size(0, 97)
+        Me.PanelSubMenuReportes.TabIndex = 16
+        '
+        'btnAbrirReportes
+        '
+        Me.btnAbrirReportes.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnAbrirReportes.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnAbrirReportes.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
+        Me.btnAbrirReportes.FlatAppearance.BorderSize = 0
+        Me.btnAbrirReportes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
+        Me.btnAbrirReportes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
+        Me.btnAbrirReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAbrirReportes.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAbrirReportes.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnAbrirReportes.Image = CType(resources.GetObject("btnAbrirReportes.Image"), System.Drawing.Image)
+        Me.btnAbrirReportes.Location = New System.Drawing.Point(0, 0)
+        Me.btnAbrirReportes.Name = "btnAbrirReportes"
+        Me.btnAbrirReportes.Size = New System.Drawing.Size(135, 97)
+        Me.btnAbrirReportes.TabIndex = 0
+        Me.btnAbrirReportes.Text = "REPORTES (TODOS)"
+        Me.btnAbrirReportes.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.btnAbrirReportes.UseVisualStyleBackColor = False
+        '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1034,6 +1067,7 @@ Partial Class frmPrincipal
         CType(Me.btnMinimizar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnMaximizar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnCerrar, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelSubMenuReportes.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -1093,4 +1127,6 @@ Partial Class frmPrincipal
     Friend WithEvents btnCaja As Button
     Friend WithEvents btnReportes As Button
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents PanelSubMenuReportes As Panel
+    Friend WithEvents btnAbrirReportes As Button
 End Class
