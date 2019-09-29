@@ -14,6 +14,7 @@ Public Class ConfigApartadoDA
             objDA.AgregarParametro("@descuentoAutorizado", configApartado_.DescuentoAutorizado)
             objDA.AgregarParametro("@diasGracia", configApartado_.DiasGracia)
             objDA.AgregarParametro("@penalizacionCancelacion", configApartado_.PenalizacionCancelacion)
+            objDA.AgregarParametro("@idSucursal", configApartado_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -28,6 +29,7 @@ Public Class ConfigApartadoDA
             objDA.AgregarParametro("@descuentoAutorizado", configApartado_.DescuentoAutorizado)
             objDA.AgregarParametro("@diasGracia", configApartado_.DiasGracia)
             objDA.AgregarParametro("@penalizacionCancelacion", configApartado_.PenalizacionCancelacion)
+            objDA.AgregarParametro("@idSucursal", configApartado_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -36,6 +38,7 @@ Public Class ConfigApartadoDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarConfiguracionApartado")
             objDA.AgregarParametro("@idConfigApartado", configApartado_.IdConfigApartado)
+            objDA.AgregarParametro("@idSucursal", configApartado_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -46,6 +49,7 @@ Public Class ConfigApartadoDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerConfiguracionApartado")
             objDA.AgregarParametro("@idConfigApartado", configApartado_.IdConfigApartado)
+            objDA.AgregarParametro("@idSucursal", configApartado_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of ConfigApartado)()
             confAp = New ConfigApartado()
@@ -53,11 +57,12 @@ Public Class ConfigApartadoDA
         End Using
         Return confAp
     End Function
-    Public Function ObtenerTodos() As ConfigApartados
-        Dim lst As ConfigApartados = Nothing
+    Public Function ObtenerTodos(ByVal configApartado_ As ConfigApartado) As ConfigApartados
+        Dim lst As New ConfigApartados()
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerConfiguracionApartados")
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
+            objDA.AgregarParametro("@idSucursal", configApartado_.IdSucursal)
             Dim lista As New List(Of ConfigApartado)
             lista = objDA.ObtenerResultados(Of ConfigApartado)()
             For Each confAp As ConfigApartado In lista

@@ -11,6 +11,7 @@ Public Class ConfigAseguradoraDA
             objDA.AgregarParametro("@numeroPoliza", configAseguradora_.NumeroPoliza)
             objDA.AgregarParametro("@fechaExpedicion", configAseguradora_.FechaExpedicion)
             objDA.AgregarParametro("@aseguradora", configAseguradora_.Aseguradora)
+            objDA.AgregarParametro("@idSucursal", configAseguradora_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -22,6 +23,7 @@ Public Class ConfigAseguradoraDA
             objDA.AgregarParametro("@numeroPoliza", configAseguradora_.NumeroPoliza)
             objDA.AgregarParametro("@fechaExpedicion", configAseguradora_.FechaExpedicion)
             objDA.AgregarParametro("@aseguradora", configAseguradora_.Aseguradora)
+            objDA.AgregarParametro("@idSucursal", configAseguradora_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -30,6 +32,7 @@ Public Class ConfigAseguradoraDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarConfigAseguradora")
             objDA.AgregarParametro("@idAseguradora", configAseguradora_.IdAseguradora)
+            objDA.AgregarParametro("@idSucursal", configAseguradora_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -40,6 +43,7 @@ Public Class ConfigAseguradoraDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerConfigAseguradora")
             objDA.AgregarParametro("@idAseguradora", configAseguradora_.IdAseguradora)
+            objDA.AgregarParametro("@idSucursal", configAseguradora_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of ConfigAseguradora)()
             confAseg = New ConfigAseguradora()
@@ -47,11 +51,12 @@ Public Class ConfigAseguradoraDA
         End Using
         Return confAseg
     End Function
-    Public Function ObtenerTodos() As ConfigAseguradoras
-        Dim lst As ConfigAseguradoras = Nothing
+    Public Function ObtenerTodos(ByVal configAseguradora_ As ConfigAseguradora) As ConfigAseguradoras
+        Dim lst As New ConfigAseguradoras()
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerConfigAseguradoras")
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
+            objDA.AgregarParametro("@idSucursal", configAseguradora_.IdSucursal)
             Dim lista As New List(Of ConfigAseguradora)
             lista = objDA.ObtenerResultados(Of ConfigAseguradora)()
             For Each confAseg As ConfigAseguradora In lista

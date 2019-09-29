@@ -1,8 +1,9 @@
 ﻿Public Class Venta
     Public Sub New()
-        idCliente_ = New Cliente
-        idUsuario_ = New Usuario
-        idEstatusVenta_ = New Generico
+        idCliente_ = New Cliente()
+        idUsuario_ = New Usuario()
+        idEstatusVenta_ = New Generico()
+        idSucursal_ = New Sucursal()
     End Sub
     Private idVenta_ As Integer
     Public Property IdVenta As Integer
@@ -58,5 +59,13 @@
             idEstatusVenta_ = value
         End Set
     End Property
-
+    Private idSucursal_ As Sucursal
+    Public Property IdSucursal As Sucursal
+        Get
+            Return idSucursal_
+        End Get
+        Set(ByVal value As Sucursal)
+            idSucursal_ = value
+        End Set
+    End Property
 End Class

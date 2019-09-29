@@ -1,8 +1,8 @@
 ﻿Public Class AbonosApartado
     Public Sub New()
-        idApartado_ = New Apartado
-        idUsuario_ = New Usuario
-
+        idApartado_ = New Apartado()
+        idUsuario_ = New Usuario()
+        idSucursal_ = New Sucursal()
     End Sub
     Private idAbonosApartado_ As Integer
     Public Property IdAbonosApartados As Integer
@@ -56,6 +56,15 @@
         End Get
         Set(ByVal value As Decimal)
             montoRestante_ = value
+        End Set
+    End Property
+    Private idSucursal_ As Sucursal
+    Public Property IdSucursal As Sucursal
+        Get
+            Return idSucursal_
+        End Get
+        Set(ByVal value As Sucursal)
+            idSucursal_ = value
         End Set
     End Property
 

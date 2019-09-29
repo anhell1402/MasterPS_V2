@@ -1,4 +1,9 @@
 ﻿Public Class Documento
+    Public Sub New()
+        idTipoDocumento_ = New Generico()
+        idDetalleEmpenio_ = New DetalleEmpenio()
+        idSucursal_ = New Sucursal()
+    End Sub
     Private idDocumento_ As Integer
     Public Property IdDocumento As Integer
         Get
@@ -42,6 +47,15 @@
         End Get
         Set(ByVal value As Byte())
             documento_ = value
+        End Set
+    End Property
+    Private idSucursal_ As Sucursal
+    Public Property IdSucursal As Sucursal
+        Get
+            Return idSucursal_
+        End Get
+        Set(ByVal value As Sucursal)
+            idSucursal_ = value
         End Set
     End Property
 End Class

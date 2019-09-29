@@ -1,7 +1,8 @@
 ﻿Public Class DetalleApartado
     Public Sub New()
-        idApartado_ = New Apartado
-        idInventario_ = New Inventario
+        idApartado_ = New Apartado()
+        idInventario_ = New Inventario()
+        idSucursal_ = New Sucursal()
     End Sub
     Private idDetalleApartado_ As Integer
     Public Property IdDetalleApartado As Integer
@@ -39,5 +40,13 @@
             precio_ = value
         End Set
     End Property
-
+    Private idSucursal_ As Sucursal
+    Public Property IdSucursal As Sucursal
+        Get
+            Return idSucursal_
+        End Get
+        Set(ByVal value As Sucursal)
+            idSucursal_ = value
+        End Set
+    End Property
 End Class

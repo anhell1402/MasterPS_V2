@@ -1,4 +1,7 @@
 ﻿Public Class ConfigDatosProfeco
+    Public Sub New()
+        idSucursal_ = New Sucursal()
+    End Sub
     Private idDatosContratoProfeco_ As Integer
     Public Property IdDatosContratoProfeco As Integer
         Get
@@ -51,6 +54,15 @@
         End Get
         Set(ByVal value As String)
             horarioServicioPublico_ = value
+        End Set
+    End Property
+    Private idSucursal_ As Sucursal
+    Public Property IdSucursal As Sucursal
+        Get
+            Return idSucursal_
+        End Get
+        Set(ByVal value As Sucursal)
+            idSucursal_ = value
         End Set
     End Property
 End Class

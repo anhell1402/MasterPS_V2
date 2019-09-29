@@ -12,6 +12,7 @@ Public Class CACDA
             objDA.AgregarParametro("@fechaRegistro", cac_.FechaRegistro)
             objDA.AgregarParametro("@descripcion", cac_.Descripcion)
             objDA.AgregarParametro("@idEmpenio", cac_.IdEmpenio)
+            objDA.AgregarParametro("@idSucursal", cac_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -24,6 +25,7 @@ Public Class CACDA
             objDA.AgregarParametro("fechaRegistro", cac_.FechaRegistro)
             objDA.AgregarParametro("@descripcion", cac_.Descripcion)
             objDA.AgregarParametro("@idEmpenio", cac_.IdEmpenio)
+            objDA.AgregarParametro("@idSucursal", cac_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -32,6 +34,7 @@ Public Class CACDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarCAC")
             objDA.AgregarParametro("@idCAC", cac_.IdCAC)
+            objDA.AgregarParametro("@idSucursal", cac_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -42,6 +45,7 @@ Public Class CACDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerCAC")
             objDA.AgregarParametro("@idCAC", cac_.IdCAC)
+            objDA.AgregarParametro("@idSucursal", cac_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of CAC)()
             cc = New CAC()
@@ -49,11 +53,12 @@ Public Class CACDA
         End Using
         Return cc
     End Function
-    Public Function ObtenerTodos() As CACS
-        Dim lst As CACS = Nothing
+    Public Function ObtenerTodos(ByVal cac_ As CAC) As CACS
+        Dim lst As New CACS
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerCACs")
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
+            objDA.AgregarParametro("@idSucursal", cac_.IdSucursal)
             Dim lista As New List(Of CAC)
             lista = objDA.ObtenerResultados(Of CAC)()
             For Each cc As CAC In lista

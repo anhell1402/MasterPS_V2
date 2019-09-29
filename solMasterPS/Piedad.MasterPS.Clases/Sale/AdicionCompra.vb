@@ -1,10 +1,11 @@
 ﻿Public Class AdicionCompra
     Public Sub New()
-        idCliente_ = New Cliente
-        idTipoIngreso_ = New Generico
-        idMercancia_ = New Mercancia
-        idTipoEmpenio_ = New Generico
-        idDetalleMercanciaVenta_ = New DetalleMercanciaVenta
+        idCliente_ = New Cliente()
+        idTipoIngreso_ = New Generico()
+        idMercancia_ = New Mercancia()
+        idTipoEmpenio_ = New Generico()
+        idDetalleMercanciaVenta_ = New DetalleMercanciaVenta()
+        idSucursal_ = New Sucursal()
     End Sub
     Private idAdicionCompra_ As Integer
     Public Property IdAdicionCompra As Integer
@@ -60,5 +61,13 @@
             idDetalleMercanciaVenta_ = value
         End Set
     End Property
-
+    Private idSucursal_ As Sucursal
+    Public Property IdSucursal As Sucursal
+        Get
+            Return idSucursal_
+        End Get
+        Set(ByVal value As Sucursal)
+            idSucursal_ = value
+        End Set
+    End Property
 End Class

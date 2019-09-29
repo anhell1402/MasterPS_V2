@@ -1,8 +1,8 @@
 ﻿Public Class ConfigTasa
     Public Sub New()
-        idTipoTasa_ = New Generico
-        idPeriodo_ = New Generico
-
+        idTipoTasa_ = New Generico()
+        idPeriodo_ = New Generico()
+        idSucursal_ = New Sucursal()
     End Sub
     Private idTasa_ As Integer
     Public Property IdTasa As Integer
@@ -130,6 +130,14 @@
             diasGracia_ = value
         End Set
     End Property
-
+    Private idSucursal_ As Sucursal
+    Public Property IdSucursal As Sucursal
+        Get
+            Return idSucursal_
+        End Get
+        Set(ByVal value As Sucursal)
+            idSucursal_ = value
+        End Set
+    End Property
 End Class
 

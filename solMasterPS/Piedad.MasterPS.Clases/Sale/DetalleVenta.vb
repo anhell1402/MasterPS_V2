@@ -1,7 +1,8 @@
 ﻿Public Class DetalleVenta
     Public Sub New()
-        idVenta_ = New Venta
-        idInventario_ = New Inventario
+        idVenta_ = New Venta()
+        idInventario_ = New Inventario()
+        idSucursal_ = New Sucursal()
     End Sub
     Private idDetalleVenta_ As Integer
     Public Property IdDetalleVenta As Integer
@@ -66,5 +67,13 @@
             cantidad_ = value
         End Set
     End Property
-
+    Private idSucursal_ As Sucursal
+    Public Property IdSucursal As Sucursal
+        Get
+            Return idSucursal_
+        End Get
+        Set(ByVal value As Sucursal)
+            idSucursal_ = value
+        End Set
+    End Property
 End Class

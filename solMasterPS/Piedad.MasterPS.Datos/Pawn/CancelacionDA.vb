@@ -13,6 +13,7 @@ Public Class CancelacionDA
             objDA.AgregarParametro("@descripcion", cancelacion_.Descripcion)
             objDA.AgregarParametro("@fecha", cancelacion_.Fecha)
             objDA.AgregarParametro("@idEmpenio", cancelacion_.IdEmpenio)
+            objDA.AgregarParametro("@idSucursal", cancelacion_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -26,6 +27,7 @@ Public Class CancelacionDA
             objDA.AgregarParametro("@descripcion", cancelacion_.Descripcion)
             objDA.AgregarParametro("@fecha", cancelacion_.Fecha)
             objDA.AgregarParametro("@idEmpenio", cancelacion_.IdEmpenio)
+            objDA.AgregarParametro("@idSucursal", cancelacion_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -34,6 +36,7 @@ Public Class CancelacionDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarCancelacion")
             objDA.AgregarParametro("@idCancelacion", cancelacion_.IdCancelacion)
+            objDA.AgregarParametro("@idSucursal", cancelacion_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -44,6 +47,7 @@ Public Class CancelacionDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerCancelacion")
             objDA.AgregarParametro("@idCancelacion", cancelacion_.IdCancelacion)
+            objDA.AgregarParametro("@idSucursal", cancelacion_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of Cancelacion)()
             cancel = New Cancelacion()
@@ -51,11 +55,12 @@ Public Class CancelacionDA
         End Using
         Return cancel
     End Function
-    Public Function ObtenerTodos() As Cancelaciones
-        Dim lst As Cancelaciones = Nothing
+    Public Function ObtenerTodos(ByVal cancelacion_ As Cancelacion) As Cancelaciones
+        Dim lst As New Cancelaciones()
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerCancelaciones")
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
+            objDA.AgregarParametro("@idSucursal", cancelacion_.IdSucursal)
             Dim lista As New List(Of Cancelacion)
             lista = objDA.ObtenerResultados(Of Cancelacion)()
             For Each cancel As Cancelacion In lista

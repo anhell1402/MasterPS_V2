@@ -23,6 +23,7 @@ Public Class ConfigOtrasVariableDA
             objDA.AgregarParametro("@restriccionInteresMinimo", configOtrasVariable_.RestriccionInteresMinimo)
             objDA.AgregarParametro("@diasInteresMinimo", configOtrasVariable_.DiasInteresMinimo)
             objDA.AgregarParametro("@reporteContratosDiasVencidos", configOtrasVariable_.ReporteContratoDiasVencidos)
+            objDA.AgregarParametro("@idSucursal", configOtrasVariable_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -46,6 +47,7 @@ Public Class ConfigOtrasVariableDA
             objDA.AgregarParametro("@restriccionInteresMinimo", configOtrasVariable_.RestriccionInteresMinimo)
             objDA.AgregarParametro("@diasInteresMinimo", configOtrasVariable_.DiasInteresMinimo)
             objDA.AgregarParametro("@reporteContratosDiasVencidos", configOtrasVariable_.ReporteContratoDiasVencidos)
+            objDA.AgregarParametro("@idSucursal", configOtrasVariable_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -54,6 +56,7 @@ Public Class ConfigOtrasVariableDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarConfigOtrasVariable")
             objDA.AgregarParametro("@idOtrasVariables", configOtrasVariable_.IdOtrasVariables)
+            objDA.AgregarParametro("@idSucursal", configOtrasVariable_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -64,6 +67,7 @@ Public Class ConfigOtrasVariableDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerConfigOtrasVariable")
             objDA.AgregarParametro("@idOtrasVariables", configOtrasVariable_.IdOtrasVariables)
+            objDA.AgregarParametro("@idSucursal", configOtrasVariable_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of ConfigOtraVariable)()
             confOV = New ConfigOtraVariable()
@@ -71,11 +75,12 @@ Public Class ConfigOtrasVariableDA
         End Using
         Return confOV
     End Function
-    Public Function ObtenerTodos() As ConfigOtrasVariables
-        Dim lst As ConfigOtrasVariables = Nothing
+    Public Function ObtenerTodos(ByVal configOtrasVariable_ As ConfigOtraVariable) As ConfigOtrasVariables
+        Dim lst As New ConfigOtrasVariables()
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerConfigOtrasVariables")
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
+            objDA.AgregarParametro("@idSucursal", configOtrasVariable_.IdSucursal)
             Dim lista As New List(Of ConfigOtraVariable)
             lista = objDA.ObtenerResultados(Of ConfigOtraVariable)()
             For Each confOV As ConfigOtraVariable In lista

@@ -12,6 +12,7 @@ Public Class DetalleMercanciaVentaDA
             objDA.AgregarParametro("@idMercancia", detalleMercVta_.IdMercancia)
             objDA.AgregarParametro("@precioUnitario", detalleMercVta_.PrecioUnitario)
             objDA.AgregarParametro("@avaluo", detalleMercVta_.Avaluo)
+            objDA.AgregarParametro("@idSucursal", detalleMercVta_.IdSucursal)
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -23,6 +24,7 @@ Public Class DetalleMercanciaVentaDA
             objDA.AgregarParametro("@idMercancia", detalleMercVta_.IdMercancia)
             objDA.AgregarParametro("@precioUnitario", detalleMercVta_.PrecioUnitario)
             objDA.AgregarParametro("@avaluo", detalleMercVta_.Avaluo)
+            objDA.AgregarParametro("@idSucursal", detalleMercVta_.IdSucursal)
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -30,6 +32,7 @@ Public Class DetalleMercanciaVentaDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarDetalleMercanciaVenta")
             objDA.AgregarParametro("@idDetalleMercanciaVenta", detalleMercVta_.IdDetalleMercanciaVenta)
+            objDA.AgregarParametro("@idSucursal", detalleMercVta_.IdSucursal)
             objDA.EjecutaComando()
         End Using
     End Sub
@@ -39,16 +42,19 @@ Public Class DetalleMercanciaVentaDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerDetalleMercanciaVenta")
             objDA.AgregarParametro("@idDetalleMercanciaVenta", detalleMercVenta_.IdDetalleMercanciaVenta)
+            objDA.AgregarParametro("@idSucursal", detalleMercVenta_.IdSucursal)
             lst = objDA.ObtenerResultados(Of DetalleMercanciaVenta)()
             detalleMV = New DetalleMercanciaVenta()
             detalleMV = lst(0)
         End Using
         Return detalleMV
     End Function
-    Public Function ObtenerTodos() As DetalleMercanciaVentas
-        Dim lst As DetalleMercanciaVentas = Nothing
+    Public Function ObtenerTodos(ByVal detalleMercVenta_ As DetalleMercanciaVenta) As DetalleMercanciaVentas
+        Dim lst As New DetalleMercanciaVentas()
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerDetalleMercanciasVentas")
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
+            objDA.AgregarParametro("@idSucursal", detalleMercVenta_.IdSucursal)
             Dim lista As New List(Of DetalleMercanciaVenta)
             lista = objDA.ObtenerResultados(Of DetalleMercanciaVenta)()
             For Each detalleMV As DetalleMercanciaVenta In lista

@@ -4,6 +4,7 @@
         idRol_ = New Generico()
         idTelefono_ = New Generico()
         idDireccion_ = New Direccion()
+        idSucursal_ = New Sucursal()
     End Sub
     Private idUsuario_ As Integer
     Public Property IdUsuario As Integer
@@ -117,6 +118,15 @@
     Public WriteOnly Property SetIdTelefono As Integer
         Set(value As Integer)
             idTelefono_.IdGenerico = value
+        End Set
+    End Property
+    Private idSucursal_ As Sucursal
+    Public Property IdSucursal As Sucursal
+        Get
+            Return idSucursal_
+        End Get
+        Set(ByVal value As Sucursal)
+            idSucursal_ = value
         End Set
     End Property
 End Class

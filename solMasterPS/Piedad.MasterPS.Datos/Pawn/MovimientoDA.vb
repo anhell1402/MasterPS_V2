@@ -29,6 +29,7 @@ Public Class MovimientoDA
             objDA.AgregarParametro("@idTipoOperacionEmpenio", movimiento_.IdTipoOperacionEmpenio)
             objDA.AgregarParametro("@idEstatusEmpenio", movimiento_.IdEstatusEmpenio)
             objDA.AgregarParametro("@idUsuario", movimiento_.IdUsuario)
+            objDA.AgregarParametro("@idSucursal", movimiento_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -58,6 +59,7 @@ Public Class MovimientoDA
             objDA.AgregarParametro("@idTipoOperacionEmpenio", movimiento_.IdTipoOperacionEmpenio)
             objDA.AgregarParametro("@idEstatusEmpenio", movimiento_.IdEstatusEmpenio)
             objDA.AgregarParametro("@idUsuario", movimiento_.IdUsuario)
+            objDA.AgregarParametro("@idSucursal", movimiento_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -66,6 +68,7 @@ Public Class MovimientoDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarRegistroMovimientoEmpenio")
             objDA.AgregarParametro("@idFolio", movimiento_.IdFolio)
+            objDA.AgregarParametro("@idSucursal", movimiento_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -76,6 +79,7 @@ Public Class MovimientoDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerRegistroMovimientoEmpenio")
             objDA.AgregarParametro("@idFolio", movimiento_.IdFolio)
+            objDA.AgregarParametro("@idSucursal", movimiento_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of Movimiento)()
             regEmp = New Movimiento()
@@ -83,11 +87,12 @@ Public Class MovimientoDA
         End Using
         Return regEmp
     End Function
-    Public Function ObtenerTodos() As Movimientos
-        Dim lst As Movimientos = Nothing
+    Public Function ObtenerTodos(ByVal movimiento_ As Movimiento) As Movimientos
+        Dim lst As New Movimientos()
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerRegistroMovimientoEmpenios")
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
+            objDA.AgregarParametro("@idSucursal", movimiento_.IdSucursal)
             Dim lista As New List(Of Movimiento)
             lista = objDA.ObtenerResultados(Of Movimiento)()
             For Each regEmp As Movimiento In lista

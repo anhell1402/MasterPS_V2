@@ -16,6 +16,7 @@ Public Class InventarioDA
             objDA.AgregarParametro("@diasVencidos", inventario_.DiasVencidos)
             objDA.AgregarParametro("@idTipoIngreso", inventario_.IdTipoIngreso)
             objDA.AgregarParametro("@idEstatusInventario", inventario_.IdEstatusInventario)
+            objDA.AgregarParametro("@idSucursal", inventario_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -32,6 +33,7 @@ Public Class InventarioDA
             objDA.AgregarParametro("@diasVencidos", inventario_.DiasVencidos)
             objDA.AgregarParametro("@idTipoIngreso", inventario_.IdTipoIngreso)
             objDA.AgregarParametro("@idEstatusInventario", inventario_.IdEstatusInventario)
+            objDA.AgregarParametro("@idSucursal", inventario_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -40,6 +42,7 @@ Public Class InventarioDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarInventario")
             objDA.AgregarParametro("@idInventario", inventario_.IdInventario)
+            objDA.AgregarParametro("@idSucursal", inventario_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -50,6 +53,7 @@ Public Class InventarioDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerInventario")
             objDA.AgregarParametro("@idInventario", inventario_.IdInventario)
+            objDA.AgregarParametro("@idSucursal", inventario_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of Inventario)()
             inv = New Inventario()
@@ -57,11 +61,12 @@ Public Class InventarioDA
         End Using
         Return inv
     End Function
-    Public Function ObtenerTodos() As Inventarios
-        Dim lst As Inventarios = Nothing
+    Public Function ObtenerTodos(ByVal inventario_ As Inventario) As Inventarios
+        Dim lst As New Inventarios()
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerInventarios")
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
+            objDA.AgregarParametro("@idSucursal", inventario_.IdSucursal)
             Dim lista As New List(Of Inventario)
             lista = objDA.ObtenerResultados(Of Inventario)()
             For Each inv As Inventario In lista

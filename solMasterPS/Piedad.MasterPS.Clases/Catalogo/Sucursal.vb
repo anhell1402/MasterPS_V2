@@ -1,7 +1,7 @@
 ﻿Public Class Sucursal
     Public Sub New()
-        idDireccion_ = New Direccion
-        idTelefono_ = New Generico
+        idDireccion_ = New Direccion()
+        idTelefono_ = New Generico()
     End Sub
     Private idSucursal_ As Integer
     Public Property IdSucursal As Integer

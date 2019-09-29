@@ -38,6 +38,7 @@ Public Class DetalleEmpenioDA
             objDA.AgregarParametro("@pureza", detalleEmpenio_.Pureza)
             objDA.AgregarParametro("@idTipoArte", detalleEmpenio_.IdTipoArte)
             objDA.AgregarParametro("@idTipoAntiguedades", detalleEmpenio_.IdTipoAntiguedades)
+            objDA.AgregarParametro("@idSucursal", detalleEmpenio_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -76,6 +77,7 @@ Public Class DetalleEmpenioDA
             objDA.AgregarParametro("@pureza", detalleEmpenio_.Pureza)
             objDA.AgregarParametro("@idTipoArte", detalleEmpenio_.IdTipoArte)
             objDA.AgregarParametro("@idTipoAntiguedades", detalleEmpenio_.IdTipoAntiguedades)
+            objDA.AgregarParametro("@idSucursal", detalleEmpenio_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -84,6 +86,7 @@ Public Class DetalleEmpenioDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarDetalleEmpenio")
             objDA.AgregarParametro("@idDetalleEmpenio", detalleEmpenio_.IdDetalleEmpenio)
+            objDA.AgregarParametro("@idSucursal", detalleEmpenio_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -94,6 +97,7 @@ Public Class DetalleEmpenioDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerDetalleEmpenio")
             objDA.AgregarParametro("@idDetalleEmpenio", detalleEmpenio_.IdDetalleEmpenio)
+            objDA.AgregarParametro("@idSucursal", detalleEmpenio_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of DetalleEmpenio)()
             detalleEmp = New DetalleEmpenio()
@@ -101,11 +105,12 @@ Public Class DetalleEmpenioDA
         End Using
         Return detalleEmp
     End Function
-    Public Function ObtenerTodos() As DetalleEmpenios
-        Dim lst As DetalleEmpenios = Nothing
+    Public Function ObtenerTodos(ByVal detalleEmpenio_ As DetalleEmpenio) As DetalleEmpenios
+        Dim lst As New DetalleEmpenios()
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerDetalleEmpenios")
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
+            objDA.AgregarParametro("@idSucursal", detalleEmpenio_.IdSucursal)
             Dim lista As New List(Of DetalleEmpenio)
             lista = objDA.ObtenerResultados(Of DetalleEmpenio)()
             For Each detalleEmp As DetalleEmpenio In lista

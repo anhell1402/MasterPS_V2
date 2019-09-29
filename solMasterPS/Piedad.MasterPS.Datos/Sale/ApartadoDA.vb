@@ -16,6 +16,7 @@ Public Class ApartadoDA
             objDA.AgregarParametro("@vencimientoApartado", apartado_.VencimientoApartado)
             objDA.AgregarParametro("@idEstatusApartado", apartado_.IdEstatusApartado)
             objDA.AgregarParametro("@idApartadoRelacionado", apartado_.IdApartadoRelacionado)
+            objDA.AgregarParametro("@idSucursal", apartado_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -32,6 +33,7 @@ Public Class ApartadoDA
             objDA.AgregarParametro("@vencimientoApartado", apartado_.VencimientoApartado)
             objDA.AgregarParametro("@idEstatusApartado", apartado_.IdEstatusApartado)
             objDA.AgregarParametro("@idApartadoRelacionado", apartado_.IdApartadoRelacionado)
+            objDA.AgregarParametro("@idSucursal", apartado_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -40,6 +42,7 @@ Public Class ApartadoDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarApartado")
             objDA.AgregarParametro("@idApartado", apartado_.IdApartado)
+            objDA.AgregarParametro("@idSucursal", apartado_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -50,6 +53,7 @@ Public Class ApartadoDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerApartado")
             objDA.AgregarParametro("@idApartado", apartado_.IdApartado)
+            objDA.AgregarParametro("@idSucursal", apartado_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of Apartado)()
             ap = New Apartado
@@ -57,11 +61,12 @@ Public Class ApartadoDA
         End Using
         Return ap
     End Function
-    Public Function ObtenerTodos() As Apartados
-        Dim lst As Apartados = Nothing
+    Public Function ObtenerTodos(ByVal apartado_ As Apartado) As Apartados
+        Dim lst As New Apartados()
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerApartados")
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
+            objDA.AgregarParametro("@idSucursal", apartado_.IdSucursal)
             Dim lista As New List(Of Apartado)
             lista = objDA.ObtenerResultados(Of Apartado)()
             For Each ap As Apartado In lista

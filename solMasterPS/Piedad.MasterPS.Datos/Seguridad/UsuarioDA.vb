@@ -18,6 +18,7 @@ Public Class UsuarioDA
             objDA.AgregarParametro("@estatus", usuario_.Status)
             objDA.AgregarParametro("@idDireccion", usuario_.IdDireccion)
             objDA.AgregarParametro("@idTelefono", usuario_.IdTelefono)
+            objDA.AgregarParametro("@idSucursal", usuario_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -36,6 +37,7 @@ Public Class UsuarioDA
             objDA.AgregarParametro("@estatus", usuario_.Status)
             objDA.AgregarParametro("@idDireccion", usuario_.IdDireccion)
             objDA.AgregarParametro("@idTelefono", usuario_.IdTelefono)
+            objDA.AgregarParametro("@idSucursal", usuario_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -44,6 +46,7 @@ Public Class UsuarioDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarUsuario")
             objDA.AgregarParametro("@idUsuario", usuario_.IdUsuario)
+            objDA.AgregarParametro("@idSucursal", usuario_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -54,6 +57,7 @@ Public Class UsuarioDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerUsuario")
             objDA.AgregarParametro("@idUsuario", usuario_.IdUsuario)
+            objDA.AgregarParametro("@idSucursal", usuario_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of Usuario)()
             us = New Usuario()
@@ -61,11 +65,12 @@ Public Class UsuarioDA
         End Using
         Return us
     End Function
-    Public Function ObtenerTodos() As Usuarios
-        Dim lst As Usuarios = Nothing
+    Public Function ObtenerTodos(ByVal usuario_ As Usuario) As Usuarios
+        Dim lst As New Usuarios()
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerUsuarios")
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
+            objDA.AgregarParametro("@idSucursal", usuario_.IdSucursal)
             Dim lista As New List(Of Usuario)
             lista = objDA.ObtenerResultados(Of Usuario)()
             For Each us As Usuario In lista

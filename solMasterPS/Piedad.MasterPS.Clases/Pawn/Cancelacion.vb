@@ -1,8 +1,9 @@
 ﻿Public Class Cancelacion
     Public Sub New()
-        idVenta_ = New Venta
-        idUsuario_ = New Usuario
-        idEmpenio_ = New Empenio
+        idVenta_ = New Venta()
+        idUsuario_ = New Usuario()
+        idEmpenio_ = New Empenio()
+        idSucursal_ = New Sucursal()
     End Sub
     Private idCancelacion_ As Integer
     Public Property IdCancelacion As Integer
@@ -58,5 +59,13 @@
             idEmpenio_ = value
         End Set
     End Property
-
+    Private idSucursal_ As Sucursal
+    Public Property IdSucursal As Sucursal
+        Get
+            Return idSucursal_
+        End Get
+        Set(ByVal value As Sucursal)
+            idSucursal_ = value
+        End Set
+    End Property
 End Class

@@ -108,6 +108,10 @@
     <Compile Include="Sale\ApartadoDA.vb" />
     <Compile Include="Sale\CancelacionApartadoDA.vb" />
     <Compile Include="Sale\DetalleAlmonedaDA.vb" />
+    <Compile Include="Sale\DetalleApartadoDA.vb" />
+    <Compile Include="Sale\DetalleMercanciaVentaDA.vb" />
+    <Compile Include="Sale\DetalleVentaDA.vb" />
+    <Compile Include="Sale\VentaDA.vb" />
     <Compile Include="Seguridad\AutenticacionDA.vb" />
     <Compile Include="Seguridad\MenuDA.vb" />
     <Compile Include="Seguridad\PermisoDA.vb" />

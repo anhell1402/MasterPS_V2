@@ -1,8 +1,9 @@
 ﻿Public Class Apartado
     Public Sub New()
-        idCliente_ = New Cliente
-        idUsuario_ = New Usuario
-        idEstatusApartado_ = New Generico
+        idCliente_ = New Cliente()
+        idUsuario_ = New Usuario()
+        idEstatusApartado_ = New Generico()
+        idSucursal_ = New Sucursal()
     End Sub
     Private idApartado_ As Integer
     Public Property IdApartado As Integer
@@ -85,5 +86,13 @@
             idApartadoRelacionado_ = value
         End Set
     End Property
-
+    Private idSucursal_ As Sucursal
+    Public Property IdSucursal As Sucursal
+        Get
+            Return idSucursal_
+        End Get
+        Set(ByVal value As Sucursal)
+            idSucursal_ = value
+        End Set
+    End Property
 End Class
