@@ -60,10 +60,10 @@ Public Class MenuBL
             Return Nothing
         End Try
     End Function
-    Public Function Obtener() As Menus
+    Public Function Obtener(ByVal _rol As Generico) As Menus
         Try
             Dim obj As New MenuDA(cadenaConex)
-            Return obj.ObtenerTodos()
+            Return obj.ObtenerTodos(_rol)
             _hayError = False
         Catch ex As Exception
             _hayError = True

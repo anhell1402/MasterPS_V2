@@ -26,6 +26,8 @@ Partial Class frmPrincipal
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPrincipal))
         Me.PanelContenedor = New System.Windows.Forms.Panel()
         Me.PanelFormularios = New System.Windows.Forms.Panel()
+        Me.PanelSubMenuReportes = New System.Windows.Forms.Panel()
+        Me.btnAbrirReportes = New System.Windows.Forms.Button()
         Me.PanelSubMenuCaja = New System.Windows.Forms.Panel()
         Me.btnCajaCorte = New System.Windows.Forms.Button()
         Me.btnCajaGastos = New System.Windows.Forms.Button()
@@ -57,7 +59,7 @@ Partial Class frmPrincipal
         Me.btnCotizar = New System.Windows.Forms.Button()
         Me.btnLiqEmp = New System.Windows.Forms.Button()
         Me.btnRefrendo = New System.Windows.Forms.Button()
-        Me.btnNuevoEmpeño = New System.Windows.Forms.Button()
+        Me.btnNuevoEmpenio = New System.Windows.Forms.Button()
         Me.PanelMensajes = New System.Windows.Forms.Panel()
         Me.lblFecha = New System.Windows.Forms.Label()
         Me.lblHora = New System.Windows.Forms.Label()
@@ -79,10 +81,9 @@ Partial Class frmPrincipal
         Me.btnCerrar = New System.Windows.Forms.PictureBox()
         Me.horaFecha = New System.Windows.Forms.Timer(Me.components)
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
-        Me.PanelSubMenuReportes = New System.Windows.Forms.Panel()
-        Me.btnAbrirReportes = New System.Windows.Forms.Button()
         Me.PanelContenedor.SuspendLayout()
         Me.PanelFormularios.SuspendLayout()
+        Me.PanelSubMenuReportes.SuspendLayout()
         Me.PanelSubMenuCaja.SuspendLayout()
         Me.PanelSubMenuHistorial.SuspendLayout()
         Me.PanelSubMenuInventario.SuspendLayout()
@@ -98,7 +99,6 @@ Partial Class frmPrincipal
         CType(Me.btnMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnMaximizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PanelSubMenuReportes.SuspendLayout()
         Me.SuspendLayout()
         '
         'PanelContenedor
@@ -132,6 +132,35 @@ Partial Class frmPrincipal
         Me.PanelFormularios.Name = "PanelFormularios"
         Me.PanelFormularios.Size = New System.Drawing.Size(1050, 545)
         Me.PanelFormularios.TabIndex = 0
+        '
+        'PanelSubMenuReportes
+        '
+        Me.PanelSubMenuReportes.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.PanelSubMenuReportes.Controls.Add(Me.btnAbrirReportes)
+        Me.PanelSubMenuReportes.Location = New System.Drawing.Point(0, 272)
+        Me.PanelSubMenuReportes.Name = "PanelSubMenuReportes"
+        Me.PanelSubMenuReportes.Size = New System.Drawing.Size(0, 97)
+        Me.PanelSubMenuReportes.TabIndex = 16
+        '
+        'btnAbrirReportes
+        '
+        Me.btnAbrirReportes.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnAbrirReportes.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnAbrirReportes.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
+        Me.btnAbrirReportes.FlatAppearance.BorderSize = 0
+        Me.btnAbrirReportes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
+        Me.btnAbrirReportes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
+        Me.btnAbrirReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAbrirReportes.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAbrirReportes.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnAbrirReportes.Image = CType(resources.GetObject("btnAbrirReportes.Image"), System.Drawing.Image)
+        Me.btnAbrirReportes.Location = New System.Drawing.Point(0, 0)
+        Me.btnAbrirReportes.Name = "btnAbrirReportes"
+        Me.btnAbrirReportes.Size = New System.Drawing.Size(135, 97)
+        Me.btnAbrirReportes.TabIndex = 0
+        Me.btnAbrirReportes.Text = "REPORTES (TODOS)"
+        Me.btnAbrirReportes.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.btnAbrirReportes.UseVisualStyleBackColor = False
         '
         'PanelSubMenuCaja
         '
@@ -329,7 +358,7 @@ Partial Class frmPrincipal
         Me.PanelSubMenuInventario.Controls.Add(Me.btnInventarioVenta)
         Me.PanelSubMenuInventario.Location = New System.Drawing.Point(0, 113)
         Me.PanelSubMenuInventario.Name = "PanelSubMenuInventario"
-        Me.PanelSubMenuInventario.Size = New System.Drawing.Size(0, 194)
+        Me.PanelSubMenuInventario.Size = New System.Drawing.Size(540, 194)
         Me.PanelSubMenuInventario.TabIndex = 13
         '
         'btnSalidaInventario
@@ -344,9 +373,9 @@ Partial Class frmPrincipal
         Me.btnSalidaInventario.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSalidaInventario.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.btnSalidaInventario.Image = CType(resources.GetObject("btnSalidaInventario.Image"), System.Drawing.Image)
-        Me.btnSalidaInventario.Location = New System.Drawing.Point(286, 97)
+        Me.btnSalidaInventario.Location = New System.Drawing.Point(270, 97)
         Me.btnSalidaInventario.Name = "btnSalidaInventario"
-        Me.btnSalidaInventario.Size = New System.Drawing.Size(150, 97)
+        Me.btnSalidaInventario.Size = New System.Drawing.Size(135, 97)
         Me.btnSalidaInventario.TabIndex = 6
         Me.btnSalidaInventario.Text = "SALIDA DE INVENTARIO"
         Me.btnSalidaInventario.TextAlign = System.Drawing.ContentAlignment.BottomLeft
@@ -364,9 +393,9 @@ Partial Class frmPrincipal
         Me.btnVisas.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnVisas.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.btnVisas.Image = CType(resources.GetObject("btnVisas.Image"), System.Drawing.Image)
-        Me.btnVisas.Location = New System.Drawing.Point(143, 97)
+        Me.btnVisas.Location = New System.Drawing.Point(135, 97)
         Me.btnVisas.Name = "btnVisas"
-        Me.btnVisas.Size = New System.Drawing.Size(143, 97)
+        Me.btnVisas.Size = New System.Drawing.Size(135, 97)
         Me.btnVisas.TabIndex = 5
         Me.btnVisas.Text = "VISAS"
         Me.btnVisas.TextAlign = System.Drawing.ContentAlignment.BottomLeft
@@ -386,7 +415,7 @@ Partial Class frmPrincipal
         Me.btnAdisionCompra.Image = CType(resources.GetObject("btnAdisionCompra.Image"), System.Drawing.Image)
         Me.btnAdisionCompra.Location = New System.Drawing.Point(0, 97)
         Me.btnAdisionCompra.Name = "btnAdisionCompra"
-        Me.btnAdisionCompra.Size = New System.Drawing.Size(143, 97)
+        Me.btnAdisionCompra.Size = New System.Drawing.Size(135, 97)
         Me.btnAdisionCompra.TabIndex = 4
         Me.btnAdisionCompra.Text = "ADISION/COMPRA"
         Me.btnAdisionCompra.TextAlign = System.Drawing.ContentAlignment.BottomLeft
@@ -404,11 +433,11 @@ Partial Class frmPrincipal
         Me.btnImpresionEtiqueta.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnImpresionEtiqueta.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.btnImpresionEtiqueta.Image = CType(resources.GetObject("btnImpresionEtiqueta.Image"), System.Drawing.Image)
-        Me.btnImpresionEtiqueta.Location = New System.Drawing.Point(436, 0)
+        Me.btnImpresionEtiqueta.Location = New System.Drawing.Point(405, 0)
         Me.btnImpresionEtiqueta.Name = "btnImpresionEtiqueta"
-        Me.btnImpresionEtiqueta.Size = New System.Drawing.Size(150, 97)
+        Me.btnImpresionEtiqueta.Size = New System.Drawing.Size(135, 97)
         Me.btnImpresionEtiqueta.TabIndex = 3
-        Me.btnImpresionEtiqueta.Text = "IMPRESION ETIQUETAS"
+        Me.btnImpresionEtiqueta.Text = "IMP. ETIQUETAS"
         Me.btnImpresionEtiqueta.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.btnImpresionEtiqueta.UseVisualStyleBackColor = False
         '
@@ -424,9 +453,9 @@ Partial Class frmPrincipal
         Me.btnLoadBalance.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLoadBalance.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.btnLoadBalance.Image = CType(resources.GetObject("btnLoadBalance.Image"), System.Drawing.Image)
-        Me.btnLoadBalance.Location = New System.Drawing.Point(286, 0)
+        Me.btnLoadBalance.Location = New System.Drawing.Point(270, 0)
         Me.btnLoadBalance.Name = "btnLoadBalance"
-        Me.btnLoadBalance.Size = New System.Drawing.Size(150, 97)
+        Me.btnLoadBalance.Size = New System.Drawing.Size(135, 97)
         Me.btnLoadBalance.TabIndex = 2
         Me.btnLoadBalance.Text = "LOAD BALANCE"
         Me.btnLoadBalance.TextAlign = System.Drawing.ContentAlignment.BottomLeft
@@ -444,9 +473,9 @@ Partial Class frmPrincipal
         Me.btnInventarioFundicion.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnInventarioFundicion.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.btnInventarioFundicion.Image = CType(resources.GetObject("btnInventarioFundicion.Image"), System.Drawing.Image)
-        Me.btnInventarioFundicion.Location = New System.Drawing.Point(143, 0)
+        Me.btnInventarioFundicion.Location = New System.Drawing.Point(135, 0)
         Me.btnInventarioFundicion.Name = "btnInventarioFundicion"
-        Me.btnInventarioFundicion.Size = New System.Drawing.Size(143, 97)
+        Me.btnInventarioFundicion.Size = New System.Drawing.Size(135, 97)
         Me.btnInventarioFundicion.TabIndex = 1
         Me.btnInventarioFundicion.Text = "EN FUNDICION"
         Me.btnInventarioFundicion.TextAlign = System.Drawing.ContentAlignment.BottomLeft
@@ -466,7 +495,7 @@ Partial Class frmPrincipal
         Me.btnInventarioVenta.Image = CType(resources.GetObject("btnInventarioVenta.Image"), System.Drawing.Image)
         Me.btnInventarioVenta.Location = New System.Drawing.Point(0, 0)
         Me.btnInventarioVenta.Name = "btnInventarioVenta"
-        Me.btnInventarioVenta.Size = New System.Drawing.Size(143, 97)
+        Me.btnInventarioVenta.Size = New System.Drawing.Size(135, 97)
         Me.btnInventarioVenta.TabIndex = 0
         Me.btnInventarioVenta.Text = "EN VENTA"
         Me.btnInventarioVenta.TextAlign = System.Drawing.ContentAlignment.BottomLeft
@@ -531,7 +560,7 @@ Partial Class frmPrincipal
         Me.PanelSubMenuVenta.Controls.Add(Me.btnNuevo)
         Me.PanelSubMenuVenta.Location = New System.Drawing.Point(0, 74)
         Me.PanelSubMenuVenta.Name = "PanelSubMenuVenta"
-        Me.PanelSubMenuVenta.Size = New System.Drawing.Size(0, 97)
+        Me.PanelSubMenuVenta.Size = New System.Drawing.Size(540, 97)
         Me.PanelSubMenuVenta.TabIndex = 10
         '
         'btnDemasias
@@ -631,7 +660,7 @@ Partial Class frmPrincipal
         Me.PanelSubMenuEmpenio.Controls.Add(Me.btnCotizar)
         Me.PanelSubMenuEmpenio.Controls.Add(Me.btnLiqEmp)
         Me.PanelSubMenuEmpenio.Controls.Add(Me.btnRefrendo)
-        Me.PanelSubMenuEmpenio.Controls.Add(Me.btnNuevoEmpeño)
+        Me.PanelSubMenuEmpenio.Controls.Add(Me.btnNuevoEmpenio)
         Me.PanelSubMenuEmpenio.Location = New System.Drawing.Point(0, 34)
         Me.PanelSubMenuEmpenio.Name = "PanelSubMenuEmpenio"
         Me.PanelSubMenuEmpenio.Size = New System.Drawing.Size(0, 97)
@@ -697,25 +726,25 @@ Partial Class frmPrincipal
         Me.btnRefrendo.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.btnRefrendo.UseVisualStyleBackColor = False
         '
-        'btnNuevoEmpeño
+        'btnNuevoEmpenio
         '
-        Me.btnNuevoEmpeño.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnNuevoEmpeño.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnNuevoEmpeño.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
-        Me.btnNuevoEmpeño.FlatAppearance.BorderSize = 0
-        Me.btnNuevoEmpeño.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
-        Me.btnNuevoEmpeño.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
-        Me.btnNuevoEmpeño.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnNuevoEmpeño.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNuevoEmpeño.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnNuevoEmpeño.Image = CType(resources.GetObject("btnNuevoEmpeño.Image"), System.Drawing.Image)
-        Me.btnNuevoEmpeño.Location = New System.Drawing.Point(0, 0)
-        Me.btnNuevoEmpeño.Name = "btnNuevoEmpeño"
-        Me.btnNuevoEmpeño.Size = New System.Drawing.Size(135, 97)
-        Me.btnNuevoEmpeño.TabIndex = 0
-        Me.btnNuevoEmpeño.Text = "NUEVO"
-        Me.btnNuevoEmpeño.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.btnNuevoEmpeño.UseVisualStyleBackColor = False
+        Me.btnNuevoEmpenio.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnNuevoEmpenio.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnNuevoEmpenio.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
+        Me.btnNuevoEmpenio.FlatAppearance.BorderSize = 0
+        Me.btnNuevoEmpenio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
+        Me.btnNuevoEmpenio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
+        Me.btnNuevoEmpenio.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnNuevoEmpenio.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNuevoEmpenio.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnNuevoEmpenio.Image = CType(resources.GetObject("btnNuevoEmpenio.Image"), System.Drawing.Image)
+        Me.btnNuevoEmpenio.Location = New System.Drawing.Point(0, 0)
+        Me.btnNuevoEmpenio.Name = "btnNuevoEmpenio"
+        Me.btnNuevoEmpenio.Size = New System.Drawing.Size(135, 97)
+        Me.btnNuevoEmpenio.TabIndex = 0
+        Me.btnNuevoEmpenio.Text = "NUEVO"
+        Me.btnNuevoEmpenio.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.btnNuevoEmpenio.UseVisualStyleBackColor = False
         '
         'PanelMensajes
         '
@@ -854,7 +883,7 @@ Partial Class frmPrincipal
         Me.btnSummary.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.btnSummary.Image = CType(resources.GetObject("btnSummary.Image"), System.Drawing.Image)
         Me.btnSummary.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSummary.Location = New System.Drawing.Point(-3, 356)
+        Me.btnSummary.Location = New System.Drawing.Point(0, 356)
         Me.btnSummary.Name = "btnSummary"
         Me.btnSummary.Size = New System.Drawing.Size(250, 35)
         Me.btnSummary.TabIndex = 6
@@ -1010,35 +1039,6 @@ Partial Class frmPrincipal
         '
         Me.horaFecha.Enabled = True
         '
-        'PanelSubMenuReportes
-        '
-        Me.PanelSubMenuReportes.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.PanelSubMenuReportes.Controls.Add(Me.btnAbrirReportes)
-        Me.PanelSubMenuReportes.Location = New System.Drawing.Point(0, 272)
-        Me.PanelSubMenuReportes.Name = "PanelSubMenuReportes"
-        Me.PanelSubMenuReportes.Size = New System.Drawing.Size(0, 97)
-        Me.PanelSubMenuReportes.TabIndex = 16
-        '
-        'btnAbrirReportes
-        '
-        Me.btnAbrirReportes.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnAbrirReportes.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnAbrirReportes.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
-        Me.btnAbrirReportes.FlatAppearance.BorderSize = 0
-        Me.btnAbrirReportes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
-        Me.btnAbrirReportes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
-        Me.btnAbrirReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAbrirReportes.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAbrirReportes.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnAbrirReportes.Image = CType(resources.GetObject("btnAbrirReportes.Image"), System.Drawing.Image)
-        Me.btnAbrirReportes.Location = New System.Drawing.Point(0, 0)
-        Me.btnAbrirReportes.Name = "btnAbrirReportes"
-        Me.btnAbrirReportes.Size = New System.Drawing.Size(135, 97)
-        Me.btnAbrirReportes.TabIndex = 0
-        Me.btnAbrirReportes.Text = "REPORTES (TODOS)"
-        Me.btnAbrirReportes.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.btnAbrirReportes.UseVisualStyleBackColor = False
-        '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1051,6 +1051,7 @@ Partial Class frmPrincipal
         Me.Text = "Menu Principal"
         Me.PanelContenedor.ResumeLayout(False)
         Me.PanelFormularios.ResumeLayout(False)
+        Me.PanelSubMenuReportes.ResumeLayout(False)
         Me.PanelSubMenuCaja.ResumeLayout(False)
         Me.PanelSubMenuHistorial.ResumeLayout(False)
         Me.PanelSubMenuInventario.ResumeLayout(False)
@@ -1067,7 +1068,6 @@ Partial Class frmPrincipal
         CType(Me.btnMinimizar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnMaximizar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnCerrar, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PanelSubMenuReportes.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -1092,7 +1092,7 @@ Partial Class frmPrincipal
     Friend WithEvents btnCotizar As Button
     Friend WithEvents btnLiqEmp As Button
     Friend WithEvents btnRefrendo As Button
-    Friend WithEvents btnNuevoEmpeño As Button
+    Friend WithEvents btnNuevoEmpenio As Button
     Friend WithEvents PanelSubMenuVenta As Panel
     Friend WithEvents btnDemasias As Button
     Friend WithEvents btnAbonos As Button

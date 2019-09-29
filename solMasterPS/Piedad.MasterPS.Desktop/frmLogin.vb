@@ -29,10 +29,10 @@ Public Class FrmLogin
             If (Not objDa.HayError) Then
                 If user IsNot Nothing Then
                     If (user.IdUsuario <> -1) Then
-                        'Usuario autenticado                        
+                        ''Usuario autenticado                        
                         txtUser.Text = String.Empty
                         Me.Hide()
-                        Dim frm As New frmPrincipal()
+                        Dim frm As New frmPrincipal(user)
                         Dim result As DialogResult = frm.ShowDialog()
                         If (result = DialogResult.Cancel) Then
                             Me.Show()

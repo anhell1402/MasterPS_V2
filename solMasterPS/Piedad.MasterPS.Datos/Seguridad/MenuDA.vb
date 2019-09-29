@@ -10,7 +10,7 @@ Public Class MenuDA
             objDA.CrearComando("dbo.sp_AltaMenu")
             objDA.AgregarParametro("@descripcion", menu_.Descripcion)
             objDA.AgregarParametro("@idPadre", menu_.IdPadre)
-            objDA.AgregarParametro("@formulario", menu_.Formulario)
+            objDA.AgregarParametro("@control", menu_.Control)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -21,7 +21,7 @@ Public Class MenuDA
             objDA.AgregarParametro("@idMenu", menu_.IdMenu)
             objDA.AgregarParametro("@descripcion", menu_.Descripcion)
             objDA.AgregarParametro("@idPadre", menu_.IdPadre)
-            objDA.AgregarParametro("@formulario", menu_.Formulario)
+            objDA.AgregarParametro("@control", menu_.Control)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -47,11 +47,12 @@ Public Class MenuDA
         End Using
         Return main
     End Function
-    Public Function ObtenerTodos() As Menus
-        Dim lst As Menus = Nothing
+    Public Function ObtenerTodos(ByVal _rol As Generico) As Menus
+        Dim lst As New Menus()
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerMenus")
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
+            objDA.AgregarParametro("@idRol", _rol.IdGenerico)
             Dim lista As New List(Of Menu)
             lista = objDA.ObtenerResultados(Of Menu)()
             For Each main As Menu In lista

@@ -26,13 +26,22 @@
             idPadre_ = value
         End Set
     End Property
-    Private formulario_ As Integer
-    Public Property Formulario As Integer
+    Private control_ As String
+    Public Property Control As String
         Get
-            Return formulario_
+            Return control_
         End Get
-        Set(ByVal value As Integer)
-            formulario_ = value
+        Set(ByVal value As String)
+            control_ = value
+        End Set
+    End Property
+    Private panelControl_ As String
+    Public Property PanelControl As String
+        Get
+            Return panelControl_
+        End Get
+        Set(value As String)
+            panelControl_ = value
         End Set
     End Property
 End Class

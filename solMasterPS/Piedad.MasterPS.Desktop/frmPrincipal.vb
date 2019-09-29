@@ -1,5 +1,19 @@
-﻿Imports System.Runtime.InteropServices
+﻿Imports System.Configuration
+Imports System.Runtime.InteropServices
+Imports Piedad.MasterPS.Clases
+Imports Piedad.MasterPS.Negocio
+
 Public Class frmPrincipal
+    Private cadena As String = ConfigurationManager.ConnectionStrings("Piedad.MasterPS.DB").ConnectionString
+    Dim _user As Usuario
+    Public Sub New(ByVal user As Usuario)
+
+        ' Esta llamada es exigida por el diseñador.
+        InitializeComponent()
+
+        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+        _user = user
+    End Sub
 #Region "FUNCIONALIDADES DEL FORMULARIO"
     'ARASTRAR EL FORMULARIO
     <DllImport("user32.DLL", EntryPoint:="ReleaseCapture")>
@@ -98,110 +112,99 @@ Public Class frmPrincipal
             formulario.BringToFront()
         End If
     End Sub
+
+    Private Sub OcultarSubMenus(ByVal idBtn As Integer)
+        If idBtn <> 1 Then
+            PanelSubMenuEmpenio.Visible = False
+        End If
+        If idBtn <> 2 Then
+            PanelSubMenuVenta.Visible = False
+        End If
+        If idBtn <> 3 Then
+            PanelSubMenuInventario.Visible = False
+        End If
+        If idBtn <> 4 Then
+            PanelSubMenuCallCenter.Visible = False
+        End If
+        If idBtn <> 5 Then
+            PanelSubMenuHistorial.Visible = False
+        End If
+        If idBtn <> 6 Then
+            PanelSubMenuCaja.Visible = False
+        End If
+        If idBtn <> 7 Then
+            PanelSubMenuReportes.Visible = False
+        End If
+    End Sub
     Private Sub BtnEmpenio_Click(sender As Object, e As EventArgs) Handles btnEmpenio.Click
         PanelSubMenuEmpenio.BringToFront()
-        PanelSubMenuVenta.Width = 0
-        PanelSubMenuInventario.Width = 0
-        PanelSubMenuCallCenter.Width = 0
-        PanelSubMenuHistorial.Width = 0
-        PanelSubMenuCaja.Width = 0
-        PanelSubMenuReportes.Width = 0
-        If PanelSubMenuEmpenio.Width = 0 Then
-            PanelSubMenuEmpenio.Width = 540
+        OcultarSubMenus(1)
+        If Not PanelSubMenuEmpenio.Visible Then
+            PanelSubMenuEmpenio.Visible = True
         Else
-            PanelSubMenuEmpenio.Width = 0
+            PanelSubMenuEmpenio.Visible = False
         End If
     End Sub
 
     Private Sub BtnVenta_Click(sender As Object, e As EventArgs) Handles btnVenta.Click
         PanelSubMenuVenta.BringToFront()
-        PanelSubMenuEmpenio.Width = 0
-        PanelSubMenuInventario.Width = 0
-        PanelSubMenuCallCenter.Width = 0
-        PanelSubMenuHistorial.Width = 0
-        PanelSubMenuCaja.Width = 0
-        PanelSubMenuReportes.Width = 0
-        If PanelSubMenuVenta.Width = 0 Then
-            PanelSubMenuVenta.Width = 540
+        OcultarSubMenus(2)
+        If Not PanelSubMenuVenta.Visible Then
+            PanelSubMenuVenta.Visible = True
         Else
-            PanelSubMenuVenta.Width = 0
+            PanelSubMenuVenta.Visible = False
         End If
     End Sub
     Private Sub BtnInventario_Click(sender As Object, e As EventArgs) Handles btnInventario.Click
         PanelSubMenuInventario.BringToFront()
-        PanelSubMenuEmpenio.Width = 0
-        PanelSubMenuVenta.Width = 0
-        PanelSubMenuCallCenter.Width = 0
-        PanelSubMenuHistorial.Width = 0
-        PanelSubMenuCaja.Width = 0
-        PanelSubMenuReportes.Width = 0
-        If PanelSubMenuInventario.Width = 0 Then
-            PanelSubMenuInventario.Width = 586
+        OcultarSubMenus(3)
+        If Not PanelSubMenuInventario.Visible Then
+            PanelSubMenuInventario.Visible = True
         Else
-            PanelSubMenuInventario.Width = 0
+            PanelSubMenuInventario.Visible = False
         End If
     End Sub
     Private Sub BtnCallCenter_Click(sender As Object, e As EventArgs) Handles btnCallCenter.Click
         PanelSubMenuCallCenter.BringToFront()
-        PanelSubMenuEmpenio.Width = 0
-        PanelSubMenuVenta.Width = 0
-        PanelSubMenuInventario.Width = 0
-        PanelSubMenuHistorial.Width = 0
-        PanelSubMenuCaja.Width = 0
-        PanelSubMenuReportes.Width = 0
-        If PanelSubMenuCallCenter.Width = 0 Then
-            PanelSubMenuCallCenter.Width = 270
+        OcultarSubMenus(4)
+        If Not PanelSubMenuCallCenter.Visible Then
+            PanelSubMenuCallCenter.Visible = True
         Else
-            PanelSubMenuCallCenter.Width = 0
+            PanelSubMenuCallCenter.Visible = False
         End If
     End Sub
     Private Sub BtnHistorial_Click(sender As Object, e As EventArgs) Handles btnHistorial.Click
         PanelSubMenuHistorial.BringToFront()
-        PanelSubMenuEmpenio.Width = 0
-        PanelSubMenuVenta.Width = 0
-        PanelSubMenuInventario.Width = 0
-        PanelSubMenuCallCenter.Width = 0
-        PanelSubMenuCaja.Width = 0
-        PanelSubMenuReportes.Width = 0
-        If PanelSubMenuHistorial.Width = 0 Then
-            PanelSubMenuHistorial.Width = 540
+        OcultarSubMenus(5)
+        If Not PanelSubMenuHistorial.Visible Then
+            PanelSubMenuHistorial.Visible = True
         Else
-            PanelSubMenuHistorial.Width = 0
+            PanelSubMenuHistorial.Visible = False
         End If
     End Sub
     Private Sub BtnCaja_Click(sender As Object, e As EventArgs) Handles btnCaja.Click
         PanelSubMenuCaja.BringToFront()
-        PanelSubMenuEmpenio.Width = 0
-        PanelSubMenuVenta.Width = 0
-        PanelSubMenuInventario.Width = 0
-        PanelSubMenuCallCenter.Width = 0
-        PanelSubMenuHistorial.Width = 0
-        PanelSubMenuReportes.Width = 0
-        If PanelSubMenuCaja.Width = 0 Then
-            PanelSubMenuCaja.Width = 540
+        OcultarSubMenus(6)
+        If Not PanelSubMenuCaja.Visible Then
+            PanelSubMenuCaja.Visible = True
         Else
-            PanelSubMenuCaja.Width = 0
+            PanelSubMenuCaja.Visible = False
         End If
     End Sub
     Private Sub BtnReportes_Click(sender As Object, e As EventArgs) Handles btnReportes.Click
         PanelSubMenuReportes.BringToFront()
-        PanelSubMenuEmpenio.Width = 0
-        PanelSubMenuVenta.Width = 0
-        PanelSubMenuInventario.Width = 0
-        PanelSubMenuCallCenter.Width = 0
-        PanelSubMenuHistorial.Width = 0
-        PanelSubMenuCaja.Width = 0
-        If PanelSubMenuReportes.Width = 0 Then
-            PanelSubMenuReportes.Width = 135
+        OcultarSubMenus(7)
+        If Not PanelSubMenuReportes.Visible Then
+            PanelSubMenuReportes.Visible = True
         Else
-            PanelSubMenuReportes.Width = 0
+            PanelSubMenuReportes.Visible = False
         End If
     End Sub
     Private Sub HoraFecha_Tick(sender As Object, e As EventArgs) Handles horaFecha.Tick
         lblHora.Text = DateTime.Now.ToLongTimeString()
         lblFecha.Text = DateTime.Now.ToLongDateString()
     End Sub
-    Private Sub BtnNuevoEmpeño_Click(sender As Object, e As EventArgs) Handles btnNuevoEmpeño.Click
+    Private Sub BtnNuevoEmpeño_Click(sender As Object, e As EventArgs) Handles btnNuevoEmpenio.Click
         PanelSubMenuEmpenio.Width = 0
         AbrirFormularioEnPanel(Of frmEmpenio)()
     End Sub
@@ -210,5 +213,89 @@ Public Class frmPrincipal
         PanelSubMenuEmpenio.Width = 0
         AbrirFormularioEnPanel(Of frmRefrendo)()
     End Sub
+    Private Sub OcultarPadres()
+        btnEmpenio.Visible = False
+        btnVenta.Visible = False
+        btnInventario.Visible = False
+        btnCallCenter.Visible = False
+        btnHistorial.Visible = False
+        btnCaja.Visible = False
+        btnReportes.Visible = False
+        btnConfiguracion.Visible = False
+        btnSummary.Visible = False
+    End Sub
+    Private Sub frmPrincipal_Load(sender As Object, e As EventArgs) Handles Me.Load
+        CargaMenu()
+    End Sub
 
+    Private Sub CargaMenu()
+        OcultarPadres()
+        Dim lstMenu As New Menus()
+        Dim obj As New MenuBL(cadena)
+        lstMenu = obj.Obtener(_user.IdRol)
+        Dim posY As Integer = 34
+        For Each mn As Menu In lstMenu
+            If mn.IdPadre = 0 Then
+                For Each ct As Control In PanelMenu.Controls
+                    If TypeOf ct Is Button Then
+                        Dim btn As Button = CType(ct, Button)
+                        If mn.Control.ToLower() = btn.Name.ToLower() Then
+                            btn.Visible = True
+                            btn.Location = New Point(0, posY)
+                            Dim pnl As Panel = Me.Controls.Find(mn.PanelControl, True).FirstOrDefault()
+                            pnl.Location = New Point(0, posY)
+                            posY = posY + 35
+                            CargaSubMenu(lstMenu, mn.PanelControl)
+                            Exit For
+                        End If
+                    End If
+                Next
+            End If
+        Next
+    End Sub
+
+    Private Sub CargaSubMenu(ByVal lstMenu As Menus, ByVal panelName As String)
+        Dim lstBotones As New List(Of Button)
+        Dim pnl As Panel = Me.Controls.Find(panelName, True).FirstOrDefault()
+        For Each ctrl As Control In pnl.Controls
+            If TypeOf ctrl Is Button Then
+                Dim btn As Button = CType(ctrl, Button)
+                btn.Visible = False
+                If lstMenu.Find(Function(p) p.Control = btn.Name) IsNot Nothing Then
+                    btn.Visible = True
+                    lstBotones.Add(btn)
+                End If
+            End If
+        Next
+        Dim posY As Integer = 0
+        Dim posX As Integer = 0
+        Dim alto As Integer = 97
+        Dim largo As Integer = 0
+        Dim filas As Integer = 1
+        Dim cantBtn As Integer = 0
+        For Each mn As Menu In lstMenu
+            Dim btn As Button = lstBotones.Find(Function(p) p.Name = mn.Control)
+            If (btn IsNot Nothing) Then
+                cantBtn += 1
+                If (cantBtn > 4) Then
+                    posX = 0
+                    posY = posY + 97
+                    cantBtn = 0
+                    filas = filas + 1
+                End If
+                btn.Location = New Point(posX, posY)
+                posX = posX + 135
+                If filas > 1 Then
+                    largo = 135 * 4
+                Else
+                    largo = posX
+                End If
+
+            End If
+        Next
+        pnl.Width = largo
+        pnl.Height = alto * filas
+        pnl.Visible = False
+    End Sub
 End Class
+
