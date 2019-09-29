@@ -29,11 +29,7 @@ Partial Class frmPrincipal
         Me.PanelSubMenuConfiguracion = New System.Windows.Forms.Panel()
         Me.btnGenerales = New System.Windows.Forms.Button()
         Me.btnSincronizar = New System.Windows.Forms.Button()
-<<<<<<< HEAD
-        Me.Catalogos = New System.Windows.Forms.Button()
-=======
         Me.btnCatalogo = New System.Windows.Forms.Button()
->>>>>>> 9efe420a2c3b9f3473508afc2b07dd33828ab79a
         Me.btnRoles = New System.Windows.Forms.Button()
         Me.btnPermisos = New System.Windows.Forms.Button()
         Me.btnUsuarios = New System.Windows.Forms.Button()
@@ -151,11 +147,7 @@ Partial Class frmPrincipal
         Me.PanelSubMenuConfiguracion.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.PanelSubMenuConfiguracion.Controls.Add(Me.btnGenerales)
         Me.PanelSubMenuConfiguracion.Controls.Add(Me.btnSincronizar)
-<<<<<<< HEAD
-        Me.PanelSubMenuConfiguracion.Controls.Add(Me.Catalogos)
-=======
         Me.PanelSubMenuConfiguracion.Controls.Add(Me.btnCatalogo)
->>>>>>> 9efe420a2c3b9f3473508afc2b07dd33828ab79a
         Me.PanelSubMenuConfiguracion.Controls.Add(Me.btnRoles)
         Me.PanelSubMenuConfiguracion.Controls.Add(Me.btnPermisos)
         Me.PanelSubMenuConfiguracion.Controls.Add(Me.btnUsuarios)
@@ -204,27 +196,6 @@ Partial Class frmPrincipal
         Me.btnSincronizar.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.btnSincronizar.UseVisualStyleBackColor = False
         '
-<<<<<<< HEAD
-        'Catalogos
-        '
-        Me.Catalogos.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Catalogos.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Catalogos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
-        Me.Catalogos.FlatAppearance.BorderSize = 0
-        Me.Catalogos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
-        Me.Catalogos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
-        Me.Catalogos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Catalogos.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Catalogos.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Catalogos.Image = CType(resources.GetObject("Catalogos.Image"), System.Drawing.Image)
-        Me.Catalogos.Location = New System.Drawing.Point(405, 0)
-        Me.Catalogos.Name = "Catalogos"
-        Me.Catalogos.Size = New System.Drawing.Size(135, 97)
-        Me.Catalogos.TabIndex = 3
-        Me.Catalogos.Text = "CATALOGOS"
-        Me.Catalogos.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.Catalogos.UseVisualStyleBackColor = False
-=======
         'btnCatalogo
         '
         Me.btnCatalogo.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
@@ -244,7 +215,6 @@ Partial Class frmPrincipal
         Me.btnCatalogo.Text = "CATALOGOS"
         Me.btnCatalogo.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.btnCatalogo.UseVisualStyleBackColor = False
->>>>>>> 9efe420a2c3b9f3473508afc2b07dd33828ab79a
         '
         'btnRoles
         '
