@@ -59,10 +59,10 @@ Public Class ConfigFacturacionBL
             Return Nothing
         End Try
     End Function
-    Public Function Obtener() As ConfigFacturaciones
+    Public Function ObtenerTodos(ByVal configFacturacion_ As ConfigFacturacion) As ConfigFacturaciones
         Try
             Dim obj As New ConfigFacturacionDA(cadenaConex)
-            Return obj.ObtenerTodos()
+            Return obj.ObtenerTodos(configFacturacion_)
             _hayError = False
         Catch ex As Exception
             _hayError = True

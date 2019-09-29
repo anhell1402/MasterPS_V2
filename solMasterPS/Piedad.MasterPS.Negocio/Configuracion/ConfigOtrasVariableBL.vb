@@ -59,10 +59,10 @@ Public Class ConfigOtrasVariableBL
             Return Nothing
         End Try
     End Function
-    Public Function Obtener() As ConfigOtrasVariables
+    Public Function ObtenerTodos(ByVal configOtraVariable_ As ConfigOtraVariable) As ConfigOtrasVariables
         Try
             Dim obj As New ConfigOtrasVariableDA(cadenaConex)
-            Return obj.ObtenerTodos()
+            Return obj.ObtenerTodos(configOtraVariable_)
             _hayError = False
         Catch ex As Exception
             _hayError = True

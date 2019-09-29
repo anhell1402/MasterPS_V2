@@ -59,10 +59,10 @@ Public Class ConfigApartadoBL
             Return Nothing
         End Try
     End Function
-    Public Function Obtener() As ConfigApartados
+    Public Function ObtenerTodos(ByVal configApartado_ As ConfigApartado) As ConfigApartados
         Try
             Dim obj As New ConfigApartadoDA(cadenaConex)
-            Return obj.ObtenerTodos()
+            Return obj.ObtenerTodos(configApartado_)
             _hayError = False
         Catch ex As Exception
             _hayError = True

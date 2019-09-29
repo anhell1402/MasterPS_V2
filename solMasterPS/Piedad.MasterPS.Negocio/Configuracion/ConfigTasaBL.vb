@@ -59,10 +59,10 @@ Public Class ConfigTasaBL
             Return Nothing
         End Try
     End Function
-    Public Function Obtener() As ConfigTasas
+    Public Function ObtenerTodos(ByVal configTasa_ As ConfigTasa) As ConfigTasas
         Try
             Dim obj As New ConfigTasaDA(cadenaConex)
-            Return obj.ObtenerTodos()
+            Return obj.ObtenerTodos(configTasa_)
             _hayError = False
         Catch ex As Exception
             _hayError = True

@@ -59,10 +59,10 @@ Public Class DetalleEmpenioBL
             Return Nothing
         End Try
     End Function
-    Public Function Obtener() As DetalleEmpenios
+    Public Function ObtenerTodos(ByVal detalleEmpenio_ As DetalleEmpenio) As DetalleEmpenios
         Try
             Dim obj As New DetalleEmpenioDA(cadenaConex)
-            Return obj.ObtenerTodos()
+            Return obj.ObtenerTodos(detalleEmpenio_)
             _hayError = False
         Catch ex As Exception
             _hayError = True

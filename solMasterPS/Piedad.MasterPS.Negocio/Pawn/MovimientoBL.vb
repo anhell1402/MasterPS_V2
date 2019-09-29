@@ -59,10 +59,10 @@ Public Class MovimientoBL
             Return Nothing
         End Try
     End Function
-    Public Function Obtener() As Movimientos
+    Public Function ObtenerTodos(ByVal movimiento_ As Movimiento) As Movimientos
         Try
             Dim obj As New MovimientoDA(cadenaConex)
-            Return obj.ObtenerTodos()
+            Return obj.ObtenerTodos(movimiento_)
             _hayError = False
         Catch ex As Exception
             _hayError = True

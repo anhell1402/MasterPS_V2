@@ -60,10 +60,10 @@ Public Class MensajeBL
             Return Nothing
         End Try
     End Function
-    Public Function Obtener() As Mensajes
+    Public Function ObtenerTodos(ByVal mensaje_ As Mensaje) As Mensajes
         Try
             Dim obj As New MensajeDA(cadenaConex)
-            Return obj.ObtenerTodos()
+            Return obj.ObtenerTodos(mensaje_)
             _hayError = False
         Catch ex As Exception
             _hayError = True

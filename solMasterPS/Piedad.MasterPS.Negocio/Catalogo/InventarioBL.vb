@@ -59,10 +59,10 @@ Public Class InventarioBL
             Return Nothing
         End Try
     End Function
-    Public Function Obtener() As Inventarios
+    Public Function ObtenerTodos(ByVal inventario_ As Inventario) As Inventarios
         Try
             Dim obj As New InventarioDA(cadenaConex)
-            Return obj.ObtenerTodos()
+            Return obj.ObtenerTodos(inventario_)
             _hayError = False
         Catch ex As Exception
             _hayError = True

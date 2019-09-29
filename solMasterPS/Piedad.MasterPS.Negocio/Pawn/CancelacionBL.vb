@@ -59,10 +59,10 @@ Public Class CancelacionBL
             Return Nothing
         End Try
     End Function
-    Public Function Obtener() As Cancelaciones
+    Public Function ObtenerTodos(ByVal cancelacion_ As Cancelacion) As Cancelaciones
         Try
             Dim obj As New CancelacionDA(cadenaConex)
-            Return obj.ObtenerTodos()
+            Return obj.ObtenerTodos(cancelacion_)
             _hayError = False
         Catch ex As Exception
             _hayError = True

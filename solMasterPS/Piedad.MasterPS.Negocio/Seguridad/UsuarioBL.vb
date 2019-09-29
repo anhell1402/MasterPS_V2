@@ -59,10 +59,10 @@ Public Class UsuarioBL
             Return Nothing
         End Try
     End Function
-    Public Function Obtener() As Usuarios
+    Public Function ObtenerTodos(ByVal usuario_ As Usuario) As Usuarios
         Try
             Dim obj As New UsuarioDA(cadenaConex)
-            Return obj.ObtenerTodos()
+            Return obj.ObtenerTodos(usuario_)
             _hayError = False
         Catch ex As Exception
             _hayError = True

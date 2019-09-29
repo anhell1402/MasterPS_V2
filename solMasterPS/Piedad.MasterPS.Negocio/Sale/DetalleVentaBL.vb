@@ -1,7 +1,6 @@
 ﻿Imports Piedad.MasterPS.Clases
 Imports Piedad.MasterPS.Datos
-
-Public Class CACBL
+Public Class DetalleVentaBL
     Private _error As String
     Public ReadOnly Property MensajeError As String
         Get
@@ -19,41 +18,40 @@ Public Class CACBL
         cadenaConex = cadenaConexion
         _hayError = False
     End Sub
-    Public Sub Almacenar(ByVal cac_ As CAC)
+    Public Sub Almacenar(ByVal detalleVenta_ As DetalleVenta)
         Try
-            Dim obj As New CACDA(cadenaConex)
-            obj.Almacenar(cac_)
-            _hayError = False
-        Catch ex As Exception
-            _hayError = True
-            _error = ex.Message
-        End Try
-
-    End Sub
-    Public Sub Actualizar(ByVal cac_ As CAC)
-        Try
-            Dim obj As New CACDA(cadenaConex)
-            obj.Actualizar(cac_)
+            Dim obj As New DetalleVentaDA(cadenaConex)
+            obj.Almacenar(detalleVenta_)
             _hayError = False
         Catch ex As Exception
             _hayError = True
             _error = ex.Message
         End Try
     End Sub
-    Public Sub Eliminar(ByVal cac_ As CAC)
+    Public Sub Actualizar(ByVal detalleVenta_ As DetalleVenta)
         Try
-            Dim obj As New CACDA(cadenaConex)
-            obj.Eliminar(cac_)
+            Dim obj As New DetalleVentaDA(cadenaConex)
+            obj.Actualizar(detalleVenta_)
             _hayError = False
         Catch ex As Exception
             _hayError = True
             _error = ex.Message
         End Try
     End Sub
-    Public Function Obtener(ByVal cac_ As CAC) As CAC
+    Public Sub Eliminar(ByVal detalleVenta_ As DetalleVenta)
         Try
-            Dim obj As New CACDA(cadenaConex)
-            Return obj.Obtener(cac_)
+            Dim obj As New DetalleVentaDA(cadenaConex)
+            obj.Eliminar(detalleVenta_)
+            _hayError = False
+        Catch ex As Exception
+            _hayError = True
+            _error = ex.Message
+        End Try
+    End Sub
+    Public Function Obtener(ByVal detalleVenta_ As DetalleVenta) As DetalleVenta
+        Try
+            Dim obj As New DetalleVentaDA(cadenaConex)
+            Return obj.Obtener(detalleVenta_)
             _hayError = False
         Catch ex As Exception
             _hayError = True
@@ -61,10 +59,10 @@ Public Class CACBL
             Return Nothing
         End Try
     End Function
-    Public Function ObtenerTodos(ByVal cac_ As CAC) As CACS
+    Public Function ObtenerTodos(ByVal detalleVenta_ As DetalleVenta) As DetalleVentas
         Try
-            Dim obj As New CACDA(cadenaConex)
-            Return obj.ObtenerTodos(cac_)
+            Dim obj As New DetalleVentaDA(cadenaConex)
+            Return obj.ObtenerTodos(detalleVenta_)
             _hayError = False
         Catch ex As Exception
             _hayError = True

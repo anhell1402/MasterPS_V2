@@ -59,10 +59,10 @@ Public Class AlmonedaBL
             Return Nothing
         End Try
     End Function
-    Public Function Obtener() As Almonedas
+    Public Function ObtenerTodos(ByVal almoneda_ As Almoneda) As Almonedas
         Try
             Dim obj As New AlmonedaDA(cadenaConex)
-            Return obj.ObtenerTodos()
+            Return obj.ObtenerTodos(almoneda_)
             _hayError = False
         Catch ex As Exception
             _hayError = True

@@ -59,10 +59,10 @@ Public Class ClienteBL
             Return Nothing
         End Try
     End Function
-    Public Function Obtener() As Clientes
+    Public Function ObtenerTodos(ByVal cliente_ As Cliente) As Clientes
         Try
             Dim obj As New ClienteDA(cadenaConex)
-            Return obj.ObtenerTodos()
+            Return obj.ObtenerTodos(cliente_)
             _hayError = False
         Catch ex As Exception
             _hayError = True

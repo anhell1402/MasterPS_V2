@@ -59,10 +59,10 @@ Public Class AdicionCompraBL
             Return Nothing
         End Try
     End Function
-    Public Function Obtener() As AdicionesCompras
+    Public Function ObtenerTodos(ByVal adicionCompra_ As AdicionCompra) As AdicionesCompras
         Try
             Dim obj As New AdicionCompraDA(cadenaConex)
-            Return obj.ObtenerTodos()
+            Return obj.ObtenerTodos(adicionCompra_)
             _hayError = False
         Catch ex As Exception
             _hayError = True

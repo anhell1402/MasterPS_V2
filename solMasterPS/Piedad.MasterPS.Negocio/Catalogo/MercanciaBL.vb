@@ -59,10 +59,10 @@ Public Class MercanciaBL
             Return Nothing
         End Try
     End Function
-    Public Function Obtener() As Mercancias
+    Public Function ObtenerTodos(ByVal mercancia_ As Mercancia) As Mercancias
         Try
             Dim obj As New MercanciaDA(cadenaConex)
-            Return obj.ObtenerTodos()
+            Return obj.ObtenerTodos(mercancia_)
             _hayError = False
         Catch ex As Exception
             _hayError = True

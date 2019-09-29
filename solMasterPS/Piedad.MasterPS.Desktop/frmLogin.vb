@@ -17,8 +17,7 @@ Public Class FrmLogin
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
-    Private Sub BtnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
-        'Admin123.2019#
+    Private Sub Autenticar()
         If txtUser.Text.Trim() <> String.Empty And txtPass.Text.Trim() <> String.Empty Then
             Dim user As New Usuario()
             user.Username = txtUser.Text.Trim()
@@ -56,7 +55,10 @@ Public Class FrmLogin
             frmAviso.ShowDialog()
             Dim resp As RespuestaVentana = frmAviso.Respuesta
         End If
-
+    End Sub
+    Private Sub BtnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
+        'user: sa | pass: go
+        Autenticar()
         'frmPrincipal.Show()
     End Sub
 
@@ -72,5 +74,11 @@ Public Class FrmLogin
     Private Sub LkOlvidaste_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lkOlvidaste.LinkClicked
         Dim frm As New frmOlvidaPasswd()
         frm.ShowDialog()
+    End Sub
+
+    Private Sub TxtPass_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPass.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Autenticar()
+        End If
     End Sub
 End Class

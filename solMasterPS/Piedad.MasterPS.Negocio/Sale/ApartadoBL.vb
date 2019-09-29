@@ -59,10 +59,10 @@ Public Class ApartadoBL
             Return Nothing
         End Try
     End Function
-    Public Function Obtener() As Apartados
+    Public Function ObtenerTodos(ByVal apartado_ As Apartado) As Apartados
         Try
             Dim obj As New ApartadoDA(cadenaConex)
-            Return obj.ObtenerTodos()
+            Return obj.ObtenerTodos(apartado_)
             _hayError = False
         Catch ex As Exception
             _hayError = True

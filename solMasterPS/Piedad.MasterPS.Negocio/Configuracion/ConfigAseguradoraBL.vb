@@ -59,10 +59,10 @@ Public Class ConfigAseguradoraBL
             Return Nothing
         End Try
     End Function
-    Public Function Obtener() As ConfigAseguradoras
+    Public Function ObtenerTodos(ByVal configAseguradora_ As ConfigAseguradora) As ConfigAseguradoras
         Try
             Dim obj As New ConfigAseguradoraDA(cadenaConex)
-            Return obj.ObtenerTodos()
+            Return obj.ObtenerTodos(configAseguradora_)
             _hayError = False
         Catch ex As Exception
             _hayError = True

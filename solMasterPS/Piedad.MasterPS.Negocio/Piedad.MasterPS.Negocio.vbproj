@@ -107,6 +107,10 @@
     <Compile Include="Sale\ApartadoBL.vb" />
     <Compile Include="Sale\CancelacionApartadoBL.vb" />
     <Compile Include="Sale\DetalleAlmonedaBL.vb" />
+    <Compile Include="Sale\DetalleApartadoBL.vb" />
+    <Compile Include="Sale\DetalleMercanciaVentaBL.vb" />
+    <Compile Include="Sale\DetalleVentaBL.vb" />
+    <Compile Include="Sale\VentaBL.vb" />
     <Compile Include="Seguridad\AutenticacionBL.vb" />
     <Compile Include="Seguridad\MenuBL.vb" />
     <Compile Include="Seguridad\PermisoBL.vb" />

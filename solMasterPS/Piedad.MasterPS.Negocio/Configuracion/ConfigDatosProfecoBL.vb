@@ -59,10 +59,10 @@ Public Class ConfigDatosProfecoBL
             Return Nothing
         End Try
     End Function
-    Public Function Obtener() As ConfigDatosProfecos
+    Public Function ObtenerTodos(ByVal configDatosProfeco_ As ConfigDatosProfeco) As ConfigDatosProfecos
         Try
             Dim obj As New ConfigDatosProfecoDA(cadenaConex)
-            Return obj.ObtenerTodos()
+            Return obj.ObtenerTodos(configDatosProfeco_)
             _hayError = False
         Catch ex As Exception
             _hayError = True

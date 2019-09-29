@@ -59,10 +59,10 @@ Public Class DocumentoBL
             Return Nothing
         End Try
     End Function
-    Public Function Obtener() As Documentos
+    Public Function ObtenerTodos(ByVal documento_ As Documento) As Documentos
         Try
             Dim obj As New DocumentoDA(cadenaConex)
-            Return obj.ObtenerTodos()
+            Return obj.ObtenerTodos(documento_)
             _hayError = False
         Catch ex As Exception
             _hayError = True

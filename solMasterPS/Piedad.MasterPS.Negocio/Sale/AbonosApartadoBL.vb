@@ -59,10 +59,10 @@ Public Class AbonosApartadoBL
             Return Nothing
         End Try
     End Function
-    Public Function Obtener() As AbonosApartados
+    Public Function ObtenerTodos(ByVal abonosApartado_ As AbonosApartado) As AbonosApartados
         Try
             Dim obj As New AbonosApartadoDA(cadenaConex)
-            Return obj.ObtenerTodos()
+            Return obj.ObtenerTodos(abonosApartado_)
             _hayError = False
         Catch ex As Exception
             _hayError = True

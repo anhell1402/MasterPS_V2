@@ -41,7 +41,7 @@ Partial Class frmPrincipal
         Me.PanelSubMenuInventario = New System.Windows.Forms.Panel()
         Me.btnSalidaInventario = New System.Windows.Forms.Button()
         Me.btnVisas = New System.Windows.Forms.Button()
-        Me.btnAdisionCompra = New System.Windows.Forms.Button()
+        Me.btnAdicionCompra = New System.Windows.Forms.Button()
         Me.btnImpresionEtiqueta = New System.Windows.Forms.Button()
         Me.btnLoadBalance = New System.Windows.Forms.Button()
         Me.btnInventarioFundicion = New System.Windows.Forms.Button()
@@ -351,7 +351,7 @@ Partial Class frmPrincipal
         Me.PanelSubMenuInventario.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.PanelSubMenuInventario.Controls.Add(Me.btnSalidaInventario)
         Me.PanelSubMenuInventario.Controls.Add(Me.btnVisas)
-        Me.PanelSubMenuInventario.Controls.Add(Me.btnAdisionCompra)
+        Me.PanelSubMenuInventario.Controls.Add(Me.btnAdicionCompra)
         Me.PanelSubMenuInventario.Controls.Add(Me.btnImpresionEtiqueta)
         Me.PanelSubMenuInventario.Controls.Add(Me.btnLoadBalance)
         Me.PanelSubMenuInventario.Controls.Add(Me.btnInventarioFundicion)
@@ -401,25 +401,25 @@ Partial Class frmPrincipal
         Me.btnVisas.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.btnVisas.UseVisualStyleBackColor = False
         '
-        'btnAdisionCompra
+        'btnAdicionCompra
         '
-        Me.btnAdisionCompra.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnAdisionCompra.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnAdisionCompra.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
-        Me.btnAdisionCompra.FlatAppearance.BorderSize = 0
-        Me.btnAdisionCompra.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
-        Me.btnAdisionCompra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
-        Me.btnAdisionCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAdisionCompra.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAdisionCompra.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnAdisionCompra.Image = CType(resources.GetObject("btnAdisionCompra.Image"), System.Drawing.Image)
-        Me.btnAdisionCompra.Location = New System.Drawing.Point(0, 97)
-        Me.btnAdisionCompra.Name = "btnAdisionCompra"
-        Me.btnAdisionCompra.Size = New System.Drawing.Size(135, 97)
-        Me.btnAdisionCompra.TabIndex = 4
-        Me.btnAdisionCompra.Text = "ADISION/COMPRA"
-        Me.btnAdisionCompra.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.btnAdisionCompra.UseVisualStyleBackColor = False
+        Me.btnAdicionCompra.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnAdicionCompra.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnAdicionCompra.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
+        Me.btnAdicionCompra.FlatAppearance.BorderSize = 0
+        Me.btnAdicionCompra.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
+        Me.btnAdicionCompra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
+        Me.btnAdicionCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAdicionCompra.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdicionCompra.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnAdicionCompra.Image = CType(resources.GetObject("btnAdicionCompra.Image"), System.Drawing.Image)
+        Me.btnAdicionCompra.Location = New System.Drawing.Point(0, 97)
+        Me.btnAdicionCompra.Name = "btnAdicionCompra"
+        Me.btnAdicionCompra.Size = New System.Drawing.Size(135, 97)
+        Me.btnAdicionCompra.TabIndex = 4
+        Me.btnAdicionCompra.Text = "ADISION/COMPRA"
+        Me.btnAdicionCompra.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.btnAdicionCompra.UseVisualStyleBackColor = False
         '
         'btnImpresionEtiqueta
         '
@@ -1112,7 +1112,7 @@ Partial Class frmPrincipal
     Friend WithEvents btnInventarioVenta As Button
     Friend WithEvents btnSalidaInventario As Button
     Friend WithEvents btnVisas As Button
-    Friend WithEvents btnAdisionCompra As Button
+    Friend WithEvents btnAdicionCompra As Button
     Friend WithEvents PanelSubMenuHistorial As Panel
     Friend WithEvents btnHistorialApartados As Button
     Friend WithEvents btnHistorialVentas As Button

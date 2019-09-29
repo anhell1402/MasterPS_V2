@@ -59,10 +59,10 @@ Public Class CotitularBL
             Return Nothing
         End Try
     End Function
-    Public Function Obtener() As Cotitulares
+    Public Function ObtenerTodos(ByVal cotitular_ As Cotitular) As Cotitulares
         Try
             Dim obj As New CotitularDA(cadenaConex)
-            Return obj.ObtenerTodos()
+            Return obj.ObtenerTodos(cotitular_)
             _hayError = False
         Catch ex As Exception
             _hayError = True
