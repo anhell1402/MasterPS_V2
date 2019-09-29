@@ -1,9 +1,9 @@
 ﻿Public Class Checador
     Public Sub New()
-        idSucursal_ = New Sucursal
-        idUsuario_ = New Usuario
-        idMotivo_ = New Generico
-        idCaja_ = New Generico
+        idSucursal_ = New Sucursal()
+        idUsuario_ = New Usuario()
+        idMotivo_ = New Generico()
+        idCaja_ = New Generico()
     End Sub
     Private idChecador_ As Integer
     Public Property IdChecador As Integer

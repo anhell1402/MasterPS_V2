@@ -21,6 +21,7 @@ Public Class ClienteDA
             objDA.AgregarParametro("@idOcupacion", cliente_.IdOcupacion)
             objDA.AgregarParametro("@alerta", cliente_.Alerta)
             objDA.AgregarParametro("@fechaRegistro", cliente_.FechaRegistro)
+            objDA.AgregarParametro("@idSucursal", cliente_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -42,6 +43,7 @@ Public Class ClienteDA
             objDA.AgregarParametro("@idOcupacion", cliente_.IdOcupacion)
             objDA.AgregarParametro("@alerta", cliente_.Alerta)
             objDA.AgregarParametro("@fechaRegistro", cliente_.FechaRegistro)
+            objDA.AgregarParametro("@idSucursal", cliente_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -50,6 +52,7 @@ Public Class ClienteDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarCliente")
             objDA.AgregarParametro("@idCliente", cliente_.IdCliente)
+            objDA.AgregarParametro("@idSucursal", cliente_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -60,6 +63,7 @@ Public Class ClienteDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerCliente")
             objDA.AgregarParametro("@idCliente", cliente_.IdCliente)
+            objDA.AgregarParametro("@idSucursal", cliente_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of Cliente)()
             cte = New Cliente()
@@ -67,11 +71,12 @@ Public Class ClienteDA
         End Using
         Return cte
     End Function
-    Public Function ObtenerTodos() As Clientes
-        Dim lst As Clientes = Nothing
+    Public Function ObtenerTodos(ByVal cliente_ As Cliente) As Clientes
+        Dim lst As New Clientes()
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerClientes")
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
+            objDA.AgregarParametro("@idSucursal", cliente_.IdSucursal)
             Dim lista As New List(Of Cliente)
             lista = objDA.ObtenerResultados(Of Cliente)()
             For Each cte As Cliente In lista

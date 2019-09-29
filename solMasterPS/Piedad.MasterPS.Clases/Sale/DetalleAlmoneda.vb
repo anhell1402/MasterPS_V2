@@ -1,8 +1,9 @@
 ﻿Public Class DetalleAlmoneda
     Public Sub New()
-        idAlmoneda_ = New Almoneda
-        idEmpenio_ = New Empenio
-        idTipoEmpenio_ = New Generico
+        idAlmoneda_ = New Almoneda()
+        idEmpenio_ = New Empenio()
+        idTipoEmpenio_ = New Generico()
+        idSucursal_ = New Sucursal()
     End Sub
     Private idDetalleAlmoneda_ As Integer
     Public Property IdDetalleAlmoneda As Integer
@@ -49,5 +50,13 @@
             liberado_ = value
         End Set
     End Property
-
+    Private idSucursal_ As Sucursal
+    Public Property IdSucursal As Sucursal
+        Get
+            Return idSucursal_
+        End Get
+        Set(ByVal value As Sucursal)
+            idSucursal_ = value
+        End Set
+    End Property
 End Class

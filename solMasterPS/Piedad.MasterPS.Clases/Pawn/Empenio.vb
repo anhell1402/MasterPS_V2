@@ -1,11 +1,11 @@
 ﻿Public Class Empenio
     Public Sub New()
-        idCliente_ = New Cliente
-        idTasa_ = New ConfigTasa
-        idUsuario_ = New Usuario
-        idTipoEmpenio_ = New Generico
-        idEstatusEmpenio_ = New Generico
-
+        idCliente_ = New Cliente()
+        idTasa_ = New ConfigTasa()
+        idUsuario_ = New Usuario()
+        idTipoEmpenio_ = New Generico()
+        idEstatusEmpenio_ = New Generico()
+        idSucursal_ = New Sucursal()
     End Sub
     Private idEmpenio_ As Integer
     Public Property IdEmpenio As Integer
@@ -104,6 +104,15 @@
         End Get
         Set(ByVal value As Generico)
             idEstatusEmpenio_ = value
+        End Set
+    End Property
+    Private idSucursal_ As Sucursal
+    Public Property IdSucursal As Sucursal
+        Get
+            Return idSucursal_
+        End Get
+        Set(ByVal value As Sucursal)
+            idSucursal_ = value
         End Set
     End Property
 End Class

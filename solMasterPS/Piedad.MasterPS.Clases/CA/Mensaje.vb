@@ -1,7 +1,8 @@
 ﻿Public Class Mensaje
     Public Sub New()
-        idEstatusMensaje_ = New Generico
-        idCliente_ = New Cliente
+        idEstatusMensaje_ = New Generico()
+        idCliente_ = New Cliente()
+        idSucursal_ = New Sucursal()
     End Sub
     Private idMensaje_ As Integer
     Public Property IdMensaje As Integer
@@ -57,5 +58,13 @@
             idCliente_ = value
         End Set
     End Property
-
+    Private idSucursal_ As Sucursal
+    Public Property IdSucursal As Sucursal
+        Get
+            Return idSucursal_
+        End Get
+        Set(ByVal value As Sucursal)
+            idSucursal_ = value
+        End Set
+    End Property
 End Class

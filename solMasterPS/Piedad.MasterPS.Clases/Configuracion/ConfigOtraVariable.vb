@@ -1,4 +1,7 @@
 ﻿Public Class ConfigOtraVariable
+    Public Sub New()
+        idSucursal_ = New Sucursal()
+    End Sub
     Private idOtraVariable_ As Integer
     Public Property IdOtrasVariables As Integer
         Get
@@ -143,5 +146,13 @@
             reporteContratoDiasVencidos_ = value
         End Set
     End Property
-
+    Private idSucursal_ As Sucursal
+    Public Property IdSucursal As Sucursal
+        Get
+            Return idSucursal_
+        End Get
+        Set(ByVal value As Sucursal)
+            idSucursal_ = value
+        End Set
+    End Property
 End Class

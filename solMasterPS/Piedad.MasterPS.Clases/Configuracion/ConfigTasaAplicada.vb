@@ -1,4 +1,7 @@
 ﻿Public Class ConfigTasaAplicada
+    Public Sub New()
+        idSucursal_ = New Sucursal()
+    End Sub
     Private idTasaAplicada_ As Integer
     Public Property IdTasaAplicada As Integer
         Get
@@ -44,5 +47,13 @@
             porcentajeUtilidad_ = value
         End Set
     End Property
-
+    Private idSucursal_ As Sucursal
+    Public Property IdSucursal As Sucursal
+        Get
+            Return idSucursal_
+        End Get
+        Set(ByVal value As Sucursal)
+            idSucursal_ = value
+        End Set
+    End Property
 End Class

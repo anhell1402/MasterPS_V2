@@ -1,11 +1,12 @@
 ﻿Public Class Cliente
     Public Sub New()
-        idDireccion_ = New Direccion
-        idTipoIdentificacion_ = New Generico
-        idTelefono_ = New Generico
-        idSexo_ = New Generico
-        idOcupacion_ = New Generico
-        idMedioEnterado_ = New Generico
+        idDireccion_ = New Direccion()
+        idTipoIdentificacion_ = New Generico()
+        idTelefono_ = New Generico()
+        idSexo_ = New Generico()
+        idOcupacion_ = New Generico()
+        idMedioEnterado_ = New Generico()
+        idSucursal_ = New Sucursal()
     End Sub
     Private idCliente_ As Integer
     Public Property IdCliente As Integer
@@ -140,6 +141,15 @@
         End Get
         Set(ByVal value As Generico)
             idMedioEnterado_ = value
+        End Set
+    End Property
+    Private idSucursal_ As Sucursal
+    Public Property IdSucursal As Sucursal
+        Get
+            Return idSucursal_
+        End Get
+        Set(ByVal value As Sucursal)
+            idSucursal_ = value
         End Set
     End Property
 End Class

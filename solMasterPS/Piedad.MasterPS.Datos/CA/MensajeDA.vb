@@ -13,6 +13,7 @@ Public Class MensajeDA
             objDA.AgregarParametro("@idEstatusMensaje", mensaje_.IdEstatusMensaje)
             objDA.AgregarParametro("@fechaFinal", mensaje_.FechaFinal)
             objDA.AgregarParametro("idCliente", mensaje_.IdCliente)
+            objDA.AgregarParametro("@idSucursal", mensaje_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -26,6 +27,7 @@ Public Class MensajeDA
             objDA.AgregarParametro("@idEstatusMensaje", mensaje_.IdEstatusMensaje)
             objDA.AgregarParametro("@fechaFinal", mensaje_.FechaFinal)
             objDA.AgregarParametro("@idCliente", mensaje_.IdCliente)
+            objDA.AgregarParametro("@idSucursal", mensaje_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -34,6 +36,7 @@ Public Class MensajeDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarMensaje")
             objDA.AgregarParametro("@idMensaje", mensaje_.IdMensaje)
+            objDA.AgregarParametro("@idSucursal", mensaje_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -44,6 +47,7 @@ Public Class MensajeDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerMensaje")
             objDA.AgregarParametro("@idMensaje", mensaje_.IdMensaje)
+            objDA.AgregarParametro("@idSucursal", mensaje_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of Mensaje)()
             msj = New Mensaje()
@@ -51,11 +55,12 @@ Public Class MensajeDA
         End Using
         Return msj
     End Function
-    Public Function ObtenerTodos() As Mensajes
-        Dim lst As Mensajes = Nothing
+    Public Function ObtenerTodos(ByVal mensaje_ As Mensaje) As Mensajes
+        Dim lst As New Mensajes()
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerMensajes")
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
+            objDA.AgregarParametro("@idSucursal", mensaje_.IdSucursal)
             Dim lista As New List(Of Mensaje)
             lista = objDA.ObtenerResultados(Of Mensaje)()
             For Each msj As Mensaje In lista

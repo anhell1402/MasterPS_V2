@@ -12,6 +12,7 @@ Public Class DetalleAlmonedaDA
             objDA.AgregarParametro("@idEmpenio", detalleAlmoneda_.IdEmpenio)
             objDA.AgregarParametro("@idTipoEmpenio", detalleAlmoneda_.IdTipoEmpenio)
             objDA.AgregarParametro("@liberado", detalleAlmoneda_.Liberado)
+            objDA.AgregarParametro("@idSucursal", detalleAlmoneda_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -24,6 +25,7 @@ Public Class DetalleAlmonedaDA
             objDA.AgregarParametro("@idEmpenio", detalleAlmoneda_.IdEmpenio)
             objDA.AgregarParametro("@idTipoEmpenio", detalleAlmoneda_.IdTipoEmpenio)
             objDA.AgregarParametro("@liberado", detalleAlmoneda_.Liberado)
+            objDA.AgregarParametro("@idSucursal", detalleAlmoneda_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -32,6 +34,7 @@ Public Class DetalleAlmonedaDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarDetalleAlmoneda")
             objDA.AgregarParametro("@idDetalleAlmoneda", detalleAlmoneda_.IdDetalleAlmoneda)
+            objDA.AgregarParametro("@idSucursal", detalleAlmoneda_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -42,6 +45,7 @@ Public Class DetalleAlmonedaDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerDetalleAlmoneda")
             objDA.AgregarParametro("@idDetalleAlmoneda", detalleAlmoneda_.IdDetalleAlmoneda)
+            objDA.AgregarParametro("@idSucursal", detalleAlmoneda_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of DetalleAlmoneda)()
             detalleAl = New DetalleAlmoneda()
@@ -49,11 +53,12 @@ Public Class DetalleAlmonedaDA
         End Using
         Return detalleAl
     End Function
-    Public Function ObtenerTodos() As DetalleAlmonedas
-        Dim lst As DetalleAlmonedas = Nothing
+    Public Function ObtenerTodos(ByVal detalleAlmoneda_ As DetalleAlmoneda) As DetalleAlmonedas
+        Dim lst As New DetalleAlmonedas()
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerDetalleAlmonedas")
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
+            objDA.AgregarParametro("@idSucursal", detalleAlmoneda_.IdSucursal)
             Dim lista As New List(Of DetalleAlmoneda)
             lista = objDA.ObtenerResultados(Of DetalleAlmoneda)()
             For Each detalleAl As DetalleAlmoneda In lista

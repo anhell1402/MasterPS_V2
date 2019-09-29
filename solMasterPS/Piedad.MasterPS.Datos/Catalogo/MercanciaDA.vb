@@ -14,6 +14,7 @@ Public Class MercanciaDA
             objDA.AgregarParametro("@idMarca_EstadoMetal", mercancia_.IdMarca_EstadoMetal)
             objDA.AgregarParametro("@precioMaximo", mercancia_.PrecioMaximo)
             objDA.AgregarParametro("@modelo", mercancia_.Modelo)
+            objDA.AgregarParametro("@idSucursal", mercancia_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -28,6 +29,7 @@ Public Class MercanciaDA
             objDA.AgregarParametro("@idMarca_EstadoMetal", mercancia_.IdMarca_EstadoMetal)
             objDA.AgregarParametro("@precioMaximo", mercancia_.PrecioMaximo)
             objDA.AgregarParametro("@modelo", mercancia_.Modelo)
+            objDA.AgregarParametro("@idSucursal", mercancia_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -36,6 +38,7 @@ Public Class MercanciaDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarMercancia")
             objDA.AgregarParametro("@idMercancia", mercancia_.IdMercancia)
+            objDA.AgregarParametro("@idSucursal", mercancia_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -46,6 +49,7 @@ Public Class MercanciaDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerMercancia")
             objDA.AgregarParametro("@idMercancia", mercancia_.IdMercancia)
+            objDA.AgregarParametro("@idSucursal", mercancia_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of Mercancia)()
             merc = New Mercancia()
@@ -53,11 +57,12 @@ Public Class MercanciaDA
         End Using
         Return merc
     End Function
-    Public Function ObtenerTodos() As Mercancias
-        Dim lst As Mercancias = Nothing
+    Public Function ObtenerTodos(ByVal mercancia_ As Mercancia) As Mercancias
+        Dim lst As New Mercancias()
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerMercancias")
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
+            objDA.AgregarParametro("@idSucursal", mercancia_.IdSucursal)
             Dim lista As New List(Of Mercancia)
             lista = objDA.ObtenerResultados(Of Mercancia)()
             For Each merc As Mercancia In lista

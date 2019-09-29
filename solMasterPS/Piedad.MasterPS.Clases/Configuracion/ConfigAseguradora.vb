@@ -1,4 +1,7 @@
 ﻿Public Class ConfigAseguradora
+    Public Sub New()
+        idSucursal_ = New Sucursal()
+    End Sub
     Private idAseguradora_ As Integer
     Public Property IdAseguradora As Integer
         Get
@@ -35,5 +38,13 @@
             aseguradora_ = value
         End Set
     End Property
-
+    Private idSucursal_ As Sucursal
+    Public Property IdSucursal As Sucursal
+        Get
+            Return idSucursal_
+        End Get
+        Set(ByVal value As Sucursal)
+            idSucursal_ = value
+        End Set
+    End Property
 End Class

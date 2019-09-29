@@ -1,7 +1,8 @@
 ﻿Public Class CAC
     Public Sub New()
-        idUsuario_ = New Usuario
-        idEmpenio_ = New Empenio
+        idUsuario_ = New Usuario()
+        idEmpenio_ = New Empenio()
+        idSucursal_ = New Sucursal()
     End Sub
     Private idCAC_ As Integer
     Public Property IdCAC As Integer
@@ -48,5 +49,13 @@
             idEmpenio_ = value
         End Set
     End Property
-
+    Private idSucursal_ As Sucursal
+    Public Property IdSucursal As Sucursal
+        Get
+            Return idSucursal_
+        End Get
+        Set(ByVal value As Sucursal)
+            idSucursal_ = value
+        End Set
+    End Property
 End Class

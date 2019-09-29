@@ -1,9 +1,10 @@
 ﻿Public Class Movimiento
     Public Sub New()
-        idEmpenio_ = New Empenio
-        idTipoOperacionEmpenio_ = New Generico
-        idEstatusEmpenio_ = New Generico
-        idUsuario_ = New Usuario
+        idEmpenio_ = New Empenio()
+        idTipoOperacionEmpenio_ = New Generico()
+        idEstatusEmpenio_ = New Generico()
+        idUsuario_ = New Usuario()
+        idSucursal_ = New Sucursal()
     End Sub
     Private idFolio_ As Integer
     Public Property IdFolio As Integer
@@ -203,5 +204,13 @@
             idUsuario_ = value
         End Set
     End Property
-
+    Private idSucursal_ As Sucursal
+    Public Property IdSucursal As Sucursal
+        Get
+            Return idSucursal_
+        End Get
+        Set(ByVal value As Sucursal)
+            idSucursal_ = value
+        End Set
+    End Property
 End Class

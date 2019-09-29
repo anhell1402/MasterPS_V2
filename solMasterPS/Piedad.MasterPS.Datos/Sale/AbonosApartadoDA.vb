@@ -13,6 +13,7 @@ Public Class AbonosApartadoDA
             objDA.AgregarParametro("@fechaRegistro", abonosApartado_.FechaRegistro)
             objDA.AgregarParametro("@montoAbonado", abonosApartado_.MontoAbonado)
             objDA.AgregarParametro("@montoRestante", abonosApartado_.MontoRestante)
+            objDA.AgregarParametro("@idSucursal", abonosApartado_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -26,6 +27,7 @@ Public Class AbonosApartadoDA
             objDA.AgregarParametro("@fechaRegistro", abonosApartado_.FechaRegistro)
             objDA.AgregarParametro("@montoAbonado", abonosApartado_.MontoAbonado)
             objDA.AgregarParametro("@montoRestante", abonosApartado_.MontoRestante)
+            objDA.AgregarParametro("@idSucursal", abonosApartado_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -34,6 +36,7 @@ Public Class AbonosApartadoDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarAbonosApartado")
             objDA.AgregarParametro("@idAbonosApartado", abonosApartado_.IdAbonosApartados)
+            objDA.AgregarParametro("@idSucursal", abonosApartado_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -44,6 +47,7 @@ Public Class AbonosApartadoDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerAbonosApartado")
             objDA.AgregarParametro("@idAbonosApartado", abonosApartado_.IdAbonosApartados)
+            objDA.AgregarParametro("@idSucursal", abonosApartado_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of AbonosApartado)()
             abonosAp = New AbonosApartado()
@@ -51,11 +55,12 @@ Public Class AbonosApartadoDA
         End Using
         Return abonosAp
     End Function
-    Public Function ObtenerTodos() As AbonosApartados
-        Dim lst As AbonosApartados = Nothing
+    Public Function ObtenerTodos(ByVal abonosApartado_ As AbonosApartado) As AbonosApartados
+        Dim lst As New AbonosApartados()
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerAbonosApartados")
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
+            objDA.AgregarParametro("@idSucursal", abonosApartado_.IdSucursal)
             Dim lista As New List(Of AbonosApartado)
             lista = objDA.ObtenerResultados(Of AbonosApartado)()
             For Each abonosAp As AbonosApartado In lista

@@ -1,9 +1,10 @@
 ﻿Public Class CancelacionApartado
     Public Sub New()
-        idApartado_ = New Apartado
-        idTipoCancelacionApartado_ = New Generico
-        idConfigApartado_ = New ConfigApartado
-        idVenta_ = New Venta
+        idApartado_ = New Apartado()
+        idTipoCancelacionApartado_ = New Generico()
+        idConfigApartado_ = New ConfigApartado()
+        idVenta_ = New Venta()
+        idSucursal_ = New Sucursal()
     End Sub
     Private idCancelacionApartado_ As Integer
     Public Property IdCancelacionApartado As Integer
@@ -68,5 +69,13 @@
             idVenta_ = value
         End Set
     End Property
-
+    Private idSucursal_ As Sucursal
+    Public Property IdSucursal As Sucursal
+        Get
+            Return idSucursal_
+        End Get
+        Set(ByVal value As Sucursal)
+            idSucursal_ = value
+        End Set
+    End Property
 End Class

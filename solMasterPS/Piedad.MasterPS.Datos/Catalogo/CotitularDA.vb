@@ -14,6 +14,7 @@ Public Class CotitularDA
             objDA.AgregarParametro("@idCliente", cotitular_.IdCliente)
             objDA.AgregarParametro("@idTipoIdentificacion", cotitular_.IdTipoIdentificacion)
             objDA.AgregarParametro("@numeroIdentificacion", cotitular_.NumeroIdentificacion)
+            objDA.AgregarParametro("@idSucursal", cotitular_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -28,6 +29,7 @@ Public Class CotitularDA
             objDA.AgregarParametro("@idCliente", cotitular_.IdCliente)
             objDA.AgregarParametro("@idTipoIdentificacion", cotitular_.IdTipoIdentificacion)
             objDA.AgregarParametro("@numeroIdentificacion", cotitular_.NumeroIdentificacion)
+            objDA.AgregarParametro("@idSucursal", cotitular_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -36,6 +38,7 @@ Public Class CotitularDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarCotitular")
             objDA.AgregarParametro("@idCotitular", cotitular_.IdCotitular)
+            objDA.AgregarParametro("@idSucursal", cotitular_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -46,6 +49,7 @@ Public Class CotitularDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerCotitular")
             objDA.AgregarParametro("@idCotitular", cotitular_.IdCotitular)
+            objDA.AgregarParametro("@idSucursal", cotitular_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of Cotitular)()
             cot = New Cotitular()
@@ -53,11 +57,12 @@ Public Class CotitularDA
         End Using
         Return cot
     End Function
-    Public Function ObtenerTodos() As Cotitulares
-        Dim lst As Cotitulares = Nothing
+    Public Function ObtenerTodos(ByVal cotitular_ As Cotitular) As Cotitulares
+        Dim lst As New Cotitulares()
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerCotitulares")
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
+            objDA.AgregarParametro("@idSucursal", cotitular_.IdSucursal)
             Dim lista As New List(Of Cotitular)
             lista = objDA.ObtenerResultados(Of Cotitular)()
             For Each cot As Cotitular In lista

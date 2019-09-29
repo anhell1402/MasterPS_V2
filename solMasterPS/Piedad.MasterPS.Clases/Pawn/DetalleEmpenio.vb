@@ -1,12 +1,13 @@
 ﻿Public Class DetalleEmpenio
     Public Sub New()
-        idEmpenio_ = New Empenio
-        idMercancia_ = New Mercancia
-        idTipoMotor_ = New Generico
-        idNivelCombustible_ = New Generico
-        idTipoFormaDiamante_ = New Generico
-        idTipoArte_ = New Generico
-        idTipoAntiguedades_ = New Generico
+        idEmpenio_ = New Empenio()
+        idMercancia_ = New Mercancia()
+        idTipoMotor_ = New Generico()
+        idNivelCombustible_ = New Generico()
+        idTipoFormaDiamante_ = New Generico()
+        idTipoArte_ = New Generico()
+        idTipoAntiguedades_ = New Generico()
+        idSucursal_ = New Sucursal()
     End Sub
     Private idDetalleEmpenio_ As Integer
     Public Property IdDetalleEmpenio As Integer
@@ -287,5 +288,13 @@
             idTipoAntiguedades_ = value
         End Set
     End Property
-
+    Private idSucursal_ As Sucursal
+    Public Property IdSucursal As Sucursal
+        Get
+            Return idSucursal_
+        End Get
+        Set(ByVal value As Sucursal)
+            idSucursal_ = value
+        End Set
+    End Property
 End Class

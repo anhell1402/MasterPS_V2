@@ -14,6 +14,7 @@ Public Class CancelacionApartadoDA
             objDA.AgregarParametro("@idConfigApartado", cancelacionApartado_.IdConfigApartado)
             objDA.AgregarParametro("@montoACuenta", cancelacionApartado_.MontoACuenta)
             objDA.AgregarParametro("@idVenta", cancelacionApartado_.IdVenta)
+            objDA.AgregarParametro("@idSucursal", cancelacionApartado_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -28,6 +29,7 @@ Public Class CancelacionApartadoDA
             objDA.AgregarParametro("@idConfigApartado", cancelacionApartado_.IdConfigApartado)
             objDA.AgregarParametro("@montoACuenta", cancelacionApartado_.MontoACuenta)
             objDA.AgregarParametro("@idVenta", cancelacionApartado_.IdVenta)
+            objDA.AgregarParametro("@idSucursal", cancelacionApartado_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -36,6 +38,7 @@ Public Class CancelacionApartadoDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarCancelacionApartado")
             objDA.AgregarParametro("@idCancelacionApartado", cancelacionApartado_.IdCancelacionApartado)
+            objDA.AgregarParametro("@idSucursal", cancelacionApartado_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -46,6 +49,7 @@ Public Class CancelacionApartadoDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerCancelacionApartado")
             objDA.AgregarParametro("@idCancelacionApartado", cancelacionApartado_.IdCancelacionApartado)
+            objDA.AgregarParametro("@idSucursal", cancelacionApartado_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of CancelacionApartado)()
             cancelAp = New CancelacionApartado()
@@ -53,11 +57,12 @@ Public Class CancelacionApartadoDA
         End Using
         Return cancelAp
     End Function
-    Public Function ObtenerTodos() As CancelacionApartados
-        Dim lst As CancelacionApartados = Nothing
+    Public Function ObtenerTodos(ByVal cancelacionApartado_ As CancelacionApartado) As CancelacionApartados
+        Dim lst As New CancelacionApartados()
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerCancelacionApartados")
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
+            objDA.AgregarParametro("@idSucursal", cancelacionApartado_.IdSucursal)
             Dim lista As New List(Of CancelacionApartado)
             lista = objDA.ObtenerResultados(Of CancelacionApartado)()
             For Each cancelAp As CancelacionApartado In lista

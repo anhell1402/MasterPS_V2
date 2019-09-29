@@ -13,6 +13,7 @@ Public Class ConfigDatosProfecoDA
             objDA.AgregarParametro("@paginaWeb", configDatosProfeco_.PaginaWeb)
             objDA.AgregarParametro("@autorizacionMercadeo", configDatosProfeco_.AutorizacionMercadeo)
             objDA.AgregarParametro("@horarioServicioPublico", configDatosProfeco_.HorarioServicioPublico)
+            objDA.AgregarParametro("@idSucursal", configDatosProfeco_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -26,6 +27,7 @@ Public Class ConfigDatosProfecoDA
             objDA.AgregarParametro("@paginaWeb", configDatosProfeco_.PaginaWeb)
             objDA.AgregarParametro("@autorizacionMercadeo", configDatosProfeco_.AutorizacionMercadeo)
             objDA.AgregarParametro("@horarioServicioPublico", configDatosProfeco_.HorarioServicioPublico)
+            objDA.AgregarParametro("@idSucursal", configDatosProfeco_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -34,6 +36,7 @@ Public Class ConfigDatosProfecoDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarConfigDatosContratoProfeco")
             objDA.AgregarParametro("@idDatosContratoProfeco", configDatosProfeco_.IdDatosContratoProfeco)
+            objDA.AgregarParametro("@idSucursal", configDatosProfeco_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -44,6 +47,7 @@ Public Class ConfigDatosProfecoDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerConfigDatosContratoProfeco")
             objDA.AgregarParametro("@idDatosContratoProfeco", configDatosProfeco_.IdDatosContratoProfeco)
+            objDA.AgregarParametro("@idSucursal", configDatosProfeco_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of ConfigDatosProfeco)()
             confProf = New ConfigDatosProfeco()
@@ -51,11 +55,12 @@ Public Class ConfigDatosProfecoDA
         End Using
         Return confProf
     End Function
-    Public Function ObtenerTodos() As ConfigDatosProfecos
-        Dim lst As ConfigDatosProfecos = Nothing
+    Public Function ObtenerTodos(ByVal configDatosProfeco_ As ConfigDatosProfeco) As ConfigDatosProfecos
+        Dim lst As New ConfigDatosProfecos()
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("ObtenerConfigDatosContratoProfecos")
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
+            objDA.AgregarParametro("@idSucursal", configDatosProfeco_.IdSucursal)
             Dim lista As New List(Of ConfigDatosProfeco)
             lista = objDA.ObtenerResultados(Of ConfigDatosProfeco)()
             For Each confProf As ConfigDatosProfeco In lista

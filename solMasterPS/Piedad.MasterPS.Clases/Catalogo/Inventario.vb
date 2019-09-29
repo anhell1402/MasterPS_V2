@@ -1,11 +1,12 @@
 ﻿Public Class Inventario
     Public Sub New()
-        idMercancia_ = New Mercancia
-        idAdicionCompra_ = New AdicionCompra
-        idEmpenio_ = New Empenio
-        idDetalleMercanciaVenta_ = New DetalleMercanciaVenta
-        idTipoIngreso_ = New Generico
-        idEstatusInventario_ = New Generico
+        idMercancia_ = New Mercancia()
+        idAdicionCompra_ = New AdicionCompra()
+        idEmpenio_ = New Empenio()
+        idDetalleMercanciaVenta_ = New DetalleMercanciaVenta()
+        idTipoIngreso_ = New Generico()
+        idEstatusInventario_ = New Generico()
+        idSucursal_ = New Sucursal()
     End Sub
     Private idInventario_ As Integer
     Public Property IdInventario As Integer
@@ -88,5 +89,13 @@
             idEstatusInventario_ = value
         End Set
     End Property
-
+    Private idSucursal_ As Sucursal
+    Public Property IdSucursal As Sucursal
+        Get
+            Return idSucursal_
+        End Get
+        Set(ByVal value As Sucursal)
+            idSucursal_ = value
+        End Set
+    End Property
 End Class

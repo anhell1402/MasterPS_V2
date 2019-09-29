@@ -1,6 +1,7 @@
 ﻿Public Class Almoneda
     Public Sub New()
-        idUsuario_ = New Usuario
+        idUsuario_ = New Usuario()
+        idSucursal_ = New Sucursal()
     End Sub
     Private idAlmoneda_ As Integer
     Public Property IdAlmoneda As Integer
@@ -29,5 +30,13 @@
             fechaRegistro_ = value
         End Set
     End Property
-
+    Private idSucursal_ As Sucursal
+    Public Property IdSucursal As Sucursal
+        Get
+            Return idSucursal_
+        End Get
+        Set(ByVal value As Sucursal)
+            idSucursal_ = value
+        End Set
+    End Property
 End Class

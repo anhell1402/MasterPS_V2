@@ -10,6 +10,7 @@ Public Class ConfigFacturacionDA
             objDA.CrearComando("dbo.sp_AltaConfigFacturacion")
             objDA.AgregarParametro("@serie", configFacturacion_.Serie)
             objDA.AgregarParametro("@folio", configFacturacion_.Folio)
+            objDA.AgregarParametro("@idSucursal", configFacturacion_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -20,6 +21,7 @@ Public Class ConfigFacturacionDA
             objDA.AgregarParametro("@idFacturacion", configFacturacion_.IdFacturacion)
             objDA.AgregarParametro("@serie", configFacturacion_.Serie)
             objDA.AgregarParametro("@folio", configFacturacion_.Folio)
+            objDA.AgregarParametro("@idSucursal", configFacturacion_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -28,6 +30,7 @@ Public Class ConfigFacturacionDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarConfigFacturacion")
             objDA.AgregarParametro("@idFacturacion", configFacturacion_.IdFacturacion)
+            objDA.AgregarParametro("@idSucursal", configFacturacion_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -38,6 +41,7 @@ Public Class ConfigFacturacionDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerConfigFacturacion")
             objDA.AgregarParametro("@idFacturacion", configFacturacion_.IdFacturacion)
+            objDA.AgregarParametro("@idSucursal", configFacturacion_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of ConfigFacturacion)()
             conFac = New ConfigFacturacion()
@@ -45,12 +49,13 @@ Public Class ConfigFacturacionDA
         End Using
         Return conFac
     End Function
-    Public Function ObtenerTodos() As ConfigFacturaciones
-        Dim lst As ConfigFacturaciones = Nothing
+    Public Function ObtenerTodos(ByVal configFacturacion_ As ConfigFacturacion) As ConfigFacturaciones
+        Dim lst As New ConfigFacturaciones()
         Using objDA As New ConexDB(cadenaConex)
             Dim lista As New List(Of ConfigFacturacion)
             lista = objDA.ObtenerResultados(Of ConfigFacturacion)()
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
+            objDA.AgregarParametro("@idSucursal", configFacturacion_.IdSucursal)
             For Each conFac As ConfigFacturacion In lista
                 lst.Add(conFac)
             Next

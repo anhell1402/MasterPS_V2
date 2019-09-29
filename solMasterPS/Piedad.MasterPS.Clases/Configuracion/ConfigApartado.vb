@@ -1,4 +1,7 @@
 ﻿Public Class ConfigApartado
+    Public Sub New()
+        idSucursal_ = New Sucursal()
+    End Sub
     Private idConfigApartado_ As Integer
     Public Property IdConfigApartado As Integer
         Get
@@ -60,6 +63,15 @@
         End Get
         Set(ByVal value As Integer)
             penalizacionCancelacion_ = value
+        End Set
+    End Property
+    Private idSucursal_ As Sucursal
+    Public Property IdSucursal As Sucursal
+        Get
+            Return idSucursal_
+        End Get
+        Set(ByVal value As Sucursal)
+            idSucursal_ = value
         End Set
     End Property
 End Class

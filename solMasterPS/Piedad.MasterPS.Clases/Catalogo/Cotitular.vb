@@ -1,8 +1,8 @@
 ﻿Public Class Cotitular
     Public Sub New()
-        idCliente_ = New Cliente
-        idTipoIdentificacion_ = New Generico
-
+        idCliente_ = New Cliente()
+        idTipoIdentificacion_ = New Generico()
+        idSucursal_ = New Sucursal()
     End Sub
     Private idCotitular_ As Integer
     Public Property IdCotitular As Integer
@@ -67,5 +67,13 @@
             numeroIdentificacion_ = value
         End Set
     End Property
-
+    Private idSucursal_ As Sucursal
+    Public Property IdSucursal As Sucursal
+        Get
+            Return idSucursal_
+        End Get
+        Set(ByVal value As Sucursal)
+            idSucursal_ = value
+        End Set
+    End Property
 End Class

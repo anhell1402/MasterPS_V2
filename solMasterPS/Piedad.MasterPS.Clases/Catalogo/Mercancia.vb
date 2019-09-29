@@ -1,9 +1,10 @@
 ﻿Public Class Mercancia
     Public Sub New()
-        idTipoEmpenio_ = New Generico
-        idTipoMercancia_Metal_ = New Generico
-        idFamilia_TipoKilataje_ = New Generico
-        idMarca_EstadoMetal_ = New Generico
+        idTipoEmpenio_ = New Generico()
+        idTipoMercancia_Metal_ = New Generico()
+        idFamilia_TipoKilataje_ = New Generico()
+        idMarca_EstadoMetal_ = New Generico()
+        idSucursal_ = New Sucursal()
     End Sub
     Private idMercancia_ As Integer
     Public Property IdMercancia As Integer
@@ -68,5 +69,13 @@
             modelo_ = value
         End Set
     End Property
-
+    Private idSucursal_ As Sucursal
+    Public Property IdSucursal As Sucursal
+        Get
+            Return idSucursal_
+        End Get
+        Set(ByVal value As Sucursal)
+            idSucursal_ = value
+        End Set
+    End Property
 End Class

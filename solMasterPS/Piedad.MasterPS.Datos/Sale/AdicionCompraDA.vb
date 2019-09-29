@@ -13,6 +13,7 @@ Public Class AdicionCompraDA
             objDA.AgregarParametro("@idMercancia", adicionCompra_.IdMercancia)
             objDA.AgregarParametro("@idTipoEmpenio", adicionCompra_.IdTipoEmpenio)
             objDA.AgregarParametro("@idDetalleMercanciaVenta", adicionCompra_.IdDetalleMercanciaVenta)
+            objDA.AgregarParametro("@idSucursal", adicionCompra_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -26,6 +27,7 @@ Public Class AdicionCompraDA
             objDA.AgregarParametro("@idMercancia", adicionCompra_.IdMercancia)
             objDA.AgregarParametro("@idTipoEmpenio", adicionCompra_.IdTipoEmpenio)
             objDA.AgregarParametro("@idDetalleMercanciaVenta", adicionCompra_.IdDetalleMercanciaVenta)
+            objDA.AgregarParametro("@idSucursal", adicionCompra_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -34,6 +36,7 @@ Public Class AdicionCompraDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_EliminarAdicionCompra")
             objDA.AgregarParametro("@idAdicionCompra", adicionCompra_.IdAdicionCompra)
+            objDA.AgregarParametro("@idSucursal", adicionCompra_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -44,6 +47,7 @@ Public Class AdicionCompraDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerAdicionCompra")
             objDA.AgregarParametro("@idAdicionCompra", adicionCompra_.IdAdicionCompra)
+            objDA.AgregarParametro("@idSucursal", adicionCompra_.IdSucursal)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             lst = objDA.ObtenerResultados(Of AdicionCompra)()
             adiCom = New AdicionCompra()
@@ -51,11 +55,12 @@ Public Class AdicionCompraDA
         End Using
         Return adiCom
     End Function
-    Public Function ObtenerTodos() As AdicionesCompras
-        Dim lst As AdicionesCompras = Nothing
+    Public Function ObtenerTodos(ByVal adicionCompra_ As AdicionCompra) As AdicionesCompras
+        Dim lst As New AdicionesCompras()
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerAdicionesCompras")
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
+            objDA.AgregarParametro("@idSucursal", adicionCompra_.IdSucursal)
             Dim lista As New List(Of AdicionCompra)
             lista = objDA.ObtenerResultados(Of AdicionCompra)()
             For Each adiCom As AdicionCompra In lista
