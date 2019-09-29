@@ -26,6 +26,13 @@ Partial Class frmPrincipal
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPrincipal))
         Me.PanelContenedor = New System.Windows.Forms.Panel()
         Me.PanelFormularios = New System.Windows.Forms.Panel()
+        Me.PanelSubMenuConfiguracion = New System.Windows.Forms.Panel()
+        Me.btnGenerales = New System.Windows.Forms.Button()
+        Me.btnSincronizar = New System.Windows.Forms.Button()
+        Me.btnCatalogo = New System.Windows.Forms.Button()
+        Me.btnRoles = New System.Windows.Forms.Button()
+        Me.btnPermisos = New System.Windows.Forms.Button()
+        Me.btnUsuarios = New System.Windows.Forms.Button()
         Me.PanelSubMenuReportes = New System.Windows.Forms.Panel()
         Me.btnAbrirReportes = New System.Windows.Forms.Button()
         Me.PanelSubMenuCaja = New System.Windows.Forms.Panel()
@@ -81,15 +88,9 @@ Partial Class frmPrincipal
         Me.btnCerrar = New System.Windows.Forms.PictureBox()
         Me.horaFecha = New System.Windows.Forms.Timer(Me.components)
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
-        Me.PanelSubMenuConfiguracion = New System.Windows.Forms.Panel()
-        Me.btnSincronizar = New System.Windows.Forms.Button()
-        Me.Catalogos = New System.Windows.Forms.Button()
-        Me.btnRoles = New System.Windows.Forms.Button()
-        Me.btnPermisos = New System.Windows.Forms.Button()
-        Me.btnUsuarios = New System.Windows.Forms.Button()
-        Me.btnGenerales = New System.Windows.Forms.Button()
         Me.PanelContenedor.SuspendLayout()
         Me.PanelFormularios.SuspendLayout()
+        Me.PanelSubMenuConfiguracion.SuspendLayout()
         Me.PanelSubMenuReportes.SuspendLayout()
         Me.PanelSubMenuCaja.SuspendLayout()
         Me.PanelSubMenuHistorial.SuspendLayout()
@@ -106,7 +107,6 @@ Partial Class frmPrincipal
         CType(Me.btnMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnMaximizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PanelSubMenuConfiguracion.SuspendLayout()
         Me.SuspendLayout()
         '
         'PanelContenedor
@@ -141,6 +141,140 @@ Partial Class frmPrincipal
         Me.PanelFormularios.Name = "PanelFormularios"
         Me.PanelFormularios.Size = New System.Drawing.Size(1050, 545)
         Me.PanelFormularios.TabIndex = 0
+        '
+        'PanelSubMenuConfiguracion
+        '
+        Me.PanelSubMenuConfiguracion.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.PanelSubMenuConfiguracion.Controls.Add(Me.btnGenerales)
+        Me.PanelSubMenuConfiguracion.Controls.Add(Me.btnSincronizar)
+        Me.PanelSubMenuConfiguracion.Controls.Add(Me.btnCatalogo)
+        Me.PanelSubMenuConfiguracion.Controls.Add(Me.btnRoles)
+        Me.PanelSubMenuConfiguracion.Controls.Add(Me.btnPermisos)
+        Me.PanelSubMenuConfiguracion.Controls.Add(Me.btnUsuarios)
+        Me.PanelSubMenuConfiguracion.Location = New System.Drawing.Point(0, 313)
+        Me.PanelSubMenuConfiguracion.Name = "PanelSubMenuConfiguracion"
+        Me.PanelSubMenuConfiguracion.Size = New System.Drawing.Size(540, 194)
+        Me.PanelSubMenuConfiguracion.TabIndex = 17
+        '
+        'btnGenerales
+        '
+        Me.btnGenerales.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnGenerales.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnGenerales.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
+        Me.btnGenerales.FlatAppearance.BorderSize = 0
+        Me.btnGenerales.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
+        Me.btnGenerales.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
+        Me.btnGenerales.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGenerales.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGenerales.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnGenerales.Image = CType(resources.GetObject("btnGenerales.Image"), System.Drawing.Image)
+        Me.btnGenerales.Location = New System.Drawing.Point(135, 97)
+        Me.btnGenerales.Name = "btnGenerales"
+        Me.btnGenerales.Size = New System.Drawing.Size(135, 97)
+        Me.btnGenerales.TabIndex = 5
+        Me.btnGenerales.Text = "GENERALES"
+        Me.btnGenerales.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.btnGenerales.UseVisualStyleBackColor = False
+        '
+        'btnSincronizar
+        '
+        Me.btnSincronizar.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnSincronizar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSincronizar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
+        Me.btnSincronizar.FlatAppearance.BorderSize = 0
+        Me.btnSincronizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
+        Me.btnSincronizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
+        Me.btnSincronizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSincronizar.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSincronizar.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnSincronizar.Image = CType(resources.GetObject("btnSincronizar.Image"), System.Drawing.Image)
+        Me.btnSincronizar.Location = New System.Drawing.Point(0, 97)
+        Me.btnSincronizar.Name = "btnSincronizar"
+        Me.btnSincronizar.Size = New System.Drawing.Size(135, 97)
+        Me.btnSincronizar.TabIndex = 4
+        Me.btnSincronizar.Text = "SYNC"
+        Me.btnSincronizar.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.btnSincronizar.UseVisualStyleBackColor = False
+        '
+        'btnCatalogo
+        '
+        Me.btnCatalogo.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnCatalogo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnCatalogo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
+        Me.btnCatalogo.FlatAppearance.BorderSize = 0
+        Me.btnCatalogo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
+        Me.btnCatalogo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
+        Me.btnCatalogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCatalogo.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCatalogo.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnCatalogo.Image = CType(resources.GetObject("btnCatalogo.Image"), System.Drawing.Image)
+        Me.btnCatalogo.Location = New System.Drawing.Point(405, 0)
+        Me.btnCatalogo.Name = "btnCatalogo"
+        Me.btnCatalogo.Size = New System.Drawing.Size(135, 97)
+        Me.btnCatalogo.TabIndex = 3
+        Me.btnCatalogo.Text = "CATALOGOS"
+        Me.btnCatalogo.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.btnCatalogo.UseVisualStyleBackColor = False
+        '
+        'btnRoles
+        '
+        Me.btnRoles.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnRoles.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnRoles.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
+        Me.btnRoles.FlatAppearance.BorderSize = 0
+        Me.btnRoles.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
+        Me.btnRoles.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
+        Me.btnRoles.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRoles.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRoles.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnRoles.Image = CType(resources.GetObject("btnRoles.Image"), System.Drawing.Image)
+        Me.btnRoles.Location = New System.Drawing.Point(270, 0)
+        Me.btnRoles.Name = "btnRoles"
+        Me.btnRoles.Size = New System.Drawing.Size(135, 97)
+        Me.btnRoles.TabIndex = 2
+        Me.btnRoles.Text = "ROLES"
+        Me.btnRoles.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.btnRoles.UseVisualStyleBackColor = False
+        '
+        'btnPermisos
+        '
+        Me.btnPermisos.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnPermisos.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnPermisos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
+        Me.btnPermisos.FlatAppearance.BorderSize = 0
+        Me.btnPermisos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
+        Me.btnPermisos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
+        Me.btnPermisos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPermisos.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPermisos.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnPermisos.Image = CType(resources.GetObject("btnPermisos.Image"), System.Drawing.Image)
+        Me.btnPermisos.Location = New System.Drawing.Point(135, 0)
+        Me.btnPermisos.Name = "btnPermisos"
+        Me.btnPermisos.Size = New System.Drawing.Size(135, 97)
+        Me.btnPermisos.TabIndex = 1
+        Me.btnPermisos.Text = "PERMISOS"
+        Me.btnPermisos.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.btnPermisos.UseVisualStyleBackColor = False
+        '
+        'btnUsuarios
+        '
+        Me.btnUsuarios.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnUsuarios.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnUsuarios.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
+        Me.btnUsuarios.FlatAppearance.BorderSize = 0
+        Me.btnUsuarios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
+        Me.btnUsuarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
+        Me.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnUsuarios.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUsuarios.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnUsuarios.Image = CType(resources.GetObject("btnUsuarios.Image"), System.Drawing.Image)
+        Me.btnUsuarios.Location = New System.Drawing.Point(0, 0)
+        Me.btnUsuarios.Name = "btnUsuarios"
+        Me.btnUsuarios.Size = New System.Drawing.Size(135, 97)
+        Me.btnUsuarios.TabIndex = 0
+        Me.btnUsuarios.Text = "USUARIOS"
+        Me.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.btnUsuarios.UseVisualStyleBackColor = False
         '
         'PanelSubMenuReportes
         '
@@ -1048,140 +1182,6 @@ Partial Class frmPrincipal
         '
         Me.horaFecha.Enabled = True
         '
-        'PanelSubMenuConfiguracion
-        '
-        Me.PanelSubMenuConfiguracion.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.PanelSubMenuConfiguracion.Controls.Add(Me.btnGenerales)
-        Me.PanelSubMenuConfiguracion.Controls.Add(Me.btnSincronizar)
-        Me.PanelSubMenuConfiguracion.Controls.Add(Me.Catalogos)
-        Me.PanelSubMenuConfiguracion.Controls.Add(Me.btnRoles)
-        Me.PanelSubMenuConfiguracion.Controls.Add(Me.btnPermisos)
-        Me.PanelSubMenuConfiguracion.Controls.Add(Me.btnUsuarios)
-        Me.PanelSubMenuConfiguracion.Location = New System.Drawing.Point(0, 313)
-        Me.PanelSubMenuConfiguracion.Name = "PanelSubMenuConfiguracion"
-        Me.PanelSubMenuConfiguracion.Size = New System.Drawing.Size(540, 194)
-        Me.PanelSubMenuConfiguracion.TabIndex = 17
-        '
-        'btnSincronizar
-        '
-        Me.btnSincronizar.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnSincronizar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSincronizar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
-        Me.btnSincronizar.FlatAppearance.BorderSize = 0
-        Me.btnSincronizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
-        Me.btnSincronizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
-        Me.btnSincronizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSincronizar.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSincronizar.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnSincronizar.Image = CType(resources.GetObject("btnSincronizar.Image"), System.Drawing.Image)
-        Me.btnSincronizar.Location = New System.Drawing.Point(0, 97)
-        Me.btnSincronizar.Name = "btnSincronizar"
-        Me.btnSincronizar.Size = New System.Drawing.Size(135, 97)
-        Me.btnSincronizar.TabIndex = 4
-        Me.btnSincronizar.Text = "SYNC"
-        Me.btnSincronizar.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.btnSincronizar.UseVisualStyleBackColor = False
-        '
-        'Catalogos
-        '
-        Me.Catalogos.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Catalogos.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Catalogos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
-        Me.Catalogos.FlatAppearance.BorderSize = 0
-        Me.Catalogos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
-        Me.Catalogos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
-        Me.Catalogos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Catalogos.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Catalogos.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Catalogos.Image = CType(resources.GetObject("Catalogos.Image"), System.Drawing.Image)
-        Me.Catalogos.Location = New System.Drawing.Point(405, 0)
-        Me.Catalogos.Name = "Catalogos"
-        Me.Catalogos.Size = New System.Drawing.Size(135, 97)
-        Me.Catalogos.TabIndex = 3
-        Me.Catalogos.Text = "CATALOGOS"
-        Me.Catalogos.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.Catalogos.UseVisualStyleBackColor = False
-        '
-        'btnRoles
-        '
-        Me.btnRoles.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnRoles.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnRoles.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
-        Me.btnRoles.FlatAppearance.BorderSize = 0
-        Me.btnRoles.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
-        Me.btnRoles.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
-        Me.btnRoles.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRoles.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRoles.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnRoles.Image = CType(resources.GetObject("btnRoles.Image"), System.Drawing.Image)
-        Me.btnRoles.Location = New System.Drawing.Point(270, 0)
-        Me.btnRoles.Name = "btnRoles"
-        Me.btnRoles.Size = New System.Drawing.Size(135, 97)
-        Me.btnRoles.TabIndex = 2
-        Me.btnRoles.Text = "ROLES"
-        Me.btnRoles.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.btnRoles.UseVisualStyleBackColor = False
-        '
-        'btnPermisos
-        '
-        Me.btnPermisos.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnPermisos.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnPermisos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
-        Me.btnPermisos.FlatAppearance.BorderSize = 0
-        Me.btnPermisos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
-        Me.btnPermisos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
-        Me.btnPermisos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnPermisos.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPermisos.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnPermisos.Image = CType(resources.GetObject("btnPermisos.Image"), System.Drawing.Image)
-        Me.btnPermisos.Location = New System.Drawing.Point(135, 0)
-        Me.btnPermisos.Name = "btnPermisos"
-        Me.btnPermisos.Size = New System.Drawing.Size(135, 97)
-        Me.btnPermisos.TabIndex = 1
-        Me.btnPermisos.Text = "PERMISOS"
-        Me.btnPermisos.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.btnPermisos.UseVisualStyleBackColor = False
-        '
-        'btnUsuarios
-        '
-        Me.btnUsuarios.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnUsuarios.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnUsuarios.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
-        Me.btnUsuarios.FlatAppearance.BorderSize = 0
-        Me.btnUsuarios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
-        Me.btnUsuarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
-        Me.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnUsuarios.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUsuarios.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnUsuarios.Image = CType(resources.GetObject("btnUsuarios.Image"), System.Drawing.Image)
-        Me.btnUsuarios.Location = New System.Drawing.Point(0, 0)
-        Me.btnUsuarios.Name = "btnUsuarios"
-        Me.btnUsuarios.Size = New System.Drawing.Size(135, 97)
-        Me.btnUsuarios.TabIndex = 0
-        Me.btnUsuarios.Text = "USUARIOS"
-        Me.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.btnUsuarios.UseVisualStyleBackColor = False
-        '
-        'btnGenerales
-        '
-        Me.btnGenerales.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnGenerales.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnGenerales.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
-        Me.btnGenerales.FlatAppearance.BorderSize = 0
-        Me.btnGenerales.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
-        Me.btnGenerales.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
-        Me.btnGenerales.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGenerales.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGenerales.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnGenerales.Image = CType(resources.GetObject("btnGenerales.Image"), System.Drawing.Image)
-        Me.btnGenerales.Location = New System.Drawing.Point(135, 97)
-        Me.btnGenerales.Name = "btnGenerales"
-        Me.btnGenerales.Size = New System.Drawing.Size(135, 97)
-        Me.btnGenerales.TabIndex = 5
-        Me.btnGenerales.Text = "GENERALES"
-        Me.btnGenerales.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.btnGenerales.UseVisualStyleBackColor = False
-        '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1194,6 +1194,7 @@ Partial Class frmPrincipal
         Me.Text = "Menu Principal"
         Me.PanelContenedor.ResumeLayout(False)
         Me.PanelFormularios.ResumeLayout(False)
+        Me.PanelSubMenuConfiguracion.ResumeLayout(False)
         Me.PanelSubMenuReportes.ResumeLayout(False)
         Me.PanelSubMenuCaja.ResumeLayout(False)
         Me.PanelSubMenuHistorial.ResumeLayout(False)
@@ -1211,7 +1212,6 @@ Partial Class frmPrincipal
         CType(Me.btnMinimizar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnMaximizar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnCerrar, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PanelSubMenuConfiguracion.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -1276,7 +1276,7 @@ Partial Class frmPrincipal
     Friend WithEvents PanelSubMenuConfiguracion As Panel
     Friend WithEvents btnGenerales As Button
     Friend WithEvents btnSincronizar As Button
-    Friend WithEvents Catalogos As Button
+    Friend WithEvents btnCatalogo As Button
     Friend WithEvents btnRoles As Button
     Friend WithEvents btnPermisos As Button
     Friend WithEvents btnUsuarios As Button

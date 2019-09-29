@@ -23,7 +23,7 @@ Partial Class frmCatGenerico
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.lblGenerico = New System.Windows.Forms.Label()
-        Me.btnBuscar = New System.Windows.Forms.Button()
+        Me.btnSeleccionar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.btnActualizar = New System.Windows.Forms.Button()
@@ -51,24 +51,24 @@ Partial Class frmCatGenerico
         Me.lblGenerico.TabIndex = 1
         Me.lblGenerico.Text = "GENERICOS"
         '
-        'btnBuscar
+        'btnSeleccionar
         '
-        Me.btnBuscar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnBuscar.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnBuscar.FlatAppearance.BorderSize = 0
-        Me.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
-        Me.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
-        Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBuscar.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBuscar.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnBuscar.Location = New System.Drawing.Point(295, 89)
-        Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(134, 23)
-        Me.btnBuscar.TabIndex = 8
-        Me.btnBuscar.Text = "BUSCAR"
-        Me.btnBuscar.UseVisualStyleBackColor = False
+        Me.btnSeleccionar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnSeleccionar.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnSeleccionar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSeleccionar.FlatAppearance.BorderSize = 0
+        Me.btnSeleccionar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
+        Me.btnSeleccionar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
+        Me.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSeleccionar.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSeleccionar.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnSeleccionar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSeleccionar.Location = New System.Drawing.Point(295, 89)
+        Me.btnSeleccionar.Name = "btnSeleccionar"
+        Me.btnSeleccionar.Size = New System.Drawing.Size(134, 23)
+        Me.btnSeleccionar.TabIndex = 8
+        Me.btnSeleccionar.Text = "SELECCIONAR"
+        Me.btnSeleccionar.UseVisualStyleBackColor = False
         '
         'btnSalir
         '
@@ -238,7 +238,7 @@ Partial Class frmCatGenerico
         Me.Controls.Add(Me.DGVGenericos)
         Me.Controls.Add(Me.ComboBoxGenericos)
         Me.Controls.Add(Me.lblTipo)
-        Me.Controls.Add(Me.btnBuscar)
+        Me.Controls.Add(Me.btnSeleccionar)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.btnNuevo)
         Me.Controls.Add(Me.btnActualizar)
@@ -253,7 +253,7 @@ Partial Class frmCatGenerico
     End Sub
 
     Friend WithEvents lblGenerico As Label
-    Friend WithEvents btnBuscar As Button
+    Friend WithEvents btnSeleccionar As Button
     Friend WithEvents btnSalir As Button
     Friend WithEvents btnNuevo As Button
     Friend WithEvents btnActualizar As Button

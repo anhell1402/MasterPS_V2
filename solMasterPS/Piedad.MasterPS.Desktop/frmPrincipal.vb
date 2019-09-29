@@ -228,6 +228,11 @@ Public Class frmPrincipal
         CargaMenu()
     End Sub
 
+    Private Sub BtnCatalogo_Click(sender As Object, e As EventArgs) Handles btnCatalogo.Click
+        PanelSubMenuConfiguracion.Visible = False
+        AbrirFormularioEnPanel(Of frmCatGenerico)()
+    End Sub
+
     Private Sub CargaMenu()
         OcultarPadres()
         Dim lstMenu As New Menus()
