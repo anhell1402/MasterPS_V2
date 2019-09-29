@@ -29,7 +29,11 @@ Partial Class frmPrincipal
         Me.PanelSubMenuConfiguracion = New System.Windows.Forms.Panel()
         Me.btnGenerales = New System.Windows.Forms.Button()
         Me.btnSincronizar = New System.Windows.Forms.Button()
+<<<<<<< HEAD
+        Me.Catalogos = New System.Windows.Forms.Button()
+=======
         Me.btnCatalogo = New System.Windows.Forms.Button()
+>>>>>>> 9efe420a2c3b9f3473508afc2b07dd33828ab79a
         Me.btnRoles = New System.Windows.Forms.Button()
         Me.btnPermisos = New System.Windows.Forms.Button()
         Me.btnUsuarios = New System.Windows.Forms.Button()
@@ -147,7 +151,11 @@ Partial Class frmPrincipal
         Me.PanelSubMenuConfiguracion.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.PanelSubMenuConfiguracion.Controls.Add(Me.btnGenerales)
         Me.PanelSubMenuConfiguracion.Controls.Add(Me.btnSincronizar)
+<<<<<<< HEAD
+        Me.PanelSubMenuConfiguracion.Controls.Add(Me.Catalogos)
+=======
         Me.PanelSubMenuConfiguracion.Controls.Add(Me.btnCatalogo)
+>>>>>>> 9efe420a2c3b9f3473508afc2b07dd33828ab79a
         Me.PanelSubMenuConfiguracion.Controls.Add(Me.btnRoles)
         Me.PanelSubMenuConfiguracion.Controls.Add(Me.btnPermisos)
         Me.PanelSubMenuConfiguracion.Controls.Add(Me.btnUsuarios)
@@ -196,6 +204,27 @@ Partial Class frmPrincipal
         Me.btnSincronizar.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.btnSincronizar.UseVisualStyleBackColor = False
         '
+<<<<<<< HEAD
+        'Catalogos
+        '
+        Me.Catalogos.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Catalogos.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Catalogos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(6, Byte), Integer))
+        Me.Catalogos.FlatAppearance.BorderSize = 0
+        Me.Catalogos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
+        Me.Catalogos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
+        Me.Catalogos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Catalogos.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Catalogos.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Catalogos.Image = CType(resources.GetObject("Catalogos.Image"), System.Drawing.Image)
+        Me.Catalogos.Location = New System.Drawing.Point(405, 0)
+        Me.Catalogos.Name = "Catalogos"
+        Me.Catalogos.Size = New System.Drawing.Size(135, 97)
+        Me.Catalogos.TabIndex = 3
+        Me.Catalogos.Text = "CATALOGOS"
+        Me.Catalogos.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.Catalogos.UseVisualStyleBackColor = False
+=======
         'btnCatalogo
         '
         Me.btnCatalogo.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
@@ -215,6 +244,7 @@ Partial Class frmPrincipal
         Me.btnCatalogo.Text = "CATALOGOS"
         Me.btnCatalogo.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.btnCatalogo.UseVisualStyleBackColor = False
+>>>>>>> 9efe420a2c3b9f3473508afc2b07dd33828ab79a
         '
         'btnRoles
         '
@@ -282,7 +312,7 @@ Partial Class frmPrincipal
         Me.PanelSubMenuReportes.Controls.Add(Me.btnAbrirReportes)
         Me.PanelSubMenuReportes.Location = New System.Drawing.Point(0, 272)
         Me.PanelSubMenuReportes.Name = "PanelSubMenuReportes"
-        Me.PanelSubMenuReportes.Size = New System.Drawing.Size(0, 97)
+        Me.PanelSubMenuReportes.Size = New System.Drawing.Size(140, 97)
         Me.PanelSubMenuReportes.TabIndex = 16
         '
         'btnAbrirReportes
@@ -314,7 +344,7 @@ Partial Class frmPrincipal
         Me.PanelSubMenuCaja.Controls.Add(Me.btnCajaArqueo)
         Me.PanelSubMenuCaja.Location = New System.Drawing.Point(0, 231)
         Me.PanelSubMenuCaja.Name = "PanelSubMenuCaja"
-        Me.PanelSubMenuCaja.Size = New System.Drawing.Size(0, 97)
+        Me.PanelSubMenuCaja.Size = New System.Drawing.Size(140, 97)
         Me.PanelSubMenuCaja.TabIndex = 15
         '
         'btnCajaCorte
@@ -406,7 +436,7 @@ Partial Class frmPrincipal
         Me.PanelSubMenuHistorial.Controls.Add(Me.btnHistorialCliente)
         Me.PanelSubMenuHistorial.Location = New System.Drawing.Point(0, 193)
         Me.PanelSubMenuHistorial.Name = "PanelSubMenuHistorial"
-        Me.PanelSubMenuHistorial.Size = New System.Drawing.Size(0, 97)
+        Me.PanelSubMenuHistorial.Size = New System.Drawing.Size(140, 97)
         Me.PanelSubMenuHistorial.TabIndex = 14
         '
         'btnHistorialApartados
@@ -651,7 +681,7 @@ Partial Class frmPrincipal
         Me.PanelSubMenuCallCenter.Controls.Add(Me.btnRegistroCall)
         Me.PanelSubMenuCallCenter.Location = New System.Drawing.Point(0, 154)
         Me.PanelSubMenuCallCenter.Name = "PanelSubMenuCallCenter"
-        Me.PanelSubMenuCallCenter.Size = New System.Drawing.Size(0, 97)
+        Me.PanelSubMenuCallCenter.Size = New System.Drawing.Size(130, 97)
         Me.PanelSubMenuCallCenter.TabIndex = 12
         '
         'btnBuscarRegistroCall
@@ -806,7 +836,7 @@ Partial Class frmPrincipal
         Me.PanelSubMenuEmpenio.Controls.Add(Me.btnNuevoEmpenio)
         Me.PanelSubMenuEmpenio.Location = New System.Drawing.Point(0, 34)
         Me.PanelSubMenuEmpenio.Name = "PanelSubMenuEmpenio"
-        Me.PanelSubMenuEmpenio.Size = New System.Drawing.Size(0, 97)
+        Me.PanelSubMenuEmpenio.Size = New System.Drawing.Size(140, 97)
         Me.PanelSubMenuEmpenio.TabIndex = 9
         '
         'btnCotizar

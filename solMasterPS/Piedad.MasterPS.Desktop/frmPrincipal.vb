@@ -77,14 +77,18 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub PanelFormularios_MouseClick(sender As Object, e As MouseEventArgs) Handles PanelFormularios.MouseClick
-        PanelSubMenuEmpenio.Width = 0
-        PanelSubMenuVenta.Width = 0
-        PanelSubMenuInventario.Width = 0
-        PanelSubMenuCallCenter.Width = 0
-        PanelSubMenuHistorial.Width = 0
-        PanelSubMenuCaja.Width = 0
+        OcultarSubMenus()
     End Sub
-
+    Private Sub OcultarSubMenus()
+        PanelSubMenuEmpenio.Visible = False
+        PanelSubMenuVenta.Visible = False
+        PanelSubMenuInventario.Visible = False
+        PanelSubMenuCallCenter.Visible = False
+        PanelSubMenuHistorial.Visible = False
+        PanelSubMenuCaja.Visible = False
+        PanelSubMenuConfiguracion.Visible = False
+        PanelSubMenuReportes.Visible = False
+    End Sub
     Private Sub BtnRestaurar_Click(sender As Object, e As EventArgs) Handles btnRestaurar.Click
         Me.Size = New Size(sw, sh)
         Me.Location = New Point(lx, ly)
@@ -235,6 +239,7 @@ Public Class frmPrincipal
 
     Private Sub CargaMenu()
         OcultarPadres()
+        OcultarSubMenus()
         Dim lstMenu As New Menus()
         Dim obj As New MenuBL(cadena)
         lstMenu = obj.Obtener(_user.IdRol)
