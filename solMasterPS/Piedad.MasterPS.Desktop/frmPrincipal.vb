@@ -13,6 +13,7 @@ Public Class frmPrincipal
 
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
         _user = user
+        Me.WindowState = FormWindowState.Maximized
     End Sub
 #Region "FUNCIONALIDADES DEL FORMULARIO"
     'ARASTRAR EL FORMULARIO
@@ -139,6 +140,9 @@ Public Class frmPrincipal
         If idBtn <> 7 Then
             PanelSubMenuReportes.Visible = False
         End If
+        If idBtn <> 8 Then
+            PanelSubMenuConfiguracion.Visible = False
+        End If
     End Sub
     Private Sub BtnEmpenio_Click(sender As Object, e As EventArgs) Handles btnEmpenio.Click
         PanelSubMenuEmpenio.BringToFront()
@@ -209,12 +213,12 @@ Public Class frmPrincipal
         lblFecha.Text = DateTime.Now.ToLongDateString()
     End Sub
     Private Sub BtnNuevoEmpeño_Click(sender As Object, e As EventArgs) Handles btnNuevoEmpenio.Click
-        PanelSubMenuEmpenio.Width = 0
+        PanelSubMenuEmpenio.Visible = False
         AbrirFormularioEnPanel(Of frmEmpenio)()
     End Sub
 
     Private Sub BtnRefrendo_Click(sender As Object, e As EventArgs) Handles btnRefrendo.Click
-        PanelSubMenuEmpenio.Width = 0
+        PanelSubMenuEmpenio.Visible = False
         AbrirFormularioEnPanel(Of frmRefrendo)()
     End Sub
     Private Sub OcultarPadres()
@@ -237,6 +241,15 @@ Public Class frmPrincipal
         AbrirFormularioEnPanel(Of frmCatGenerico)()
     End Sub
 
+    Private Sub BtnConfiguracion_Click(sender As Object, e As EventArgs) Handles btnConfiguracion.Click
+        PanelSubMenuConfiguracion.BringToFront()
+        OcultarSubMenus(8)
+        If Not PanelSubMenuConfiguracion.Visible Then
+            PanelSubMenuConfiguracion.Visible = True
+        Else
+            PanelSubMenuConfiguracion.Visible = False
+        End If
+    End Sub
     Private Sub CargaMenu()
         OcultarPadres()
         OcultarSubMenus()

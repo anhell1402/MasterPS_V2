@@ -22,6 +22,7 @@ Partial Class frmCatGenerico
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.lblGenerico = New System.Windows.Forms.Label()
         Me.btnSeleccionar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
@@ -35,8 +36,8 @@ Partial Class frmCatGenerico
         Me.lblAuxiliar2 = New System.Windows.Forms.Label()
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
         Me.txtAuxiliarUno = New System.Windows.Forms.TextBox()
-        Me.txtAuxiliarDos = New System.Windows.Forms.TextBox()
         Me.btnEliminar = New System.Windows.Forms.Button()
+        Me.cmbTipoEmpenio = New System.Windows.Forms.ComboBox()
         CType(Me.DGVGenericos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -139,6 +140,7 @@ Partial Class frmCatGenerico
         '
         'ComboBoxGenericos
         '
+        Me.ComboBoxGenericos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBoxGenericos.FormattingEnabled = True
         Me.ComboBoxGenericos.Location = New System.Drawing.Point(89, 89)
         Me.ComboBoxGenericos.Name = "ComboBoxGenericos"
@@ -147,17 +149,34 @@ Partial Class frmCatGenerico
         '
         'DGVGenericos
         '
+        Me.DGVGenericos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.DGVGenericos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.DGVGenericos.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.DGVGenericos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVGenericos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DGVGenericos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGVGenericos.EnableHeadersVisualStyles = False
         Me.DGVGenericos.Location = New System.Drawing.Point(47, 133)
+        Me.DGVGenericos.MultiSelect = False
         Me.DGVGenericos.Name = "DGVGenericos"
-        Me.DGVGenericos.Size = New System.Drawing.Size(514, 230)
+        Me.DGVGenericos.ReadOnly = True
+        Me.DGVGenericos.RowHeadersVisible = False
+        Me.DGVGenericos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DGVGenericos.Size = New System.Drawing.Size(568, 230)
         Me.DGVGenericos.TabIndex = 11
         '
         'lblDescripcion
         '
         Me.lblDescripcion.AutoSize = True
         Me.lblDescripcion.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDescripcion.Location = New System.Drawing.Point(584, 133)
+        Me.lblDescripcion.Location = New System.Drawing.Point(643, 133)
         Me.lblDescripcion.Name = "lblDescripcion"
         Me.lblDescripcion.Size = New System.Drawing.Size(93, 17)
         Me.lblDescripcion.TabIndex = 12
@@ -167,7 +186,7 @@ Partial Class frmCatGenerico
         '
         Me.lblAuxiliar1.AutoSize = True
         Me.lblAuxiliar1.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAuxiliar1.Location = New System.Drawing.Point(584, 201)
+        Me.lblAuxiliar1.Location = New System.Drawing.Point(643, 201)
         Me.lblAuxiliar1.Name = "lblAuxiliar1"
         Me.lblAuxiliar1.Size = New System.Drawing.Size(96, 17)
         Me.lblAuxiliar1.TabIndex = 13
@@ -177,32 +196,25 @@ Partial Class frmCatGenerico
         '
         Me.lblAuxiliar2.AutoSize = True
         Me.lblAuxiliar2.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAuxiliar2.Location = New System.Drawing.Point(584, 272)
+        Me.lblAuxiliar2.Location = New System.Drawing.Point(643, 272)
         Me.lblAuxiliar2.Name = "lblAuxiliar2"
-        Me.lblAuxiliar2.Size = New System.Drawing.Size(95, 17)
+        Me.lblAuxiliar2.Size = New System.Drawing.Size(81, 17)
         Me.lblAuxiliar2.TabIndex = 14
-        Me.lblAuxiliar2.Text = "AUXILIAR DOS :"
+        Me.lblAuxiliar2.Text = "AUXILIAR ID :"
         '
         'txtDescripcion
         '
-        Me.txtDescripcion.Location = New System.Drawing.Point(587, 153)
+        Me.txtDescripcion.Location = New System.Drawing.Point(646, 153)
         Me.txtDescripcion.Name = "txtDescripcion"
         Me.txtDescripcion.Size = New System.Drawing.Size(239, 20)
         Me.txtDescripcion.TabIndex = 15
         '
         'txtAuxiliarUno
         '
-        Me.txtAuxiliarUno.Location = New System.Drawing.Point(587, 221)
+        Me.txtAuxiliarUno.Location = New System.Drawing.Point(646, 221)
         Me.txtAuxiliarUno.Name = "txtAuxiliarUno"
         Me.txtAuxiliarUno.Size = New System.Drawing.Size(239, 20)
         Me.txtAuxiliarUno.TabIndex = 16
-        '
-        'txtAuxiliarDos
-        '
-        Me.txtAuxiliarDos.Location = New System.Drawing.Point(587, 292)
-        Me.txtAuxiliarDos.Name = "txtAuxiliarDos"
-        Me.txtAuxiliarDos.Size = New System.Drawing.Size(239, 20)
-        Me.txtAuxiliarDos.TabIndex = 17
         '
         'btnEliminar
         '
@@ -223,13 +235,22 @@ Partial Class frmCatGenerico
         Me.btnEliminar.Text = "ELIMINAR"
         Me.btnEliminar.UseVisualStyleBackColor = False
         '
+        'cmbTipoEmpenio
+        '
+        Me.cmbTipoEmpenio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbTipoEmpenio.FormattingEnabled = True
+        Me.cmbTipoEmpenio.Location = New System.Drawing.Point(646, 292)
+        Me.cmbTipoEmpenio.Name = "cmbTipoEmpenio"
+        Me.cmbTipoEmpenio.Size = New System.Drawing.Size(239, 21)
+        Me.cmbTipoEmpenio.TabIndex = 19
+        '
         'frmCatGenerico
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1050, 545)
+        Me.Controls.Add(Me.cmbTipoEmpenio)
         Me.Controls.Add(Me.btnEliminar)
-        Me.Controls.Add(Me.txtAuxiliarDos)
         Me.Controls.Add(Me.txtAuxiliarUno)
         Me.Controls.Add(Me.txtDescripcion)
         Me.Controls.Add(Me.lblAuxiliar2)
@@ -265,6 +286,6 @@ Partial Class frmCatGenerico
     Friend WithEvents lblAuxiliar2 As Label
     Friend WithEvents txtDescripcion As TextBox
     Friend WithEvents txtAuxiliarUno As TextBox
-    Friend WithEvents txtAuxiliarDos As TextBox
     Friend WithEvents btnEliminar As Button
+    Friend WithEvents cmbTipoEmpenio As ComboBox
 End Class

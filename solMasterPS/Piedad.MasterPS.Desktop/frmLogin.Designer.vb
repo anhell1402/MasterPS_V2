@@ -69,7 +69,7 @@ Partial Class FrmLogin
         Me.txtUser.Location = New System.Drawing.Point(316, 106)
         Me.txtUser.Name = "txtUser"
         Me.txtUser.Size = New System.Drawing.Size(395, 20)
-        Me.txtUser.TabIndex = 1
+        Me.txtUser.TabIndex = 0
         '
         'txtPass
         '
@@ -80,7 +80,7 @@ Partial Class FrmLogin
         Me.txtPass.Location = New System.Drawing.Point(316, 161)
         Me.txtPass.Name = "txtPass"
         Me.txtPass.Size = New System.Drawing.Size(395, 20)
-        Me.txtPass.TabIndex = 2
+        Me.txtPass.TabIndex = 1
         '
         'Label1
         '
@@ -105,7 +105,7 @@ Partial Class FrmLogin
         Me.btnLogin.Location = New System.Drawing.Point(316, 211)
         Me.btnLogin.Name = "btnLogin"
         Me.btnLogin.Size = New System.Drawing.Size(395, 40)
-        Me.btnLogin.TabIndex = 3
+        Me.btnLogin.TabIndex = 2
         Me.btnLogin.Text = "ACCEDER"
         Me.btnLogin.UseVisualStyleBackColor = False
         '
@@ -118,7 +118,7 @@ Partial Class FrmLogin
         Me.lkOlvidaste.Location = New System.Drawing.Point(425, 256)
         Me.lkOlvidaste.Name = "lkOlvidaste"
         Me.lkOlvidaste.Size = New System.Drawing.Size(181, 17)
-        Me.lkOlvidaste.TabIndex = 0
+        Me.lkOlvidaste.TabIndex = 3
         Me.lkOlvidaste.TabStop = True
         Me.lkOlvidaste.Text = "¿Olvidaste la Contraseña?"
         '

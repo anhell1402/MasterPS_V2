@@ -39,7 +39,7 @@ Public Class GenericoDA
                 actualiza = "dbo.sp_ActualizarCatMovimientoEmpenio"
                 elimina = "dbo.sp_EliminarCatMovimientoEmpenio"
                 obtener_ = "dbo.sp_ObtenerCatMovimientoEmpenio"
-                obtenerTodos_ = "dbo.sp_ObtenerCatMovimientoEmpenios"
+                obtenerTodos_ = "dbo.sp_ObtenerCatMovimientosEmpenios"
                 Exit Select
             Case TipoGenerico.Estado
                 almacena = "dbo.sp_AltaEstado"
@@ -301,7 +301,7 @@ Public Class GenericoDA
     End Function
 
     Public Function ObtenerTodos() As Genericos
-        Dim lst As Genericos = Nothing
+        Dim lst As New Genericos()
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando(obtenerTodos_)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
