@@ -45,4 +45,14 @@ Public Class Generico
             idAuxiliarUno_ = value
         End Set
     End Property
+
+    Private descripcionAuxiliar_ As String
+    Public Property DescripcionAuxiliar As String
+        Get
+            Return descripcionAuxiliar_
+        End Get
+        Set(value As String)
+            descripcionAuxiliar_ = value
+        End Set
+    End Property
 End Class
