@@ -6,6 +6,14 @@ Imports Piedad.MasterPS.Negocio
 Public Class frmPrincipal
     Private cadena As String = ConfigurationManager.ConnectionStrings("Piedad.MasterPS.DB").ConnectionString
     Dim _user As Usuario
+    Public Sub New()
+
+        ' Esta llamada es exigida por el diseñador.
+        InitializeComponent()
+
+        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+
+    End Sub
     Public Sub New(ByVal user As Usuario)
 
         ' Esta llamada es exigida por el diseñador.
@@ -13,6 +21,7 @@ Public Class frmPrincipal
 
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
         _user = user
+        Me.WindowState = FormWindowState.Maximized
     End Sub
 #Region "FUNCIONALIDADES DEL FORMULARIO"
     'ARASTRAR EL FORMULARIO
@@ -109,6 +118,8 @@ Public Class frmPrincipal
             PanelFormularios.Controls.Add(formulario)
             PanelFormularios.Tag = formulario
             formulario.Anchor = Anchor.Right Or Anchor.Left Or Anchor.Top Or Anchor.Bottom
+            Dim frm As New frmPrincipal()
+            formulario.WindowState = frm.WindowState
             formulario.Show()
             formulario.BringToFront()
         Else
@@ -138,6 +149,9 @@ Public Class frmPrincipal
         End If
         If idBtn <> 7 Then
             PanelSubMenuReportes.Visible = False
+        End If
+        If idBtn <> 8 Then
+            PanelSubMenuConfiguracion.Visible = False
         End If
     End Sub
     Private Sub BtnEmpenio_Click(sender As Object, e As EventArgs) Handles btnEmpenio.Click
@@ -209,12 +223,12 @@ Public Class frmPrincipal
         lblFecha.Text = DateTime.Now.ToLongDateString()
     End Sub
     Private Sub BtnNuevoEmpeño_Click(sender As Object, e As EventArgs) Handles btnNuevoEmpenio.Click
-        PanelSubMenuEmpenio.Width = 0
+        PanelSubMenuEmpenio.Visible = False
         AbrirFormularioEnPanel(Of frmEmpenio)()
     End Sub
 
     Private Sub BtnRefrendo_Click(sender As Object, e As EventArgs) Handles btnRefrendo.Click
-        PanelSubMenuEmpenio.Width = 0
+        PanelSubMenuEmpenio.Visible = False
         AbrirFormularioEnPanel(Of frmRefrendo)()
     End Sub
     Private Sub OcultarPadres()
@@ -235,6 +249,21 @@ Public Class frmPrincipal
     Private Sub BtnCatalogo_Click(sender As Object, e As EventArgs) Handles btnCatalogo.Click
         PanelSubMenuConfiguracion.Visible = False
         AbrirFormularioEnPanel(Of frmCatGenerico)()
+    End Sub
+
+    Private Sub BtnConfiguracion_Click(sender As Object, e As EventArgs) Handles btnConfiguracion.Click
+        PanelSubMenuConfiguracion.BringToFront()
+        OcultarSubMenus(8)
+        If Not PanelSubMenuConfiguracion.Visible Then
+            PanelSubMenuConfiguracion.Visible = True
+        Else
+            PanelSubMenuConfiguracion.Visible = False
+        End If
+    End Sub
+
+    Private Sub BtnPermisos_Click(sender As Object, e As EventArgs) Handles btnPermisos.Click
+        PanelSubMenuConfiguracion.Visible = False
+        AbrirFormularioEnPanel(Of frmPermisos)()
     End Sub
 
     Private Sub CargaMenu()

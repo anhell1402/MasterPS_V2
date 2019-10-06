@@ -34,18 +34,32 @@ Public Class MenuDA
             objDA.EjecutaComando()
         End Using
     End Sub
-    Public Function Obtener(ByVal menu_ As Menu) As Menu
-        Dim main As Menu = Nothing
-        Dim lst As List(Of Menu)
+    'Public Function Obtener(ByVal menu_ As Menu) As Menu
+    '    Dim main As Menu = Nothing
+    '    Dim lst As List(Of Menu)
+    '    Using objDA As New ConexDB(cadenaConex)
+    '        objDA.CrearComando("dbo.sp_ObtenerMenu")
+    '        objDA.AgregarParametro("@idMenu", menu_.IdMenu)
+    '        objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
+    '        lst = objDA.ObtenerResultados(Of Menu)()
+    '        main = New Menu()
+    '        main = lst(0)
+    '    End Using
+    '    Return main
+    'End Function
+    Public Function Obtener(ByVal gene As Generico) As Menus
+        Dim lst As New Menus()
+        Dim tmp As New List(Of Menu)
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerMenu")
-            objDA.AgregarParametro("@idMenu", menu_.IdMenu)
+            objDA.AgregarParametro("@idRol", gene.IdGenerico)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
-            lst = objDA.ObtenerResultados(Of Menu)()
-            main = New Menu()
-            main = lst(0)
+            tmp = objDA.ObtenerResultados(Of Menu)()
+            For Each mn As Menu In tmp
+                lst.Add(mn)
+            Next
         End Using
-        Return main
+        Return lst
     End Function
     Public Function ObtenerTodos(ByVal _rol As Generico) As Menus
         Dim lst As New Menus()

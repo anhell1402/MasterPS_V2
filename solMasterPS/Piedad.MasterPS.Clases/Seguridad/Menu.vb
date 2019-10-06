@@ -44,4 +44,13 @@
             panelControl_ = value
         End Set
     End Property
+    Private permiso_ As Integer
+    Public Property Permiso As Integer
+        Get
+            Return permiso_
+        End Get
+        Set(value As Integer)
+            permiso_ = value
+        End Set
+    End Property
 End Class

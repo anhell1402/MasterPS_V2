@@ -139,7 +139,9 @@ Partial Class frmCatGenerico
         '
         'ComboBoxGenericos
         '
+        Me.ComboBoxGenericos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBoxGenericos.FormattingEnabled = True
+        Me.ComboBoxGenericos.Items.AddRange(New Object() {"a", "b", "c"})
         Me.ComboBoxGenericos.Location = New System.Drawing.Point(89, 89)
         Me.ComboBoxGenericos.Name = "ComboBoxGenericos"
         Me.ComboBoxGenericos.Size = New System.Drawing.Size(200, 21)
@@ -228,6 +230,7 @@ Partial Class frmCatGenerico
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1050, 545)
+        Me.ControlBox = False
         Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.txtAuxiliarDos)
         Me.Controls.Add(Me.txtAuxiliarUno)
@@ -243,7 +246,6 @@ Partial Class frmCatGenerico
         Me.Controls.Add(Me.btnNuevo)
         Me.Controls.Add(Me.btnActualizar)
         Me.Controls.Add(Me.lblGenerico)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmCatGenerico"
         Me.Text = "Generico"
         CType(Me.DGVGenericos, System.ComponentModel.ISupportInitialize).EndInit()

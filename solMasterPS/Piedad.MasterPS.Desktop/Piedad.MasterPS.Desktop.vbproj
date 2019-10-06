@@ -73,10 +73,16 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmCatGenerico.Designer.vb">
+    <Compile Include="Configuracion\frmCatGenerico.Designer.vb">
       <DependentUpon>frmCatGenerico.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmCatGenerico.vb">
+    <Compile Include="Configuracion\frmCatGenerico.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion\frmPermisos.Designer.vb">
+      <DependentUpon>frmPermisos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion\frmPermisos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Empenio\frmEmpenio.Designer.vb">
@@ -135,8 +141,11 @@
     <Compile Include="TipoVentana.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmCatGenerico.resx">
+    <EmbeddedResource Include="Configuracion\frmCatGenerico.resx">
       <DependentUpon>frmCatGenerico.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion\frmPermisos.resx">
+      <DependentUpon>frmPermisos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Empenio\frmEmpenio.resx">
       <DependentUpon>frmEmpenio.vb</DependentUpon>
@@ -179,6 +188,10 @@
     <ProjectReference Include="..\Piedad.MasterPS.Clases\Piedad.MasterPS.Clases.vbproj">
       <Project>{7c757211-290e-4090-b56e-1ccd98fb6a44}</Project>
       <Name>Piedad.MasterPS.Clases</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Piedad.MasterPS.Datos\Piedad.MasterPS.Datos.vbproj">
+      <Project>{93B57437-047D-44BE-A628-C8BC203881E7}</Project>
+      <Name>Piedad.MasterPS.Datos</Name>
     </ProjectReference>
     <ProjectReference Include="..\Piedad.MasterPS.Negocio\Piedad.MasterPS.Negocio.vbproj">
       <Project>{2553e7f2-85a2-469f-ae0d-30d41afed23e}</Project>

@@ -301,7 +301,7 @@ Public Class GenericoDA
     End Function
 
     Public Function ObtenerTodos() As Genericos
-        Dim lst As Genericos = Nothing
+        Dim lst As New Genericos()
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando(obtenerTodos_)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado

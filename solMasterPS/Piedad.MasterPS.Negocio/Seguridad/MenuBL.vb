@@ -49,10 +49,10 @@ Public Class MenuBL
             _error = ex.Message
         End Try
     End Sub
-    Public Function Obtener(ByVal menu_ As Menu) As Menu
+    Public Function ObtenerDisplay(ByVal gene As Generico) As Menus
         Try
             Dim obj As New MenuDA(cadenaConex)
-            Return obj.Obtener(menu_)
+            Return obj.Obtener(gene)
             _hayError = False
         Catch ex As Exception
             _hayError = True
