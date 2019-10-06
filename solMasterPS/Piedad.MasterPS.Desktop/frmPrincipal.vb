@@ -6,14 +6,6 @@ Imports Piedad.MasterPS.Negocio
 Public Class frmPrincipal
     Private cadena As String = ConfigurationManager.ConnectionStrings("Piedad.MasterPS.DB").ConnectionString
     Dim _user As Usuario
-    Public Sub New()
-
-        ' Esta llamada es exigida por el diseñador.
-        InitializeComponent()
-
-        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
-
-    End Sub
     Public Sub New(ByVal user As Usuario)
 
         ' Esta llamada es exigida por el diseñador.
@@ -118,8 +110,6 @@ Public Class frmPrincipal
             PanelFormularios.Controls.Add(formulario)
             PanelFormularios.Tag = formulario
             formulario.Anchor = Anchor.Right Or Anchor.Left Or Anchor.Top Or Anchor.Bottom
-            Dim frm As New frmPrincipal()
-            formulario.WindowState = frm.WindowState
             formulario.Show()
             formulario.BringToFront()
         Else
@@ -260,12 +250,6 @@ Public Class frmPrincipal
             PanelSubMenuConfiguracion.Visible = False
         End If
     End Sub
-
-    Private Sub BtnPermisos_Click(sender As Object, e As EventArgs) Handles btnPermisos.Click
-        PanelSubMenuConfiguracion.Visible = False
-        AbrirFormularioEnPanel(Of frmPermisos)()
-    End Sub
-
     Private Sub CargaMenu()
         OcultarPadres()
         OcultarSubMenus()

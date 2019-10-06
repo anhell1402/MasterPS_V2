@@ -39,7 +39,7 @@ Public Class GenericoDA
                 actualiza = "dbo.sp_ActualizarCatMovimientoEmpenio"
                 elimina = "dbo.sp_EliminarCatMovimientoEmpenio"
                 obtener_ = "dbo.sp_ObtenerCatMovimientoEmpenio"
-                obtenerTodos_ = "dbo.sp_ObtenerCatMovimientoEmpenios"
+                obtenerTodos_ = "dbo.sp_ObtenerCatMovimientosEmpenios"
                 Exit Select
             Case TipoGenerico.Estado
                 almacena = "dbo.sp_AltaEstado"

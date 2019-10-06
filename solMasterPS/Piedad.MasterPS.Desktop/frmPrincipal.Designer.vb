@@ -282,7 +282,7 @@ Partial Class frmPrincipal
         Me.PanelSubMenuReportes.Controls.Add(Me.btnAbrirReportes)
         Me.PanelSubMenuReportes.Location = New System.Drawing.Point(0, 272)
         Me.PanelSubMenuReportes.Name = "PanelSubMenuReportes"
-        Me.PanelSubMenuReportes.Size = New System.Drawing.Size(140, 97)
+        Me.PanelSubMenuReportes.Size = New System.Drawing.Size(130, 97)
         Me.PanelSubMenuReportes.TabIndex = 16
         '
         'btnAbrirReportes
@@ -314,7 +314,7 @@ Partial Class frmPrincipal
         Me.PanelSubMenuCaja.Controls.Add(Me.btnCajaArqueo)
         Me.PanelSubMenuCaja.Location = New System.Drawing.Point(0, 231)
         Me.PanelSubMenuCaja.Name = "PanelSubMenuCaja"
-        Me.PanelSubMenuCaja.Size = New System.Drawing.Size(140, 97)
+        Me.PanelSubMenuCaja.Size = New System.Drawing.Size(540, 97)
         Me.PanelSubMenuCaja.TabIndex = 15
         '
         'btnCajaCorte
@@ -651,7 +651,7 @@ Partial Class frmPrincipal
         Me.PanelSubMenuCallCenter.Controls.Add(Me.btnRegistroCall)
         Me.PanelSubMenuCallCenter.Location = New System.Drawing.Point(0, 154)
         Me.PanelSubMenuCallCenter.Name = "PanelSubMenuCallCenter"
-        Me.PanelSubMenuCallCenter.Size = New System.Drawing.Size(130, 97)
+        Me.PanelSubMenuCallCenter.Size = New System.Drawing.Size(260, 97)
         Me.PanelSubMenuCallCenter.TabIndex = 12
         '
         'btnBuscarRegistroCall
@@ -806,7 +806,7 @@ Partial Class frmPrincipal
         Me.PanelSubMenuEmpenio.Controls.Add(Me.btnNuevoEmpenio)
         Me.PanelSubMenuEmpenio.Location = New System.Drawing.Point(0, 34)
         Me.PanelSubMenuEmpenio.Name = "PanelSubMenuEmpenio"
-        Me.PanelSubMenuEmpenio.Size = New System.Drawing.Size(140, 97)
+        Me.PanelSubMenuEmpenio.Size = New System.Drawing.Size(540, 97)
         Me.PanelSubMenuEmpenio.TabIndex = 9
         '
         'btnCotizar

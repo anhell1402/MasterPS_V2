@@ -73,22 +73,94 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Caja\frmAportaRetira.Designer.vb">
+      <DependentUpon>frmAportaRetira.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Caja\frmAportaRetira.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Caja\frmArqueo.Designer.vb">
+      <DependentUpon>frmArqueo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Caja\frmArqueo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Caja\frmCorteDeCaja.Designer.vb">
+      <DependentUpon>frmCorteDeCaja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Caja\frmCorteDeCaja.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Caja\frmGastos.Designer.vb">
+      <DependentUpon>frmGastos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Caja\frmGastos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CallCenter\frmBuscarRegistrosCC.Designer.vb">
+      <DependentUpon>frmBuscarRegistrosCC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CallCenter\frmBuscarRegistrosCC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CallCenter\frmRegistroCC.Designer.vb">
+      <DependentUpon>frmRegistroCC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CallCenter\frmRegistroCC.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Configuracion\frmCatGenerico.Designer.vb">
       <DependentUpon>frmCatGenerico.vb</DependentUpon>
     </Compile>
     <Compile Include="Configuracion\frmCatGenerico.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Configuracion\frmPermisos.Designer.vb">
-      <DependentUpon>frmPermisos.vb</DependentUpon>
+    <Compile Include="Configuracion\frmConfigPermisos.Designer.vb">
+      <DependentUpon>frmConfigPermisos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Configuracion\frmPermisos.vb">
+    <Compile Include="Configuracion\frmConfigPermisos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion\frmConfigRoles.Designer.vb">
+      <DependentUpon>frmConfigRoles.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion\frmConfigRoles.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion\frmConfigUsuarios.Designer.vb">
+      <DependentUpon>frmConfigUsuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion\frmConfigUsuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion\frmGenerales.Designer.vb">
+      <DependentUpon>frmGenerales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion\frmGenerales.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion\frmSync.Designer.vb">
+      <DependentUpon>frmSync.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion\frmSync.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empenio\frmCotizarEmpenio.Designer.vb">
+      <DependentUpon>frmCotizarEmpenio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Empenio\frmCotizarEmpenio.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Empenio\frmEmpenio.Designer.vb">
       <DependentUpon>frmEmpenio.vb</DependentUpon>
     </Compile>
     <Compile Include="Empenio\frmEmpenio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empenio\frmLiquidacion.Designer.vb">
+      <DependentUpon>frmLiquidacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Empenio\frmLiquidacion.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLogin.vb">
@@ -122,6 +194,72 @@
     <Compile Include="frmVentanaAviso.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Historial\frmHsApartados.Designer.vb">
+      <DependentUpon>frmHsApartados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Historial\frmHsApartados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Historial\frmHsClientes.Designer.vb">
+      <DependentUpon>frmHsClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Historial\frmHsClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Historial\frmHsEmpenios.Designer.vb">
+      <DependentUpon>frmHsEmpenios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Historial\frmHsEmpenios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Historial\frmHsVentas.Designer.vb">
+      <DependentUpon>frmHsVentas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Historial\frmHsVentas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\frmAdicionCompra.Designer.vb">
+      <DependentUpon>frmAdicionCompra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\frmAdicionCompra.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\frmImpresionEtiquetas.Designer.vb">
+      <DependentUpon>frmImpresionEtiquetas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\frmImpresionEtiquetas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\frmInFundicion.Designer.vb">
+      <DependentUpon>frmInFundicion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\frmInFundicion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\frmInLoadBalance.Designer.vb">
+      <DependentUpon>frmInLoadBalance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\frmInLoadBalance.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\frmInVenta.Designer.vb">
+      <DependentUpon>frmInVenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\frmInVenta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\frmInVisas.Designer.vb">
+      <DependentUpon>frmInVisas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\frmInVisas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\frmSalidaInventario.Designer.vb">
+      <DependentUpon>frmSalidaInventario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\frmSalidaInventario.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -137,18 +275,90 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Reportes\frmReportes.Designer.vb">
+      <DependentUpon>frmReportes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmReportes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="RespuestaVentana.vb" />
+    <Compile Include="Summary\frmSummary.Designer.vb">
+      <DependentUpon>frmSummary.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Summary\frmSummary.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="TipoVentana.vb" />
+    <Compile Include="Venta\frmAbonos.Designer.vb">
+      <DependentUpon>frmAbonos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Venta\frmAbonos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venta\frmApartado.Designer.vb">
+      <DependentUpon>frmApartado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Venta\frmApartado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venta\frmDemasias.Designer.vb">
+      <DependentUpon>frmDemasias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Venta\frmDemasias.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venta\frmVenta.Designer.vb">
+      <DependentUpon>frmVenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Venta\frmVenta.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Caja\frmAportaRetira.resx">
+      <DependentUpon>frmAportaRetira.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Caja\frmArqueo.resx">
+      <DependentUpon>frmArqueo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Caja\frmCorteDeCaja.resx">
+      <DependentUpon>frmCorteDeCaja.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Caja\frmGastos.resx">
+      <DependentUpon>frmGastos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CallCenter\frmBuscarRegistrosCC.resx">
+      <DependentUpon>frmBuscarRegistrosCC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CallCenter\frmRegistroCC.resx">
+      <DependentUpon>frmRegistroCC.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Configuracion\frmCatGenerico.resx">
       <DependentUpon>frmCatGenerico.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Configuracion\frmPermisos.resx">
-      <DependentUpon>frmPermisos.vb</DependentUpon>
+    <EmbeddedResource Include="Configuracion\frmConfigPermisos.resx">
+      <DependentUpon>frmConfigPermisos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion\frmConfigRoles.resx">
+      <DependentUpon>frmConfigRoles.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion\frmConfigUsuarios.resx">
+      <DependentUpon>frmConfigUsuarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion\frmGenerales.resx">
+      <DependentUpon>frmGenerales.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion\frmSync.resx">
+      <DependentUpon>frmSync.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empenio\frmCotizarEmpenio.resx">
+      <DependentUpon>frmCotizarEmpenio.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Empenio\frmEmpenio.resx">
       <DependentUpon>frmEmpenio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empenio\frmLiquidacion.resx">
+      <DependentUpon>frmLiquidacion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
@@ -165,11 +375,62 @@
     <EmbeddedResource Include="frmVentanaAviso.resx">
       <DependentUpon>frmVentanaAviso.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Historial\frmHsApartados.resx">
+      <DependentUpon>frmHsApartados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Historial\frmHsClientes.resx">
+      <DependentUpon>frmHsClientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Historial\frmHsEmpenios.resx">
+      <DependentUpon>frmHsEmpenios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Historial\frmHsVentas.resx">
+      <DependentUpon>frmHsVentas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\frmAdicionCompra.resx">
+      <DependentUpon>frmAdicionCompra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\frmImpresionEtiquetas.resx">
+      <DependentUpon>frmImpresionEtiquetas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\frmInFundicion.resx">
+      <DependentUpon>frmInFundicion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\frmInLoadBalance.resx">
+      <DependentUpon>frmInLoadBalance.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\frmInVenta.resx">
+      <DependentUpon>frmInVenta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\frmInVisas.resx">
+      <DependentUpon>frmInVisas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\frmSalidaInventario.resx">
+      <DependentUpon>frmSalidaInventario.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>PublicVbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmReportes.resx">
+      <DependentUpon>frmReportes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Summary\frmSummary.resx">
+      <DependentUpon>frmSummary.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venta\frmAbonos.resx">
+      <DependentUpon>frmAbonos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venta\frmApartado.resx">
+      <DependentUpon>frmApartado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venta\frmDemasias.resx">
+      <DependentUpon>frmDemasias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venta\frmVenta.resx">
+      <DependentUpon>frmVenta.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
