@@ -139,6 +139,12 @@
     <Compile Include="Configuracion\frmGenerales.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Configuracion\frmPermisos.Designer.vb">
+      <DependentUpon>frmPermisos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion\frmPermisos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Configuracion\frmSync.Designer.vb">
       <DependentUpon>frmSync.vb</DependentUpon>
     </Compile>
@@ -347,6 +353,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Configuracion\frmGenerales.resx">
       <DependentUpon>frmGenerales.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion\frmPermisos.resx">
+      <DependentUpon>frmPermisos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Configuracion\frmSync.resx">
       <DependentUpon>frmSync.vb</DependentUpon>

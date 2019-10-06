@@ -8,7 +8,14 @@ Public Class frmCatGenerico
     Private Sub BtnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Me.Close()
     End Sub
-
+    Private Sub LlenarTipoEmpenio()
+        Dim obj As New GenericoBL(cadena, TipoGenerico.TipoEmpenio)
+        Dim lst As New Genericos()
+        lst = obj.Obtener()
+        cmbTipoEmpenio.DataSource = lst
+        cmbTipoEmpenio.ValueMember = "IdGenerico"
+        cmbTipoEmpenio.DisplayMember = "Descripcion"
+    End Sub
     Private Sub FrmCatGenerico_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lblDescripcion.Visible = False
         txtDescripcion.Visible = False
@@ -20,7 +27,7 @@ Public Class frmCatGenerico
         btnActualizar.Enabled = False
         btnNuevo.Enabled = False
         btnEliminar.Enabled = False
-        ComboBoxGenericos.Items.Insert(0, "-- Seleccione un Opcion --")
+        ComboBoxGenericos.Items.Insert(0, "-- Seleccione una opción --")
         ComboBoxGenericos.Items.Insert(1, "Categoria / Metal")
         ComboBoxGenericos.Items.Insert(2, "Estado de la Venta")
         ComboBoxGenericos.Items.Insert(3, "Estado del Apartado")
@@ -49,6 +56,8 @@ Public Class frmCatGenerico
         ComboBoxGenericos.Items.Insert(26, "Tipos de Ingreso de Mercancia")
         ComboBoxGenericos.Items.Insert(27, "Tipos de Movimientos de Empeño")
         ComboBoxGenericos.Items.Insert(28, "Tipos de Periodo x Tasas")
+        ComboBoxGenericos.Items.RemoveAt(14)
+        ComboBoxGenericos.SelectedIndex = 0
     End Sub
     Public Sub LlenarTodo()
         Dim tipo As TipoGenerico
@@ -60,6 +69,7 @@ Public Class frmCatGenerico
                 Exit Select
             Case 1
                 tipo = TipoGenerico.TipoMercancia_Metal
+                LlenarTipoEmpenio()
                 Exit Select
             Case 2
                 tipo = TipoGenerico.EstatusVenta
@@ -78,12 +88,14 @@ Public Class frmCatGenerico
                 Exit Select
             Case 7
                 tipo = TipoGenerico.Familia_TipoKilataje
+                LlenarTipoEmpenio()
                 Exit Select
             Case 8
                 tipo = TipoGenerico.TipoFormaDiamante
                 Exit Select
             Case 9
                 tipo = TipoGenerico.Marca_EstadoMetal
+                LlenarTipoEmpenio()
                 Exit Select
             Case 10
                 tipo = TipoGenerico.MedioEnterado
@@ -148,57 +160,53 @@ Public Class frmCatGenerico
         Dim lst As New Genericos()
         lst = obj.Obtener()
         DGVGenericos.DataSource = lst
+        If lst.Count > 0 Then
+            DGVGenericos.Rows(0).Selected = False
+        End If
         DGVGenericos.Columns(0).Visible = False
-
+        DGVGenericos.Columns(2).Visible = False
+        DGVGenericos.Columns(3).Visible = False
+        lblDescripcion.Visible = True
+        txtDescripcion.Visible = True
+        cmbTipoEmpenio.Visible = False
+        lblAuxiliar2.Visible = False
+        If tipo = TipoGenerico.TipoMercancia_Metal Or tipo = TipoGenerico.Familia_TipoKilataje Or tipo = TipoGenerico.Marca_EstadoMetal Then
+            cmbTipoEmpenio.Visible = True
+            lblAuxiliar2.Visible = True
+            DGVGenericos.Columns(3).Visible = True
+            DGVGenericos.Columns(3).HeaderText = "Tipo de Empeño"
+        End If
+        lblAuxiliar1.Visible = False
+        txtAuxiliarUno.Visible = False
         If tipo = TipoGenerico.TipoFormaDiamante Then
-            DGVGenericos.Columns(1).Visible = True
-            DGVGenericos.Columns(2).Visible = True
-            DGVGenericos.Columns(3).Visible = False
-            lblDescripcion.Visible = True
-            txtDescripcion.Visible = True
             lblAuxiliar1.Visible = True
             txtAuxiliarUno.Visible = True
-            lblAuxiliar2.Visible = False
-            cmbTipoEmpenio.Visible = False
-        ElseIf tipo = TipoGenerico.TipoMercancia_Metal Then
-            DGVGenericos.Columns(1).Visible = True
-            DGVGenericos.Columns(2).Visible = False
-            DGVGenericos.Columns(3).Visible = True
-            lblDescripcion.Visible = True
-            txtDescripcion.Visible = True
-            lblAuxiliar1.Visible = False
-            txtAuxiliarUno.Visible = False
-            lblAuxiliar2.Visible = True
-            cmbTipoEmpenio.Visible = True
-        ElseIf tipo = TipoGenerico.Familia_TipoKilataje Then
-            DGVGenericos.Columns(1).Visible = True
-            DGVGenericos.Columns(2).Visible = False
-            DGVGenericos.Columns(3).Visible = True
-        ElseIf tipo = TipoGenerico.Marca_EstadoMetal Then
-            DGVGenericos.Columns(1).Visible = True
-            DGVGenericos.Columns(2).Visible = False
-            DGVGenericos.Columns(3).Visible = True
-        Else
-            DGVGenericos.Columns(1).Visible = True
-            DGVGenericos.Columns(2).Visible = False
-            DGVGenericos.Columns(3).Visible = False
+            DGVGenericos.Columns(2).Visible = True
+            DGVGenericos.Columns(2).HeaderText = "URL"
         End If
+
     End Sub
     Public Sub LimpiarCampos()
         txtDescripcion.Clear()
         txtAuxiliarUno.Clear()
-        cmbTipoEmpenio.Items.IndexOf(0)
     End Sub
     Private Sub BtnSeleccionar_Click(sender As Object, e As EventArgs) Handles btnSeleccionar.Click
-        LlenarTodo()
-        LimpiarCampos()
-        btnNuevo.Enabled = True
-        lblDescripcion.Visible = True
-        txtDescripcion.Visible = True
-        lblAuxiliar1.Visible = True
-        txtAuxiliarUno.Visible = True
-        lblAuxiliar2.Visible = True
-        cmbTipoEmpenio.Visible = True
+        If ComboBoxGenericos.SelectedIndex > 0 Then
+            LlenarTodo()
+            LimpiarCampos()
+            btnNuevo.Enabled = True
+        Else
+            Dim msg As New frmVentanaAviso(TipoVentana.AdvertenciaError, "Debe seleccionar un elemento", "Advertencia")
+            msg.ShowDialog()
+            lblDescripcion.Visible = False
+            txtDescripcion.Visible = False
+            lblAuxiliar1.Visible = False
+            lblAuxiliar2.Visible = False
+            txtAuxiliarUno.Visible = False
+            cmbTipoEmpenio.Visible = False
+            DGVGenericos.DataSource = Nothing
+        End If
+
     End Sub
     Private Sub DGVGenericos_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVGenericos.CellDoubleClick
         Dim fila As DataGridViewRow = DGVGenericos.Rows(e.RowIndex)

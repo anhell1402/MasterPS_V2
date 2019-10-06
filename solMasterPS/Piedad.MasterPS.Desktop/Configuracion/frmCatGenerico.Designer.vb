@@ -22,7 +22,7 @@ Partial Class frmCatGenerico
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.lblGenerico = New System.Windows.Forms.Label()
         Me.btnSeleccionar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
@@ -153,14 +153,14 @@ Partial Class frmCatGenerico
         Me.DGVGenericos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DGVGenericos.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DGVGenericos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGVGenericos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVGenericos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DGVGenericos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGVGenericos.EnableHeadersVisualStyles = False
         Me.DGVGenericos.Location = New System.Drawing.Point(47, 133)
@@ -188,9 +188,9 @@ Partial Class frmCatGenerico
         Me.lblAuxiliar1.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblAuxiliar1.Location = New System.Drawing.Point(643, 201)
         Me.lblAuxiliar1.Name = "lblAuxiliar1"
-        Me.lblAuxiliar1.Size = New System.Drawing.Size(96, 17)
+        Me.lblAuxiliar1.Size = New System.Drawing.Size(32, 17)
         Me.lblAuxiliar1.TabIndex = 13
-        Me.lblAuxiliar1.Text = "AUXILIAR UNO :"
+        Me.lblAuxiliar1.Text = "URL:"
         '
         'lblAuxiliar2
         '
@@ -198,9 +198,9 @@ Partial Class frmCatGenerico
         Me.lblAuxiliar2.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblAuxiliar2.Location = New System.Drawing.Point(643, 272)
         Me.lblAuxiliar2.Name = "lblAuxiliar2"
-        Me.lblAuxiliar2.Size = New System.Drawing.Size(81, 17)
+        Me.lblAuxiliar2.Size = New System.Drawing.Size(106, 17)
         Me.lblAuxiliar2.TabIndex = 14
-        Me.lblAuxiliar2.Text = "AUXILIAR ID :"
+        Me.lblAuxiliar2.Text = "TIPO DE EMPEÑO:"
         '
         'txtDescripcion
         '
