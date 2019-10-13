@@ -1,4 +1,18 @@
-﻿Public Class frmVentanaAviso
+﻿Imports System.Runtime.InteropServices
+Public Class frmVentanaAviso
+    'ARASTRAR EL FORMULARIO
+    <DllImport("user32.DLL", EntryPoint:="ReleaseCapture")>
+    Private Shared Sub ReleaseCapture()
+    End Sub
+
+    <DllImport("user32.DLL", EntryPoint:="SendMessage")>
+    Private Shared Sub SendMessage(ByVal hWnd As System.IntPtr, ByVal wMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer)
+    End Sub
+    Private Sub PanelSuperiorAviso_MouseMove(sender As Object, e As MouseEventArgs) Handles PanelSuperiorAviso.MouseMove
+        ReleaseCapture()
+        SendMessage(Me.Handle, &H112&, &HF012&, 0)
+    End Sub
+
     Private _tipoVentana As TipoVentana
     Private _mensaje As String
     Private _titulo As String
@@ -51,4 +65,6 @@
         _respuesta = RespuestaVentana.No
         Me.Close()
     End Sub
+
+
 End Class

@@ -39,6 +39,8 @@ Public Class DetalleEmpenioDA
             objDA.AgregarParametro("@idTipoArte", detalleEmpenio_.IdTipoArte)
             objDA.AgregarParametro("@idTipoAntiguedades", detalleEmpenio_.IdTipoAntiguedades)
             objDA.AgregarParametro("@idSucursal", detalleEmpenio_.IdSucursal)
+            objDA.AgregarParametro("@claveFolio_Documento", detalleEmpenio_.ClaveFolio_Documento)
+            objDA.AgregarParametro("@idDocumento", detalleEmpenio_.IdDocumento)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -78,6 +80,8 @@ Public Class DetalleEmpenioDA
             objDA.AgregarParametro("@idTipoArte", detalleEmpenio_.IdTipoArte)
             objDA.AgregarParametro("@idTipoAntiguedades", detalleEmpenio_.IdTipoAntiguedades)
             objDA.AgregarParametro("@idSucursal", detalleEmpenio_.IdSucursal)
+            objDA.AgregarParametro("@claveFolio_Documento", detalleEmpenio_.ClaveFolio_Documento)
+            objDA.AgregarParametro("@idDocumento", detalleEmpenio_.IdDocumento)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using

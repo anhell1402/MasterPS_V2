@@ -23,12 +23,12 @@ Partial Class frmPermisos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.pnlDisplayMenu = New System.Windows.Forms.Panel()
+        Me.lblMenuDisplay = New System.Windows.Forms.Label()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.lblDescripcion = New System.Windows.Forms.Label()
         Me.btnObtenerPermisos = New System.Windows.Forms.Button()
         Me.cmbRol = New System.Windows.Forms.ComboBox()
-        Me.lblMenuDisplay = New System.Windows.Forms.Label()
         Me.pnlDisplayMenu.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -40,6 +40,16 @@ Partial Class frmPermisos
         Me.pnlDisplayMenu.Name = "pnlDisplayMenu"
         Me.pnlDisplayMenu.Size = New System.Drawing.Size(662, 504)
         Me.pnlDisplayMenu.TabIndex = 0
+        '
+        'lblMenuDisplay
+        '
+        Me.lblMenuDisplay.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblMenuDisplay.AutoSize = True
+        Me.lblMenuDisplay.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMenuDisplay.Location = New System.Drawing.Point(13, 20)
+        Me.lblMenuDisplay.Name = "lblMenuDisplay"
+        Me.lblMenuDisplay.Size = New System.Drawing.Size(0, 17)
+        Me.lblMenuDisplay.TabIndex = 17
         '
         'btnSalir
         '
@@ -120,16 +130,6 @@ Partial Class frmPermisos
         Me.cmbRol.Size = New System.Drawing.Size(200, 21)
         Me.cmbRol.TabIndex = 16
         '
-        'lblMenuDisplay
-        '
-        Me.lblMenuDisplay.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblMenuDisplay.AutoSize = True
-        Me.lblMenuDisplay.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMenuDisplay.Location = New System.Drawing.Point(13, 20)
-        Me.lblMenuDisplay.Name = "lblMenuDisplay"
-        Me.lblMenuDisplay.Size = New System.Drawing.Size(0, 17)
-        Me.lblMenuDisplay.TabIndex = 17
-        '
         'frmPermisos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -142,6 +142,7 @@ Partial Class frmPermisos
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.pnlDisplayMenu)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmPermisos"
         Me.Text = "Permisos"
         Me.pnlDisplayMenu.ResumeLayout(False)

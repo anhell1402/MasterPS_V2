@@ -249,7 +249,6 @@ Public Class GenericoDA
     Public Sub Almacenar(ByVal generic As Generico)
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando(almacena)
-            objDA.AgregarParametro("@id", generic.IdGenerico)
             objDA.AgregarParametro("@valor", generic.Descripcion)
             If tipoGen = TipoGenerico.Caja Or tipoGen = TipoGenerico.TipoMercancia_Metal Or
                 tipoGen = TipoGenerico.Telefono Or tipoGen = TipoGenerico.Familia_TipoKilataje Or
@@ -258,6 +257,7 @@ Public Class GenericoDA
             ElseIf tipoGen = TipoGenerico.TipoFormaDiamante Then
                 objDA.AgregarParametro("@auxiliarUno", generic.AuxiliarUno)
             End If
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
     End Sub

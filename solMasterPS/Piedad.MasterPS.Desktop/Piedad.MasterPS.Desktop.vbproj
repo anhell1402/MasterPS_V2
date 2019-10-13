@@ -115,6 +115,12 @@
     <Compile Include="Configuracion\frmCatGenerico.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Configuracion\frmConfigContrasenia.Designer.vb">
+      <DependentUpon>frmConfigContrasenia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion\frmConfigContrasenia.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Configuracion\frmConfigPermisos.Designer.vb">
       <DependentUpon>frmConfigPermisos.vb</DependentUpon>
     </Compile>
@@ -149,6 +155,12 @@
       <DependentUpon>frmSync.vb</DependentUpon>
     </Compile>
     <Compile Include="Configuracion\frmSync.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empenio\frmAltaMcia.Designer.vb">
+      <DependentUpon>frmAltaMcia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Empenio\frmAltaMcia.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Empenio\frmCotizarEmpenio.Designer.vb">
@@ -200,6 +212,12 @@
     <Compile Include="frmVentanaAviso.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Historial\frmAltaCliente.Designer.vb">
+      <DependentUpon>frmAltaCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Historial\frmAltaCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Historial\frmHsApartados.Designer.vb">
       <DependentUpon>frmHsApartados.vb</DependentUpon>
     </Compile>
@@ -222,6 +240,12 @@
       <DependentUpon>frmHsVentas.vb</DependentUpon>
     </Compile>
     <Compile Include="Historial\frmHsVentas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Historial\frmModificarCliente.Designer.vb">
+      <DependentUpon>frmModificarCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Historial\frmModificarCliente.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Inventario\frmAdicionCompra.Designer.vb">
@@ -342,6 +366,9 @@
     <EmbeddedResource Include="Configuracion\frmCatGenerico.resx">
       <DependentUpon>frmCatGenerico.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion\frmConfigContrasenia.resx">
+      <DependentUpon>frmConfigContrasenia.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Configuracion\frmConfigPermisos.resx">
       <DependentUpon>frmConfigPermisos.vb</DependentUpon>
     </EmbeddedResource>
@@ -359,6 +386,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Configuracion\frmSync.resx">
       <DependentUpon>frmSync.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empenio\frmAltaMcia.resx">
+      <DependentUpon>frmAltaMcia.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Empenio\frmCotizarEmpenio.resx">
       <DependentUpon>frmCotizarEmpenio.vb</DependentUpon>
@@ -384,6 +414,9 @@
     <EmbeddedResource Include="frmVentanaAviso.resx">
       <DependentUpon>frmVentanaAviso.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Historial\frmAltaCliente.resx">
+      <DependentUpon>frmAltaCliente.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Historial\frmHsApartados.resx">
       <DependentUpon>frmHsApartados.vb</DependentUpon>
     </EmbeddedResource>
@@ -395,6 +428,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Historial\frmHsVentas.resx">
       <DependentUpon>frmHsVentas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Historial\frmModificarCliente.resx">
+      <DependentUpon>frmModificarCliente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inventario\frmAdicionCompra.resx">
       <DependentUpon>frmAdicionCompra.vb</DependentUpon>

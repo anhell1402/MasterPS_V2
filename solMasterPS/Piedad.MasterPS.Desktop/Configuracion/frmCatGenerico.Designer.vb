@@ -22,7 +22,7 @@ Partial Class frmCatGenerico
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.lblGenerico = New System.Windows.Forms.Label()
         Me.btnSeleccionar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
@@ -38,6 +38,7 @@ Partial Class frmCatGenerico
         Me.txtAuxiliarUno = New System.Windows.Forms.TextBox()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.cmbTipoEmpenio = New System.Windows.Forms.ComboBox()
+        Me.lblId = New System.Windows.Forms.Label()
         CType(Me.DGVGenericos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -153,14 +154,14 @@ Partial Class frmCatGenerico
         Me.DGVGenericos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DGVGenericos.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DGVGenericos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGVGenericos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVGenericos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DGVGenericos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGVGenericos.EnableHeadersVisualStyles = False
         Me.DGVGenericos.Location = New System.Drawing.Point(47, 133)
@@ -244,11 +245,23 @@ Partial Class frmCatGenerico
         Me.cmbTipoEmpenio.Size = New System.Drawing.Size(239, 21)
         Me.cmbTipoEmpenio.TabIndex = 19
         '
+        'lblId
+        '
+        Me.lblId.AutoSize = True
+        Me.lblId.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblId.Location = New System.Drawing.Point(742, 133)
+        Me.lblId.Name = "lblId"
+        Me.lblId.Size = New System.Drawing.Size(20, 17)
+        Me.lblId.TabIndex = 20
+        Me.lblId.Text = "ID"
+        Me.lblId.Visible = False
+        '
         'frmCatGenerico
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1050, 545)
+        Me.Controls.Add(Me.lblId)
         Me.Controls.Add(Me.cmbTipoEmpenio)
         Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.txtAuxiliarUno)
@@ -288,4 +301,5 @@ Partial Class frmCatGenerico
     Friend WithEvents txtAuxiliarUno As TextBox
     Friend WithEvents btnEliminar As Button
     Friend WithEvents cmbTipoEmpenio As ComboBox
+    Friend WithEvents lblId As Label
 End Class

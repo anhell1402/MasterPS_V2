@@ -250,6 +250,22 @@ Public Class frmPrincipal
             PanelSubMenuConfiguracion.Visible = False
         End If
     End Sub
+
+    Private Sub BtnRoles_Click(sender As Object, e As EventArgs) Handles btnRoles.Click
+        PanelSubMenuConfiguracion.Visible = False
+        AbrirFormularioEnPanel(Of frmConfigRoles)()
+    End Sub
+
+    Private Sub BtnUsuarios_Click(sender As Object, e As EventArgs) Handles btnUsuarios.Click
+        PanelSubMenuConfiguracion.Visible = False
+        AbrirFormularioEnPanel(Of frmConfigUsuarios)()
+    End Sub
+
+    Private Sub BtnCajaArqueo_Click(sender As Object, e As EventArgs) Handles btnCajaArqueo.Click
+        PanelSubMenuCaja.Visible = False
+        frmArqueo.Show()
+    End Sub
+
     Private Sub CargaMenu()
         OcultarPadres()
         OcultarSubMenus()
