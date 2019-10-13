@@ -28,7 +28,7 @@ Public Class PermisoBL
             _error = ex.Message
         End Try
     End Sub
-    Public Sub Actualizar(ByVal permiso_ As Permiso)
+    Public Sub Actualizar(ByVal permiso_ As Permisos)
         Try
             Dim obj As New PermisoDA(cadenaConex)
             obj.Actualizar(permiso_)
