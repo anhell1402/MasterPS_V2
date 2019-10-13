@@ -14,12 +14,16 @@ Public Class PermisoDA
             objDA.EjecutaComando()
         End Using
     End Sub
-    Public Sub Actualizar(ByVal permiso_ As Permiso)
+    Public Sub Actualizar(ByVal permisos_ As Permisos)
+        Dim lst As String = String.Empty
+        For Each permi As Permiso In permisos_
+            lst += permi.IdMenu.IdMenu.ToString() + ","
+        Next
+        lst = lst.Substring(0, lst.Length - 1)
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ActualizarPermisos")
-            objDA.AgregarParametro("@idPermiso", permiso_.IdPermiso)
-            objDA.AgregarParametro("@idMenu", permiso_.IdMenu)
-            objDA.AgregarParametro("@idRol", permiso_.IdRol)
+            objDA.AgregarParametro("@permisos", lst)
+            objDA.AgregarParametro("@idRol", permisos_(0).IdRol.IdGenerico)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using

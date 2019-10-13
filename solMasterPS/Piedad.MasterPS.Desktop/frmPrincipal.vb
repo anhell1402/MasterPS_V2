@@ -6,14 +6,17 @@ Imports Piedad.MasterPS.Negocio
 Public Class frmPrincipal
     Private cadena As String = ConfigurationManager.ConnectionStrings("Piedad.MasterPS.DB").ConnectionString
     Dim _user As Usuario
-    Public Sub New(ByVal user As Usuario)
-
+    Public Sub New()
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
-
+        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+    End Sub
+    Public Sub New(ByVal user As Usuario)
+        ' Esta llamada es exigida por el diseñador.
+        InitializeComponent()
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
         _user = user
-        Me.WindowState = FormWindowState.Maximized
+        'Me.WindowState = FormWindowState.Maximized
     End Sub
 #Region "FUNCIONALIDADES DEL FORMULARIO"
     'ARASTRAR EL FORMULARIO
@@ -63,6 +66,7 @@ Public Class frmPrincipal
 
         Me.Size = Screen.PrimaryScreen.WorkingArea.Size
         Me.Location = Screen.PrimaryScreen.WorkingArea.Location
+        Me.WindowState = FormWindowState.Maximized
     End Sub
     Private Sub BtnSlide_Click(sender As Object, e As EventArgs) Handles btnSlide.Click
         If PanelMenu.Width = 250 Then
@@ -80,7 +84,7 @@ Public Class frmPrincipal
     Private Sub PanelFormularios_MouseClick(sender As Object, e As MouseEventArgs) Handles PanelFormularios.MouseClick
         OcultarSubMenus()
     End Sub
-    Private Sub OcultarSubMenus()
+    Public Sub OcultarSubMenus()
         PanelSubMenuEmpenio.Visible = False
         PanelSubMenuVenta.Visible = False
         PanelSubMenuInventario.Visible = False
@@ -90,13 +94,25 @@ Public Class frmPrincipal
         PanelSubMenuConfiguracion.Visible = False
         PanelSubMenuReportes.Visible = False
     End Sub
+    Public WriteOnly Property Ocultar As Boolean
+        Set(value As Boolean)
+            PanelSubMenuEmpenio.Visible = value
+            PanelSubMenuVenta.Visible = value
+            PanelSubMenuInventario.Visible = value
+            PanelSubMenuCallCenter.Visible = value
+            PanelSubMenuHistorial.Visible = value
+            PanelSubMenuCaja.Visible = value
+            PanelSubMenuConfiguracion.Visible = value
+            PanelSubMenuReportes.Visible = value
+        End Set
+    End Property
     Private Sub BtnRestaurar_Click(sender As Object, e As EventArgs) Handles btnRestaurar.Click
         Me.Size = New Size(sw, sh)
         Me.Location = New Point(lx, ly)
 
         btnMaximizar.Visible = True
         btnRestaurar.Visible = False
-
+        Me.WindowState = FormWindowState.Normal
     End Sub
 #End Region
     'METODO DE ABRIR FORMULARIO DENTRO DEL PANEL FORMULARIOS
@@ -109,6 +125,7 @@ Public Class frmPrincipal
             formulario.TopLevel = False
             PanelFormularios.Controls.Add(formulario)
             PanelFormularios.Tag = formulario
+            formulario.Size = New Size(PanelFormularios.Width, PanelFormularios.Height)
             formulario.Anchor = Anchor.Right Or Anchor.Left Or Anchor.Top Or Anchor.Bottom
             formulario.Show()
             formulario.BringToFront()
@@ -251,19 +268,19 @@ Public Class frmPrincipal
         End If
     End Sub
 
-    Private Sub BtnRoles_Click(sender As Object, e As EventArgs) Handles btnRoles.Click
+    Private Sub BtnPermisos_Click(sender As Object, e As EventArgs) Handles btnPermisos.Click
         PanelSubMenuConfiguracion.Visible = False
-        AbrirFormularioEnPanel(Of frmConfigRoles)()
+        AbrirFormularioEnPanel(Of frmConfigPermisos)()
     End Sub
 
-    Private Sub BtnUsuarios_Click(sender As Object, e As EventArgs) Handles btnUsuarios.Click
-        PanelSubMenuConfiguracion.Visible = False
-        AbrirFormularioEnPanel(Of frmConfigUsuarios)()
-    End Sub
-
-    Private Sub BtnCajaArqueo_Click(sender As Object, e As EventArgs) Handles btnCajaArqueo.Click
-        PanelSubMenuCaja.Visible = False
-        frmArqueo.Show()
+    Private Sub PanelBarraTitulo_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles PanelBarraTitulo.MouseDoubleClick
+        If WindowState = FormWindowState.Maximized Then
+            'Me.WindowState = FormWindowState.Normal
+            BtnRestaurar_Click(sender, e)
+        Else
+            'Me.WindowState = FormWindowState.Maximized
+            BtnMaximizar_Click(sender, e)
+        End If
     End Sub
 
     Private Sub CargaMenu()
