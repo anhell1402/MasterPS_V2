@@ -209,7 +209,8 @@ Public Class frmCatGenerico
             cmbTipoEmpenio.Visible = False
             DGVGenericos.DataSource = Nothing
         End If
-
+        btnActualizar.Enabled = False
+        btnEliminar.Enabled = False
     End Sub
     Private Sub DGVGenericos_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVGenericos.CellDoubleClick
         Dim fila As DataGridViewRow = DGVGenericos.Rows(e.RowIndex)

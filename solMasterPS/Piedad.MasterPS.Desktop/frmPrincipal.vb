@@ -288,6 +288,11 @@ Public Class frmPrincipal
         AbrirFormularioEnPanel(Of frmConfigRoles)()
     End Sub
 
+    Private Sub btnUsuarios_Click(sender As Object, e As EventArgs) Handles btnUsuarios.Click
+        PanelSubMenuConfiguracion.Visible = False
+        AbrirFormularioEnPanel(Of frmConfigUsuarios)()
+    End Sub
+
     Private Sub CargaMenu()
         OcultarPadres()
         OcultarSubMenus()

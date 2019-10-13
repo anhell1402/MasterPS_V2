@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class FrmLogin
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class FrmConfigInicial
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,26 +20,23 @@ Partial Class FrmLogin
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmLogin))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmConfigInicial))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.txtUser = New System.Windows.Forms.TextBox()
         Me.txtPass = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnLogin = New System.Windows.Forms.Button()
-        Me.lkOlvidaste = New System.Windows.Forms.LinkLabel()
         Me.btnCerrar = New System.Windows.Forms.PictureBox()
-        Me.btnMinimizar = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.lblSucursal = New System.Windows.Forms.Label()
+        Me.cmbSucursal = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -68,7 +65,7 @@ Partial Class FrmLogin
         Me.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtUser.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUser.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.txtUser.Location = New System.Drawing.Point(316, 122)
+        Me.txtUser.Location = New System.Drawing.Point(316, 150)
         Me.txtUser.Name = "txtUser"
         Me.txtUser.Size = New System.Drawing.Size(395, 20)
         Me.txtUser.TabIndex = 0
@@ -79,8 +76,9 @@ Partial Class FrmLogin
         Me.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtPass.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPass.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.txtPass.Location = New System.Drawing.Point(316, 177)
+        Me.txtPass.Location = New System.Drawing.Point(316, 205)
         Me.txtPass.Name = "txtPass"
+        Me.txtPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(45)
         Me.txtPass.Size = New System.Drawing.Size(395, 20)
         Me.txtPass.TabIndex = 1
         '
@@ -89,11 +87,11 @@ Partial Class FrmLogin
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(469, 13)
+        Me.Label1.Location = New System.Drawing.Point(327, 20)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(100, 33)
+        Me.Label1.Size = New System.Drawing.Size(344, 33)
         Me.Label1.TabIndex = 3
-        Me.Label1.Text = "LOGIN"
+        Me.Label1.Text = "CONFIGURACIÓN INICIAL"
         '
         'btnLogin
         '
@@ -104,25 +102,12 @@ Partial Class FrmLogin
         Me.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLogin.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogin.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnLogin.Location = New System.Drawing.Point(316, 227)
+        Me.btnLogin.Location = New System.Drawing.Point(316, 249)
         Me.btnLogin.Name = "btnLogin"
         Me.btnLogin.Size = New System.Drawing.Size(395, 40)
         Me.btnLogin.TabIndex = 2
-        Me.btnLogin.Text = "ACCEDER"
+        Me.btnLogin.Text = "GUARDAR CONFIGURACION"
         Me.btnLogin.UseVisualStyleBackColor = False
-        '
-        'lkOlvidaste
-        '
-        Me.lkOlvidaste.ActiveLinkColor = System.Drawing.Color.ForestGreen
-        Me.lkOlvidaste.AutoSize = True
-        Me.lkOlvidaste.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lkOlvidaste.LinkColor = System.Drawing.Color.LimeGreen
-        Me.lkOlvidaste.Location = New System.Drawing.Point(425, 272)
-        Me.lkOlvidaste.Name = "lkOlvidaste"
-        Me.lkOlvidaste.Size = New System.Drawing.Size(181, 17)
-        Me.lkOlvidaste.TabIndex = 3
-        Me.lkOlvidaste.TabStop = True
-        Me.lkOlvidaste.Text = "¿Olvidaste la Contraseña?"
         '
         'btnCerrar
         '
@@ -135,23 +120,12 @@ Partial Class FrmLogin
         Me.btnCerrar.TabIndex = 6
         Me.btnCerrar.TabStop = False
         '
-        'btnMinimizar
-        '
-        Me.btnMinimizar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnMinimizar.Image = CType(resources.GetObject("btnMinimizar.Image"), System.Drawing.Image)
-        Me.btnMinimizar.Location = New System.Drawing.Point(702, 9)
-        Me.btnMinimizar.Name = "btnMinimizar"
-        Me.btnMinimizar.Size = New System.Drawing.Size(15, 15)
-        Me.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnMinimizar.TabIndex = 7
-        Me.btnMinimizar.TabStop = False
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label2.Location = New System.Drawing.Point(318, 102)
+        Me.Label2.Location = New System.Drawing.Point(318, 130)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(60, 17)
         Me.Label2.TabIndex = 8
@@ -162,7 +136,7 @@ Partial Class FrmLogin
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label3.Location = New System.Drawing.Point(318, 160)
+        Me.Label3.Location = New System.Drawing.Point(318, 188)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(88, 17)
         Me.Label3.TabIndex = 9
@@ -173,49 +147,45 @@ Partial Class FrmLogin
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label4.Location = New System.Drawing.Point(318, 64)
+        Me.Label4.Location = New System.Drawing.Point(318, 76)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(72, 17)
+        Me.Label4.Size = New System.Drawing.Size(69, 17)
         Me.Label4.TabIndex = 10
-        Me.Label4.Text = "SUCURSAL:"
+        Me.Label4.Text = "SUCURSAL"
         '
-        'lblSucursal
+        'cmbSucursal
         '
-        Me.lblSucursal.AutoSize = True
-        Me.lblSucursal.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSucursal.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.lblSucursal.Location = New System.Drawing.Point(396, 64)
-        Me.lblSucursal.Name = "lblSucursal"
-        Me.lblSucursal.Size = New System.Drawing.Size(0, 17)
-        Me.lblSucursal.TabIndex = 11
+        Me.cmbSucursal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbSucursal.FormattingEnabled = True
+        Me.cmbSucursal.Location = New System.Drawing.Point(316, 96)
+        Me.cmbSucursal.Name = "cmbSucursal"
+        Me.cmbSucursal.Size = New System.Drawing.Size(395, 21)
+        Me.cmbSucursal.TabIndex = 11
         '
-        'FrmLogin
+        'FrmConfigInicial
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkGreen
         Me.ClientSize = New System.Drawing.Size(750, 330)
-        Me.Controls.Add(Me.lblSucursal)
+        Me.Controls.Add(Me.cmbSucursal)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.btnMinimizar)
         Me.Controls.Add(Me.btnCerrar)
-        Me.Controls.Add(Me.lkOlvidaste)
         Me.Controls.Add(Me.btnLogin)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtPass)
         Me.Controls.Add(Me.txtUser)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "FrmLogin"
+        Me.Name = "FrmConfigInicial"
         Me.Opacity = 0.98R
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmLog"
         Me.Panel1.ResumeLayout(False)
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnCerrar, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnMinimizar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -226,12 +196,10 @@ Partial Class FrmLogin
     Friend WithEvents txtPass As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents btnLogin As Button
-    Friend WithEvents lkOlvidaste As LinkLabel
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents btnCerrar As PictureBox
-    Friend WithEvents btnMinimizar As PictureBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents lblSucursal As Label
+    Friend WithEvents cmbSucursal As ComboBox
 End Class

@@ -10,9 +10,6 @@ Public Class frmConfigRoles
     End Sub
 
     Private Sub FrmConfigRoles_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        lblRol.Visible = False
-        txtRoles.Visible = False
-        btnAgregar.Visible = False
         btnNuevo.Enabled = True
         btnActualizar.Enabled = False
         btnEliminar.Enabled = False
@@ -29,51 +26,35 @@ Public Class frmConfigRoles
         dgvRol.DataSource = lst
 
         If lst.Count > 0 Then
-            dgvRol.Rows(1).Selected = False
+            dgvRol.Rows(0).Selected = False
         End If
+
         dgvRol.Columns(0).Visible = False
         dgvRol.Columns(2).Visible = False
         dgvRol.Columns(3).Visible = False
         dgvRol.Columns(4).Visible = False
-
+        Deshabilitar()
     End Sub
     Public Sub LimpiarCampos()
         txtRoles.Clear()
     End Sub
 
     Private Sub DgvRol_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvRol.CellDoubleClick
-        Dim fila As DataGridViewRow = dgvRol.Rows(e.RowIndex)
-        lblIdRol.Text = Convert.ToInt32(fila.Cells(0).Value)
-        txtRoles.Text = Convert.ToString(fila.Cells(1).Value)
+        If e.RowIndex >= 0 Then
+            Dim fila As DataGridViewRow = dgvRol.Rows(e.RowIndex)
+            lblIdRol.Text = Convert.ToInt32(fila.Cells(0).Value)
+            txtRoles.Text = Convert.ToString(fila.Cells(1).Value)
 
-        lblRol.Visible = True
-        txtRoles.Visible = True
-        btnAgregar.Visible = False
+            lblRol.Visible = True
+            txtRoles.Visible = True
 
-        btnNuevo.Enabled = False
-        btnActualizar.Enabled = True
-        btnEliminar.Enabled = True
+            btnNuevo.Enabled = False
+            btnActualizar.Enabled = True
+            btnEliminar.Enabled = True
+        End If
     End Sub
 
     Private Sub BtnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
-        lblRol.Visible = True
-        txtRoles.Visible = True
-        btnAgregar.Visible = True
-        txtRoles.Focus()
-    End Sub
-    Private Function Valida() As Boolean
-        Dim correcto As Boolean = False
-        Dim tipo As TipoGenerico
-        tipo = TipoGenerico.Rol
-        If (txtRoles.Text.Trim() <> String.Empty) Then
-            correcto = True
-        Else
-            correcto = False
-            mensajeError = "Especifique un rol en el campo vacío."
-        End If
-        Return correcto
-    End Function
-    Private Sub BtnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         Dim tipo As TipoGenerico
         tipo = TipoGenerico.Rol
         If Not Valida() Then
@@ -89,6 +70,18 @@ Public Class frmConfigRoles
             LlenarDgv()
         End If
     End Sub
+    Private Function Valida() As Boolean
+        Dim correcto As Boolean = False
+        Dim tipo As TipoGenerico
+        tipo = TipoGenerico.Rol
+        If (txtRoles.Text.Trim() <> String.Empty) Then
+            correcto = True
+        Else
+            correcto = False
+            mensajeError = "Especifique un rol en el campo vacío."
+        End If
+        Return correcto
+    End Function
 
     Private Sub BtnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
         Dim tipo As TipoGenerico
@@ -106,8 +99,6 @@ Public Class frmConfigRoles
 
             LimpiarCampos()
             LlenarDgv()
-            lblRol.Visible = False
-            txtRoles.Visible = False
             btnNuevo.Enabled = True
         End If
     End Sub
@@ -125,9 +116,19 @@ Public Class frmConfigRoles
             Me.DialogResult = DialogResult.Cancel
             LimpiarCampos()
             LlenarDgv()
-            lblRol.Visible = False
-            txtRoles.Visible = False
             btnNuevo.Enabled = True
         End If
+    End Sub
+
+    Private Sub dgvRol_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvRol.CellClick
+        Deshabilitar()
+    End Sub
+
+    Private Sub Deshabilitar()
+        btnNuevo.Enabled = True
+        btnActualizar.Enabled = False
+        btnEliminar.Enabled = False
+        'lblRol.Visible = False
+        'txtRoles.Visible = False
     End Sub
 End Class
