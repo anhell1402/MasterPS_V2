@@ -25,14 +25,17 @@ Public Class frmConfigRoles
         Dim obj As New GenericoBL(cadena, tipo)
         Dim lst As New Genericos()
         lst = obj.Obtener()
+        lst.RemoveAt(0)
         dgvRol.DataSource = lst
+
         If lst.Count > 0 Then
-            dgvRol.Rows(0).Selected = False
+            dgvRol.Rows(1).Selected = False
         End If
         dgvRol.Columns(0).Visible = False
         dgvRol.Columns(2).Visible = False
         dgvRol.Columns(3).Visible = False
         dgvRol.Columns(4).Visible = False
+
     End Sub
     Public Sub LimpiarCampos()
         txtRoles.Clear()

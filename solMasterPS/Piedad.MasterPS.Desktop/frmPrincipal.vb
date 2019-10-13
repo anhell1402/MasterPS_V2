@@ -283,6 +283,11 @@ Public Class frmPrincipal
         End If
     End Sub
 
+    Private Sub BtnRoles_Click(sender As Object, e As EventArgs) Handles btnRoles.Click
+        PanelSubMenuConfiguracion.Visible = False
+        AbrirFormularioEnPanel(Of frmConfigRoles)()
+    End Sub
+
     Private Sub CargaMenu()
         OcultarPadres()
         OcultarSubMenus()
