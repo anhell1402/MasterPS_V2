@@ -60,6 +60,7 @@ Public Class SucursalDA
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             Dim lista As New List(Of Sucursal)
             lista = objDA.ObtenerResultados(Of Sucursal)()
+            lst = New Sucursales()
             For Each suc As Sucursal In lista
                 lst.Add(suc)
             Next
