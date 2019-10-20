@@ -32,4 +32,6 @@
     TipoOperacionEmpenio = 30
     TipoTasa = 31
     TipoTelefono = 32
+    EstatusCliente = 33
+    TipoPrendaOro = 34
 End Enum

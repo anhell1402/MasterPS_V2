@@ -47,11 +47,6 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Data.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Printing.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Sparkline.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Utils.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraEditors.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -164,10 +159,22 @@
     <Compile Include="Configuracion\frmSync.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Empenio\frmAltaJoyeria.Designer.vb">
+      <DependentUpon>frmAltaJoyeria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Empenio\frmAltaJoyeria.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Empenio\frmAltaMcia.Designer.vb">
       <DependentUpon>frmAltaMcia.vb</DependentUpon>
     </Compile>
     <Compile Include="Empenio\frmAltaMcia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empenio\frmAltaVehiculo.Designer.vb">
+      <DependentUpon>frmAltaVehiculo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Empenio\frmAltaVehiculo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Empenio\frmCotizarEmpenio.Designer.vb">
@@ -186,6 +193,24 @@
       <DependentUpon>frmLiquidacion.vb</DependentUpon>
     </Compile>
     <Compile Include="Empenio\frmLiquidacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empenio\frmSeleccionJoyeria.Designer.vb">
+      <DependentUpon>frmSeleccionJoyeria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Empenio\frmSeleccionJoyeria.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empenio\frmSeleccionMciasElectronicas.Designer.vb">
+      <DependentUpon>frmSeleccionMciasElectronicas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Empenio\frmSeleccionMciasElectronicas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empenio\frmSeleccionVehiculo.Designer.vb">
+      <DependentUpon>frmSeleccionVehiculo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Empenio\frmSeleccionVehiculo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmConfigInicial.Designer.vb">
@@ -400,8 +425,14 @@
     <EmbeddedResource Include="Configuracion\frmSync.resx">
       <DependentUpon>frmSync.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Empenio\frmAltaJoyeria.resx">
+      <DependentUpon>frmAltaJoyeria.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Empenio\frmAltaMcia.resx">
       <DependentUpon>frmAltaMcia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empenio\frmAltaVehiculo.resx">
+      <DependentUpon>frmAltaVehiculo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Empenio\frmCotizarEmpenio.resx">
       <DependentUpon>frmCotizarEmpenio.vb</DependentUpon>
@@ -411,6 +442,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Empenio\frmLiquidacion.resx">
       <DependentUpon>frmLiquidacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empenio\frmSeleccionJoyeria.resx">
+      <DependentUpon>frmSeleccionJoyeria.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empenio\frmSeleccionMciasElectronicas.resx">
+      <DependentUpon>frmSeleccionMciasElectronicas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empenio\frmSeleccionVehiculo.resx">
+      <DependentUpon>frmSeleccionVehiculo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmConfigInicial.resx">
       <DependentUpon>frmConfigInicial.vb</DependentUpon>
@@ -469,7 +509,6 @@
     <EmbeddedResource Include="Inventario\frmSalidaInventario.resx">
       <DependentUpon>frmSalidaInventario.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>PublicVbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>

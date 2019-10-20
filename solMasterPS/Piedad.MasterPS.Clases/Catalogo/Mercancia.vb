@@ -5,6 +5,7 @@
         idFamilia_TipoKilataje_ = New Generico()
         idMarca_EstadoMetal_ = New Generico()
         idSucursal_ = New Sucursal()
+        idTipoPrendaOro_ = New Generico()
     End Sub
     Private idMercancia_ As Integer
     Public Property IdMercancia As Integer
@@ -76,6 +77,15 @@
         End Get
         Set(ByVal value As Sucursal)
             idSucursal_ = value
+        End Set
+    End Property
+    Private idTipoPrendaOro_ As Generico
+    Public Property IdTipoPrendaOro As Generico
+        Get
+            Return idTipoPrendaOro_
+        End Get
+        Set(ByVal value As Generico)
+            idTipoPrendaOro_ = value
         End Set
     End Property
 End Class

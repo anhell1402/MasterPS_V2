@@ -244,6 +244,20 @@ Public Class GenericoDA
                 obtener_ = "dbo.sp_ObtenerTipoTelefono"
                 obtenerTodos_ = "dbo.sp_ObtenerTipoTelefonos"
                 Exit Select
+            Case TipoGenerico.EstatusCliente
+                almacena = "dbo.sp_AltaEstatusCliente"
+                actualiza = "dbo.sp_ActualizarEstatusCliente"
+                elimina = "dbo.sp_EliminarEstatusCliente"
+                obtener_ = "dbo.sp_ObtenerEstatusCliente"
+                obtenerTodos_ = "dbo.sp_ObtenerEstatusClientes"
+                Exit Select
+            Case TipoGenerico.TipoPrendaOro
+                almacena = "dbo.sp_AltaTipoPrendaOro"
+                actualiza = "dbo.sp_ActualizarTipoPrendaOro"
+                elimina = "dbo.sp_EliminarTipoPrendaOro"
+                obtener_ = "dbo.sp_ObtenerTipoPrendaOro"
+                obtenerTodos_ = "dbo.sp_ObtenerTiposPrendaOro"
+                Exit Select
         End Select
     End Sub
     Public Sub Almacenar(ByVal generic As Generico)
