@@ -22,17 +22,20 @@ Public Class UsuarioBL
         Try
             Dim obj As New UsuarioDA(cadenaConex)
             obj.Almacenar(usuario_)
-            _hayError = False
+            _hayError = obj.HayError
+            _error = obj.MensajeError
         Catch ex As Exception
             _hayError = True
             _error = ex.Message
         End Try
+
     End Sub
     Public Sub Actualizar(ByVal usuario_ As Usuario)
         Try
             Dim obj As New UsuarioDA(cadenaConex)
             obj.Actualizar(usuario_)
-            _hayError = False
+            _hayError = obj.HayError
+            _error = obj.MensajeError
         Catch ex As Exception
             _hayError = True
             _error = ex.Message
@@ -42,33 +45,40 @@ Public Class UsuarioBL
         Try
             Dim obj As New UsuarioDA(cadenaConex)
             obj.Eliminar(usuario_)
-            _hayError = False
+            _hayError = obj.HayError
+            _error = obj.MensajeError
         Catch ex As Exception
             _hayError = True
             _error = ex.Message
         End Try
     End Sub
     Public Function Obtener(ByVal usuario_ As Usuario) As Usuario
+        Dim user As Usuario
         Try
             Dim obj As New UsuarioDA(cadenaConex)
-            Return obj.Obtener(usuario_)
-            _hayError = False
+            user = obj.Obtener(usuario_)
+            _hayError = obj.HayError
+            _error = obj.MensajeError
         Catch ex As Exception
             _hayError = True
             _error = ex.Message
-            Return Nothing
+            user = Nothing
         End Try
+        Return user
     End Function
     Public Function ObtenerTodos(ByVal usuario_ As Usuario) As Usuarios
+        Dim users As Usuarios
         Try
             Dim obj As New UsuarioDA(cadenaConex)
-            Return obj.ObtenerTodos(usuario_)
-            _hayError = False
+            users = obj.ObtenerTodos(usuario_)
+            _hayError = obj.HayError
+            _error = obj.MensajeError
         Catch ex As Exception
             _hayError = True
             _error = ex.Message
-            Return Nothing
+            users = Nothing
         End Try
+        Return users
     End Function
 
 

@@ -69,7 +69,7 @@ Public Class FrmConfigInicial
         Dim obj As New SucursalBL(cadena)
         lst = obj.Obtener()
         cmbSucursal.DataSource = lst
-        cmbSucursal.DisplayMember = "Nombre"
+        cmbSucursal.DisplayMember = "Nick"
         cmbSucursal.ValueMember = "IdSucursal"
     End Sub
 

@@ -23,7 +23,7 @@ Partial Class frmConfigUsuarios
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmConfigUsuarios))
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnEditar = New System.Windows.Forms.Button()
@@ -50,6 +50,8 @@ Partial Class frmConfigUsuarios
         Me.cmbTipoTelefono = New System.Windows.Forms.ComboBox()
         Me.dgvUsuarios = New System.Windows.Forms.DataGridView()
         Me.chbxActivo = New System.Windows.Forms.CheckBox()
+        Me.lblSucursalID = New System.Windows.Forms.Label()
+        Me.lblIdusuario = New System.Windows.Forms.Label()
         CType(Me.pbImagen, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -247,7 +249,7 @@ Partial Class frmConfigUsuarios
         Me.txtUsuario.BackColor = System.Drawing.Color.WhiteSmoke
         Me.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtUsuario.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUsuario.Location = New System.Drawing.Point(299, 244)
+        Me.txtUsuario.Location = New System.Drawing.Point(299, 243)
         Me.txtUsuario.Name = "txtUsuario"
         Me.txtUsuario.Size = New System.Drawing.Size(179, 19)
         Me.txtUsuario.TabIndex = 9
@@ -338,23 +340,23 @@ Partial Class frmConfigUsuarios
         Me.dgvUsuarios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgvUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvUsuarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvUsuarios.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvUsuarios.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvUsuarios.EnableHeadersVisualStyles = False
-        Me.dgvUsuarios.Location = New System.Drawing.Point(231, 292)
+        Me.dgvUsuarios.Location = New System.Drawing.Point(30, 292)
         Me.dgvUsuarios.MultiSelect = False
         Me.dgvUsuarios.Name = "dgvUsuarios"
         Me.dgvUsuarios.ReadOnly = True
         Me.dgvUsuarios.RowHeadersVisible = False
         Me.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvUsuarios.Size = New System.Drawing.Size(605, 219)
+        Me.dgvUsuarios.Size = New System.Drawing.Size(806, 219)
         Me.dgvUsuarios.TabIndex = 33
         '
         'chbxActivo
@@ -368,12 +370,33 @@ Partial Class frmConfigUsuarios
         Me.chbxActivo.Text = "ACTIVO"
         Me.chbxActivo.UseVisualStyleBackColor = True
         '
+        'lblSucursalID
+        '
+        Me.lblSucursalID.AutoSize = True
+        Me.lblSucursalID.Location = New System.Drawing.Point(656, 204)
+        Me.lblSucursalID.Name = "lblSucursalID"
+        Me.lblSucursalID.Size = New System.Drawing.Size(0, 13)
+        Me.lblSucursalID.TabIndex = 36
+        Me.lblSucursalID.Visible = False
+        '
+        'lblIdusuario
+        '
+        Me.lblIdusuario.AutoSize = True
+        Me.lblIdusuario.Location = New System.Drawing.Point(908, 362)
+        Me.lblIdusuario.Name = "lblIdusuario"
+        Me.lblIdusuario.Size = New System.Drawing.Size(39, 13)
+        Me.lblIdusuario.TabIndex = 37
+        Me.lblIdusuario.Text = "Label1"
+        Me.lblIdusuario.Visible = False
+        '
         'frmConfigUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightGray
         Me.ClientSize = New System.Drawing.Size(1050, 545)
+        Me.Controls.Add(Me.lblIdusuario)
+        Me.Controls.Add(Me.lblSucursalID)
         Me.Controls.Add(Me.chbxActivo)
         Me.Controls.Add(Me.dgvUsuarios)
         Me.Controls.Add(Me.lblTipoTelefono)
@@ -436,4 +459,6 @@ Partial Class frmConfigUsuarios
     Friend WithEvents cmbTipoTelefono As ComboBox
     Friend WithEvents dgvUsuarios As DataGridView
     Friend WithEvents chbxActivo As CheckBox
+    Friend WithEvents lblSucursalID As Label
+    Friend WithEvents lblIdusuario As Label
 End Class
