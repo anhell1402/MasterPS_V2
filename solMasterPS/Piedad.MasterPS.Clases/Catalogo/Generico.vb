@@ -3,7 +3,7 @@
 ''' estatusInventario, estatusMensaje, estatusVenta, familia_tipoKilataje, marca_estadoMetal, medioEnterado, motivoChecador
 ''' municipio, nivelCombustible, ocupacion, pais, periodo, rol, sexo, telefono, tipoCancelacionApartado, tipoDocumento,
 ''' tipoEmpenio, tipoFormaDiamante, tipoIdentificacion, tipoIngreso, tipoMercancia_Metal, tipoMotor, tipoOperacionEmpenio
-''' tipoTasa, tipoTelefono y caja.
+''' tipoTasa, tipoTelefono, caja, estatusClientes y tipoPrendaOro.
 ''' </summary>
 Public Class Generico
     Private idGenerico_ As Integer

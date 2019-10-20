@@ -15,6 +15,7 @@ Public Class MercanciaDA
             objDA.AgregarParametro("@precioMaximo", mercancia_.PrecioMaximo)
             objDA.AgregarParametro("@modelo", mercancia_.Modelo)
             objDA.AgregarParametro("@idSucursal", mercancia_.IdSucursal)
+            objDA.AgregarParametro("@idTipoPrendaOro", mercancia_.IdTipoPrendaOro)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -30,6 +31,7 @@ Public Class MercanciaDA
             objDA.AgregarParametro("@precioMaximo", mercancia_.PrecioMaximo)
             objDA.AgregarParametro("@modelo", mercancia_.Modelo)
             objDA.AgregarParametro("@idSucursal", mercancia_.IdSucursal)
+            objDA.AgregarParametro("@idTipoPrendaOro", mercancia_.IdTipoPrendaOro)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
             objDA.EjecutaComando()
         End Using
@@ -62,7 +64,7 @@ Public Class MercanciaDA
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando("dbo.sp_ObtenerMercancias")
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
-            objDA.AgregarParametro("@idSucursal", mercancia_.IdSucursal)
+            objDA.AgregarParametro("@idSucursal", mercancia_.IdSucursal.IdSucursal)
             Dim lista As New List(Of Mercancia)
             lista = objDA.ObtenerResultados(Of Mercancia)()
             For Each merc As Mercancia In lista

@@ -1,5 +1,6 @@
 ﻿Imports System.Runtime.InteropServices
 Public Class frmVentanaAviso
+#Region "Movimiento del Formulario"
     'ARASTRAR EL FORMULARIO
     <DllImport("user32.DLL", EntryPoint:="ReleaseCapture")>
     Private Shared Sub ReleaseCapture()
@@ -8,6 +9,7 @@ Public Class frmVentanaAviso
     <DllImport("user32.DLL", EntryPoint:="SendMessage")>
     Private Shared Sub SendMessage(ByVal hWnd As System.IntPtr, ByVal wMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer)
     End Sub
+#End Region
     Private Sub PanelSuperiorAviso_MouseMove(sender As Object, e As MouseEventArgs) Handles PanelSuperiorAviso.MouseMove
         ReleaseCapture()
         SendMessage(Me.Handle, &H112&, &HF012&, 0)

@@ -3,7 +3,7 @@ Imports Piedad.MasterPS.Clases
 Imports Piedad.MasterPS.Datos
 Imports Piedad.MasterPS.Negocio
 Imports System.Runtime.InteropServices
-Public Class frmAltaMcia
+Public Class frmSeleccionMciasElectronicas
 #Region "Movimiento del Formulario"
     <DllImport("user32.DLL", EntryPoint:="ReleaseCapture")>
     Private Shared Sub ReleaseCapture()
@@ -21,6 +21,10 @@ Public Class frmAltaMcia
         Me.Close()
     End Sub
 
+    Private Sub BtnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
+        frmAltaMcia.Show()
+    End Sub
+
     Private Sub PanelTitulo_MouseMove(sender As Object, e As MouseEventArgs) Handles PanelTitulo.MouseMove
         ReleaseCapture()
         SendMessage(Me.Handle, &H112&, &HF012&, 0)
@@ -30,7 +34,8 @@ Public Class frmAltaMcia
         ReleaseCapture()
         SendMessage(Me.Handle, &H112&, &HF012&, 0)
     End Sub
-    Private Sub FrmAltaMcia_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    Private Sub FrmSeleccionMciasElectronicas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.BringToFront()
     End Sub
 End Class
