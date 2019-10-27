@@ -8,7 +8,7 @@
         idTipoArte_ = New Generico()
         idTipoAntiguedades_ = New Generico()
         idSucursal_ = New Sucursal()
-        idDocumento_ = New Documento()
+        'idDocumento_ = New Documento()
         idTipoPrendaOro_ = New Generico()
     End Sub
     Private idDetalleEmpenio_ As Integer
@@ -398,15 +398,15 @@
             claveFolio_Documento_ = value
         End Set
     End Property
-    Private idDocumento_ As Documento
-    Public Property IdDocumento As Documento
-        Get
-            Return idDocumento_
-        End Get
-        Set(ByVal value As Documento)
-            idDocumento_ = value
-        End Set
-    End Property
+    'Private idDocumento_ As Documento
+    'Public Property IdDocumento As Documento
+    '    Get
+    '        Return idDocumento_
+    '    End Get
+    '    Set(ByVal value As Documento)
+    '        idDocumento_ = value
+    '    End Set
+    'End Property
     Private idTipoPrendaOro_ As Generico
     Public Property IdTipoPrendaOro As Generico
         Get

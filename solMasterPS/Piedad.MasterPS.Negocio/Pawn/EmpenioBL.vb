@@ -71,11 +71,11 @@ Public Class EmpenioBL
         End Try
     End Function
 
-    Public Function ObtenerPrecio(ByVal esJoyeria As Boolean, ByVal merca_ As Mercancia) As Decimal
+    Public Function ObtenerPrecio(ByVal esJoyeria As Boolean, ByVal merca_ As Mercancia, Optional detEmpenio As DetalleEmpenio = Nothing) As Decimal
         Dim precio As Decimal = 0
         Try
             Dim obj As New EmpenioDA(cadenaConex)
-            precio = obj.ObtenerPrecio(esJoyeria, merca_)
+            precio = obj.ObtenerPrecio(esJoyeria, merca_, detEmpenio)
             _hayError = obj.HayError
             _error = obj.MensajeError
         Catch ex As Exception

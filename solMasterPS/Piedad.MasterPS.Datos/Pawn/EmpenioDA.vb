@@ -82,17 +82,20 @@ Public Class EmpenioDA
         End Using
         Return lst
     End Function
-    Public Function ObtenerPrecio(ByVal esJoyeria As Boolean, ByVal merca_ As Mercancia) As Decimal
+    Public Function ObtenerPrecio(ByVal esJoyeria As Boolean, ByVal merca_ As Mercancia, Optional detEmpenio As DetalleEmpenio = Nothing) As Decimal
         Dim lst As New Empenios()
         Dim precio As Decimal = 0
         Using objDA As New ConexDB(cadenaConex)
             If esJoyeria Then
-                objDA.CrearComando("select	[dbo].[fn_ObtenerPrecioJoyeria](@idMercanciaMetal ,	@kilataje ,	@estado , @idSucursal) as precio")
+                objDA.CrearComando("select	[dbo].[fn_ObtenerPrecioJoyeria](@idMercanciaMetal ,	@kilataje ,	@estado , @idSucursal , @pesoPrenda , @numPiedras , @pesoPiedra) as precio")
                 objDA.EstablecerTipoComando = TipoComando.ComandoEnTexto
                 objDA.AgregarParametro("@idMercanciaMetal", merca_.IdTipoMercancia_Metal.IdGenerico)
                 objDA.AgregarParametro("@kilataje", merca_.IdFamilia_TipoKilataje.IdGenerico)
                 objDA.AgregarParametro("@estado", merca_.IdMarca_EstadoMetal.IdGenerico)
                 objDA.AgregarParametro("@idSucursal", merca_.IdSucursal.IdSucursal)
+                objDA.AgregarParametro("@pesoPrenda", detEmpenio.Peso)
+                objDA.AgregarParametro("@numPiedras", detEmpenio.NumeroPiedras)
+                objDA.AgregarParametro("@pesoPiedra", detEmpenio.PesoPiedra)
             Else
                 objDA.CrearComando("select	[dbo].[fn_ObtenerPrecioGeneral](@idTipoMercancia_Metal, @idFamilia_TipoKilataje, @idMarca_EstadoMetal , @modelo, @idTipoEmpenio) as precio")
                 objDA.EstablecerTipoComando = TipoComando.ComandoEnTexto

@@ -26,6 +26,14 @@ Partial Class frmSeleccionJoyeria
         Me.PanelTitulo = New System.Windows.Forms.Panel()
         Me.lblTitulo = New System.Windows.Forms.Label()
         Me.PanelContenedor = New System.Windows.Forms.Panel()
+        Me.txtNumPiedras = New System.Windows.Forms.TextBox()
+        Me.txtPesoPrenda = New System.Windows.Forms.TextBox()
+        Me.txtPesoPiedras = New System.Windows.Forms.TextBox()
+        Me.txtCantidad = New System.Windows.Forms.TextBox()
+        Me.lblPiedras = New System.Windows.Forms.Label()
+        Me.lblPesoPiedras = New System.Windows.Forms.Label()
+        Me.lblPeso = New System.Windows.Forms.Label()
+        Me.lblCantidad = New System.Windows.Forms.Label()
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
@@ -76,6 +84,14 @@ Partial Class frmSeleccionJoyeria
         'PanelContenedor
         '
         Me.PanelContenedor.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.PanelContenedor.Controls.Add(Me.txtNumPiedras)
+        Me.PanelContenedor.Controls.Add(Me.txtPesoPrenda)
+        Me.PanelContenedor.Controls.Add(Me.txtPesoPiedras)
+        Me.PanelContenedor.Controls.Add(Me.txtCantidad)
+        Me.PanelContenedor.Controls.Add(Me.lblPiedras)
+        Me.PanelContenedor.Controls.Add(Me.lblPesoPiedras)
+        Me.PanelContenedor.Controls.Add(Me.lblPeso)
+        Me.PanelContenedor.Controls.Add(Me.lblCantidad)
         Me.PanelContenedor.Controls.Add(Me.btnCerrar)
         Me.PanelContenedor.Controls.Add(Me.btnAgregar)
         Me.PanelContenedor.Controls.Add(Me.txtDescripcion)
@@ -99,8 +115,91 @@ Partial Class frmSeleccionJoyeria
         Me.PanelContenedor.Controls.Add(Me.pbImagen)
         Me.PanelContenedor.Location = New System.Drawing.Point(5, 35)
         Me.PanelContenedor.Name = "PanelContenedor"
-        Me.PanelContenedor.Size = New System.Drawing.Size(285, 453)
+        Me.PanelContenedor.Size = New System.Drawing.Size(285, 528)
         Me.PanelContenedor.TabIndex = 1
+        '
+        'txtNumPiedras
+        '
+        Me.txtNumPiedras.Location = New System.Drawing.Point(231, 293)
+        Me.txtNumPiedras.Name = "txtNumPiedras"
+        Me.txtNumPiedras.Size = New System.Drawing.Size(41, 20)
+        Me.txtNumPiedras.TabIndex = 57
+        Me.txtNumPiedras.Text = "0"
+        '
+        'txtPesoPrenda
+        '
+        Me.txtPesoPrenda.Location = New System.Drawing.Point(90, 292)
+        Me.txtPesoPrenda.Name = "txtPesoPrenda"
+        Me.txtPesoPrenda.Size = New System.Drawing.Size(50, 20)
+        Me.txtPesoPrenda.TabIndex = 56
+        Me.txtPesoPrenda.Text = "0"
+        '
+        'txtPesoPiedras
+        '
+        Me.txtPesoPiedras.Location = New System.Drawing.Point(231, 267)
+        Me.txtPesoPiedras.Name = "txtPesoPiedras"
+        Me.txtPesoPiedras.Size = New System.Drawing.Size(41, 20)
+        Me.txtPesoPiedras.TabIndex = 55
+        Me.txtPesoPiedras.Text = "0"
+        '
+        'txtCantidad
+        '
+        Me.txtCantidad.Location = New System.Drawing.Point(90, 266)
+        Me.txtCantidad.Name = "txtCantidad"
+        Me.txtCantidad.ReadOnly = True
+        Me.txtCantidad.Size = New System.Drawing.Size(50, 20)
+        Me.txtCantidad.TabIndex = 54
+        Me.txtCantidad.Text = "1"
+        '
+        'lblPiedras
+        '
+        Me.lblPiedras.AutoSize = True
+        Me.lblPiedras.BackColor = System.Drawing.Color.Transparent
+        Me.lblPiedras.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPiedras.ForeColor = System.Drawing.Color.Black
+        Me.lblPiedras.Location = New System.Drawing.Point(161, 294)
+        Me.lblPiedras.Name = "lblPiedras"
+        Me.lblPiedras.Size = New System.Drawing.Size(71, 17)
+        Me.lblPiedras.TabIndex = 53
+        Me.lblPiedras.Text = "# Piedras:"
+        Me.lblPiedras.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'lblPesoPiedras
+        '
+        Me.lblPesoPiedras.AutoSize = True
+        Me.lblPesoPiedras.BackColor = System.Drawing.Color.Transparent
+        Me.lblPesoPiedras.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPesoPiedras.ForeColor = System.Drawing.Color.Black
+        Me.lblPesoPiedras.Location = New System.Drawing.Point(144, 268)
+        Me.lblPesoPiedras.Name = "lblPesoPiedras"
+        Me.lblPesoPiedras.Size = New System.Drawing.Size(88, 17)
+        Me.lblPesoPiedras.TabIndex = 52
+        Me.lblPesoPiedras.Text = "Piedras (gr.):"
+        '
+        'lblPeso
+        '
+        Me.lblPeso.AutoSize = True
+        Me.lblPeso.BackColor = System.Drawing.Color.Transparent
+        Me.lblPeso.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPeso.ForeColor = System.Drawing.Color.Black
+        Me.lblPeso.Location = New System.Drawing.Point(46, 293)
+        Me.lblPeso.Name = "lblPeso"
+        Me.lblPeso.Size = New System.Drawing.Size(42, 17)
+        Me.lblPeso.TabIndex = 51
+        Me.lblPeso.Text = "Peso:"
+        Me.lblPeso.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'lblCantidad
+        '
+        Me.lblCantidad.AutoSize = True
+        Me.lblCantidad.BackColor = System.Drawing.Color.Transparent
+        Me.lblCantidad.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCantidad.ForeColor = System.Drawing.Color.Black
+        Me.lblCantidad.Location = New System.Drawing.Point(16, 266)
+        Me.lblCantidad.Name = "lblCantidad"
+        Me.lblCantidad.Size = New System.Drawing.Size(75, 17)
+        Me.lblCantidad.TabIndex = 50
+        Me.lblCantidad.Text = "Cantidad:"
         '
         'btnCerrar
         '
@@ -113,7 +212,7 @@ Partial Class frmSeleccionJoyeria
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCerrar.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCerrar.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnCerrar.Location = New System.Drawing.Point(147, 415)
+        Me.btnCerrar.Location = New System.Drawing.Point(147, 490)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(134, 30)
         Me.btnCerrar.TabIndex = 49
@@ -131,7 +230,7 @@ Partial Class frmSeleccionJoyeria
         Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAgregar.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAgregar.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnAgregar.Location = New System.Drawing.Point(8, 415)
+        Me.btnAgregar.Location = New System.Drawing.Point(8, 490)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(134, 30)
         Me.btnAgregar.TabIndex = 48
@@ -140,10 +239,10 @@ Partial Class frmSeleccionJoyeria
         '
         'txtDescripcion
         '
-        Me.txtDescripcion.Location = New System.Drawing.Point(7, 371)
+        Me.txtDescripcion.Location = New System.Drawing.Point(7, 428)
         Me.txtDescripcion.Multiline = True
         Me.txtDescripcion.Name = "txtDescripcion"
-        Me.txtDescripcion.Size = New System.Drawing.Size(265, 39)
+        Me.txtDescripcion.Size = New System.Drawing.Size(265, 53)
         Me.txtDescripcion.TabIndex = 47
         '
         'lblDescripcion
@@ -152,7 +251,7 @@ Partial Class frmSeleccionJoyeria
         Me.lblDescripcion.BackColor = System.Drawing.Color.Transparent
         Me.lblDescripcion.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDescripcion.ForeColor = System.Drawing.Color.Black
-        Me.lblDescripcion.Location = New System.Drawing.Point(4, 351)
+        Me.lblDescripcion.Location = New System.Drawing.Point(4, 408)
         Me.lblDescripcion.Name = "lblDescripcion"
         Me.lblDescripcion.Size = New System.Drawing.Size(87, 17)
         Me.lblDescripcion.TabIndex = 46
@@ -161,9 +260,9 @@ Partial Class frmSeleccionJoyeria
         'txtAvaluo
         '
         Me.txtAvaluo.Enabled = False
-        Me.txtAvaluo.Location = New System.Drawing.Point(90, 321)
+        Me.txtAvaluo.Location = New System.Drawing.Point(125, 382)
         Me.txtAvaluo.Name = "txtAvaluo"
-        Me.txtAvaluo.Size = New System.Drawing.Size(150, 20)
+        Me.txtAvaluo.Size = New System.Drawing.Size(115, 20)
         Me.txtAvaluo.TabIndex = 45
         '
         'lblAvaluo
@@ -172,7 +271,7 @@ Partial Class frmSeleccionJoyeria
         Me.lblAvaluo.BackColor = System.Drawing.Color.Transparent
         Me.lblAvaluo.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblAvaluo.ForeColor = System.Drawing.Color.Black
-        Me.lblAvaluo.Location = New System.Drawing.Point(30, 324)
+        Me.lblAvaluo.Location = New System.Drawing.Point(62, 385)
         Me.lblAvaluo.Name = "lblAvaluo"
         Me.lblAvaluo.Size = New System.Drawing.Size(58, 17)
         Me.lblAvaluo.TabIndex = 44
@@ -184,7 +283,7 @@ Partial Class frmSeleccionJoyeria
         Me.lblPrestamoMaxCantidad.BackColor = System.Drawing.Color.Transparent
         Me.lblPrestamoMaxCantidad.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPrestamoMaxCantidad.ForeColor = System.Drawing.Color.DarkRed
-        Me.lblPrestamoMaxCantidad.Location = New System.Drawing.Point(161, 266)
+        Me.lblPrestamoMaxCantidad.Location = New System.Drawing.Point(161, 326)
         Me.lblPrestamoMaxCantidad.Name = "lblPrestamoMaxCantidad"
         Me.lblPrestamoMaxCantidad.Size = New System.Drawing.Size(44, 18)
         Me.lblPrestamoMaxCantidad.TabIndex = 43
@@ -196,7 +295,7 @@ Partial Class frmSeleccionJoyeria
         Me.lblPrestamoMaximo.BackColor = System.Drawing.Color.Transparent
         Me.lblPrestamoMaximo.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPrestamoMaximo.ForeColor = System.Drawing.Color.Black
-        Me.lblPrestamoMaximo.Location = New System.Drawing.Point(47, 266)
+        Me.lblPrestamoMaximo.Location = New System.Drawing.Point(47, 326)
         Me.lblPrestamoMaximo.Name = "lblPrestamoMaximo"
         Me.lblPrestamoMaximo.Size = New System.Drawing.Size(117, 17)
         Me.lblPrestamoMaximo.TabIndex = 42
@@ -204,9 +303,9 @@ Partial Class frmSeleccionJoyeria
         '
         'txtPrestamo
         '
-        Me.txtPrestamo.Location = New System.Drawing.Point(90, 295)
+        Me.txtPrestamo.Location = New System.Drawing.Point(125, 356)
         Me.txtPrestamo.Name = "txtPrestamo"
-        Me.txtPrestamo.Size = New System.Drawing.Size(150, 20)
+        Me.txtPrestamo.Size = New System.Drawing.Size(115, 20)
         Me.txtPrestamo.TabIndex = 41
         '
         'lblPrestamo
@@ -215,7 +314,7 @@ Partial Class frmSeleccionJoyeria
         Me.lblPrestamo.BackColor = System.Drawing.Color.Transparent
         Me.lblPrestamo.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPrestamo.ForeColor = System.Drawing.Color.Black
-        Me.lblPrestamo.Location = New System.Drawing.Point(15, 295)
+        Me.lblPrestamo.Location = New System.Drawing.Point(47, 356)
         Me.lblPrestamo.Name = "lblPrestamo"
         Me.lblPrestamo.Size = New System.Drawing.Size(73, 17)
         Me.lblPrestamo.TabIndex = 40
@@ -342,7 +441,7 @@ Partial Class frmSeleccionJoyeria
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gold
-        Me.ClientSize = New System.Drawing.Size(297, 494)
+        Me.ClientSize = New System.Drawing.Size(297, 568)
         Me.Controls.Add(Me.PanelContenedor)
         Me.Controls.Add(Me.PanelTitulo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -382,4 +481,12 @@ Partial Class frmSeleccionJoyeria
     Friend WithEvents lblDescripcion As Label
     Friend WithEvents btnCerrar As Button
     Friend WithEvents btnAgregar As Button
+    Public WithEvents txtNumPiedras As TextBox
+    Public WithEvents txtPesoPrenda As TextBox
+    Public WithEvents txtPesoPiedras As TextBox
+    Public WithEvents txtCantidad As TextBox
+    Friend WithEvents lblPiedras As Label
+    Friend WithEvents lblPesoPiedras As Label
+    Friend WithEvents lblPeso As Label
+    Friend WithEvents lblCantidad As Label
 End Class
