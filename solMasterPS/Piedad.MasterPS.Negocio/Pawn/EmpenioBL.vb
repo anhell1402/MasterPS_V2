@@ -70,18 +70,4 @@ Public Class EmpenioBL
             Return Nothing
         End Try
     End Function
-
-    Public Function ObtenerPrecio(ByVal esJoyeria As Boolean, ByVal merca_ As Mercancia) As Decimal
-        Dim precio As Decimal = 0
-        Try
-            Dim obj As New EmpenioDA(cadenaConex)
-            precio = obj.ObtenerPrecio(esJoyeria, merca_)
-            _hayError = obj.HayError
-            _error = obj.MensajeError
-        Catch ex As Exception
-            _hayError = True
-            _error = ex.Message
-        End Try
-        Return precio
-    End Function
 End Class

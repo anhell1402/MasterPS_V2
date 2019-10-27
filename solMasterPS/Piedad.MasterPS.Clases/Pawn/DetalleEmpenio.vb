@@ -9,7 +9,6 @@
         idTipoAntiguedades_ = New Generico()
         idSucursal_ = New Sucursal()
         idDocumento_ = New Documento()
-        idTipoPrendaOro_ = New Generico()
     End Sub
     Private idDetalleEmpenio_ As Integer
     Public Property IdDetalleEmpenio As Integer
@@ -155,21 +154,6 @@
             idTipoMotor_ = value
         End Set
     End Property
-    Public WriteOnly Property SetIdTipoMotor As Integer
-        Set(value As Integer)
-            idTipoMotor_.IdGenerico = value
-        End Set
-    End Property
-    Public WriteOnly Property SetDescripcionTipoMotor As String
-        Set(value As String)
-            idTipoMotor_.Descripcion = value
-        End Set
-    End Property
-    Public ReadOnly Property DescripcionTipoMotor As String
-        Get
-            Return IdTipoMotor.Descripcion
-        End Get
-    End Property
     Private idNivelCombustible_ As Generico
     Public Property IdNivelCombustible As Generico
         Get
@@ -178,21 +162,6 @@
         Set(ByVal value As Generico)
             idNivelCombustible_ = value
         End Set
-    End Property
-    Public WriteOnly Property SetIdNivelCombustible As Integer
-        Set(value As Integer)
-            idNivelCombustible_.IdGenerico = value
-        End Set
-    End Property
-    Public WriteOnly Property SetDescripcion As String
-        Set(value As String)
-            idNivelCombustible_.Descripcion = value
-        End Set
-    End Property
-    Public ReadOnly Property DescripcionNivelCombustible As String
-        Get
-            Return IdNivelCombustible.Descripcion
-        End Get
     End Property
     Private numeroTarjetaCirculacion_ As Decimal
     Public Property NumeroTarjetaCirculacion As Decimal
@@ -293,21 +262,6 @@
             idTipoFormaDiamante_ = value
         End Set
     End Property
-    Public WriteOnly Property SetIdTipoFormaDiamante As Integer
-        Set(value As Integer)
-            idTipoFormaDiamante_.IdGenerico = value
-        End Set
-    End Property
-    Public WriteOnly Property SetDescripcionTipoFormaDiamante As String
-        Set(value As String)
-            idTipoFormaDiamante_.Descripcion = value
-        End Set
-    End Property
-    Public ReadOnly Property DescripcionTipoFormaDiamante As String
-        Get
-            Return IdTipoFormaDiamante.Descripcion
-        End Get
-    End Property
     Private pureza_ As String
     Public Property Pureza As String
         Get
@@ -326,21 +280,6 @@
             idTipoArte_ = value
         End Set
     End Property
-    Public WriteOnly Property SetIdTipoArte As Integer
-        Set(value As Integer)
-            idTipoArte_.IdGenerico = value
-        End Set
-    End Property
-    Public WriteOnly Property SetDescripcionTipoArte As String
-        Set(value As String)
-            idTipoArte_.Descripcion = value
-        End Set
-    End Property
-    Public ReadOnly Property DescripcionTipoArte As String
-        Get
-            Return IdTipoArte.Descripcion
-        End Get
-    End Property
     Private idTipoAntiguedades_ As Generico
     Public Property IdTipoAntiguedades As Generico
         Get
@@ -350,21 +289,6 @@
             idTipoAntiguedades_ = value
         End Set
     End Property
-    Public WriteOnly Property SetIdTipoAntiguedades As Integer
-        Set(value As Integer)
-            idTipoAntiguedades_.IdGenerico = value
-        End Set
-    End Property
-    Public WriteOnly Property SetDescripcionTipoAntiguedades As String
-        Set(value As String)
-            idTipoAntiguedades_.Descripcion = value
-        End Set
-    End Property
-    Public ReadOnly Property DescripcionTipoAntiguedades As String
-        Get
-            Return IdTipoAntiguedades.Descripcion
-        End Get
-    End Property
     Private idSucursal_ As Sucursal
     Public Property IdSucursal As Sucursal
         Get
@@ -373,21 +297,6 @@
         Set(ByVal value As Sucursal)
             idSucursal_ = value
         End Set
-    End Property
-    Public WriteOnly Property SetIdSucursal As Integer
-        Set(value As Integer)
-            idSucursal_.IdSucursal = value
-        End Set
-    End Property
-    Public WriteOnly Property SetDescripcionSucursal As String
-        Set(value As String)
-            idSucursal_.Nick = value
-        End Set
-    End Property
-    Public ReadOnly Property DescripcionSucursal As String
-        Get
-            Return IdSucursal.Nick
-        End Get
     End Property
     Private claveFolio_Documento_ As String
     Public Property ClaveFolio_Documento As String
@@ -406,29 +315,5 @@
         Set(ByVal value As Documento)
             idDocumento_ = value
         End Set
-    End Property
-    Private idTipoPrendaOro_ As Generico
-    Public Property IdTipoPrendaOro As Generico
-        Get
-            Return idTipoPrendaOro_
-        End Get
-        Set(ByVal value As Generico)
-            idTipoPrendaOro_ = value
-        End Set
-    End Property
-    Public WriteOnly Property SetIdTipoPrendaOro As Integer
-        Set(value As Integer)
-            idTipoPrendaOro_.IdGenerico = value
-        End Set
-    End Property
-    Public WriteOnly Property SetDescripcionTipoPrendaOro As String
-        Set(value As String)
-            idTipoPrendaOro_.Descripcion = value
-        End Set
-    End Property
-    Public ReadOnly Property DescripcionTipoPrendaOro As String
-        Get
-            Return IdTipoPrendaOro.Descripcion
-        End Get
     End Property
 End Class

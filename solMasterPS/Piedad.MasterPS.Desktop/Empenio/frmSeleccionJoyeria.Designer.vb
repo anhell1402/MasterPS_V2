@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class frmSeleccionJoyeria
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()>
+    <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,12 +20,13 @@ Partial Class frmSeleccionJoyeria
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()>
+    <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmSeleccionJoyeria))
         Me.PanelTitulo = New System.Windows.Forms.Panel()
         Me.lblTitulo = New System.Windows.Forms.Label()
         Me.PanelContenedor = New System.Windows.Forms.Panel()
+        Me.lblPureza = New System.Windows.Forms.Label()
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
@@ -76,6 +77,7 @@ Partial Class frmSeleccionJoyeria
         'PanelContenedor
         '
         Me.PanelContenedor.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.PanelContenedor.Controls.Add(Me.lblPureza)
         Me.PanelContenedor.Controls.Add(Me.btnCerrar)
         Me.PanelContenedor.Controls.Add(Me.btnAgregar)
         Me.PanelContenedor.Controls.Add(Me.txtDescripcion)
@@ -101,6 +103,18 @@ Partial Class frmSeleccionJoyeria
         Me.PanelContenedor.Name = "PanelContenedor"
         Me.PanelContenedor.Size = New System.Drawing.Size(285, 453)
         Me.PanelContenedor.TabIndex = 1
+        '
+        'lblPureza
+        '
+        Me.lblPureza.AutoSize = True
+        Me.lblPureza.BackColor = System.Drawing.Color.Transparent
+        Me.lblPureza.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPureza.ForeColor = System.Drawing.Color.Black
+        Me.lblPureza.Location = New System.Drawing.Point(33, 207)
+        Me.lblPureza.Name = "lblPureza"
+        Me.lblPureza.Size = New System.Drawing.Size(55, 17)
+        Me.lblPureza.TabIndex = 50
+        Me.lblPureza.Text = "Pureza:"
         '
         'btnCerrar
         '
@@ -279,8 +293,6 @@ Partial Class frmSeleccionJoyeria
         Me.txtTipoEmpenio.Name = "txtTipoEmpenio"
         Me.txtTipoEmpenio.Size = New System.Drawing.Size(150, 20)
         Me.txtTipoEmpenio.TabIndex = 35
-        Me.txtTipoEmpenio.Text = "JOYERÍA"
-        Me.txtTipoEmpenio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblKilataje
         '
@@ -382,4 +394,5 @@ Partial Class frmSeleccionJoyeria
     Friend WithEvents lblDescripcion As Label
     Friend WithEvents btnCerrar As Button
     Friend WithEvents btnAgregar As Button
+    Friend WithEvents lblPureza As Label
 End Class

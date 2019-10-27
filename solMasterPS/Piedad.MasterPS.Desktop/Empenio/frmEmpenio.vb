@@ -23,17 +23,17 @@ Public Class frmEmpenio
     Private Sub CmbTipoEmpenio_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbTipoEmpenio.SelectedIndexChanged
         If cmbTipoEmpenio.SelectedIndex = 1 Then
             Dim frm As New frmSeleccionJoyeria()
-            frm.ShowDialog()
+            frm.Show()
             frm.BringToFront()
             frm.txtTipoEmpenio.Text = Convert.ToString(Me.cmbTipoEmpenio.Text)
-        ElseIf cmbTipoEmpenio.SelectedIndex = 2 Or cmbTipoEmpenio.SelectedIndex = 3 Then
-            Dim frm As New frmSeleccionMciasElectronicas(cmbTipoEmpenio.SelectedIndex.ToString())
-            frm.ShowDialog()
+        ElseIf cmbTipoEmpenio.SelectedIndex = 2 Then
+            Dim frm As New frmSeleccionMciasElectronicas
+            frm.Show()
             frm.BringToFront()
             frm.txtTipoEmpenio.Text = Convert.ToString(Me.cmbTipoEmpenio.Text)
         ElseIf cmbTipoEmpenio.SelectedIndex = 4 Then
             Dim frm As New frmSeleccionVehiculo()
-            frm.ShowDialog()
+            frm.Show()
             frm.BringToFront()
             frm.txtTipoEmpenio.Text = Convert.ToString(Me.cmbTipoEmpenio.Text)
         End If

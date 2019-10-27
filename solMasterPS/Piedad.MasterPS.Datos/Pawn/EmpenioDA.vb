@@ -2,9 +2,6 @@
 Imports Piedad.MasterPS.DataAccess
 Public Class EmpenioDA
     Private cadenaConex As String
-
-    Public Property HayError As Boolean
-    Public Property MensajeError As String
     Public Sub New(ByVal cadenaConexion As String)
         cadenaConex = cadenaConexion
     End Sub
@@ -81,40 +78,5 @@ Public Class EmpenioDA
             Next
         End Using
         Return lst
-    End Function
-    Public Function ObtenerPrecio(ByVal esJoyeria As Boolean, ByVal merca_ As Mercancia) As Decimal
-        Dim lst As New Empenios()
-        Dim precio As Decimal = 0
-        Using objDA As New ConexDB(cadenaConex)
-            If esJoyeria Then
-                objDA.CrearComando("select	[dbo].[fn_ObtenerPrecioJoyeria](@idMercanciaMetal ,	@kilataje ,	@estado , @idSucursal) as precio")
-                objDA.EstablecerTipoComando = TipoComando.ComandoEnTexto
-                objDA.AgregarParametro("@idMercanciaMetal", merca_.IdTipoMercancia_Metal.IdGenerico)
-                objDA.AgregarParametro("@kilataje", merca_.IdFamilia_TipoKilataje.IdGenerico)
-                objDA.AgregarParametro("@estado", merca_.IdMarca_EstadoMetal.IdGenerico)
-                objDA.AgregarParametro("@idSucursal", merca_.IdSucursal.IdSucursal)
-            Else
-                objDA.CrearComando("select	[dbo].[fn_ObtenerPrecioGeneral](@idTipoMercancia_Metal, @idFamilia_TipoKilataje, @idMarca_EstadoMetal , @modelo, @idTipoEmpenio) as precio")
-                objDA.EstablecerTipoComando = TipoComando.ComandoEnTexto
-                objDA.AgregarParametro("@idTipoMercancia_Metal", merca_.IdTipoMercancia_Metal.IdGenerico)
-                objDA.AgregarParametro("@idFamilia_TipoKilataje", merca_.IdFamilia_TipoKilataje.IdGenerico)
-                objDA.AgregarParametro("@idMarca_EstadoMetal", merca_.IdMarca_EstadoMetal.IdGenerico)
-                objDA.AgregarParametro("@modelo", merca_.Modelo)
-                objDA.AgregarParametro("@idTipoEmpenio", merca_.IdTipoEmpenio.IdGenerico)
-            End If
-
-
-            Dim dt As DataTable = objDA.ObtenerResultados()
-            If objDA.HayError Then
-                HayError = True
-                MensajeError = objDA.MensajeError
-            Else
-                For Each row As DataRow In dt.Rows
-                    precio = Convert.ToDecimal(row("precio"))
-                Next row
-
-            End If
-        End Using
-        Return precio
     End Function
 End Class
