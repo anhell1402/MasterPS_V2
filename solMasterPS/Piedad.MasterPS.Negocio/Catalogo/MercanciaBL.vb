@@ -70,4 +70,19 @@ Public Class MercanciaBL
             Return Nothing
         End Try
     End Function
+
+    Public Function ObtenerModeloss(ByVal merccia_ As Mercancia) As Mercancias
+        Dim lst As New Mercancias()
+        Try
+            Dim obj As New MercanciaDA(cadenaConex)
+            lst = obj.ObtenerModelos(merccia_)
+            _hayError = obj.HayError
+            _error = obj.MensajeError
+        Catch ex As Exception
+            _hayError = True
+            _error = ex.Message
+            lst = Nothing
+        End Try
+        Return lst
+    End Function
 End Class

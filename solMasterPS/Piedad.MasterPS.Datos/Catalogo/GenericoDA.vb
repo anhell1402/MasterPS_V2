@@ -314,11 +314,35 @@ Public Class GenericoDA
         Return gen
     End Function
 
-    Public Function ObtenerTodos() As Genericos
+    Public Function ObtenerTodos(Optional ID As Generico = Nothing) As Genericos
         Dim lst As New Genericos()
         Using objDA As New ConexDB(cadenaConex)
             objDA.CrearComando(obtenerTodos_)
             objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
+            If tipoGen = TipoGenerico.TipoMercancia_Metal Or
+               tipoGen = TipoGenerico.Marca_EstadoMetal Or
+               tipoGen = TipoGenerico.Familia_TipoKilataje Then
+                objDA.AgregarParametro("@idAuxiliar", ID.IdAuxiliarUno)
+            End If
+            Dim lista As New List(Of Generico)
+            lista = objDA.ObtenerResultados(Of Generico)()
+            For Each gen As Generico In lista
+                lst.Add(gen)
+            Next
+        End Using
+        Return lst
+    End Function
+
+    Public Function ObtenerTodosBy(Optional ID As Generico = Nothing) As Genericos
+        Dim lst As New Genericos()
+        Using objDA As New ConexDB(cadenaConex)
+            objDA.CrearComando("dbo.sp_ObtenerMarcaEstadosMetalesByFamilia")
+            objDA.EstablecerTipoComando = TipoComando.ProcedimientoAlmacenado
+            If tipoGen = TipoGenerico.TipoMercancia_Metal Or
+               tipoGen = TipoGenerico.Marca_EstadoMetal Or
+               tipoGen = TipoGenerico.Familia_TipoKilataje Then
+                objDA.AgregarParametro("@idAuxiliar", ID.IdAuxiliarUno)
+            End If
             Dim lista As New List(Of Generico)
             lista = objDA.ObtenerResultados(Of Generico)()
             For Each gen As Generico In lista

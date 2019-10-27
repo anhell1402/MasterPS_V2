@@ -30,34 +30,7 @@ Public Class frmAltaJoyeria
     Private Sub BtnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()
     End Sub
-    Private Function ObtenerSucursalLocal(ByVal id As Boolean) As String
-        Dim suc As String = String.Empty
-        Dim path As String = "c:\masterps\config\"
-        If IO.Directory.Exists(path) Then
-            If IO.File.Exists(path + "suc.conf") Then
-                Dim reader As New StreamReader(path + "suc.conf", Encoding.Default)
-                Dim a As String
-                Do
-                    a = reader.ReadLine
-                    If a IsNot Nothing Then
-                        Try
-                            Dim uncode As String
-                            If id Then
-                                uncode = Protection.Decrypt(a).Split("|")(1)
-                            Else
-                                uncode = Protection.Decrypt(a).Split("|")(2)
-                            End If
-                            suc = uncode
-                        Catch ex As Exception
-                            suc = String.Empty
-                        End Try
-                    End If
-                Loop Until a Is Nothing
-                reader.Close()
-            End If
-        End If
-        Return suc
-    End Function
+
     Private Sub LlenarTipoEmpenio()
         Dim tipo As TipoGenerico
         tipo = TipoGenerico.TipoEmpenio
@@ -85,10 +58,12 @@ Public Class frmAltaJoyeria
     Private Sub LlenarDGV()
         Dim idSuc As String
         idSuc = ObtenerSucursalLocal(False)
-
+        Dim merc As New Mercancia()
+        merc.IdSucursal.IdSucursal = Convert.ToInt32(idSuc)
         Dim obj As New MercanciaBL(cadena)
 
-        Dim lst As New List(Of Mercancias())
+        Dim lst As New Mercancias()
+        lst = obj.ObtenerTodos(merc)
         dgvPrendas.DataSource = lst
         If lst.Count > 0 Then
             dgvPrendas.Rows(0).Selected = False
@@ -96,7 +71,7 @@ Public Class frmAltaJoyeria
         Else
             dgvPrendas.Enabled = False
         End If
-
+        Me.Cursor = Cursors.Default
     End Sub
     Private Function Valida() As Boolean
         Dim correcto As Boolean = False

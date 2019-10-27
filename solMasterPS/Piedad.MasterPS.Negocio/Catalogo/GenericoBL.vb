@@ -72,4 +72,27 @@ Public Class GenericoBL
             Return Nothing
         End Try
     End Function
+    Public Function ObtenerTodos(ByVal ID As Generico) As Genericos
+        Try
+            Dim obj As New GenericoDA(cadenaConex, tipoGen)
+            Return obj.ObtenerTodos(ID)
+            _hayError = False
+        Catch ex As Exception
+            _hayError = True
+            _error = ex.Message
+            Return Nothing
+        End Try
+    End Function
+
+    Public Function ObtenerTodosBy(ByVal ID As Generico) As Genericos
+        Try
+            Dim obj As New GenericoDA(cadenaConex, tipoGen)
+            Return obj.ObtenerTodosBy(ID)
+            _hayError = False
+        Catch ex As Exception
+            _hayError = True
+            _error = ex.Message
+            Return Nothing
+        End Try
+    End Function
 End Class
