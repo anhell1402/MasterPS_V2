@@ -250,7 +250,6 @@
     <Compile Include="frmVentanaAviso.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="General.vb" />
     <Compile Include="Historial\frmAltaCliente.Designer.vb">
       <DependentUpon>frmAltaCliente.vb</DependentUpon>
     </Compile>

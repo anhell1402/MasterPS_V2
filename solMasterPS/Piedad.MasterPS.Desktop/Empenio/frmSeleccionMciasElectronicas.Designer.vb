@@ -30,18 +30,15 @@ Partial Class frmSeleccionMciasElectronicas
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.lblPrecioMaximo = New System.Windows.Forms.Label()
-        Me.txtPrecio = New System.Windows.Forms.TextBox()
+        Me.txtPrecioMax = New System.Windows.Forms.TextBox()
         Me.lblModelo = New System.Windows.Forms.Label()
         Me.cmbMarca = New System.Windows.Forms.ComboBox()
         Me.lblMarca = New System.Windows.Forms.Label()
         Me.cmbFamilia = New System.Windows.Forms.ComboBox()
         Me.lblFamilia = New System.Windows.Forms.Label()
-        Me.lblCategoria = New System.Windows.Forms.Label()
+        Me.lblTipo = New System.Windows.Forms.Label()
         Me.pbImagen = New System.Windows.Forms.PictureBox()
         Me.PanelContenedorMercancias = New System.Windows.Forms.Panel()
-        Me.cmbMercanciaMetal = New System.Windows.Forms.ComboBox()
-        Me.lblTipo = New System.Windows.Forms.Label()
-        Me.btnNuevo = New System.Windows.Forms.Button()
         Me.cmbModelo = New System.Windows.Forms.ComboBox()
         Me.txtSerie = New System.Windows.Forms.TextBox()
         Me.lblNoSerie = New System.Windows.Forms.Label()
@@ -55,6 +52,7 @@ Partial Class frmSeleccionMciasElectronicas
         Me.lblAvaluo = New System.Windows.Forms.Label()
         Me.lblDescripcionPrenda = New System.Windows.Forms.Label()
         Me.txtDescripcionPrenda = New System.Windows.Forms.TextBox()
+        Me.btnNuevo = New System.Windows.Forms.Button()
         Me.PanelTitulo.SuspendLayout()
         CType(Me.btnCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbImagen, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -69,14 +67,14 @@ Partial Class frmSeleccionMciasElectronicas
         Me.PanelTitulo.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelTitulo.Location = New System.Drawing.Point(0, 0)
         Me.PanelTitulo.Name = "PanelTitulo"
-        Me.PanelTitulo.Size = New System.Drawing.Size(732, 30)
+        Me.PanelTitulo.Size = New System.Drawing.Size(769, 30)
         Me.PanelTitulo.TabIndex = 0
         '
         'btnCerrar
         '
         Me.btnCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnCerrar.Image = CType(resources.GetObject("btnCerrar.Image"), System.Drawing.Image)
-        Me.btnCerrar.Location = New System.Drawing.Point(704, 6)
+        Me.btnCerrar.Location = New System.Drawing.Point(741, 6)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(16, 16)
         Me.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -98,11 +96,10 @@ Partial Class frmSeleccionMciasElectronicas
         '
         Me.txtTipoEmpenio.Enabled = False
         Me.txtTipoEmpenio.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTipoEmpenio.Location = New System.Drawing.Point(240, 13)
+        Me.txtTipoEmpenio.Location = New System.Drawing.Point(16, 33)
         Me.txtTipoEmpenio.Name = "txtTipoEmpenio"
         Me.txtTipoEmpenio.Size = New System.Drawing.Size(140, 23)
         Me.txtTipoEmpenio.TabIndex = 29
-        Me.txtTipoEmpenio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'btnSalir
         '
@@ -115,7 +112,7 @@ Partial Class frmSeleccionMciasElectronicas
         Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSalir.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSalir.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnSalir.Location = New System.Drawing.Point(519, 263)
+        Me.btnSalir.Location = New System.Drawing.Point(566, 264)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(203, 30)
         Me.btnSalir.TabIndex = 28
@@ -133,7 +130,7 @@ Partial Class frmSeleccionMciasElectronicas
         Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAgregar.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAgregar.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnAgregar.Location = New System.Drawing.Point(310, 263)
+        Me.btnAgregar.Location = New System.Drawing.Point(566, 228)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(203, 30)
         Me.btnAgregar.TabIndex = 27
@@ -144,27 +141,27 @@ Partial Class frmSeleccionMciasElectronicas
         '
         Me.lblPrecioMaximo.AutoSize = True
         Me.lblPrecioMaximo.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPrecioMaximo.ForeColor = System.Drawing.Color.Black
-        Me.lblPrecioMaximo.Location = New System.Drawing.Point(586, 110)
+        Me.lblPrecioMaximo.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.lblPrecioMaximo.Location = New System.Drawing.Point(20, 126)
         Me.lblPrecioMaximo.Name = "lblPrecioMaximo"
         Me.lblPrecioMaximo.Size = New System.Drawing.Size(73, 17)
         Me.lblPrecioMaximo.TabIndex = 26
         Me.lblPrecioMaximo.Text = "Prestamo:"
         '
-        'txtPrecio
+        'txtPrecioMax
         '
-        Me.txtPrecio.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPrecio.Location = New System.Drawing.Point(589, 130)
-        Me.txtPrecio.Name = "txtPrecio"
-        Me.txtPrecio.Size = New System.Drawing.Size(116, 23)
-        Me.txtPrecio.TabIndex = 25
+        Me.txtPrecioMax.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPrecioMax.Location = New System.Drawing.Point(18, 146)
+        Me.txtPrecioMax.Name = "txtPrecioMax"
+        Me.txtPrecioMax.Size = New System.Drawing.Size(117, 23)
+        Me.txtPrecioMax.TabIndex = 25
         '
         'lblModelo
         '
         Me.lblModelo.AutoSize = True
         Me.lblModelo.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblModelo.ForeColor = System.Drawing.Color.Black
-        Me.lblModelo.Location = New System.Drawing.Point(605, 49)
+        Me.lblModelo.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.lblModelo.Location = New System.Drawing.Point(448, 12)
         Me.lblModelo.Name = "lblModelo"
         Me.lblModelo.Size = New System.Drawing.Size(61, 17)
         Me.lblModelo.TabIndex = 24
@@ -173,9 +170,10 @@ Partial Class frmSeleccionMciasElectronicas
         'cmbMarca
         '
         Me.cmbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmbMarca.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbMarca.FormattingEnabled = True
-        Me.cmbMarca.Location = New System.Drawing.Point(475, 69)
+        Me.cmbMarca.Location = New System.Drawing.Point(318, 32)
         Me.cmbMarca.Name = "cmbMarca"
         Me.cmbMarca.Size = New System.Drawing.Size(127, 25)
         Me.cmbMarca.TabIndex = 22
@@ -184,8 +182,8 @@ Partial Class frmSeleccionMciasElectronicas
         '
         Me.lblMarca.AutoSize = True
         Me.lblMarca.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMarca.ForeColor = System.Drawing.Color.Black
-        Me.lblMarca.Location = New System.Drawing.Point(472, 50)
+        Me.lblMarca.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.lblMarca.Location = New System.Drawing.Point(315, 13)
         Me.lblMarca.Name = "lblMarca"
         Me.lblMarca.Size = New System.Drawing.Size(53, 17)
         Me.lblMarca.TabIndex = 21
@@ -194,9 +192,10 @@ Partial Class frmSeleccionMciasElectronicas
         'cmbFamilia
         '
         Me.cmbFamilia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbFamilia.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmbFamilia.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbFamilia.FormattingEnabled = True
-        Me.cmbFamilia.Location = New System.Drawing.Point(319, 69)
+        Me.cmbFamilia.Location = New System.Drawing.Point(162, 32)
         Me.cmbFamilia.Name = "cmbFamilia"
         Me.cmbFamilia.Size = New System.Drawing.Size(150, 25)
         Me.cmbFamilia.TabIndex = 20
@@ -205,45 +204,40 @@ Partial Class frmSeleccionMciasElectronicas
         '
         Me.lblFamilia.AutoSize = True
         Me.lblFamilia.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFamilia.ForeColor = System.Drawing.Color.Black
-        Me.lblFamilia.Location = New System.Drawing.Point(316, 49)
+        Me.lblFamilia.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.lblFamilia.Location = New System.Drawing.Point(159, 12)
         Me.lblFamilia.Name = "lblFamilia"
         Me.lblFamilia.Size = New System.Drawing.Size(58, 17)
         Me.lblFamilia.TabIndex = 19
         Me.lblFamilia.Text = "Familia:"
         '
-        'lblCategoria
+        'lblTipo
         '
-        Me.lblCategoria.AutoSize = True
-        Me.lblCategoria.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCategoria.ForeColor = System.Drawing.Color.Black
-        Me.lblCategoria.Location = New System.Drawing.Point(160, 15)
-        Me.lblCategoria.Name = "lblCategoria"
-        Me.lblCategoria.Size = New System.Drawing.Size(79, 17)
-        Me.lblCategoria.TabIndex = 18
-        Me.lblCategoria.Text = "Categoría:"
+        Me.lblTipo.AutoSize = True
+        Me.lblTipo.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTipo.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.lblTipo.Location = New System.Drawing.Point(13, 13)
+        Me.lblTipo.Name = "lblTipo"
+        Me.lblTipo.Size = New System.Drawing.Size(38, 17)
+        Me.lblTipo.TabIndex = 18
+        Me.lblTipo.Text = "Tipo:"
         '
         'pbImagen
         '
+        Me.pbImagen.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.pbImagen.Image = CType(resources.GetObject("pbImagen.Image"), System.Drawing.Image)
-        Me.pbImagen.Location = New System.Drawing.Point(12, 9)
+        Me.pbImagen.Location = New System.Drawing.Point(566, 36)
         Me.pbImagen.Name = "pbImagen"
-        Me.pbImagen.Size = New System.Drawing.Size(133, 127)
+        Me.pbImagen.Size = New System.Drawing.Size(191, 153)
         Me.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbImagen.TabIndex = 30
         Me.pbImagen.TabStop = False
         '
         'PanelContenedorMercancias
         '
-        Me.PanelContenedorMercancias.BackColor = System.Drawing.Color.White
-        Me.PanelContenedorMercancias.Controls.Add(Me.cmbMercanciaMetal)
-        Me.PanelContenedorMercancias.Controls.Add(Me.lblTipo)
-        Me.PanelContenedorMercancias.Controls.Add(Me.btnNuevo)
+        Me.PanelContenedorMercancias.BackColor = System.Drawing.Color.DarkGreen
         Me.PanelContenedorMercancias.Controls.Add(Me.cmbModelo)
         Me.PanelContenedorMercancias.Controls.Add(Me.txtSerie)
-        Me.PanelContenedorMercancias.Controls.Add(Me.btnSalir)
-        Me.PanelContenedorMercancias.Controls.Add(Me.pbImagen)
-        Me.PanelContenedorMercancias.Controls.Add(Me.btnAgregar)
         Me.PanelContenedorMercancias.Controls.Add(Me.lblNoSerie)
         Me.PanelContenedorMercancias.Controls.Add(Me.lblPrestamoCantidadMax)
         Me.PanelContenedorMercancias.Controls.Add(Me.lblPrestamoMax)
@@ -255,65 +249,28 @@ Partial Class frmSeleccionMciasElectronicas
         Me.PanelContenedorMercancias.Controls.Add(Me.lblAvaluo)
         Me.PanelContenedorMercancias.Controls.Add(Me.lblDescripcionPrenda)
         Me.PanelContenedorMercancias.Controls.Add(Me.txtDescripcionPrenda)
-        Me.PanelContenedorMercancias.Controls.Add(Me.txtPrecio)
+        Me.PanelContenedorMercancias.Controls.Add(Me.txtPrecioMax)
         Me.PanelContenedorMercancias.Controls.Add(Me.cmbMarca)
         Me.PanelContenedorMercancias.Controls.Add(Me.txtTipoEmpenio)
         Me.PanelContenedorMercancias.Controls.Add(Me.lblMarca)
         Me.PanelContenedorMercancias.Controls.Add(Me.lblModelo)
         Me.PanelContenedorMercancias.Controls.Add(Me.cmbFamilia)
-        Me.PanelContenedorMercancias.Controls.Add(Me.lblCategoria)
+        Me.PanelContenedorMercancias.Controls.Add(Me.lblTipo)
         Me.PanelContenedorMercancias.Controls.Add(Me.lblFamilia)
         Me.PanelContenedorMercancias.Controls.Add(Me.lblPrecioMaximo)
-        Me.PanelContenedorMercancias.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PanelContenedorMercancias.Location = New System.Drawing.Point(5, 35)
+        Me.PanelContenedorMercancias.Dock = System.Windows.Forms.DockStyle.Left
+        Me.PanelContenedorMercancias.Location = New System.Drawing.Point(0, 30)
         Me.PanelContenedorMercancias.Name = "PanelContenedorMercancias"
-        Me.PanelContenedorMercancias.Size = New System.Drawing.Size(722, 306)
+        Me.PanelContenedorMercancias.Size = New System.Drawing.Size(560, 276)
         Me.PanelContenedorMercancias.TabIndex = 31
-        '
-        'cmbMercanciaMetal
-        '
-        Me.cmbMercanciaMetal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbMercanciaMetal.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmbMercanciaMetal.FormattingEnabled = True
-        Me.cmbMercanciaMetal.Location = New System.Drawing.Point(163, 69)
-        Me.cmbMercanciaMetal.Name = "cmbMercanciaMetal"
-        Me.cmbMercanciaMetal.Size = New System.Drawing.Size(150, 25)
-        Me.cmbMercanciaMetal.TabIndex = 46
-        '
-        'lblTipo
-        '
-        Me.lblTipo.AutoSize = True
-        Me.lblTipo.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTipo.ForeColor = System.Drawing.Color.Black
-        Me.lblTipo.Location = New System.Drawing.Point(160, 49)
-        Me.lblTipo.Name = "lblTipo"
-        Me.lblTipo.Size = New System.Drawing.Size(38, 17)
-        Me.lblTipo.TabIndex = 45
-        Me.lblTipo.Text = "Tipo:"
-        '
-        'btnNuevo
-        '
-        Me.btnNuevo.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnNuevo.FlatAppearance.BorderSize = 0
-        Me.btnNuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
-        Me.btnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
-        Me.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnNuevo.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNuevo.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnNuevo.Location = New System.Drawing.Point(12, 142)
-        Me.btnNuevo.Name = "btnNuevo"
-        Me.btnNuevo.Size = New System.Drawing.Size(133, 26)
-        Me.btnNuevo.TabIndex = 32
-        Me.btnNuevo.Text = "+ NUEVO"
-        Me.btnNuevo.UseVisualStyleBackColor = False
         '
         'cmbModelo
         '
         Me.cmbModelo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbModelo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmbModelo.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbModelo.FormattingEnabled = True
-        Me.cmbModelo.Location = New System.Drawing.Point(608, 69)
+        Me.cmbModelo.Location = New System.Drawing.Point(451, 33)
         Me.cmbModelo.Name = "cmbModelo"
         Me.cmbModelo.Size = New System.Drawing.Size(97, 25)
         Me.cmbModelo.TabIndex = 44
@@ -321,17 +278,17 @@ Partial Class frmSeleccionMciasElectronicas
         'txtSerie
         '
         Me.txtSerie.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSerie.Location = New System.Drawing.Point(403, 131)
+        Me.txtSerie.Location = New System.Drawing.Point(261, 88)
         Me.txtSerie.Name = "txtSerie"
-        Me.txtSerie.Size = New System.Drawing.Size(141, 23)
+        Me.txtSerie.Size = New System.Drawing.Size(216, 23)
         Me.txtSerie.TabIndex = 42
         '
         'lblNoSerie
         '
         Me.lblNoSerie.AutoSize = True
         Me.lblNoSerie.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNoSerie.ForeColor = System.Drawing.Color.Black
-        Me.lblNoSerie.Location = New System.Drawing.Point(400, 111)
+        Me.lblNoSerie.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.lblNoSerie.Location = New System.Drawing.Point(258, 68)
         Me.lblNoSerie.Name = "lblNoSerie"
         Me.lblNoSerie.Size = New System.Drawing.Size(68, 17)
         Me.lblNoSerie.TabIndex = 43
@@ -341,8 +298,8 @@ Partial Class frmSeleccionMciasElectronicas
         '
         Me.lblPrestamoCantidadMax.AutoSize = True
         Me.lblPrestamoCantidadMax.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPrestamoCantidadMax.ForeColor = System.Drawing.Color.DarkRed
-        Me.lblPrestamoCantidadMax.Location = New System.Drawing.Point(437, 182)
+        Me.lblPrestamoCantidadMax.ForeColor = System.Drawing.Color.Yellow
+        Me.lblPrestamoCantidadMax.Location = New System.Drawing.Point(188, 148)
         Me.lblPrestamoCantidadMax.Name = "lblPrestamoCantidadMax"
         Me.lblPrestamoCantidadMax.Size = New System.Drawing.Size(49, 19)
         Me.lblPrestamoCantidadMax.TabIndex = 41
@@ -353,8 +310,8 @@ Partial Class frmSeleccionMciasElectronicas
         '
         Me.lblPrestamoMax.AutoSize = True
         Me.lblPrestamoMax.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPrestamoMax.ForeColor = System.Drawing.Color.Black
-        Me.lblPrestamoMax.Location = New System.Drawing.Point(314, 182)
+        Me.lblPrestamoMax.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.lblPrestamoMax.Location = New System.Drawing.Point(164, 126)
         Me.lblPrestamoMax.Name = "lblPrestamoMax"
         Me.lblPrestamoMax.Size = New System.Drawing.Size(117, 17)
         Me.lblPrestamoMax.TabIndex = 40
@@ -363,7 +320,7 @@ Partial Class frmSeleccionMciasElectronicas
         'txtColor
         '
         Me.txtColor.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtColor.Location = New System.Drawing.Point(285, 131)
+        Me.txtColor.Location = New System.Drawing.Point(143, 88)
         Me.txtColor.Name = "txtColor"
         Me.txtColor.Size = New System.Drawing.Size(112, 23)
         Me.txtColor.TabIndex = 38
@@ -372,8 +329,8 @@ Partial Class frmSeleccionMciasElectronicas
         '
         Me.lblColor.AutoSize = True
         Me.lblColor.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblColor.ForeColor = System.Drawing.Color.Black
-        Me.lblColor.Location = New System.Drawing.Point(282, 111)
+        Me.lblColor.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.lblColor.Location = New System.Drawing.Point(140, 68)
         Me.lblColor.Name = "lblColor"
         Me.lblColor.Size = New System.Drawing.Size(48, 17)
         Me.lblColor.TabIndex = 39
@@ -382,7 +339,7 @@ Partial Class frmSeleccionMciasElectronicas
         'txtTamanio
         '
         Me.txtTamanio.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTamanio.Location = New System.Drawing.Point(163, 131)
+        Me.txtTamanio.Location = New System.Drawing.Point(17, 88)
         Me.txtTamanio.Name = "txtTamanio"
         Me.txtTamanio.Size = New System.Drawing.Size(116, 23)
         Me.txtTamanio.TabIndex = 36
@@ -391,8 +348,8 @@ Partial Class frmSeleccionMciasElectronicas
         '
         Me.lblTamanio.AutoSize = True
         Me.lblTamanio.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTamanio.ForeColor = System.Drawing.Color.Black
-        Me.lblTamanio.Location = New System.Drawing.Point(164, 111)
+        Me.lblTamanio.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.lblTamanio.Location = New System.Drawing.Point(18, 68)
         Me.lblTamanio.Name = "lblTamanio"
         Me.lblTamanio.Size = New System.Drawing.Size(65, 17)
         Me.lblTamanio.TabIndex = 37
@@ -400,20 +357,19 @@ Partial Class frmSeleccionMciasElectronicas
         '
         'txtAvaluo
         '
-        Me.txtAvaluo.Enabled = False
         Me.txtAvaluo.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAvaluo.ForeColor = System.Drawing.Color.DarkRed
-        Me.txtAvaluo.Location = New System.Drawing.Point(589, 200)
+        Me.txtAvaluo.ForeColor = System.Drawing.Color.Navy
+        Me.txtAvaluo.Location = New System.Drawing.Point(442, 146)
         Me.txtAvaluo.Name = "txtAvaluo"
-        Me.txtAvaluo.Size = New System.Drawing.Size(116, 23)
+        Me.txtAvaluo.Size = New System.Drawing.Size(106, 23)
         Me.txtAvaluo.TabIndex = 32
         '
         'lblAvaluo
         '
         Me.lblAvaluo.AutoSize = True
         Me.lblAvaluo.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAvaluo.ForeColor = System.Drawing.Color.Black
-        Me.lblAvaluo.Location = New System.Drawing.Point(586, 180)
+        Me.lblAvaluo.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.lblAvaluo.Location = New System.Drawing.Point(439, 126)
         Me.lblAvaluo.Name = "lblAvaluo"
         Me.lblAvaluo.Size = New System.Drawing.Size(58, 17)
         Me.lblAvaluo.TabIndex = 33
@@ -423,8 +379,8 @@ Partial Class frmSeleccionMciasElectronicas
         '
         Me.lblDescripcionPrenda.AutoSize = True
         Me.lblDescripcionPrenda.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDescripcionPrenda.ForeColor = System.Drawing.Color.Black
-        Me.lblDescripcionPrenda.Location = New System.Drawing.Point(11, 184)
+        Me.lblDescripcionPrenda.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.lblDescripcionPrenda.Location = New System.Drawing.Point(15, 193)
         Me.lblDescripcionPrenda.Name = "lblDescripcionPrenda"
         Me.lblDescripcionPrenda.Size = New System.Drawing.Size(175, 17)
         Me.lblDescripcionPrenda.TabIndex = 31
@@ -432,21 +388,43 @@ Partial Class frmSeleccionMciasElectronicas
         '
         'txtDescripcionPrenda
         '
-        Me.txtDescripcionPrenda.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDescripcionPrenda.Location = New System.Drawing.Point(12, 204)
+        Me.txtDescripcionPrenda.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDescripcionPrenda.Location = New System.Drawing.Point(16, 213)
         Me.txtDescripcionPrenda.Multiline = True
         Me.txtDescripcionPrenda.Name = "txtDescripcionPrenda"
-        Me.txtDescripcionPrenda.Size = New System.Drawing.Size(532, 45)
+        Me.txtDescripcionPrenda.Size = New System.Drawing.Size(532, 47)
         Me.txtDescripcionPrenda.TabIndex = 30
+        '
+        'btnNuevo
+        '
+        Me.btnNuevo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnNuevo.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnNuevo.FlatAppearance.BorderSize = 0
+        Me.btnNuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.ForestGreen
+        Me.btnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen
+        Me.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnNuevo.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNuevo.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnNuevo.Location = New System.Drawing.Point(566, 192)
+        Me.btnNuevo.Name = "btnNuevo"
+        Me.btnNuevo.Size = New System.Drawing.Size(203, 30)
+        Me.btnNuevo.TabIndex = 32
+        Me.btnNuevo.Text = "NUEVO"
+        Me.btnNuevo.UseVisualStyleBackColor = False
         '
         'frmSeleccionMciasElectronicas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.ForestGreen
-        Me.ClientSize = New System.Drawing.Size(732, 346)
+        Me.BackColor = System.Drawing.Color.Gainsboro
+        Me.ClientSize = New System.Drawing.Size(769, 306)
+        Me.Controls.Add(Me.btnNuevo)
         Me.Controls.Add(Me.PanelContenedorMercancias)
+        Me.Controls.Add(Me.pbImagen)
         Me.Controls.Add(Me.PanelTitulo)
+        Me.Controls.Add(Me.btnSalir)
+        Me.Controls.Add(Me.btnAgregar)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmSeleccionMciasElectronicas"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -469,7 +447,7 @@ Partial Class frmSeleccionMciasElectronicas
     Friend WithEvents lblModelo As Label
     Friend WithEvents lblMarca As Label
     Friend WithEvents lblFamilia As Label
-    Friend WithEvents lblCategoria As Label
+    Friend WithEvents lblTipo As Label
     Friend WithEvents btnCerrar As PictureBox
     Friend WithEvents pbImagen As PictureBox
     Friend WithEvents PanelContenedorMercancias As Panel
@@ -481,7 +459,7 @@ Partial Class frmSeleccionMciasElectronicas
     Friend WithEvents lblDescripcionPrenda As Label
     Friend WithEvents btnNuevo As Button
     Public WithEvents txtTipoEmpenio As TextBox
-    Public WithEvents txtPrecio As TextBox
+    Public WithEvents txtPrecioMax As TextBox
     Public WithEvents cmbMarca As ComboBox
     Public WithEvents cmbFamilia As ComboBox
     Public WithEvents txtSerie As TextBox
@@ -491,6 +469,4 @@ Partial Class frmSeleccionMciasElectronicas
     Public WithEvents txtAvaluo As TextBox
     Public WithEvents txtDescripcionPrenda As TextBox
     Public WithEvents cmbModelo As ComboBox
-    Public WithEvents cmbMercanciaMetal As ComboBox
-    Friend WithEvents lblTipo As Label
 End Class
