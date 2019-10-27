@@ -161,4 +161,8 @@ Public Class frmSeleccionMciasElectronicas
     Private Sub cmbModelo_SelectedValueChanged(sender As Object, e As EventArgs) Handles cmbModelo.SelectedValueChanged
         ObtenerPrecio()
     End Sub
+
+    Private Sub PanelContenedorMercancias_Paint(sender As Object, e As PaintEventArgs) Handles PanelContenedorMercancias.Paint
+
+    End Sub
 End Class
